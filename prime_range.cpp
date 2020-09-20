@@ -23,6 +23,7 @@ vector<vector<int>> input()
         set.push_back(a);
         set.push_back(b);
         all_sets.push_back(set);
+        set.clear();
     }
 
     return all_sets;
@@ -33,6 +34,8 @@ int findByValue(const map<int,int>& all_primes, int value){
     while(it != all_primes.end()){
         if(it->second == value){
             return it->first;
+        }else{
+            it++;
         }
     }
 }
@@ -40,29 +43,33 @@ int findByValue(const map<int,int>& all_primes, int value){
 vector<int> process(const vector<vector<int>>& input_data)
 {
     cout << "thanks, thinking..." << endl;
-    //int max = 15485867;
-    int max = 3000017;
+    int max = 15485867;
+//    int max = 3000017;
     vector<int> primes;
     vector<bool> is_prime(max,true);
     map <int,int> all_primes;
-    int n=0;
     for(int i=2;i<sqrt(max);i++){
+        int n=1;
         if(is_prime[i]){
             for(int j=pow(i,2);j<max; j+=(n*i))
                 is_prime[j] = false;
             n++;
         }
     }
-    for(int j=0;j<max;j++){
+    int index=0;
+    for(int j=2;j<max;j++){
         if(is_prime[j])
         {
-            all_primes[j]++;
-        }
+            index++;
+            all_primes.insert({index,j});
+        }else{}
     }
-
     primes.reserve(input_data.size());
     for(int k=0;k<input_data.size();k++){
-        primes.push_back(findByValue(all_primes,input_data[k][1])-findByValue(all_primes,input_data[k][0]));
+        int max = findByValue(all_primes,input_data[k][1]);
+        int min = findByValue(all_primes,input_data[k][0]);
+        int delta = max - min;
+        primes.push_back(delta+1);
     }
 
     return primes;
