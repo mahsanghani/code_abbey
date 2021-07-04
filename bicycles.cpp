@@ -35,7 +35,6 @@ vector<double> process(vector<vector<int>>data)
 
     for (int i = 0; i < data.size(); i++)
     {
-        //cout<<double(double(data[i][0])/(double(data[i][1])+double(data[i][2])))<<endl;
         distances.push_back(double(data[i][1]) * (double(data[i][0])/(double(data[i][1])+double(data[i][2]))));
     }
 
@@ -47,7 +46,7 @@ void output(vector<double> distances)
     cout << "answer: " << endl;
     for (int i = 0; i < distances.size(); i++)
     {
-        cout << setprecision(12) << distances[i] << " ";
+        cout << setprecision(14) << distances[i] << " ";
     }
 }
 
