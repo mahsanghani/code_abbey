@@ -19,11 +19,47 @@ void split(const string& string_in,
     }
 }
 
-unsigned int factorial(unsigned int n)
+unsigned long long factorial(unsigned int n)
 {
     if (n == 0)
         return 1;
     return n * factorial(n - 1);
+}
+
+# define MAX 100 // assuming we need first 100 rows
+long long triangle[MAX + 1][MAX + 1];
+
+void makeTriangle() {
+    int i, j;
+
+    // initialize the first row
+    triangle[0][0] = 1; // C(0, 0) = 1
+
+    for(i = 1; i < MAX; i++) {
+        triangle[i][0] = 1; // C(i, 0) = 1
+        for(j = 1; j <= i; j++) {
+            triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+        }
+    }
+}
+
+//long long C(int n, int r) {
+//    return triangle[n][r];
+//}
+
+# define MAX 100
+long long row[MAX + 1];
+long long C(int n, int r) {
+    int i, j;
+    // initialize by the first row
+    row[0] = 1; // this is the value of C(0, 0)
+    for(i = 1; i <= n; i++) {
+        for(j = i; j > 0; j--) {
+            // from the recurrence C(n, r) = C(n - 1, r - 1) + C(n - 1, r)
+            row[j] += row[j - 1];
+        }
+    }
+    return row[r];
 }
 
 vector<vector<int>> input()
@@ -50,6 +86,8 @@ vector<unsigned long long> process(vector<vector<int>>data)
     vector<unsigned long long> totals;
     for (int i = 0; i < data.size(); i++)
     {
+        cout << C(data[i][0],data[i][1]) << endl;
+        // totals.push_back(C(data[i][0],data[i][1]));
         unsigned long long total = 1;
         int n = data[i][0];
         int k = data[i][1];
