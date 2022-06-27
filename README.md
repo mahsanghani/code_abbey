@@ -1,2 +1,16 @@
 # code_abbey
-c++ puzzles
+
+code_abbey:
+- code abbey challenges
+
+leetcode:
+- leetcode challenges
+
+basics:
+- c++ basics
+
+intermediate:
+- c++ intermediate
+
+advanced:
+- c++ advanced
