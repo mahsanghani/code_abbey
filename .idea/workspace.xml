@@ -6,7 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="fractional numbers" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="auto" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +57,7 @@
       <workItem from="1656352082939" duration="7000" />
       <workItem from="1656352106343" duration="202000" />
       <workItem from="1656352406039" duration="1963000" />
-      <workItem from="1656422959581" duration="1739000" />
+      <workItem from="1656422959581" duration="2372000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -171,7 +171,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656425933174</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="booleans">
+      <created>1656426062587</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1656426062587</updated>
+    </task>
+    <task id="LOCAL-00018" summary="characters">
+      <created>1656426100374</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1656426100375</updated>
+    </task>
+    <task id="LOCAL-00019" summary="auto">
+      <created>1656426217428</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1656426217428</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +226,9 @@
     <MESSAGE value="assignment notation" />
     <MESSAGE value="integer modifiers" />
     <MESSAGE value="fractional numbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="fractional numbers" />
+    <MESSAGE value="booleans" />
+    <MESSAGE value="characters" />
+    <MESSAGE value="auto" />
+    <option name="LAST_COMMIT_MESSAGE" value="auto" />
   </component>
 </project>
