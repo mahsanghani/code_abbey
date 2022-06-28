@@ -6,7 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="auto" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="assignments">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +59,7 @@
       <workItem from="1656352082939" duration="7000" />
       <workItem from="1656352106343" duration="202000" />
       <workItem from="1656352406039" duration="1963000" />
-      <workItem from="1656422959581" duration="2372000" />
+      <workItem from="1656422959581" duration="3029000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -192,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656426217428</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="assignments">
+      <created>1656426652932</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1656426652932</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +238,7 @@
     <MESSAGE value="booleans" />
     <MESSAGE value="characters" />
     <MESSAGE value="auto" />
-    <option name="LAST_COMMIT_MESSAGE" value="auto" />
+    <MESSAGE value="assignments" />
+    <option name="LAST_COMMIT_MESSAGE" value="assignments" />
   </component>
 </project>
