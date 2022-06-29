@@ -6,9 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="compound">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="logical" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +59,7 @@
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
-      <workItem from="1656466882382" duration="8000" />
+      <workItem from="1656466882382" duration="427000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -238,7 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656436257658</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="relational">
+      <created>1656467011168</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1656467011168</updated>
+    </task>
+    <task id="LOCAL-00027" summary="logical">
+      <created>1656467078934</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1656467078934</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,8 +268,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update file names" />
-    <MESSAGE value="directories" />
     <MESSAGE value="updated readme" />
     <MESSAGE value="numbers" />
     <MESSAGE value="comments" />
@@ -281,6 +291,8 @@
     <MESSAGE value="pemdas" />
     <MESSAGE value="postfix" />
     <MESSAGE value="compound" />
-    <option name="LAST_COMMIT_MESSAGE" value="compound" />
+    <MESSAGE value="relational" />
+    <MESSAGE value="logical" />
+    <option name="LAST_COMMIT_MESSAGE" value="logical" />
   </component>
 </project>
