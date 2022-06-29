@@ -14,9 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="loop decrementing">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="loop fix calculator" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,28 +85,7 @@
       <workItem from="1656435014539" duration="2437000" />
       <workItem from="1656466882382" duration="5702000" />
       <workItem from="1656515249667" duration="3478000" />
-      <workItem from="1656525864456" duration="3351000" />
-    </task>
-    <task id="LOCAL-00026" summary="relational">
-      <created>1656467011168</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1656467011168</updated>
-    </task>
-    <task id="LOCAL-00027" summary="logical">
-      <created>1656467078934</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1656467078934</updated>
-    </task>
-    <task id="LOCAL-00028" summary="output">
-      <created>1656467332464</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1656467332464</updated>
+      <workItem from="1656525864456" duration="3732000" />
     </task>
     <task id="LOCAL-00029" summary="limits">
       <created>1656467391764</created>
@@ -432,7 +409,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656528805265</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="loops nested">
+      <created>1656529263735</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1656529263735</updated>
+    </task>
+    <task id="LOCAL-00076" summary="loop break and continue">
+      <created>1656529521261</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1656529521261</updated>
+    </task>
+    <task id="LOCAL-00077" summary="loop fix calculator">
+      <created>1656529603543</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1656529603543</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,9 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bitwise masks example" />
-    <MESSAGE value="bitwise masks colours" />
-    <MESSAGE value="variable scope" />
     <MESSAGE value="flow if statement" />
     <MESSAGE value="flow else if statement" />
     <MESSAGE value="flow switch" />
@@ -475,6 +470,9 @@
     <MESSAGE value="loop infinite" />
     <MESSAGE value="loop infinite practice" />
     <MESSAGE value="loop decrementing" />
-    <option name="LAST_COMMIT_MESSAGE" value="loop decrementing" />
+    <MESSAGE value="loops nested" />
+    <MESSAGE value="loop break and continue" />
+    <MESSAGE value="loop fix calculator" />
+    <option name="LAST_COMMIT_MESSAGE" value="loop fix calculator" />
   </component>
 </project>
