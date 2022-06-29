@@ -2,8 +2,6 @@
 // Created by Ahsan Ghani on 2022-06-29.
 //
 #include <iostream>
-
-
 int main(){
     int number1 {75};
     int number2 {60};
