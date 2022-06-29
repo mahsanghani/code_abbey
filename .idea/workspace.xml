@@ -6,7 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow integral logical" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow if const expr" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,21 +63,7 @@
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
       <workItem from="1656466882382" duration="5702000" />
-      <workItem from="1656515249667" duration="1819000" />
-    </task>
-    <task id="LOCAL-00007" summary="functions">
-      <created>1656352857200</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1656352857200</updated>
-    </task>
-    <task id="LOCAL-00008" summary="printing">
-      <created>1656352988985</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1656352988985</updated>
+      <workItem from="1656515249667" duration="2230000" />
     </task>
     <task id="LOCAL-00009" summary="input">
       <created>1656353115640</created>
@@ -408,7 +394,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656517354510</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="flow ternary operators">
+      <created>1656517461676</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1656517461676</updated>
+    </task>
+    <task id="LOCAL-00057" summary="flow if const expr">
+      <created>1656517515922</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1656517515922</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,8 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="output" />
-    <MESSAGE value="limits" />
     <MESSAGE value="math functions" />
     <MESSAGE value="sizeof" />
     <MESSAGE value="literals" />
@@ -451,6 +449,8 @@
     <MESSAGE value="flow switch" />
     <MESSAGE value="flow bool" />
     <MESSAGE value="flow integral logical" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow integral logical" />
+    <MESSAGE value="flow ternary operators" />
+    <MESSAGE value="flow if const expr" />
+    <option name="LAST_COMMIT_MESSAGE" value="flow if const expr" />
   </component>
 </project>
