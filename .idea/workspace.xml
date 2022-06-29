@@ -6,7 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow switch with initializer" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow switch scope" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,21 +63,7 @@
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
       <workItem from="1656466882382" duration="5702000" />
-      <workItem from="1656515249667" duration="2631000" />
-    </task>
-    <task id="LOCAL-00011" summary="number types">
-      <created>1656424920593</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1656424920593</updated>
-    </task>
-    <task id="LOCAL-00012" summary="compiler error&#10;initializing braces">
-      <created>1656425118554</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1656425118554</updated>
+      <workItem from="1656515249667" duration="3069000" />
     </task>
     <task id="LOCAL-00013" summary="functional initialization">
       <created>1656425273109</created>
@@ -408,7 +394,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656519777413</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="flow global variable">
+      <created>1656520002217</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1656520002217</updated>
+    </task>
+    <task id="LOCAL-00061" summary="flow switch scope">
+      <created>1656520111575</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1656520111575</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,8 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="literals" />
-    <MESSAGE value="constants" />
     <MESSAGE value="constexpr" />
     <MESSAGE value="constint" />
     <MESSAGE value=".gitignore" />
@@ -451,6 +449,8 @@
     <MESSAGE value="flow if const expr" />
     <MESSAGE value="flow if with initializer" />
     <MESSAGE value="flow switch with initializer" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow switch with initializer" />
+    <MESSAGE value="flow global variable" />
+    <MESSAGE value="flow switch scope" />
+    <option name="LAST_COMMIT_MESSAGE" value="flow switch scope" />
   </component>
 </project>
