@@ -6,10 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow else if statement">
-      <change afterPath="$PROJECT_DIR$/basics/flowelseif.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/flowif.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/basics/flowif.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow switch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,21 +63,7 @@
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
       <workItem from="1656466882382" duration="5702000" />
-      <workItem from="1656515249667" duration="372000" />
-    </task>
-    <task id="LOCAL-00003" summary="updated readme">
-      <created>1656352514389</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1656352514389</updated>
-    </task>
-    <task id="LOCAL-00004" summary="numbers">
-      <created>1656352706896</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1656352706896</updated>
+      <workItem from="1656515249667" duration="973000" />
     </task>
     <task id="LOCAL-00005" summary="comments">
       <created>1656352761736</created>
@@ -411,7 +394,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656515623079</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="flow switch">
+      <created>1656516214595</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1656516214595</updated>
+    </task>
+    <task id="LOCAL-00053" summary="flow switch">
+      <created>1656516221966</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1656516221966</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="compound" />
     <MESSAGE value="relational" />
     <MESSAGE value="logical" />
     <MESSAGE value="output" />
@@ -454,6 +450,7 @@
     <MESSAGE value="variable scope" />
     <MESSAGE value="flow if statement" />
     <MESSAGE value="flow else if statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow else if statement" />
+    <MESSAGE value="flow switch" />
+    <option name="LAST_COMMIT_MESSAGE" value="flow switch" />
   </component>
 </project>
