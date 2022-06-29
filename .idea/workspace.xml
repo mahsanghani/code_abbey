@@ -6,7 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="bitwise shift" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="bitwise compound">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +64,7 @@
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
-      <workItem from="1656466882382" duration="3816000" />
+      <workItem from="1656466882382" duration="4619000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -365,7 +367,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656470700521</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="bitwise logical">
+      <created>1656470882981</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1656470882981</updated>
+    </task>
+    <task id="LOCAL-00045" summary="bitwise compound">
+      <created>1656471064120</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1656471064120</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,8 +399,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="booleans" />
-    <MESSAGE value="characters" />
     <MESSAGE value="auto" />
     <MESSAGE value="assignments" />
     <MESSAGE value="updated." />
@@ -408,6 +422,8 @@
     <MESSAGE value="overflow" />
     <MESSAGE value="bitwise binary" />
     <MESSAGE value="bitwise shift" />
-    <option name="LAST_COMMIT_MESSAGE" value="bitwise shift" />
+    <MESSAGE value="bitwise logical" />
+    <MESSAGE value="bitwise compound" />
+    <option name="LAST_COMMIT_MESSAGE" value="bitwise compound" />
   </component>
 </project>
