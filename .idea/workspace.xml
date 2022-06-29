@@ -6,7 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="math" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="compound">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +60,8 @@
       <workItem from="1656352106343" duration="202000" />
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
-      <workItem from="1656435014539" duration="962000" />
+      <workItem from="1656435014539" duration="2437000" />
+      <workItem from="1656466882382" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -214,7 +217,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656435466954</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="pemdas">
+      <created>1656436019452</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1656436019452</updated>
+    </task>
+    <task id="LOCAL-00024" summary="postfix">
+      <created>1656436195494</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656436195494</updated>
+    </task>
+    <task id="LOCAL-00025" summary="compound">
+      <created>1656436257658</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1656436257658</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +278,9 @@
     <MESSAGE value="assignments" />
     <MESSAGE value="updated." />
     <MESSAGE value="math" />
-    <option name="LAST_COMMIT_MESSAGE" value="math" />
+    <MESSAGE value="pemdas" />
+    <MESSAGE value="postfix" />
+    <MESSAGE value="compound" />
+    <option name="LAST_COMMIT_MESSAGE" value="compound" />
   </component>
 </project>
