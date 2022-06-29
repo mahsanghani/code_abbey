@@ -6,7 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment=".gitignore" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="explicit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +62,7 @@
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
-      <workItem from="1656466882382" duration="2379000" />
+      <workItem from="1656466882382" duration="2736000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -330,7 +330,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656469204381</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="implicit">
+      <created>1656469387801</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1656469387801</updated>
+    </task>
+    <task id="LOCAL-00040" summary="explicit">
+      <created>1656469619179</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1656469619179</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,8 +362,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="compiler error&#10;initializing braces" />
-    <MESSAGE value="functional initialization" />
     <MESSAGE value="assignment notation" />
     <MESSAGE value="integer modifiers" />
     <MESSAGE value="fractional numbers" />
@@ -373,6 +385,8 @@
     <MESSAGE value="constexpr" />
     <MESSAGE value="constint" />
     <MESSAGE value=".gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore" />
+    <MESSAGE value="implicit" />
+    <MESSAGE value="explicit" />
+    <option name="LAST_COMMIT_MESSAGE" value="explicit" />
   </component>
 </project>
