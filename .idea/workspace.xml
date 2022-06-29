@@ -6,7 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="overflow" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="bitwise shift" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +62,7 @@
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
-      <workItem from="1656466882382" duration="3043000" />
+      <workItem from="1656466882382" duration="3816000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -351,7 +351,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656469875726</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="bitwise binary">
+      <created>1656470186286</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1656470186286</updated>
+    </task>
+    <task id="LOCAL-00043" summary="bitwise shift">
+      <created>1656470700521</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1656470700521</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,8 +383,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="integer modifiers" />
-    <MESSAGE value="fractional numbers" />
     <MESSAGE value="booleans" />
     <MESSAGE value="characters" />
     <MESSAGE value="auto" />
@@ -394,6 +406,8 @@
     <MESSAGE value="implicit" />
     <MESSAGE value="explicit" />
     <MESSAGE value="overflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="overflow" />
+    <MESSAGE value="bitwise binary" />
+    <MESSAGE value="bitwise shift" />
+    <option name="LAST_COMMIT_MESSAGE" value="bitwise shift" />
   </component>
 </project>
