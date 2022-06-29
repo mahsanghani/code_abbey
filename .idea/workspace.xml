@@ -6,9 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="constants">
-      <change afterPath="$PROJECT_DIR$/basics/constants.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="constexpr" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +59,7 @@
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
-      <workItem from="1656466882382" duration="1643000" />
+      <workItem from="1656466882382" duration="1976000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -308,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656468525484</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="constexpr">
+      <created>1656468780796</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1656468780796</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +331,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="input" />
     <MESSAGE value="spaces" />
     <MESSAGE value="number types" />
     <MESSAGE value="compiler error&#10;initializing braces" />
@@ -351,6 +355,7 @@
     <MESSAGE value="sizeof" />
     <MESSAGE value="literals" />
     <MESSAGE value="constants" />
-    <option name="LAST_COMMIT_MESSAGE" value="constants" />
+    <MESSAGE value="constexpr" />
+    <option name="LAST_COMMIT_MESSAGE" value="constexpr" />
   </component>
 </project>
