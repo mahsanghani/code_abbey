@@ -6,8 +6,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="bitwise compound">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="bitwise masks colours">
+      <change afterPath="$PROJECT_DIR$/basics/bitwisemaskscolours.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
-      <workItem from="1656466882382" duration="4619000" />
+      <workItem from="1656466882382" duration="5050000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -381,7 +381,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656471064120</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="bitwise masks">
+      <created>1656471639942</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1656471639942</updated>
+    </task>
+    <task id="LOCAL-00047" summary="bitwise masks example">
+      <created>1656471677706</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1656471677706</updated>
+    </task>
+    <task id="LOCAL-00048" summary="bitwise masks colours">
+      <created>1656471936181</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1656471936181</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,9 +420,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="auto" />
-    <MESSAGE value="assignments" />
-    <MESSAGE value="updated." />
     <MESSAGE value="math" />
     <MESSAGE value="pemdas" />
     <MESSAGE value="postfix" />
@@ -424,6 +442,9 @@
     <MESSAGE value="bitwise shift" />
     <MESSAGE value="bitwise logical" />
     <MESSAGE value="bitwise compound" />
-    <option name="LAST_COMMIT_MESSAGE" value="bitwise compound" />
+    <MESSAGE value="bitwise masks" />
+    <MESSAGE value="bitwise masks example" />
+    <MESSAGE value="bitwise masks colours" />
+    <option name="LAST_COMMIT_MESSAGE" value="bitwise masks colours" />
   </component>
 </project>
