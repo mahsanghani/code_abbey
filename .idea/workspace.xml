@@ -6,7 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="sizeof" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="constants">
+      <change afterPath="$PROJECT_DIR$/basics/constants.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +61,7 @@
       <workItem from="1656352406039" duration="1963000" />
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
-      <workItem from="1656466882382" duration="1282000" />
+      <workItem from="1656466882382" duration="1643000" />
     </task>
     <task id="LOCAL-00001" summary="update file names">
       <created>1656352165430</created>
@@ -285,7 +287,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656467735365</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="sizeof">
+      <created>1656468186027</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1656468186027</updated>
+    </task>
+    <task id="LOCAL-00034" summary="literals">
+      <created>1656468203224</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1656468203224</updated>
+    </task>
+    <task id="LOCAL-00035" summary="constants">
+      <created>1656468525484</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1656468525484</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,8 +326,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="functions" />
-    <MESSAGE value="printing" />
     <MESSAGE value="input" />
     <MESSAGE value="spaces" />
     <MESSAGE value="number types" />
@@ -328,6 +349,8 @@
     <MESSAGE value="limits" />
     <MESSAGE value="math functions" />
     <MESSAGE value="sizeof" />
-    <option name="LAST_COMMIT_MESSAGE" value="sizeof" />
+    <MESSAGE value="literals" />
+    <MESSAGE value="constants" />
+    <option name="LAST_COMMIT_MESSAGE" value="constants" />
   </component>
 </project>
