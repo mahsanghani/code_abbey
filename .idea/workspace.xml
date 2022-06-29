@@ -6,9 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="loop for multiple declarations" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,21 +64,7 @@
       <workItem from="1656435014539" duration="2437000" />
       <workItem from="1656466882382" duration="5702000" />
       <workItem from="1656515249667" duration="3478000" />
-      <workItem from="1656525864456" duration="332000" />
-    </task>
-    <task id="LOCAL-00015" summary="integer modifiers">
-      <created>1656425857774</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1656425857774</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fractional numbers">
-      <created>1656425933174</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1656425933174</updated>
+      <workItem from="1656525864456" duration="663000" />
     </task>
     <task id="LOCAL-00017" summary="booleans">
       <created>1656426062587</created>
@@ -411,7 +395,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656520770675</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="loop for">
+      <created>1656526331085</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1656526331086</updated>
+    </task>
+    <task id="LOCAL-00065" summary="loop for multiple declarations">
+      <created>1656526478515</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1656526478515</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,8 +427,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="constint" />
-    <MESSAGE value=".gitignore" />
     <MESSAGE value="implicit" />
     <MESSAGE value="explicit" />
     <MESSAGE value="overflow" />
@@ -454,6 +450,8 @@
     <MESSAGE value="flow global variable" />
     <MESSAGE value="flow switch scope" />
     <MESSAGE value="flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow" />
+    <MESSAGE value="loop for" />
+    <MESSAGE value="loop for multiple declarations" />
+    <option name="LAST_COMMIT_MESSAGE" value="loop for multiple declarations" />
   </component>
 </project>
