@@ -6,7 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow switch scope" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="flow">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,14 +65,8 @@
       <workItem from="1656422959581" duration="3159000" />
       <workItem from="1656435014539" duration="2437000" />
       <workItem from="1656466882382" duration="5702000" />
-      <workItem from="1656515249667" duration="3454000" />
-    </task>
-    <task id="LOCAL-00014" summary="assignment notation">
-      <created>1656425322442</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1656425322442</updated>
+      <workItem from="1656515249667" duration="3478000" />
+      <workItem from="1656525864456" duration="332000" />
     </task>
     <task id="LOCAL-00015" summary="integer modifiers">
       <created>1656425857774</created>
@@ -408,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656520507527</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="flow">
+      <created>1656520770675</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1656520770675</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="constexpr" />
     <MESSAGE value="constint" />
     <MESSAGE value=".gitignore" />
     <MESSAGE value="implicit" />
@@ -451,6 +453,7 @@
     <MESSAGE value="flow switch with initializer" />
     <MESSAGE value="flow global variable" />
     <MESSAGE value="flow switch scope" />
-    <option name="LAST_COMMIT_MESSAGE" value="flow switch scope" />
+    <MESSAGE value="flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="flow" />
   </component>
 </project>
