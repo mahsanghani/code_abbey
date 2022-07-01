@@ -75,7 +75,7 @@ int main(){
 
     std::cout << std::endl;
     std::cout << "std::isdigit : "<<std::endl;
-    char statement[] {"Mr Hamilton owns 221 cows. That's a lot of cows! The kid exclamed."};
+    char statement[] {"Mr Hamilton owns 221 cows. That's a lot of cows! The kid exclaimed."};
     std::cout << "statement : " << statement << std::endl;
 
     size_t digit_count{};
@@ -90,7 +90,7 @@ int main(){
 
     //Turning a character to lowercase using the std::tolower() function
     std::cout << std::endl;
-    std::cout << "std::tolwer and std::toupper: " << std::endl;
+    std::cout << "std::tolower and std::toupper: " << std::endl;
     char original_str[] {"Home. The feeling of belonging"};
     char dest_str[std::size(original_str)];
 
