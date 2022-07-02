@@ -52,3 +52,15 @@ void printList(Node *node){
         node = node->next;
     }
 }
+
+int main(){
+    Node* head = NULL;
+    append(&head,6);
+    push(&head, 7);
+    push(&head, 1);
+    append(&head, 4);
+    insertAfter(head->next, 8);
+    cout<<"Created Linked List is: "<<endl;
+    printList(head);
+    return 0;
+}
