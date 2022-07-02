@@ -15,7 +15,7 @@ public:
     }
 };
 
-void insertahead(node*& head, int value){
+void insertathead(node*& head, int value){
     node* n = new node(value);
     n->next = head;
     head = n;
@@ -39,7 +39,7 @@ void insertafter(node* head, int key, int val){
     temp->next = n;
 }
 
-void insertlast(node*& head, int val){
+void insertattail(node*& head, int val){
     node* n = new node(val);
     if (head==NULL){
         head = n;
@@ -61,3 +61,26 @@ void print(node*& head){
     cout << "NULL" << endl;
 }
 
+int main(){
+    node* head = NULL;
+
+    insertathead(head,1);
+    insertathead(head,2);
+    cout << "After insertion at head: ";
+    print(head);
+    cout << endl;
+
+    insertattail(head,4);
+    insertattail(head,5);
+    cout << "After insertion at tail: ";
+    print(head);
+    cout << endl;
+
+    insertafter(head,1,2);
+    insertafter(head,5,6);
+    cout << "After insertion at a given position: ";
+    print(head);
+    cout << endl;
+
+    return 0;
+}
