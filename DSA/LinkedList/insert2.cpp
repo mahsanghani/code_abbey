@@ -14,3 +14,9 @@ public:
         next = NULL;
     }
 };
+
+void insertahead(node*& head, int value){
+    node* n = new node(value);
+    n->next = head;
+    head = n;
+}
