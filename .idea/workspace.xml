@@ -14,7 +14,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="pushing a linked list">
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="insert after a node in a linked list">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DSA/LinkedList/insert.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/LinkedList/insert.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,21 +85,7 @@
       <workItem from="1656515249667" duration="3478000" />
       <workItem from="1656525864456" duration="4692000" />
       <workItem from="1656797994555" duration="91000" />
-      <workItem from="1656798117473" duration="909000" />
-    </task>
-    <task id="LOCAL-00033" summary="sizeof">
-      <created>1656468186027</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1656468186027</updated>
-    </task>
-    <task id="LOCAL-00034" summary="literals">
-      <created>1656468203224</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1656468203224</updated>
+      <workItem from="1656798117473" duration="1762000" />
     </task>
     <task id="LOCAL-00035" summary="constants">
       <created>1656468525484</created>
@@ -429,7 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656799140692</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="pushing a node in a linked list">
+      <created>1656799179113</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1656799179113</updated>
+    </task>
+    <task id="LOCAL-00083" summary="insert after a node in a linked list">
+      <created>1656799402748</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1656799402748</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,8 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="flow integral logical" />
-    <MESSAGE value="flow ternary operators" />
     <MESSAGE value="flow if const expr" />
     <MESSAGE value="flow if with initializer" />
     <MESSAGE value="flow switch with initializer" />
@@ -472,6 +471,8 @@
     <MESSAGE value="linked list introduction" />
     <MESSAGE value="printing a linked list" />
     <MESSAGE value="pushing a linked list" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing a linked list" />
+    <MESSAGE value="pushing a node in a linked list" />
+    <MESSAGE value="insert after a node in a linked list" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert after a node in a linked list" />
   </component>
 </project>
