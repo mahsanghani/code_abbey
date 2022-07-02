@@ -38,3 +38,17 @@ void insertafter(node* head, int key, int val){
     n->next = temp->next;
     temp->next = n;
 }
+
+void insertlast(node*& head, int val){
+    node* n = new node(val);
+    if (head==NULL){
+        head = n;
+        return;
+    }
+    node* temp = head;
+    while(temp->next != NULL){
+        temp = temp->next;
+    }
+    temp->next = n;
+}
+
