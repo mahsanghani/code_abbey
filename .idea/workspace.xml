@@ -14,7 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="insert ahead">
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="insert last">
       <change beforePath="$PROJECT_DIR$/DSA/LinkedList/insert2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/LinkedList/insert2.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,21 +84,7 @@
       <workItem from="1656515249667" duration="3478000" />
       <workItem from="1656525864456" duration="4692000" />
       <workItem from="1656797994555" duration="91000" />
-      <workItem from="1656798117473" duration="3319000" />
-    </task>
-    <task id="LOCAL-00040" summary="explicit">
-      <created>1656469619179</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1656469619179</updated>
-    </task>
-    <task id="LOCAL-00041" summary="overflow">
-      <created>1656469875726</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1656469875726</updated>
+      <workItem from="1656798117473" duration="3797000" />
     </task>
     <task id="LOCAL-00042" summary="bitwise binary">
       <created>1656470186286</created>
@@ -429,7 +415,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656801578841</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="insert after">
+      <created>1656801786785</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1656801786785</updated>
+    </task>
+    <task id="LOCAL-00090" summary="insert last">
+      <created>1656801991125</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1656801991125</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,8 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="flow" />
-    <MESSAGE value="loop for" />
     <MESSAGE value="loop for multiple declarations" />
     <MESSAGE value="loop comma operator" />
     <MESSAGE value="loop range" />
@@ -472,6 +470,8 @@
     <MESSAGE value="main function for a linked list" />
     <MESSAGE value="class node" />
     <MESSAGE value="insert ahead" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert ahead" />
+    <MESSAGE value="insert after" />
+    <MESSAGE value="insert last" />
+    <option name="LAST_COMMIT_MESSAGE" value="insert last" />
   </component>
 </project>
