@@ -14,8 +14,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="printing a linked list">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="pushing a linked list">
+      <change beforePath="$PROJECT_DIR$/DSA/LinkedList/insert.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/LinkedList/insert.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +84,7 @@
       <workItem from="1656515249667" duration="3478000" />
       <workItem from="1656525864456" duration="4692000" />
       <workItem from="1656797994555" duration="91000" />
-      <workItem from="1656798117473" duration="595000" />
-    </task>
-    <task id="LOCAL-00032" summary="sizeof">
-      <created>1656467735365</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1656467735365</updated>
+      <workItem from="1656798117473" duration="909000" />
     </task>
     <task id="LOCAL-00033" summary="sizeof">
       <created>1656468186027</created>
@@ -429,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656798230803</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="pushing a linked list">
+      <created>1656799140692</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1656799140692</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="flow bool" />
     <MESSAGE value="flow integral logical" />
     <MESSAGE value="flow ternary operators" />
     <MESSAGE value="flow if const expr" />
@@ -472,6 +471,7 @@
     <MESSAGE value="loop init" />
     <MESSAGE value="linked list introduction" />
     <MESSAGE value="printing a linked list" />
-    <option name="LAST_COMMIT_MESSAGE" value="printing a linked list" />
+    <MESSAGE value="pushing a linked list" />
+    <option name="LAST_COMMIT_MESSAGE" value="pushing a linked list" />
   </component>
 </project>
