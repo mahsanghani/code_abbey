@@ -14,8 +14,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="insert last">
-      <change beforePath="$PROJECT_DIR$/DSA/LinkedList/insert2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/LinkedList/insert2.cpp" afterDir="false" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="main function">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,21 +84,8 @@
       <workItem from="1656515249667" duration="3478000" />
       <workItem from="1656525864456" duration="4692000" />
       <workItem from="1656797994555" duration="91000" />
-      <workItem from="1656798117473" duration="3797000" />
-    </task>
-    <task id="LOCAL-00042" summary="bitwise binary">
-      <created>1656470186286</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1656470186286</updated>
-    </task>
-    <task id="LOCAL-00043" summary="bitwise shift">
-      <created>1656470700521</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1656470700521</updated>
+      <workItem from="1656798117473" duration="3987000" />
+      <workItem from="1656864435095" duration="338000" />
     </task>
     <task id="LOCAL-00044" summary="bitwise logical">
       <created>1656470882981</created>
@@ -429,7 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656801991125</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="print function">
+      <created>1656802069198</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1656802069198</updated>
+    </task>
+    <task id="LOCAL-00092" summary="main function">
+      <created>1656802218433</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1656802218433</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,8 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loop for multiple declarations" />
-    <MESSAGE value="loop comma operator" />
     <MESSAGE value="loop range" />
     <MESSAGE value="loop while" />
     <MESSAGE value="loop huge" />
@@ -472,6 +471,8 @@
     <MESSAGE value="insert ahead" />
     <MESSAGE value="insert after" />
     <MESSAGE value="insert last" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert last" />
+    <MESSAGE value="print function" />
+    <MESSAGE value="main function" />
+    <option name="LAST_COMMIT_MESSAGE" value="main function" />
   </component>
 </project>
