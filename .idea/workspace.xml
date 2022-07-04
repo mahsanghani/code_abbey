@@ -14,7 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="templates overloading" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="templates multiple parameters">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,14 +89,7 @@
       <workItem from="1656910407903" duration="2287000" />
       <workItem from="1656941948314" duration="7202000" />
       <workItem from="1656957659449" duration="2177000" />
-      <workItem from="1656963288462" duration="1586000" />
-    </task>
-    <task id="LOCAL-00087" summary="class node">
-      <created>1656801421873</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1656801421873</updated>
+      <workItem from="1656963288462" duration="2300000" />
     </task>
     <task id="LOCAL-00088" summary="insert ahead">
       <created>1656801578841</created>
@@ -432,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656964593426</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="templates multiple parameters">
+      <created>1656965127172</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1656965127172</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="functions return type deduction with references" />
     <MESSAGE value="functions definitions with return type deduction" />
     <MESSAGE value="optional output from functions" />
     <MESSAGE value="introducing std optional" />
@@ -475,6 +476,7 @@
     <MESSAGE value="template type parameters by reference" />
     <MESSAGE value="template specialization" />
     <MESSAGE value="templates overloading" />
-    <option name="LAST_COMMIT_MESSAGE" value="templates overloading" />
+    <MESSAGE value="templates multiple parameters" />
+    <option name="LAST_COMMIT_MESSAGE" value="templates multiple parameters" />
   </component>
 </project>
