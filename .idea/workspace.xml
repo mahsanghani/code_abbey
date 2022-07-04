@@ -14,9 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="binary search tree introduction">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="old enums" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,35 +84,7 @@
       <workItem from="1656797994555" duration="91000" />
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
-      <workItem from="1656910407903" duration="1000" />
-    </task>
-    <task id="LOCAL-00046" summary="bitwise masks">
-      <created>1656471639942</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1656471639942</updated>
-    </task>
-    <task id="LOCAL-00047" summary="bitwise masks example">
-      <created>1656471677706</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1656471677706</updated>
-    </task>
-    <task id="LOCAL-00048" summary="bitwise masks colours">
-      <created>1656471936181</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1656471936181</updated>
-    </task>
-    <task id="LOCAL-00049" summary="variable scope">
-      <created>1656471992512</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1656471992512</updated>
+      <workItem from="1656910407903" duration="345000" />
     </task>
     <task id="LOCAL-00050" summary="flow if statement">
       <created>1656515540518</created>
@@ -431,7 +401,35 @@
       <option name="project" value="LOCAL" />
       <updated>1656865089772</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="enum classes">
+      <created>1656910567624</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910567624</updated>
+    </task>
+    <task id="LOCAL-00096" summary="switch">
+      <created>1656910671462</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910671463</updated>
+    </task>
+    <task id="LOCAL-00097" summary="enum">
+      <created>1656910704651</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910704651</updated>
+    </task>
+    <task id="LOCAL-00098" summary="old enums">
+      <created>1656910745482</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910745482</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,10 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loop while" />
-    <MESSAGE value="loop huge" />
-    <MESSAGE value="loop do while" />
-    <MESSAGE value="loop infinite" />
     <MESSAGE value="loop infinite practice" />
     <MESSAGE value="loop decrementing" />
     <MESSAGE value="loops nested" />
@@ -474,6 +468,10 @@
     <MESSAGE value="print function" />
     <MESSAGE value="main function" />
     <MESSAGE value="binary search tree introduction" />
-    <option name="LAST_COMMIT_MESSAGE" value="binary search tree introduction" />
+    <MESSAGE value="enum classes" />
+    <MESSAGE value="switch" />
+    <MESSAGE value="enum" />
+    <MESSAGE value="old enums" />
+    <option name="LAST_COMMIT_MESSAGE" value="old enums" />
   </component>
 </project>
