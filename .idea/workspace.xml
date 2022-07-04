@@ -14,7 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="old enums" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="getting things out of functions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,49 +84,7 @@
       <workItem from="1656797994555" duration="91000" />
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
-      <workItem from="1656910407903" duration="345000" />
-    </task>
-    <task id="LOCAL-00050" summary="flow if statement">
-      <created>1656515540518</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1656515540519</updated>
-    </task>
-    <task id="LOCAL-00051" summary="flow else if statement">
-      <created>1656515623079</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1656515623079</updated>
-    </task>
-    <task id="LOCAL-00052" summary="flow switch">
-      <created>1656516214595</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1656516214595</updated>
-    </task>
-    <task id="LOCAL-00053" summary="flow switch">
-      <created>1656516221966</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1656516221966</updated>
-    </task>
-    <task id="LOCAL-00054" summary="flow bool">
-      <created>1656516394190</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1656516394190</updated>
-    </task>
-    <task id="LOCAL-00055" summary="flow integral logical">
-      <created>1656517354510</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1656517354510</updated>
+      <workItem from="1656910407903" duration="717000" />
     </task>
     <task id="LOCAL-00056" summary="flow ternary operators">
       <created>1656517461676</created>
@@ -429,7 +387,49 @@
       <option name="project" value="LOCAL" />
       <updated>1656910745482</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="rename">
+      <created>1656910787026</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910787026</updated>
+    </task>
+    <task id="LOCAL-00100" summary="enums type aliases">
+      <created>1656910827720</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910827720</updated>
+    </task>
+    <task id="LOCAL-00101" summary="using arguments">
+      <created>1656910919042</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910919042</updated>
+    </task>
+    <task id="LOCAL-00102" summary="calculator v1">
+      <created>1656910961505</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1656910961505</updated>
+    </task>
+    <task id="LOCAL-00103" summary="calculator v2">
+      <created>1656911041976</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1656911041976</updated>
+    </task>
+    <task id="LOCAL-00104" summary="getting things out of functions">
+      <created>1656911122674</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1656911122674</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,12 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loop infinite practice" />
-    <MESSAGE value="loop decrementing" />
-    <MESSAGE value="loops nested" />
-    <MESSAGE value="loop break and continue" />
-    <MESSAGE value="loop fix calculator" />
-    <MESSAGE value="loop init" />
     <MESSAGE value="linked list introduction" />
     <MESSAGE value="printing a linked list" />
     <MESSAGE value="pushing a linked list" />
@@ -472,6 +466,12 @@
     <MESSAGE value="switch" />
     <MESSAGE value="enum" />
     <MESSAGE value="old enums" />
-    <option name="LAST_COMMIT_MESSAGE" value="old enums" />
+    <MESSAGE value="rename" />
+    <MESSAGE value="enums type aliases" />
+    <MESSAGE value="using arguments" />
+    <MESSAGE value="calculator v1" />
+    <MESSAGE value="calculator v2" />
+    <MESSAGE value="getting things out of functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="getting things out of functions" />
   </component>
 </project>
