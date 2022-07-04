@@ -3,7 +3,6 @@
 //
 #include <iostream>
 
-
 int main(){
 
     //Capture everything by value

@@ -18,7 +18,7 @@ int main(){
     int c{42};
 
     auto func2 = [c](){
-        std::cout << "Inner value : " << c << " &inner : " <<&c <<  std::endl;
+        std::cout << "Inner value : " << c << " &inner : " << &c <<  std::endl;
     };
 
     for(size_t i{} ; i < 5 ;++i){
@@ -31,11 +31,11 @@ int main(){
     int d{42};
 
     auto func3 = [&d](){
-        std::cout << "Inner value : " << d << " &inner : " <<&d <<  std::endl;
+        std::cout << "Inner value : " << d << " &inner : " << &d <<  std::endl;
     };
 
     for(size_t i{} ; i < 5 ;++i){
-        std::cout << "Outer value : " << c << " &outer : " << &d << std::endl;
+        std::cout << "Outer value : " << d << " &outer : " << &d << std::endl;
         func3();
         ++d;
     }

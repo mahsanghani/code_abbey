@@ -14,8 +14,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="overloading with default parameters">
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="capture all lists using lambdas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate/lambdascapture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/intermediate/lambdascapture.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate/lambdascaptureall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/intermediate/lambdascaptureall.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,28 +89,7 @@
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
       <workItem from="1656910407903" duration="2287000" />
-      <workItem from="1656941948314" duration="3963000" />
-    </task>
-    <task id="LOCAL-00074" summary="loop decrementing">
-      <created>1656528805265</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1656528805265</updated>
-    </task>
-    <task id="LOCAL-00075" summary="loops nested">
-      <created>1656529263735</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1656529263735</updated>
-    </task>
-    <task id="LOCAL-00076" summary="loop break and continue">
-      <created>1656529521261</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1656529521261</updated>
+      <workItem from="1656941948314" duration="5595000" />
     </task>
     <task id="LOCAL-00077" summary="loop fix calculator">
       <created>1656529603543</created>
@@ -432,7 +413,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656945363723</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="declaring and using lambdas">
+      <created>1656946711516</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1656946711516</updated>
+    </task>
+    <task id="LOCAL-00124" summary="capture lists using lambdas">
+      <created>1656946735120</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1656946735120</updated>
+    </task>
+    <task id="LOCAL-00125" summary="capture all lists using lambdas">
+      <created>1656946826206</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1656946826206</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,9 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="old enums" />
-    <MESSAGE value="rename" />
-    <MESSAGE value="enums type aliases" />
     <MESSAGE value="using arguments" />
     <MESSAGE value="calculator v1" />
     <MESSAGE value="calculator v2" />
@@ -475,6 +474,9 @@
     <MESSAGE value="overloading with constant pointers to constant parameters" />
     <MESSAGE value="overloading with constant references as parameters" />
     <MESSAGE value="overloading with default parameters" />
-    <option name="LAST_COMMIT_MESSAGE" value="overloading with default parameters" />
+    <MESSAGE value="declaring and using lambdas" />
+    <MESSAGE value="capture lists using lambdas" />
+    <MESSAGE value="capture all lists using lambdas" />
+    <option name="LAST_COMMIT_MESSAGE" value="capture all lists using lambdas" />
   </component>
 </project>
