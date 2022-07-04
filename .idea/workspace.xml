@@ -14,7 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="main function">
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="binary search tree introduction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,21 +85,8 @@
       <workItem from="1656525864456" duration="4692000" />
       <workItem from="1656797994555" duration="91000" />
       <workItem from="1656798117473" duration="3987000" />
-      <workItem from="1656864435095" duration="338000" />
-    </task>
-    <task id="LOCAL-00044" summary="bitwise logical">
-      <created>1656470882981</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1656470882981</updated>
-    </task>
-    <task id="LOCAL-00045" summary="bitwise compound">
-      <created>1656471064120</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1656471064120</updated>
+      <workItem from="1656864435095" duration="1252000" />
+      <workItem from="1656910407903" duration="1000" />
     </task>
     <task id="LOCAL-00046" summary="bitwise masks">
       <created>1656471639942</created>
@@ -430,7 +417,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656802218433</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="binary search tree introduction">
+      <created>1656864845025</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1656864845026</updated>
+    </task>
+    <task id="LOCAL-00094" summary="binary search tree introduction">
+      <created>1656865089772</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1656865089772</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loop range" />
     <MESSAGE value="loop while" />
     <MESSAGE value="loop huge" />
     <MESSAGE value="loop do while" />
@@ -473,6 +473,7 @@
     <MESSAGE value="insert last" />
     <MESSAGE value="print function" />
     <MESSAGE value="main function" />
-    <option name="LAST_COMMIT_MESSAGE" value="main function" />
+    <MESSAGE value="binary search tree introduction" />
+    <option name="LAST_COMMIT_MESSAGE" value="binary search tree introduction" />
   </component>
 </project>
