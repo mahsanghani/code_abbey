@@ -14,7 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="overloading with constant parameters by value" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="overloading with constant pointers to constant parameters">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,14 +87,7 @@
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
       <workItem from="1656910407903" duration="2287000" />
-      <workItem from="1656941948314" duration="2252000" />
-    </task>
-    <task id="LOCAL-00071" summary="loop infinite">
-      <created>1656527812539</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1656527812539</updated>
+      <workItem from="1656941948314" duration="3081000" />
     </task>
     <task id="LOCAL-00072" summary="loop infinite practice">
       <created>1656528069539</created>
@@ -430,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656943952995</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="overloading with constant pointers to constant parameters">
+      <created>1656944477525</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1656944477525</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="enum classes" />
     <MESSAGE value="switch" />
     <MESSAGE value="enum" />
     <MESSAGE value="old enums" />
@@ -473,6 +474,7 @@
     <MESSAGE value="overloading pointers as parameters" />
     <MESSAGE value="overloading references as parameters" />
     <MESSAGE value="overloading with constant parameters by value" />
-    <option name="LAST_COMMIT_MESSAGE" value="overloading with constant parameters by value" />
+    <MESSAGE value="overloading with constant pointers to constant parameters" />
+    <option name="LAST_COMMIT_MESSAGE" value="overloading with constant pointers to constant parameters" />
   </component>
 </project>
