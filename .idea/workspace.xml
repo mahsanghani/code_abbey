@@ -14,7 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="getting things out of functions" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="returning from functions by pointer" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,28 +84,7 @@
       <workItem from="1656797994555" duration="91000" />
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
-      <workItem from="1656910407903" duration="717000" />
-    </task>
-    <task id="LOCAL-00056" summary="flow ternary operators">
-      <created>1656517461676</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1656517461676</updated>
-    </task>
-    <task id="LOCAL-00057" summary="flow if const expr">
-      <created>1656517515922</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1656517515922</updated>
-    </task>
-    <task id="LOCAL-00058" summary="flow if with initializer">
-      <created>1656519666584</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1656519666584</updated>
+      <workItem from="1656910407903" duration="1052000" />
     </task>
     <task id="LOCAL-00059" summary="flow switch with initializer">
       <created>1656519777413</created>
@@ -429,7 +408,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656911122674</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="returning from functions by value">
+      <created>1656911193849</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1656911193849</updated>
+    </task>
+    <task id="LOCAL-00106" summary="returning from functions by reference">
+      <created>1656911294856</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1656911294856</updated>
+    </task>
+    <task id="LOCAL-00107" summary="returning from functions by pointer">
+      <created>1656911407061</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1656911407061</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,9 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="linked list introduction" />
-    <MESSAGE value="printing a linked list" />
-    <MESSAGE value="pushing a linked list" />
     <MESSAGE value="pushing a node in a linked list" />
     <MESSAGE value="insert after a node in a linked list" />
     <MESSAGE value="append after last node in a linked list" />
@@ -472,6 +469,9 @@
     <MESSAGE value="calculator v1" />
     <MESSAGE value="calculator v2" />
     <MESSAGE value="getting things out of functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="getting things out of functions" />
+    <MESSAGE value="returning from functions by value" />
+    <MESSAGE value="returning from functions by reference" />
+    <MESSAGE value="returning from functions by pointer" />
+    <option name="LAST_COMMIT_MESSAGE" value="returning from functions by pointer" />
   </component>
 </project>
