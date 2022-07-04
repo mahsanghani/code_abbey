@@ -14,10 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="template specialization">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediate/templatespecialization.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/intermediate/templatespecialization.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="templates overloading" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,14 +87,7 @@
       <workItem from="1656910407903" duration="2287000" />
       <workItem from="1656941948314" duration="7202000" />
       <workItem from="1656957659449" duration="2177000" />
-      <workItem from="1656963288462" duration="1277000" />
-    </task>
-    <task id="LOCAL-00086" summary="main function for a linked list">
-      <created>1656800250304</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1656800250304</updated>
+      <workItem from="1656963288462" duration="1586000" />
     </task>
     <task id="LOCAL-00087" summary="class node">
       <created>1656801421873</created>
@@ -435,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656963795190</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="templates overloading">
+      <created>1656964593426</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1656964593426</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="functions return type detection" />
     <MESSAGE value="functions return type deduction with references" />
     <MESSAGE value="functions definitions with return type deduction" />
     <MESSAGE value="optional output from functions" />
@@ -478,6 +474,7 @@
     <MESSAGE value="template type deduction and explicit arguments" />
     <MESSAGE value="template type parameters by reference" />
     <MESSAGE value="template specialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="template specialization" />
+    <MESSAGE value="templates overloading" />
+    <option name="LAST_COMMIT_MESSAGE" value="templates overloading" />
   </component>
 </project>
