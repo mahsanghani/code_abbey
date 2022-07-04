@@ -14,8 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="template type parameters by reference">
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="template specialization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate/templatespecialization.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/intermediate/templatespecialization.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,14 +90,7 @@
       <workItem from="1656910407903" duration="2287000" />
       <workItem from="1656941948314" duration="7202000" />
       <workItem from="1656957659449" duration="2177000" />
-      <workItem from="1656963288462" duration="302000" />
-    </task>
-    <task id="LOCAL-00085" summary="print a linked list">
-      <created>1656800139709</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1656800139710</updated>
+      <workItem from="1656963288462" duration="1277000" />
     </task>
     <task id="LOCAL-00086" summary="main function for a linked list">
       <created>1656800250304</created>
@@ -434,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656960215717</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="template specialization">
+      <created>1656963795190</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1656963795190</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="functions bare auto type detection" />
     <MESSAGE value="functions return type detection" />
     <MESSAGE value="functions return type deduction with references" />
     <MESSAGE value="functions definitions with return type deduction" />
@@ -477,6 +477,7 @@
     <MESSAGE value="declaring and using function templates" />
     <MESSAGE value="template type deduction and explicit arguments" />
     <MESSAGE value="template type parameters by reference" />
-    <option name="LAST_COMMIT_MESSAGE" value="template type parameters by reference" />
+    <MESSAGE value="template specialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="template specialization" />
   </component>
 </project>
