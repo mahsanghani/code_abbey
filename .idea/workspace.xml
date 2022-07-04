@@ -14,10 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="overloading function parameters">
-      <change afterPath="$PROJECT_DIR$/intermediate/overloadingparameters.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="overloading pointers as parameters" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,14 +85,7 @@
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
       <workItem from="1656910407903" duration="2287000" />
-      <workItem from="1656941948314" duration="718000" />
-    </task>
-    <task id="LOCAL-00068" summary="loop while">
-      <created>1656527156656</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1656527156656</updated>
+      <workItem from="1656941948314" duration="1151000" />
     </task>
     <task id="LOCAL-00069" summary="loop huge">
       <created>1656527412441</created>
@@ -433,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656942693164</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="overloading pointers as parameters">
+      <created>1656942857132</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1656942857132</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="print function" />
     <MESSAGE value="main function" />
     <MESSAGE value="binary search tree introduction" />
     <MESSAGE value="enum classes" />
@@ -476,6 +472,7 @@
     <MESSAGE value="introducing std optional" />
     <MESSAGE value="functions optional output" />
     <MESSAGE value="overloading function parameters" />
-    <option name="LAST_COMMIT_MESSAGE" value="overloading function parameters" />
+    <MESSAGE value="overloading pointers as parameters" />
+    <option name="LAST_COMMIT_MESSAGE" value="overloading pointers as parameters" />
   </component>
 </project>
