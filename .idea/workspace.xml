@@ -14,7 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="recursive function call" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="debugging functions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,14 +85,7 @@
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
       <workItem from="1656910407903" duration="2287000" />
-      <workItem from="1656941948314" duration="6358000" />
-    </task>
-    <task id="LOCAL-00080" summary="printing a linked list">
-      <created>1656798230802</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1656798230803</updated>
+      <workItem from="1656941948314" duration="6926000" />
     </task>
     <task id="LOCAL-00081" summary="pushing a linked list">
       <created>1656799140692</created>
@@ -430,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656954210831</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="debugging functions">
+      <created>1656954755095</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1656954755095</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getting things out of functions" />
     <MESSAGE value="returning from functions by value" />
     <MESSAGE value="returning from functions by reference" />
     <MESSAGE value="returning from functions by pointer" />
@@ -473,6 +472,7 @@
     <MESSAGE value="functions using static variables" />
     <MESSAGE value="inline function call" />
     <MESSAGE value="recursive function call" />
-    <option name="LAST_COMMIT_MESSAGE" value="recursive function call" />
+    <MESSAGE value="debugging functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging functions" />
   </component>
 </project>
