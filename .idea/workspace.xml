@@ -14,7 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="functions definitions with return type deduction" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="functions optional output">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,28 +86,8 @@
       <workItem from="1656797994555" duration="91000" />
       <workItem from="1656798117473" duration="3987000" />
       <workItem from="1656864435095" duration="1252000" />
-      <workItem from="1656910407903" duration="2024000" />
-    </task>
-    <task id="LOCAL-00064" summary="loop for">
-      <created>1656526331085</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1656526331086</updated>
-    </task>
-    <task id="LOCAL-00065" summary="loop for multiple declarations">
-      <created>1656526478515</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1656526478515</updated>
-    </task>
-    <task id="LOCAL-00066" summary="loop comma operator">
-      <created>1656526753445</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1656526753445</updated>
+      <workItem from="1656910407903" duration="2287000" />
+      <workItem from="1656941948314" duration="419000" />
     </task>
     <task id="LOCAL-00067" summary="loop range">
       <created>1656527062401</created>
@@ -429,7 +411,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656912177450</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="optional output from functions">
+      <created>1656912469962</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1656912469962</updated>
+    </task>
+    <task id="LOCAL-00114" summary="introducing std optional">
+      <created>1656912606561</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1656912606561</updated>
+    </task>
+    <task id="LOCAL-00115" summary="functions optional output">
+      <created>1656912672383</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1656912672383</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,9 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="class node" />
-    <MESSAGE value="insert ahead" />
-    <MESSAGE value="insert after" />
     <MESSAGE value="insert last" />
     <MESSAGE value="print function" />
     <MESSAGE value="main function" />
@@ -472,6 +472,9 @@
     <MESSAGE value="functions return type detection" />
     <MESSAGE value="functions return type deduction with references" />
     <MESSAGE value="functions definitions with return type deduction" />
-    <option name="LAST_COMMIT_MESSAGE" value="functions definitions with return type deduction" />
+    <MESSAGE value="optional output from functions" />
+    <MESSAGE value="introducing std optional" />
+    <MESSAGE value="functions optional output" />
+    <option name="LAST_COMMIT_MESSAGE" value="functions optional output" />
   </component>
 </project>
