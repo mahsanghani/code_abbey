@@ -42,3 +42,15 @@ void deserialize(Node *&root, FILE *fp)
     deserialize(root->left, fp);
     deserialize(root->right, fp);
 }
+
+void inorder(Node *root)
+{
+    if(root)
+    {
+        inorder(root->left);
+        printf("%d", root->key);
+        inorder(root->right);
+    }
+}
+
+
