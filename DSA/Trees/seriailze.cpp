@@ -31,3 +31,14 @@ void serialize(Node *root, FILE *fp)
     serialize(root->left, fp);
     serialize(root->right, fp);
 }
+
+void deserialize(Node *&root, FILE *fp)
+{
+    int val;
+    if(!fscanf(fp, "%d", &val) || val==MARKER)
+        return;
+
+    root = newNode(val);
+    deserialize(root->left, fp);
+    deserialize(root->right, fp);
+}
