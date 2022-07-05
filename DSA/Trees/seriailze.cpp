@@ -53,4 +53,32 @@ void inorder(Node *root)
     }
 }
 
+int main()
+{
+    struct Node *root = newNode(20);
+    root->left = newNode(8);
+    root->right = newNode(22);
+    root->left->left = newNode(4);
+    root->left->right = newNode(12);
+    root->left->right->left = newNode(10);
+    root->left->right->right = newNode(14);
 
+    FILE *fp = fopen("tree.txt", "w");
+    if(fp==NULL)
+    {
+        puts("Could not open file");
+        return 0;
+    }
+
+    serialize(root, fp);
+    fclose(fp);
+
+    Node *root1 = NULL;
+    fp = fopen("tree.txt", "r");
+    deserialize(root1, fp);
+
+    printf("Inorder traversal of the tree constructed from file: \n");
+    inorder(root1);
+
+    return 0;
+}
