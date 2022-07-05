@@ -56,11 +56,11 @@ void inorder(Node *root)
 int main()
 {
     struct Node *root = newNode(20);
-    root->left = newNode(8);
-    root->right = newNode(22);
-    root->left->left = newNode(4);
-    root->left->right = newNode(12);
-    root->left->right->left = newNode(10);
+    root->left               = newNode(8);
+    root->right              = newNode(22);
+    root->left->left         = newNode(4);
+    root->left->right        = newNode(12);
+    root->left->right->left  = newNode(10);
     root->left->right->right = newNode(14);
 
     FILE *fp = fopen("tree.txt", "w");
