@@ -14,9 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="decltype template">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="decltype template 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,14 +89,7 @@
       <workItem from="1656957659449" duration="2177000" />
       <workItem from="1656963288462" duration="2355000" />
       <workItem from="1657046364565" duration="2373000" />
-      <workItem from="1657118998017" duration="1081000" />
-    </task>
-    <task id="LOCAL-00097" summary="enum">
-      <created>1656910704651</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1656910704651</updated>
+      <workItem from="1657118998017" duration="1462000" />
     </task>
     <task id="LOCAL-00098" summary="old enums">
       <created>1656910745482</created>
@@ -436,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657120204358</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="decltype template 2">
+      <created>1657120605870</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1657120605870</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="overloading with constant references as parameters" />
     <MESSAGE value="overloading with default parameters" />
     <MESSAGE value="declaring and using lambdas" />
     <MESSAGE value="capture lists using lambdas" />
@@ -479,6 +476,7 @@
     <MESSAGE value="main" />
     <MESSAGE value="fin" />
     <MESSAGE value="decltype template" />
-    <option name="LAST_COMMIT_MESSAGE" value="decltype template" />
+    <MESSAGE value="decltype template 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="decltype template 2" />
   </component>
 </project>
