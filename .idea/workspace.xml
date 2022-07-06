@@ -14,7 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="fin">
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="decltype template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,14 +91,7 @@
       <workItem from="1656957659449" duration="2177000" />
       <workItem from="1656963288462" duration="2355000" />
       <workItem from="1657046364565" duration="2373000" />
-      <workItem from="1657118998017" duration="738000" />
-    </task>
-    <task id="LOCAL-00096" summary="switch">
-      <created>1656910671462</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1656910671463</updated>
+      <workItem from="1657118998017" duration="1081000" />
     </task>
     <task id="LOCAL-00097" summary="enum">
       <created>1656910704651</created>
@@ -436,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657051318056</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="decltype template">
+      <created>1657120204357</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1657120204358</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="overloading with constant pointers to constant parameters" />
     <MESSAGE value="overloading with constant references as parameters" />
     <MESSAGE value="overloading with default parameters" />
     <MESSAGE value="declaring and using lambdas" />
@@ -479,6 +478,7 @@
     <MESSAGE value="inorder" />
     <MESSAGE value="main" />
     <MESSAGE value="fin" />
-    <option name="LAST_COMMIT_MESSAGE" value="fin" />
+    <MESSAGE value="decltype template" />
+    <option name="LAST_COMMIT_MESSAGE" value="decltype template" />
   </component>
 </project>
