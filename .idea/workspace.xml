@@ -14,7 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="main" />
+    <list default="true" id="471e5704-6fca-46cc-872e-49016871e1c3" name="Changes" comment="fin">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,14 +90,8 @@
       <workItem from="1656941948314" duration="7202000" />
       <workItem from="1656957659449" duration="2177000" />
       <workItem from="1656963288462" duration="2355000" />
-      <workItem from="1657046364565" duration="2067000" />
-    </task>
-    <task id="LOCAL-00095" summary="enum classes">
-      <created>1656910567624</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1656910567624</updated>
+      <workItem from="1657046364565" duration="2373000" />
+      <workItem from="1657118998017" duration="738000" />
     </task>
     <task id="LOCAL-00096" summary="switch">
       <created>1656910671462</created>
@@ -433,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657051027232</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="fin">
+      <created>1657051318056</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1657051318056</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="overloading with constant parameters by value" />
     <MESSAGE value="overloading with constant pointers to constant parameters" />
     <MESSAGE value="overloading with constant references as parameters" />
     <MESSAGE value="overloading with default parameters" />
@@ -476,6 +478,7 @@
     <MESSAGE value="deserialize" />
     <MESSAGE value="inorder" />
     <MESSAGE value="main" />
-    <option name="LAST_COMMIT_MESSAGE" value="main" />
+    <MESSAGE value="fin" />
+    <option name="LAST_COMMIT_MESSAGE" value="fin" />
   </component>
 </project>
