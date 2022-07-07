@@ -42,10 +42,12 @@ public:
 
 class ConcreteProductB1: public AbstractProductB {
 public:
-    string UsefulFunctionB() const override {
+    string UsefulFunctionB() const override
+    {
         return "The result of the product B1.";
     }
-    string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const override {
+    string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const override
+    {
         const string result = collaborator.UsefulFunctionA();
         return "The result of the B1 collaborating with (" + result + ")";
     }
@@ -53,10 +55,12 @@ public:
 
 class ConcreteProductB2: public AbstractProductB {
 public:
-    string UsefulFunctionB() const override {
+    string UsefulFunctionB() const override
+    {
         return "The result of the product B2.";
     }
-    string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const override {
+    string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const override
+    {
         const string result = collaborator.UsefulFunctionA();
         return "The result of the B1 collaborating with (" + result + ")";
     }
@@ -70,25 +74,30 @@ public:
 
 class ConcreteFactory1: public AbstractFactory {
 public:
-    AbstractProductA *CreateProductA() const override {
+    AbstractProductA *CreateProductA() const override
+    {
         return new ConcreteProductA1();
     }
-    AbstractProductB *CreateProductB() const override {
+    AbstractProductB *CreateProductB() const override
+    {
         return new ConcreteProductB1();
     }
 };
 
 class ConcreteFactory2: public AbstractFactory {
 public:
-    AbstractProductA *CreateProductA() const override {
+    AbstractProductA *CreateProductA() const override
+    {
         return new ConcreteProductA2();
     }
-    AbstractProductB *CreateProductB() const override {
+    AbstractProductB *CreateProductB() const override
+    {
         return new ConcreteProductB2();
     }
 };
 
-void ClientCode(const AbstractFactory &factory) {
+void ClientCode(const AbstractFactory &factory)
+{
     const AbstractProductA *product_a = factory.CreateProductA();
     const AbstractProductB *product_b = factory.CreateProductB();
     cout << product_b->UsefulFunctionB() << "\n";
@@ -97,7 +106,8 @@ void ClientCode(const AbstractFactory &factory) {
     delete product_b;
 }
 
-int main() {
+int main()
+{
     cout << "Client: Testing client code with the first factory type:" << endl;
     ConcreteFactory1 *f1 = new ConcreteFactory1();
     ClientCode(*f1);
