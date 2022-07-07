@@ -56,3 +56,8 @@ public:
         return new ConcreteProduct2();
     }
 };
+
+void ClientCode(const Creator& creator) {
+    cout << "Client: I'm not aware of the creator's class, but it still works."
+    << creator.SomeOperation() << endl;
+}
