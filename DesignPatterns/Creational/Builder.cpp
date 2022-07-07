@@ -92,7 +92,30 @@ public:
 
 void ClientCode(Director& director)
 {
+    ConcreteBuilder1* builder = new ConcreteBuilder1();
+    director.set_builder(builder);
+    cout << "Standard basic product:\n";
+    director.BuildMinimalViableProduct();
 
+    Product1* p = builder->GetProduct();
+    p->ListParts();
+    delete p;
+
+    cout << "Standard full feature product: \n";
+    director.BuildFullFeaturedProduct();
+
+    p = builder->GetProduct();
+    p->ListParts();
+    delete p;
+
+    cout << "Custom product:\n";
+    builder->ProducePartA();
+    builder->ProducePartC();
+    p=builder->GetProduct();
+    p->ListParts();
+    delete p;
+
+    delete builder;
 }
 
 int main()
