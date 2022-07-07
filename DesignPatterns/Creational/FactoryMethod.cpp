@@ -31,3 +31,14 @@ public:
     }
 };
 
+class Creator {
+public:
+    virtual ~Creator(){};
+    virtual Product* FactoryMethod() const = 0;
+    string SomeOperation() const {
+        Product* product = this->FactoryMethod();
+        string result = "Creator: The same creator's code has just worked with " + product->Operation();
+        delete product;
+        return result;
+    }
+};
