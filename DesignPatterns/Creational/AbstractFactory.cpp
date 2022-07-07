@@ -40,3 +40,24 @@ public:
     virtual string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const = 0;
 };
 
+class ConcreteProductB1: public AbstractProductB {
+public:
+    string UsefulFunctionB() const override {
+        return "The result of the product B1.";
+    }
+    string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const override {
+        const string result = collaborator.UsefulFunctionA();
+        return "The result of the B1 collaborating with (" + result + ")";
+    }
+};
+
+class ConcreteProductB2: public AbstractProductB {
+public:
+    string UsefulFunctionB() const override {
+        return "The result of the product B2.";
+    }
+    string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const override {
+        const string result = collaborator.UsefulFunctionA();
+        return "The result of the B1 collaborating with (" + result + ")";
+    }
+};
