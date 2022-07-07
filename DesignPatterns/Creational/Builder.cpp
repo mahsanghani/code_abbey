@@ -72,3 +72,20 @@ public:
     }
 };
 
+class Director{
+private:
+    Builder* builder;
+
+public:
+    void set_builder(Builder* builder){
+        this->builder=builder;
+    }
+    void BuildMinimalViableProduct(){
+        this->builder->ProducePartA();
+    }
+    void BuildFullFeaturedProduct(){
+        this->builder->ProducePartA();
+        this->builder->ProducePartB();
+        this->builder->ProducePartC();
+    }
+};
