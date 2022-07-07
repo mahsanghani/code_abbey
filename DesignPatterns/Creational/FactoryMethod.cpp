@@ -49,3 +49,10 @@ public:
         return new ConcreteProduct1();
     }
 };
+
+class ConcreteCreator2 : public Creator {
+public:
+    Product* FactoryMethod() const override {
+        return new ConcreteProduct2();
+    }
+};
