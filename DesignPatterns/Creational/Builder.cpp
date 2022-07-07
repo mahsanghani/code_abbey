@@ -15,7 +15,8 @@ using namespace std;
 class Product1{
 public:
     std::vector<std::string> parts_;
-    void ListParts()const{
+    void ListParts()const
+    {
         std::cout << "Product parts: ";
         for (size_t i=0;i<parts_.size();i++){
             if(parts_[i]==parts_.back()){
@@ -41,31 +42,38 @@ private:
     Product1* product;
 
 public:
-    ConcreteBuilder1(){
+    ConcreteBuilder1()
+    {
         this->Reset();
     }
 
-    ~ConcreteBuilder1(){
+    ~ConcreteBuilder1()
+    {
         delete product;
     }
 
-    void Reset(){
+    void Reset()
+    {
         this->product = new Product1();
     }
 
-    void ProducePartA()const override{
+    void ProducePartA()const override
+    {
         this->product->parts_.push_back("PartA1");
     }
 
-    void ProducePartB()const override{
+    void ProducePartB()const override
+    {
         this->product->parts_.push_back("PartB1");
     }
 
-    void ProducePartC()const override{
+    void ProducePartC()const override
+    {
         this->product->parts_.push_back("PartC1");
     }
 
-    Product1* GetProduct() {
+    Product1* GetProduct()
+    {
         Product1* result = this->product;
         this->Reset();
         return result;
@@ -77,13 +85,16 @@ private:
     Builder* builder;
 
 public:
-    void set_builder(Builder* builder){
+    void set_builder(Builder* builder)
+    {
         this->builder=builder;
     }
-    void BuildMinimalViableProduct(){
+    void BuildMinimalViableProduct()
+    {
         this->builder->ProducePartA();
     }
-    void BuildFullFeaturedProduct(){
+    void BuildFullFeaturedProduct()
+    {
         this->builder->ProducePartA();
         this->builder->ProducePartB();
         this->builder->ProducePartC();
