@@ -9,3 +9,11 @@ public:
     virtual ~AbstractProductA(){};
     virtual std::string UsefulFunctionA() const = 0;
 };
+
+class ConcreteProductA1 : public AbstractProductA {
+public:
+    std::string UsefulFunctionA() const override {
+        return "The result of the product A1.";
+    }
+};
+
