@@ -33,3 +33,10 @@ public:
     }
 };
 
+class AbstractProductB {
+public:
+    virtual ~AbstractProductB(){};
+    virtual string UsefulFunctionB() const = 0;
+    virtual string AnotherUsefulFunctionB(const AbstractProductA &collaborator) const = 0;
+};
+
