@@ -51,3 +51,10 @@ public:
         return "The result of the B2 collaborating with ( " + result + " )";
     }
 };
+
+class AbstractFactory {
+public:
+    virtual AbstractProductA *CreateProductA() const = 0;
+    virtual AbstractProductB *CreateProductB() const = 0;
+};
+
