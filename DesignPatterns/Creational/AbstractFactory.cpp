@@ -88,3 +88,11 @@ public:
     }
 };
 
+void ClientCode(const AbstractFactory &factory) {
+    const AbstractProductA *product_a = factory.CreateProductA();
+    const AbstractProductB *product_b = factory.CreateProductB();
+    cout << product_b->UsefulFunctionB() << "\n";
+    cout << product_b->AnotherUsefulFunctionB(*product_a) << "\n";
+    delete product_a;
+    delete product_b;
+}
