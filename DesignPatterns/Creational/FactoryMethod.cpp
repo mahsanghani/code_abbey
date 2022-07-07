@@ -23,3 +23,11 @@ public:
         return "{Result of the ConcreteProduct1}";
     }
 };
+
+class ConcreteProduct2 : public Product {
+public:
+    string Operation() const override {
+        return "{Result of the ConcreteProduct2}";
+    }
+};
+
