@@ -28,3 +28,10 @@ public:
     }
 };
 
+class Builder{
+public:
+    virtual ~Builder(){}
+    virtual void ProducePartA() const = 0;
+    virtual void ProductPartB() const = 0;
+    virtual void ProductPartC() const = 0;
+};
