@@ -61,3 +61,17 @@ void ClientCode(const Creator& creator) {
     cout << "Client: I'm not aware of the creator's class, but it still works."
     << creator.SomeOperation() << endl;
 }
+
+int main() {
+    cout << "App: Launched with the ConcreteCreator1.\n" << endl;
+    Creator* creator1 = new ConcreteCreator1();
+    ClientCode(*creator1);
+
+    cout << "App: Launched with the ConcreteCreator2.\n" << endl;
+    Creator* creator2 = new ConcreteCreator2();
+    ClientCode(*creator2);
+
+    delete creator1;
+    delete creator2;
+    return 0;
+}
