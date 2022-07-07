@@ -6,3 +6,11 @@
 // provides an interface for creating objects in a superclass,
 // but allows subclasses to alter the type of objects that will be created.
 
+#include <iostream>
+using namespace std;
+
+class Product {
+public:
+    virtual ~Product() {}
+    virtual std::string Operation() const = 0;
+};
