@@ -89,3 +89,16 @@ public:
         this->builder->ProducePartC();
     }
 };
+
+void ClientCode(Director& director)
+{
+
+}
+
+int main()
+{
+    Director* director = new Director();
+    ClientCode(*director);
+    delete director;
+    return 0;
+}
