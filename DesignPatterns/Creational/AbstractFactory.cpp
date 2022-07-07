@@ -96,3 +96,17 @@ void ClientCode(const AbstractFactory &factory) {
     delete product_a;
     delete product_b;
 }
+
+int main() {
+    cout << "Client: Testing client code with the first factory type:" << endl;
+    ConcreteFactory1 *f1 = new ConcreteFactory1();
+    ClientCode(*f1);
+    delete f1;
+
+    cout << "Client: Testing client code with the second factory type:" << endl;
+    ConcreteFactory2 *f2 = new ConcreteFactory2();
+    ClientCode(*f2);
+    delete f2;
+
+    return 0;
+}
