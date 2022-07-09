@@ -9,7 +9,7 @@ using namespace std;
 
 enum Type
 {
-    PROTOTYPE_1 = 0;
+    PROTOTYPE_1 = 0,
     PROTOTYPE_2;
 };
 
@@ -55,5 +55,25 @@ public:
     Prototype *Clone() const override
     {
         return new ConcretePrototype2(*this);
+    }
+};
+
+class PrototypeFactory {
+private:
+    unordered_map<Type, Prototype *, hash<int>> prototypes_;
+
+public:
+    PrototypeFactory() {
+        prototypes_[Type::PROTOTYPE_1] = new ConcretePrototype1("PROTOTYPE_1 ", 50.f);
+        prototypes_[Type::PROTOTYPE_2] = new ConcretePrototype2("PROTOTYPE_2 ", 60.f);
+    }
+
+    ~PrototypeFactory(){
+        delete prototypes_[Type::PROTOTYPE_1];
+        delete prototypes_[Type::PROTOTYPE_2];
+    }
+
+    Prototype *CreatePrototype(Type type) {
+        return prototypes_[type]->Clone();
     }
 };
