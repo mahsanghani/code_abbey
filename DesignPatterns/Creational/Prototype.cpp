@@ -10,7 +10,7 @@ using namespace std;
 enum Type
 {
     PROTOTYPE_1 = 0,
-    PROTOTYPE_2;
+    PROTOTYPE_2
 };
 
 class Prototype {
