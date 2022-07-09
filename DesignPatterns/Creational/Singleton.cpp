@@ -52,3 +52,17 @@ void ThreadBar()
     Singleton* singleton = Singleton::GetInstance("BAR");
     cout << singleton->value() << endl;
 }
+
+int main()
+{
+    cout << "If you see the same value" << endl;
+    cout << "then the singleton was reused." << endl;
+    cout << "If you see a different value" << endl;
+    cout << "then 2 singletons were created." << endl;
+    thread t1(ThreadFoo);
+    thread t2(ThreadBar);
+    t1.join();
+    t2.join();
+
+    return 0;
+}
