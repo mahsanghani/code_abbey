@@ -27,3 +27,14 @@ public:
         return value_;
     }
 };
+
+Singleton* Singleton::singleton_ = nullptr;
+
+Singleton *Singleton::GetInstance(const string value)
+{
+    if(singleton_== nullptr)
+    {
+        singleton_ = new Singleton(value);
+    }
+    return singleton_;
+}
