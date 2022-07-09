@@ -63,17 +63,34 @@ private:
     unordered_map<Type, Prototype *, hash<int>> prototypes_;
 
 public:
-    PrototypeFactory() {
+    PrototypeFactory()
+    {
         prototypes_[Type::PROTOTYPE_1] = new ConcretePrototype1("PROTOTYPE_1 ", 50.f);
         prototypes_[Type::PROTOTYPE_2] = new ConcretePrototype2("PROTOTYPE_2 ", 60.f);
     }
 
-    ~PrototypeFactory(){
+    ~PrototypeFactory()
+    {
         delete prototypes_[Type::PROTOTYPE_1];
         delete prototypes_[Type::PROTOTYPE_2];
     }
 
-    Prototype *CreatePrototype(Type type) {
+    Prototype *CreatePrototype(Type type)
+    {
         return prototypes_[type]->Clone();
     }
 };
+
+void Client(PrototypeFactory &prototype_factory)
+{
+    cout << "Let's create a Prototype 1\n" << endl;
+    Prototype *prototype = prototype_factory.CreatePrototype(Type::PROTOTYPE_1);
+    prototype->Method(90);
+    delete prototype;
+
+    cout << "\n" << "Let's create a Prototype 2 \n" << endl;
+
+    prototype = prototype_factory.CreatePrototype(Type::PROTOTYPE_2);
+    prototype->Method(10);
+    delete prototype;
+}
