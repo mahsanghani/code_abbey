@@ -45,3 +45,10 @@ void ThreadFoo()
     Singleton* singleton = Singleton::GetInstance("FOO");
     cout << singleton->value() << endl;
 }
+
+void ThreadBar()
+{
+    this_thread::sleep_for(chrono::milliseconds(1000));
+    Singleton* singleton = Singleton::GetInstance("BAR");
+    cout << singleton->value() << endl;
+}
