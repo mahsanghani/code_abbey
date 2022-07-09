@@ -38,3 +38,10 @@ Singleton *Singleton::GetInstance(const string value)
     }
     return singleton_;
 }
+
+void ThreadFoo()
+{
+    this_thread::sleep_for(chrono::milliseconds(1000));
+    Singleton* singleton = Singleton::GetInstance("FOO");
+    cout << singleton->value() << endl;
+}
