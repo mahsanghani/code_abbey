@@ -43,3 +43,8 @@ public:
     }
 };
 
+void ClientCode(const Target *target)
+{
+    cout << target->Request() << endl;
+}
+
