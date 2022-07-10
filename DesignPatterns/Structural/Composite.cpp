@@ -12,27 +12,36 @@
 #include <string>
 using namespace std;
 
-class Componennt
+class Component
 {
 protected:
-    Componennt *parent_;
+    Component *parent_;
 
 public:
-    virtual ~Componennt() {}
-    void SetParent(Componennt *parent)
+    virtual ~Component() {}
+    void SetParent(Component *parent)
     {
         this->parent_ = parent;
     }
-    Componennt *GetParent() const
+    Component *GetParent() const
     {
         return this->parent_;
     }
 
-    virtual void Add(Componennt *component) {}
-    virtual void Remove(Componennt *componennt) {}
+    virtual void Add(Component *component) {}
+    virtual void Remove(Component *componennt) {}
     virtual bool IsComposite() const
     {
         return false;
     }
     virtual string Operation() const = 0;
+};
+
+class Leaf: public Component
+{
+public:
+    string Operation() const override
+    {
+        return "Leaf";
+    }
 };
