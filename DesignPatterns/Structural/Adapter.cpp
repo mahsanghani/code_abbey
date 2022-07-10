@@ -20,3 +20,10 @@ public:
     }
 };
 
+class Adaptee {
+public:
+    string SpecificRequest() const
+    {
+        return ".eetpadA eht fo roivaheb laicepS";
+    }
+};
