@@ -19,3 +19,18 @@ public:
     virtual string OperationImplementation() const = 0;
 };
 
+class ConcreteImplementationA : public Implementation
+{
+    string OperationImplementation() const override
+    {
+        return "ConcreteImplementationA: Here's the result on the platform A.\n";
+    }
+};
+
+class ConcreteImplementationB : public Implementation
+{
+    string OperationImplementation() const override
+    {
+        return "ConcreteImplementationA: Here's the result on the platform B.\n";
+    }
+};
