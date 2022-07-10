@@ -18,3 +18,4 @@ public:
     virtual ~Implementation() {}
     virtual string OperationImplementation() const = 0;
 };
+
