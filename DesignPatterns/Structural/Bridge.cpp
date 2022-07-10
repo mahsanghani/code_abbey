@@ -66,3 +66,22 @@ void ClientCode(const Abstraction& abstraction)
     cout << abstraction.Operation() << endl;
 }
 
+int main()
+{
+    Implementation* implementation = new ConcreteImplementationA;
+    Abstraction* abstraction = new Abstraction(implementation);
+    ClientCode(*abstraction);
+    cout << endl;
+
+    delete implementation;
+    delete abstraction;
+
+    implementation = new ConcreteImplementationB;
+    abstraction = new ExtendedAbstraction(implementation);
+    ClientCode(*abstraction);
+
+    delete implementation;
+    delete abstraction;
+
+    return 0;
+}
