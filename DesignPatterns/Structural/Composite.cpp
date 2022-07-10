@@ -89,3 +89,12 @@ void ClientCode(Component *component)
     cout << "RESULT: " << component->Operation() << endl;
 }
 
+void ClientCode2(Component *component1, Component *component2)
+{
+    if (component1->IsComposite())
+    {
+        component1->Add(component2);
+    }
+    cout << "RESULT: " << component1->Operation() << endl;
+}
+
