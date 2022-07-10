@@ -1,6 +1,11 @@
 //
 // Created by Ahsan Ghani on 2022-07-09.
 //
+
+// Singleton is a creational design pattern that
+// lets you ensure that a class has only one instance,
+// while providing a global access point to this instance.
+
 #include <iostream>
 #include <string>
 #include <vector>
