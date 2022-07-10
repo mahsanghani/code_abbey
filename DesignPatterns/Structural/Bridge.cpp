@@ -60,3 +60,9 @@ public:
         this->implementation_->OperationImplementation();
     }
 };
+
+void ClientCode(const Abstraction& abstraction)
+{
+    cout << abstraction.Operation() << endl;
+}
+
