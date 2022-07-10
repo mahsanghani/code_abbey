@@ -103,7 +103,7 @@ int main()
     Component *simple = new Leaf;
     cout << "Client: I've got a simple component:\n" << endl;
     ClientCode(simple);
-    cout << "\n\n" << endl;
+    cout << "\n" << endl;
 
     Component *tree = new Composite;
     Component *branch1 = new Composite;
@@ -122,10 +122,10 @@ int main()
 
     cout << "Client: Now I've got a composite tree:\n";
     ClientCode(tree);
-    cout << "\n\n" << endl;
+    cout << "\n" << endl;
     cout << "Client: I don't need ot check the components classes even when managing the tree:\n";
     ClientCode2(tree,simple);
-    cout << "\n\n" << endl;
+    cout << "\n" << endl;
 
     delete simple;
     delete tree;
