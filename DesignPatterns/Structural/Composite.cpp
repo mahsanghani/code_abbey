@@ -12,3 +12,27 @@
 #include <string>
 using namespace std;
 
+class Componennt
+{
+protected:
+    Componennt *parent_;
+
+public:
+    virtual ~Componennt() {}
+    void SetParent(Componennt *parent)
+    {
+        this->parent_ = parent;
+    }
+    Componennt *GetParent() const
+    {
+        return this->parent_;
+    }
+
+    virtual void Add(Componennt *component) {}
+    virtual void Remove(Componennt *componennt) {}
+    virtual bool IsComposite() const
+    {
+        return false;
+    }
+    virtual string Operation() const = 0;
+};
