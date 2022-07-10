@@ -34,3 +34,19 @@ class ConcreteImplementationB : public Implementation
         return "ConcreteImplementationA: Here's the result on the platform B.\n";
     }
 };
+
+class Abstraction
+{
+protected:
+    Implementation* implementation_;
+
+public:
+    Abstraction(Implementation* implementation) : implementation_(implementation) {}
+    virtual ~Abstraction() {}
+    virtual string Operation() const
+    {
+        return "Abstraction: Base operation with:\n" +
+        this->implementation_->OperationImplementation();
+    }
+};
+
