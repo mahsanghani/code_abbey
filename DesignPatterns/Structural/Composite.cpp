@@ -83,3 +83,9 @@ public:
         return "Branch(" + result + ")";
     }
 };
+
+void ClientCode(Component *component)
+{
+    cout << "RESULT: " << component->Operation() << endl;
+}
+
