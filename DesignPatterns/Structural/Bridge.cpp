@@ -50,3 +50,13 @@ public:
     }
 };
 
+class ExtendedAbstraction : public Abstraction
+{
+public:
+    ExtendedAbstraction(Implementation* implementation) : Abstraction(implementation) {}
+    string Operation() const override
+    {
+        return "ExtendedAbstraction: Extended operation with:\n" +
+        this->implementation_->OperationImplementation();
+    }
+};
