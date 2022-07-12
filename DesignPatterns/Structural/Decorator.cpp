@@ -18,3 +18,12 @@ public:
     virtual ~Component() {}
     virtual string Operation() const = 0;
 };
+
+class ConcreteComponent : public Component
+{
+public:
+    string Operation() const override
+    {
+        return "ConcreteComponent";
+    }
+};
