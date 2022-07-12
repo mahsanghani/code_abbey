@@ -60,3 +60,8 @@ public:
     }
 };
 
+void ClientCode(Component* component)
+{
+    cout << "RESULT: " << component->Operation() << endl;
+}
+
