@@ -65,3 +65,22 @@ void ClientCode(Component* component)
     cout << "RESULT: " << component->Operation() << endl;
 }
 
+int main()
+{
+    Component* simple = new ConcreteComponent;
+    cout << "Client: I've got a simple component." << endl;
+    ClientCode(simple);
+    cout << "\n" << endl;
+
+    Component* decorator1 = new ConcreteDecoratorA(simple);
+    Component* decorator2 = new ConcreteDecoratorB(decorator1);
+    cout << "Client: Now I've got a decorated component." << endl;
+
+    ClientCode(decorator2);
+    cout << "\n" << endl;
+
+    delete simple;
+    delete decorator1;
+    delete decorator2;
+    return 0;
+}
