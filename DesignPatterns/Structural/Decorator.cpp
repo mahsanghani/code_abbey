@@ -12,3 +12,9 @@
 #include <string>
 using namespace std;
 
+class Component
+{
+public:
+    virtual ~Component() {}
+    virtual string Operation() const = 0;
+};
