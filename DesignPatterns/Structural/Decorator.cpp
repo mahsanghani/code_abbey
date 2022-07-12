@@ -40,3 +40,23 @@ public:
     }
 };
 
+class ConcreteDecoratorA : public Decorator
+{
+public:
+    ConcreteDecoratorA(Component* component) : Decorator(component) {}
+    string Operation() const override
+    {
+        return "ConcreteDecoratorA(" + Decorator::Operation() + ")";
+    }
+};
+
+class ConcreteDecoratorB : public Decorator
+{
+public:
+    ConcreteDecoratorB(Component* component) : Decorator(component) {}
+    string Operation() const override
+    {
+        return "ConcreteDecoratorB(" + Decorator::Operation() + ")";
+    }
+};
+
