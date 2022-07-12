@@ -27,3 +27,16 @@ public:
         return "ConcreteComponent";
     }
 };
+
+class Decorator : public Component
+{
+protected:
+    Component* component_;
+public:
+    Decorator(Component* component) : component_(component) {}
+    string Operation() const override
+    {
+        return this->component_->Operation();
+    }
+};
+
