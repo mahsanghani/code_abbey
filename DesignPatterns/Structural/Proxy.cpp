@@ -29,3 +29,35 @@ public:
         cout << "RealSubject: Handling request." << endl;
     }
 };
+
+class Proxy : public Subject
+{
+private:
+    RealSubject *real_subject_;
+    bool CheckAccess() const
+    {
+        cout << "Proxy: Checking access prior to firing a real request." << endl;
+        return true;
+    }
+    void LogAccess() const
+    {
+        cout << "Proxy: Logging the time of request." << endl;
+    }
+
+public:
+    Proxy(RealSubject *real_subject) : real_subject_(new RealSubject(*real_subject)) {}
+    ~Proxy()
+    {
+        delete real_subject_;
+    }
+
+    void Request() const override
+    {
+        if(this->CheckAccess())
+        {
+            this->real_subject_->Request();
+            this->LogAccess();
+        }
+    }
+};
+
