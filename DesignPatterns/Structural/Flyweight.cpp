@@ -70,3 +70,47 @@ public:
         cout << "Flyweight: Displaying shared (" << *shared_state_ << ") and unique (" << unique_state << ") state.\n";
     }
 };
+
+class FlyweightFactory
+{
+private:
+    unordered_map<string,Flyweight> flyweights_;
+    string GetKey(const SharedState &ss) const
+    {
+        return ss.brand_ + "_" + ss.model_ + "_" + ss.colour_;
+    }
+public:
+    FlyweightFactory(initializer_list<SharedState> share_states)
+    {
+        for (const SharedState &ss : share_states)
+        {
+            this->flyweights_.insert(make_pair<string,Flyweight>(this->GetKey(ss), Flyweight(&ss)));
+        }
+    }
+
+    Flyweight GetFlyweight(const SharedState &shared_state)
+    {
+        string key = this->GetKey(shared_state);
+        if(this->flyweights_.find(key) == this->flyweights_.end())
+        {
+            cout << "FlyweightFactory: Can't find a flyweight, creating a new one.\n";
+            this->flyweights_.insert(make_pair(key,Flyweight(&shared_state)));
+        }
+        else
+        {
+            cout << "FlyweightFactory: Reusing existing flyweight.\n";
+        }
+        return this->flyweights_.at(key);
+    }
+
+    void ListFlyweights() const
+    {
+        size_t count = this->flyweights_.size();
+        cout << "\nFlyweightFactory: I have " << count << " flyweights:\n";
+        for(pair<string, Flyweight> pair : this->flyweights_)
+        {
+            cout << pair.first << "\n";
+        }
+    }
+};
+
