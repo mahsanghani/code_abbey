@@ -20,3 +20,12 @@ class Subject
 public:
     virtual void Request() const = 0;
 };
+
+class RealSubject : public Subject
+{
+public:
+    void Request() const override
+    {
+        cout << "RealSubject: Handling request." << endl;
+    }
+};
