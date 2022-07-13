@@ -71,3 +71,14 @@ void ClientCode(Facade *facade)
     cout << facade->Operation() << endl;
 }
 
+int main()
+{
+    Subsystem1 *subsystem1 = new Subsystem1;
+    Subsystem2 *subsystem2 = new Subsystem2;
+
+    Facade *facade = new Facade(subsystem1, subsystem2);
+    ClientCode(facade);
+
+    delete facade;
+    return 0;
+}
