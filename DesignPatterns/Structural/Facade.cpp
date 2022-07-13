@@ -20,7 +20,7 @@ public:
     }
     string OperationN() const
     {
-        return "Subsystem1: Go!\n"
+        return "Subsystem1: Go!\n";
     }
 };
 
