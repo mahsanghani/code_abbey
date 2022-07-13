@@ -15,3 +15,8 @@
 #include <unordered_map>
 using namespace std;
 
+class Subject
+{
+public:
+    virtual void Request() const = 0;
+};
