@@ -61,3 +61,8 @@ public:
     }
 };
 
+void ClientCode(const Subject &subject)
+{
+    subject.Request();
+}
+
