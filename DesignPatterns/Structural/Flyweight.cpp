@@ -114,3 +114,17 @@ public:
     }
 };
 
+void AddCarToPoliceDatabase(
+        FlyweightFactory &ff,
+        const string &plates,
+        const string &owner,
+        const string &brand,
+        const string &model,
+        const string &colour
+        )
+{
+    cout << "\nClient: Adding a car to the database.\n";
+    const Flyweight &flyweight = ff.GetFlyweight({brand,model,colour});
+    flyweight.Operation({owner, plates});
+}
+
