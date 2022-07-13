@@ -10,5 +10,25 @@
 #include <algorithm>
 #include <iostream>
 #include <string>
+#include <unordered_map>
 using namespace std;
+
+struct SharedState
+{
+    string brand_;
+    string model_;
+    string colour_;
+
+    SharedState(
+            const string &brand,
+            const string &model,
+            const string &colour
+            ) : brand_(brand),
+            model_(model),
+            colour_(colour) {}
+    friend ostream &operator<<(ostream &os, const SharedState &ss)
+    {
+        return os << "[ " << ss.brand_ << " , " << ss.model_ << " , " << ss.colour_ << " ]";
+    }
+};
 
