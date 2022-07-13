@@ -65,3 +65,9 @@ public:
         return result;
     }
 };
+
+void ClientCode(Facade *facade)
+{
+    cout << facade->Operation() << endl;
+}
+
