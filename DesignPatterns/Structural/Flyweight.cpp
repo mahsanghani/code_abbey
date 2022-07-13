@@ -26,9 +26,27 @@ struct SharedState
             ) : brand_(brand),
             model_(model),
             colour_(colour) {}
+
     friend ostream &operator<<(ostream &os, const SharedState &ss)
     {
         return os << "[ " << ss.brand_ << " , " << ss.model_ << " , " << ss.colour_ << " ]";
+    }
+};
+
+struct UniqueState
+{
+    string owner_;
+    string plates_;
+
+    UniqueState(
+            const string &owner,
+            const string &plates
+            ) : owner_(owner),
+            plates_(plates) {}
+
+    friend ostream &operator<<(ostream &os, const UniqueState &us)
+    {
+        return os << "[ " << us.owner_ << " , " << us.plates_ << " ]";
     }
 };
 
