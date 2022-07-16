@@ -87,3 +87,18 @@ struct Node* merge(struct Node* h1, struct Node* h2)
         return mergeUtil(h2,h1);
     }
 }
+
+int main()
+{
+    struct Node* head1 = newNode(1);
+    head1->next = newNode(3);
+    head1->next->next = newNode(5);
+
+    struct Node* head2 = newNode(0);
+    head2->next = newNode(2);
+    head2->next->next = newNode(4);
+
+    struct Node* mergedhead = merge(head1,head2);
+    printList(mergedhead);
+    return 0;
+}
