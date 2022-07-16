@@ -50,3 +50,17 @@ Node* merge(Node* h1, Node* h2)
     }
 }
 
+int main()
+{
+    Node* head1 = newNode(1);
+    head1->next = newNode(3);
+    head1->next->next = newNode(5);
+
+    Node* head2 = newNode(0);
+    head2->next = newNode(2);
+    head2->next->next = newNode(4);
+
+    Node* mergedhead = merge(head1, head2);
+    printList(mergedhead);
+    return 0;
+}
