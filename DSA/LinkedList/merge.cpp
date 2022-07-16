@@ -18,3 +18,12 @@ Node* newNode(int key)
     return temp;
 }
 
+void printList(Node* node)
+{
+    while(node != NULL)
+    {
+        printf("%d ", node->data);
+        node = node->next;
+    }
+}
+
