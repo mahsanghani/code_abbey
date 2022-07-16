@@ -67,3 +67,23 @@ struct Node* mergeUtil(struct Node* h1, struct Node* h2)
     return h1;
 }
 
+struct Node* merge(struct Node* h1, struct Node* h2)
+{
+    if(!h1)
+    {
+        return h2;
+    }
+    if(!h2)
+    {
+        return h1;
+    }
+
+    if(h1->data < h2->data)
+    {
+        return mergeUtil(h1,h2);
+    }
+    else
+    {
+        return mergeUtil(h2,h1);
+    }
+}
