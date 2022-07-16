@@ -10,3 +10,11 @@ struct Node
     struct Node* next;
 };
 
+Node* newNode(int key)
+{
+    struct Node* temp = new Node;
+    temp->data = key;
+    temp->next = NULL;
+    return temp;
+}
+
