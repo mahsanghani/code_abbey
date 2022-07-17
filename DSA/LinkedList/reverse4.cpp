@@ -57,3 +57,13 @@ void push(Node** headref, int x)
     }
 }
 
+void print(Node* headref)
+{
+    while(headref != NULL)
+    {
+        cout << headref->data << " " << endl;
+        headref = headref->next;
+    }
+    cout << endl;
+}
+
