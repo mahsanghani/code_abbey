@@ -15,3 +15,14 @@ struct Node
     struct Node* next;
 };
 
+void reverseUtil(Node* current, Node* previous, Node** head);
+
+void reverse(Node** head)
+{
+    if(!head)
+    {
+        return;
+    }
+    reverseUtil(*head, NULL, head);
+}
+
