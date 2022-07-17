@@ -18,3 +18,14 @@ public:
     Node(int val) : data(val), next(NULL) {};
 };
 
+void reverseUtil(Node* current, Node* previous, Node** headref)
+{
+    if(current->next == NULL)
+    {
+        *headref = current;
+        current->next = previous;
+        return;
+    }
+    reverseUtil(current->next, current, headref);
+    current->next = previous;
+}
