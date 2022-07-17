@@ -14,3 +14,26 @@ struct Node
         next = NULL;
     }
 };
+
+struct LinkedList
+{
+    Node* head;
+    LinkedList()
+    { head = NULL; }
+
+    void reverse()
+    {
+        Node* current = head;
+        Node *previous = NULL;
+        Node *next = NULL;
+
+        while (current != NULL)
+        {
+            next = current->next;
+            current->next = previous;
+            previous = current;
+            current = next;
+        }
+        head = previous;
+    }
+};
