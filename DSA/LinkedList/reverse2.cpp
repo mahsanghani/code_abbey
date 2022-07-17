@@ -22,3 +22,24 @@ struct Node
     }
 };
 
+struct LinkedList
+{
+    Node* head;
+    LinkedList()
+    {
+        head = NULL;
+    }
+
+    Node* reverse(Node* head)
+    {
+        if (head == NULL || head->next == NULL)
+        {
+            return head;
+        }
+
+        Node* rest = reverse(head->next);
+        head->next = NULL;
+
+        return rest;
+    }
+};
