@@ -38,3 +38,22 @@ void reverse(Node** headref)
     }
     reverseUtil(*headref, NULL, headref);
 }
+
+void push(Node** headref, int x)
+{
+    Node* newptr = new Node(x);
+    if(*headref == NULL)
+    {
+        *headref = newptr;
+    }
+    else
+    {
+        Node* temp = *headref;
+        while(temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = newptr;
+    }
+}
+
