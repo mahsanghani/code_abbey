@@ -26,3 +26,15 @@ void reverse(Node** head)
     reverseUtil(*head, NULL, head);
 }
 
+void reverseUtil(Node* current, Node* previous, Node** head)
+{
+    if(!current->next)
+    {
+        *head = current;
+        current->next = previous;
+        return;
+    }
+    Node* next = current->next;
+    current->next = previous;
+    reverseUtil(next, current, head);
+}
