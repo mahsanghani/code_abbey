@@ -1,6 +1,19 @@
 //
 // Created by Ahsan Ghani on 2022-07-15.
 //
+
+// Initialize three pointers prev as NULL, curr as head and next as NULL.
+// Iterate through the linked list. In loop, do following.
+// Before changing next of current,
+// store next node
+// next = curr->next
+// Now change next of current
+// This is where actual reversing happens
+// curr->next = prev
+// Move prev and curr one step forward
+// prev = curr
+// curr = next
+
 #include <iostream>
 using namespace std;
 
