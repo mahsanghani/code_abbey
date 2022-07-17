@@ -29,3 +29,12 @@ void reverseUtil(Node* current, Node* previous, Node** headref)
     reverseUtil(current->next, current, headref);
     current->next = previous;
 }
+
+void reverse(Node** headref)
+{
+    if(*headref == NULL || (*headref)->next == NULL)
+    {
+        return;
+    }
+    reverseUtil(*headref, NULL, headref);
+}
