@@ -38,3 +38,11 @@ void reverseUtil(Node* current, Node* previous, Node** head)
     current->next = previous;
     reverseUtil(next, current, head);
 }
+
+Node* newNode(int key)
+{
+    Node* temp = new Node;
+    temp->data = key;
+    temp->next = NULL;
+    return temp;
+}
