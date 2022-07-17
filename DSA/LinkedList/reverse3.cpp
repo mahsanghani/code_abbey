@@ -46,3 +46,13 @@ Node* newNode(int key)
     temp->next = NULL;
     return temp;
 }
+
+void printlist(Node* head)
+{
+    while(head != NULL)
+    {
+        cout << head->data << " " << endl;
+        head = head->next;
+    }
+    cout << endl;
+}
