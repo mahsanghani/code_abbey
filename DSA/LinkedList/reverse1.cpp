@@ -70,17 +70,17 @@ struct LinkedList
 
 int main()
 {
-    LinkedList l1;
-    l1.push(20);
-    l1.push(4);
-    l1.push(15);
-    l1.push(85);
+    LinkedList ll;
+    ll.push(20);
+    ll.push(4);
+    ll.push(15);
+    ll.push(85);
 
     cout << "Given linked list." << endl;
-    l1.print();
-    l1.reverse();
+    ll.print();
+    ll.reverse();
 
     cout << "Reversed Linked List." << endl;
-    l1.print();
+    ll.print();
     return 0;
 }

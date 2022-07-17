@@ -60,3 +60,21 @@ struct LinkedList
         head = temp;
     }
 };
+
+int main()
+{
+    LinkedList ll;
+    ll.push(20);
+    ll.push(4);
+    ll.push(15);
+    ll.push(85);
+
+    cout << "Given linked list." << endl;
+    ll.print();
+
+    ll.head = ll.reverse(ll.head);
+
+    cout << "Reversed Linked List." << endl;
+    ll.print();
+    return 0;
+}
