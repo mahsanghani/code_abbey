@@ -31,3 +31,23 @@ int count(node* head)
     return k;
 }
 
+node* ll_reverse(node* head)
+{
+    node* p= head;
+    long int i = count(head);
+    long int j = 1;
+    long int arr[i];
+    while(i && p != NULL)
+    {
+        arr[j++] = p->val;
+        p = p->next;
+        i--;
+    }
+    j--;
+    while(j)
+    {
+        cout << arr[j--] << " " << endl;
+    }
+    return head;
+}
+
