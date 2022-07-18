@@ -82,3 +82,14 @@ node* create_ll(node* head, int data)
     }
 }
 
+int main()
+{
+    int i = 5;
+    int j = 1;
+    while(i--)
+    {
+        head = create_ll(head, j++);
+    }
+    head = ll_reverse(head);
+    return 0;
+}
