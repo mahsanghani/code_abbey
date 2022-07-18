@@ -65,3 +65,20 @@ node* insert_end(node* head, int data)
     return head;
 }
 
+node* create_ll(node* head, int data)
+{
+    node* p = (node*)malloc(sizeof(node));
+    p->val = data;
+    if(head == NULL)
+    {
+        head = p;
+        p->next = NULL;
+        return head;
+    }
+    else
+    {
+        head = insert_end(head, data);
+        return head;
+    }
+}
+
