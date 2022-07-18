@@ -51,3 +51,17 @@ node* ll_reverse(node* head)
     return head;
 }
 
+node* insert_end(node* head, int data)
+{
+    node *q = head;
+    node *p = (node*)malloc(sizeof(node));
+    p->val = data;
+    while(q->next != NULL)
+    {
+        q = q->next;
+    }
+    q->next = p;
+    p->next = NULL;
+    return head;
+}
+
