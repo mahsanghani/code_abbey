@@ -19,3 +19,15 @@ typedef struct node
 
 node* head = NULL;
 
+int count(node* head)
+{
+    node* p = head;
+    int k = 1;
+    while(p != NULL)
+    {
+        p = p->next;
+        k++;
+    }
+    return k;
+}
+
