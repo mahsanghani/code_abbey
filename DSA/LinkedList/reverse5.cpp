@@ -47,3 +47,25 @@ void printList(Node* temp)
     }
 }
 
+void insert_back(Node** head, int value)
+{
+    Node* temp = new Node();
+    temp->data = value;
+    temp->next = NULL;
+
+    if(*head == NULL)
+    {
+        *head = temp;
+        return;
+    }
+    else
+    {
+        Node* last_node = *head;
+        while (last_node->next != NULL)
+        {
+            last_node = last_node->next;
+        }
+        last_node->next = temp;
+        return;
+    }
+}
