@@ -38,7 +38,7 @@ void reverseLL(Node** head)
     temp->next = NULL;
 }
 
-void printList(Node* temp)
+void printlist(Node* temp)
 {
     while(temp != NULL)
     {
@@ -69,3 +69,20 @@ void insert_back(Node** head, int value)
         return;
     }
 }
+
+int main()
+{
+    Node* head = NULL;
+    insert_back(&head,1);
+    insert_back(&head,2);
+    insert_back(&head,3);
+    insert_back(&head,4);
+    insert_back(&head,5);
+    cout << "Given linked list: " << endl;
+    printlist(head);
+    reverseLL(&head);
+    cout << "Reversed linked list: " << endl;
+    printlist(head);
+    return 0;
+}
+
