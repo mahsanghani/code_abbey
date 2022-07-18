@@ -38,3 +38,12 @@ void reverseLL(Node** head)
     temp->next = NULL;
 }
 
+void printList(Node* temp)
+{
+    while(temp != NULL)
+    {
+        cout << temp->data << " " << endl;
+        temp = temp->next;
+    }
+}
+
