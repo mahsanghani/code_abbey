@@ -30,14 +30,26 @@ int binarySearch(vector<int> v, int target)
 
     if(v[low] == target)
     {
-        cout << "Found" << " At Index" << low << endl;
+        cout << "Found" << " At Index " << low << endl;
     }
     else if(v[high] == target)
     {
-        cout << "Found" << " At Index" << high << endl;
+        cout << "Found" << " At Index " << high << endl;
     }
     else
     {
         cout << "Not Found" << endl;
     }
+}
+
+int main()
+{
+    vector<int> v = {1,2,3,4,5,6};
+    int target = 1;
+    binarySearch(v,target);
+    target = 6;
+    binarySearch(v,target);
+    target = 10;
+    binarySearch(v,target);
+    return 0;
 }
