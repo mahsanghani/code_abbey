@@ -11,18 +11,18 @@
 #include <numeric>
 using namespace std;
 
-bool feasible(vector<int> &weights, int &time, int capacity)
+bool feasible(vector<int> &nums, int &m, int threshold)
 {
-    int days = 1;
+    int count = 1;
     int total = 0;
-    for (auto weight: weights)
+    for (auto num: nums)
     {
-        total += weight;
-        if (total > capacity)
+        total += num;
+        if (total > threshold)
         {
-            total = weight;
-            days += 1;
-            if (days > time)
+            total = num;
+            count += 1;
+            if (count > m)
             {
                 return false;
             }
@@ -32,15 +32,15 @@ bool feasible(vector<int> &weights, int &time, int capacity)
 }
 
 
-int shipWithinDays(vector<int> weights, int time)
+int splitArray(vector<int> nums, int m)
 {
-    int left = *max_element(weights.begin(), weights.end());
-    int right = accumulate(weights.begin(), weights.end(), 0);
+    int left = *max_element(nums.begin(), nums.end());
+    int right = accumulate(nums.begin(), nums.end(), 0);
 
     while (left < right)
     {
         int middle = left + (right - left) / 2;
-        if (feasible(weights, time, middle))
+        if (feasible(nums, m, middle))
         {
             right = middle;
         }
