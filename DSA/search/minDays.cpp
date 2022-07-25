@@ -38,8 +38,8 @@ int minDays(vector<int> nums, int m, int k)
         return -1;
     }
 
-    int left = *max_element(nums.begin(), nums.end());
-    int right = accumulate(nums.begin(), nums.end(), 0);
+    int left = 1;
+    int right = *max_element(nums.begin(), nums.end());
 
     while (left < right)
     {

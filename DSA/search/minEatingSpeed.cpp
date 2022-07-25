@@ -24,8 +24,8 @@ bool feasible(vector<int> &nums, int &hours, int speed)
 
 int minEatingSpeed(vector<int> nums, int hours)
 {
-    int left = *max_element(nums.begin(), nums.end());
-    int right = accumulate(nums.begin(), nums.end(), 0);
+    int left = 1;
+    int right = *max_element(nums.begin(), nums.end());
 
     while (left < right)
     {
