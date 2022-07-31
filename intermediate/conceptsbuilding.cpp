@@ -4,6 +4,7 @@
 #include <iostream>
 #include <type_traits>
 #include <concepts>
+using namespace std;
 
 //Syntax1
 /*
@@ -36,12 +37,10 @@ int main(){
     double x{6};
     double y{7};
 
-    //std::string x{"Hello"};
-    //std::string y{"World"};
+    //string x{"Hello"};
+    //string y{"World"};
 
     add(x,y);
-
-    std::cout << "Done!" << std::endl;
-
+    cout << "Done!" << endl;
     return 0;
 }
