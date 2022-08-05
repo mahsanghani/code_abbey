@@ -1,9 +1,6 @@
 //
 // Created by Ahsan Ghani on 2022-08-05.
 //
-//
-// Created by Ahsan Ghani on 2022-08-05.
-//
 class Solution {
 public:
     int numDecodings(string s) {
