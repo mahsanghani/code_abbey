@@ -128,11 +128,5 @@ int main(){
     }else{
         std::cout << "up_dog_13 points is null : " << up_dog_13.get() << std::endl;
     }
-
-
-
-
-
-
     return 0;
 }
