@@ -9,6 +9,7 @@
 class Point
 {
     friend std::ostream& operator<<(std::ostream& os, const Point& p);
+    friend std::istream& operator>>(std::istream& is, Point& p);
 public:
     Point() = default;
     Point(double x, double y) :
@@ -38,6 +39,20 @@ private :
 inline std::ostream& operator<<(std::ostream& os, const Point& p){
     os << "Point [ x : " << p.m_x << ", y : " << p.m_y << "]";
     return os;
+}
+
+inline std::istream& operator>>(std::istream& is, Point& p){
+    double x;
+    double y;
+
+    std::cout << "Please type in the coordinates for the point" << std::endl;
+    std::cout << "order [x,y], separated by spaces : ";
+
+    is >> x >> y ;
+    p.m_x = x;
+    p.m_y = y;
+
+    return is;
 }
 
 #endif // POINT_H
