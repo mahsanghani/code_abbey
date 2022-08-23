@@ -29,8 +29,4 @@ inline std::ostream& operator<< (std::ostream& out , const Point& p){
         " length : " << p.length()  <<  "]" ;
     return out;
 }
-
-
-
-
 #endif // POINT_H
