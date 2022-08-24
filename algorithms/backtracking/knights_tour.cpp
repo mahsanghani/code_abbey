@@ -33,3 +33,33 @@ void printSolution(int sol[N][N])
         cout << endl;
     }
 }
+
+int solveKT()
+{
+    int sol[N][N];
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            sol[x][y] = -1;
+        }
+    }
+
+    int xmove[8] = {2,1,-1,-2,-2,-1,1,2};
+    int ymove[8] = {1,2,2,1,-1,-2,-2,-1};
+
+    sol[0][0] = 0;
+
+    if (solveKTUtil(0,0,1,sol,xmove,ymove) == 0)
+    {
+        cout << "Solution does not exist";
+        return 0;
+    }
+    else
+    {
+        printSolution(sol);
+    }
+
+    return 1;
+}
