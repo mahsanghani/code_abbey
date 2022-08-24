@@ -101,3 +101,9 @@ int solveKTUtil(int x,
     }
     return 0;
 }
+
+int main()
+{
+    solveKT();
+    return 0;
+}
