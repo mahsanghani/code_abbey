@@ -49,6 +49,19 @@ bool solveMaze(int maze[N][N])
     return true;
 }
 
+bool solveMazeUtil(int maze[N][N],
+                   int x,
+                   int y,
+                   int sol[N][N])
+{
+    if (x == N-1 && y == N-1 && maze[x][y] == 1)
+    {
+        sol[x][y] = 1;
+        return true;
+    }
+}
+
+
 int main()
 {
     int maze[N][N] = {{1,0,0,0},
