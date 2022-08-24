@@ -67,3 +67,9 @@ bool solveNQ()
     printSolution(board);
     return true;
 }
+
+int main()
+{
+    solveNQ();
+    return 0;
+}
