@@ -2,6 +2,7 @@
 // Created by Ahsan Ghani on 2022-08-24.
 //
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <stack>
 using namespace std;
@@ -28,7 +29,7 @@ void printSolution(int sol[N][N])
     {
         for (int j = 0; j < N; j++)
         {
-            cout << " " << setw(2) << sol[x][y] << " ";
+            cout << " " << setw(2) << sol[i][j] << " ";
         }
         cout << endl;
     }
@@ -42,7 +43,7 @@ int solveKT()
     {
         for (int j = 0; j < N; j++)
         {
-            sol[x][y] = -1;
+            sol[i][j] = -1;
         }
     }
 
