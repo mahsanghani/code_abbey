@@ -14,3 +14,10 @@ int solveKTUtil(int x,
                 int sol[N][N],
                 int xmove[],
                 int ymove[]);
+
+int isSafe(int x,
+           int y,
+           int sol[N][N])
+{
+    return (x >= 0 && x < N && y >= 0 && y < N && sol[x][y] == -1);
+}
