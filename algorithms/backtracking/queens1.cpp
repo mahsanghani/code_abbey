@@ -90,3 +90,8 @@ bool solveNQ()
     return true;
 }
 
+int main()
+{
+    solveNQ();
+    return 0;
+}
