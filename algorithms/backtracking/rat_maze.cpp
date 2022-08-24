@@ -13,7 +13,7 @@ bool solveMazeUtil(int maze[N][N],
                    int y,
                    int sol[N][N]);
 
-void pointSolution(int sol[N][N])
+void printSolution(int sol[N][N])
 {
     for (int i = 0; i < N; i++)
     {
