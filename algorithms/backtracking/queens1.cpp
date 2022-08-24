@@ -20,3 +20,33 @@ void printSolution(int board[N][N])
     }
 }
 
+bool isSafe(int board[N][N], int row, int col)
+{
+    for (int i = 0; i < col; i++)
+    {
+        if (board[row][i])
+        {
+            return false;
+        }
+    }
+
+    for ( int i = row, int j = col;
+    i >= 0 && j >= 0; i--, j--)
+    {
+        if (board[i][j])
+        {
+            return false;
+        }
+    }
+
+    for ( int i = row, int j = col;
+            j >= 0 && i < N; i++, j--)
+    {
+        if (board[i][j])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
