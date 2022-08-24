@@ -59,6 +59,29 @@ bool solveMazeUtil(int maze[N][N],
         sol[x][y] = 1;
         return true;
     }
+
+    if (isSafe(maze,x,y) == true)
+    {
+        if (sol[x][y] == 1)
+        {
+            return false;
+        }
+        sol[x][y] = 1;
+
+        if(solveMazeUtil(maze,x+1,y,sol) == true)
+        {
+            return true;
+        }
+
+        if(solveMazeUtil(maze,x,y+1,sol) == true)
+        {
+            return true;
+        }
+
+        sol[x][y] = 0;
+        return false;
+    }
+    return false;
 }
 
 
