@@ -63,3 +63,41 @@ int solveKT()
 
     return 1;
 }
+
+int solveKTUtil(int x,
+                int y,
+                int movei,
+                int sol[N][N],
+                int xmove[8],
+                int ymove[8])
+{
+    int k, next_x, next_y;
+    if (movei == N*N)
+    {
+        return 1;
+    }
+
+    for (k = 0; k < 8; k++)
+    {
+        next_x = x + xmove[k];
+        next_y = y + ymove[k];
+        if (isSafe(next_x, next_y, sol))
+        {
+            sol[next_x][next_y] = movei;
+            if (solveKTUtil(next_x,
+                            next_y,
+                            movei+1,
+                            sol,
+                            xmove,
+                            ymove) == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                sol[next_x][next_y] = -1;
+            }
+        }
+    }
+    return 0;
+}
