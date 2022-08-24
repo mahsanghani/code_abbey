@@ -21,3 +21,15 @@ int isSafe(int x,
 {
     return (x >= 0 && x < N && y >= 0 && y < N && sol[x][y] == -1);
 }
+
+void printSolution(int sol[N][N])
+{
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            cout << " " << setw(2) << sol[x][y] << " ";
+        }
+        cout << endl;
+    }
+}
