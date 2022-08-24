@@ -1,8 +1,23 @@
 //
 // Created by Ahsan Ghani on 2022-08-23.
 //
+#ifndef PLAYER_H
+#define PLAYER_H
 
-#ifndef CODE_ABBEY_PLAYER_H
-#define CODE_ABBEY_PLAYER_H
+#include <string>
+#include <iostream>
+#include <string_view>
+#include "person.h"
 
-#endif //CODE_ABBEY_PLAYER_H
+class Player : public Person
+{
+    friend std::ostream& operator<<(std::ostream& out, const Player& player);
+public:
+    Player() = default;
+    Player(std::string_view game_param);
+
+private :
+    std::string m_game{"None"};
+};
+
+#endif // PLAYER_H
