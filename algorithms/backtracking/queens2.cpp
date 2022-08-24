@@ -23,3 +23,31 @@ void printSolution(int board[N][N])
         cout << endl;
     }
 }
+
+bool solveNQUtil(int board[N][N], int col)
+{
+    if (col >= N)
+    {
+        return true;
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        if ((ld[i-col+N-1] != 1 &&
+            rd[i+col] != 1) &&
+            cl[i] != 1)
+        {
+            board[i][col] = 1;
+            ld[i-col+N-1] = rd[i+col] = cl[i] = 1;
+
+            if (solveNQUtil(board, col + 1))
+            {
+                return true;
+            }
+
+            board[i][col] = 0;
+            ld[i-col+N-1] = rd[i+col] = cl[i] = 0;
+        }
+    }
+    return false;
+}
