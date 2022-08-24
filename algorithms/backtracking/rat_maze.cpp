@@ -25,3 +25,12 @@ void pointSolution(int sol[N][N])
     }
 }
 
+bool isSafe(int maze[N][N], int x, int y)
+{
+    if (x >= 0 && x < N && y >= 0  && y < N && maze[x][y] == 1)
+    {
+        return true;
+    }
+    return false;
+}
+
