@@ -8,6 +8,10 @@ using namespace std;
 
 #define N 4
 
+int ld[30] = {0};
+int rd[30] = {0};
+int cl[30] = {0};
+
 void printSolution(int board[N][N])
 {
     for (int i = 0; i < N; i++)
@@ -16,6 +20,6 @@ void printSolution(int board[N][N])
         {
             cout << " " << board[i][j] << " ";
         }
-        printf("\n");
+        cout << endl;
     }
 }

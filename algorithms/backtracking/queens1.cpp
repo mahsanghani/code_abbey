@@ -16,7 +16,7 @@ void printSolution(int board[N][N])
         {
             cout << " " << board[i][j] << " ";
         }
-        printf("\n");
+        cout << endl;
     }
 }
 
