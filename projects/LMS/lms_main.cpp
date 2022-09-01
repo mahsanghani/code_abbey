@@ -62,3 +62,11 @@ public:
         return publication;
     }
 };
+
+// functions
+void addBook(int counter);
+void deleteBook(int counter);
+void editBook(int counter);
+void searchBook(int counter);
+void viewAllBooks(int counter);
+void quit();
