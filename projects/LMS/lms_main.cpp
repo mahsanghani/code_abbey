@@ -39,4 +39,26 @@ public:
     {
         publication = e;
     }
+
+    // getters
+    string getIsbn()
+    {
+        return isbn;
+    }
+    string getTitle()
+    {
+        return title;
+    }
+    string getAuthor()
+    {
+        return author;
+    }
+    string getEdition()
+    {
+        return edition;
+    }
+    string getPublication()
+    {
+        return publication;
+    }
 };
