@@ -103,4 +103,36 @@ int main()
     cout<<"Enter Choice: "<<endl;
     getline(cin, choice);
     system("CLS");
+
+    if(choice=="1")
+    {
+        addBook(counter);
+    }
+    else if(choice=="2")
+    {
+        deleteBook(counter);
+    }
+    else if(choice=="3")
+    {
+        editBook(counter);
+    }
+    else if(choice=="4")
+    {
+        searchBook(counter);
+    }
+    else if(choice=="5")
+    {
+        viewAllBooks(counter);
+    }
+    else if(choice=="6")
+    {
+        quit();
+    }
+    else
+    {
+        main();
+    }
+    _getch();
+    return 0;
 }
+
