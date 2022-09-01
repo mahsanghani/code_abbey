@@ -70,3 +70,20 @@ void editBook(int counter);
 void searchBook(int counter);
 void viewAllBooks(int counter);
 void quit();
+
+int counter = 0;
+
+void increment(int a)
+{
+    a++;
+    counter=a;
+}
+
+void decrement(int a)
+{
+    a--;
+    counter=a;
+}
+
+Book books[10];
+
