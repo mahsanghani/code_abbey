@@ -87,3 +87,20 @@ void decrement(int a)
 
 Book books[10];
 
+int main()
+{
+    string choice;
+    system("CLS");
+
+    cout<<"Library Management System"<<endl;
+    cout<<"[1] Add Book"<<endl;
+    cout<<"[2] Delete Book"<<endl;
+    cout<<"[3] Edit Book"<<endl;
+    cout<<"[4] Search Book"<<endl;
+    cout<<"[5] View All Books"<<endl;
+    cout<<"[6] Quit"<<endl;
+
+    cout<<"Enter Choice: "<<endl;
+    getline(cin, choice);
+    system("CLS");
+}
