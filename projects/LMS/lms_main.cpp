@@ -92,15 +92,15 @@ int main()
     string choice;
     system("CLS");
 
-    cout<<"Library Management System"<<endl;
-    cout<<"[1] Add Book"<<endl;
-    cout<<"[2] Delete Book"<<endl;
-    cout<<"[3] Edit Book"<<endl;
-    cout<<"[4] Search Book"<<endl;
-    cout<<"[5] View All Books"<<endl;
-    cout<<"[6] Quit"<<endl;
+    cout << "Library Management System" << endl;
+    cout << "[1] Add Book" << endl;
+    cout << "[2] Delete Book" << endl;
+    cout << "[3] Edit Book" << endl;
+    cout << "[4] Search Book" << endl;
+    cout << "[5] View All Books" << endl;
+    cout << "[6] Quit" << endl;
 
-    cout<<"Enter Choice: "<<endl;
+    cout << "Enter Choice: " << endl;
     getline(cin, choice);
     system("CLS");
 
@@ -136,3 +136,49 @@ int main()
     return 0;
 }
 
+void addBook(int counter)
+{
+    // variables
+    string isbn;
+    string title;
+    string author;
+    string edition;
+    string publication;
+
+    cout << "Add Book" << endl;
+    if(counter<10)
+    {
+        cout << "Enter ISBN: " << endl;
+        getline(cin, isbn);
+        cout << "Enter Title: " << endl;
+        getline(cin, title);
+        cout << "Enter Author: " << endl;
+        getline(cin, author);
+        cout << "Enter Edition: " << endl;
+        getline(cin, edition);
+        cout << "Enter Publication: " << endl;
+        getline(cin, publication);
+
+        books[counter].setIsbn(isbn);
+        books[counter].setTitle(title);
+        books[counter].setAuthor(author);
+        books[counter].setEdition(edition);
+        books[counter].setPublication(publication);
+
+        increment(counter);
+
+        cout << "Book added successfully!" << endl;
+        cout << "Press any key to continue..." << endl;
+
+        _getch();
+        main();
+    }
+    else
+    {
+        cout << "You have reached the maximum number of books to be added!" << endl;
+        cout << "Press any key to continue..." << endl;
+
+        _getch();
+        main();
+    }
+}
