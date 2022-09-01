@@ -17,4 +17,26 @@ private:
     string edition;
     string publication;
 
+public:
+    // setters
+    void setIsbn(string a)
+    {
+        isbn = a;
+    }
+    void setTitle(string b)
+    {
+        title = b;
+    }
+    void setAuthor(string c)
+    {
+        author = c;
+    }
+    void setEdition(string d)
+    {
+        edition = d;
+    }
+    void setPublication(string e)
+    {
+        publication = e;
+    }
 };
