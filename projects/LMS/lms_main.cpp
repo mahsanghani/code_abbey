@@ -371,3 +371,22 @@ void searchBook(int counter)
     }
 }
 
+void viewAllBooks(int counter)
+{
+    cout << "View All Books!" << endl;
+
+    for(int i=0; i<counter; i++)
+    {
+        cout << "Book Details" << endl;
+        cout << "ISBN: " << books[i].getIsbn() << endl;
+        cout << "Title: " << books[i].getTitle() << endl;
+        cout << "Author: " << books[i].getAuthor() << endl;
+        cout << "Edition: " << books[i].getEdition() << endl;
+        cout << "Publication: " << books[i].getPublication() << endl;
+    }
+
+    cout << "Press any key to continue..." << endl;
+
+    _getch();
+    main();
+}
