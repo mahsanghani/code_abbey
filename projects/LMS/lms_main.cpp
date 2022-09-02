@@ -390,3 +390,8 @@ void viewAllBooks(int counter)
     _getch();
     main();
 }
+
+void quit()
+{
+    _exit(1);
+}
