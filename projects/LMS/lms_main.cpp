@@ -132,7 +132,7 @@ int main()
     {
         main();
     }
-    _getch();
+    getch();
     return 0;
 }
 
@@ -170,7 +170,7 @@ void addBook(int counter)
         cout << "Book added successfully!" << endl;
         cout << "Press any key to continue..." << endl;
 
-        _getch();
+        getch();
         main();
     }
     else
@@ -178,7 +178,7 @@ void addBook(int counter)
         cout << "You have reached the maximum number of books to be added!" << endl;
         cout << "Press any key to continue..." << endl;
 
-        _getch();
+        getch();
         main();
     }
 }
@@ -192,7 +192,7 @@ void deleteBook(int counter)
     if (counter == 0)
     {
         cout << "There are no more books left to delete!" << endl;
-        _getch();
+        getch();
         main();
     }
 
@@ -231,7 +231,7 @@ void deleteBook(int counter)
                 cout << "Book successfully deleted!" << endl;
                 cout << "Press any key to continue..." << endl;
 
-                _getch();
+                getch();
                 main();
             } else
             {
@@ -243,7 +243,7 @@ void deleteBook(int counter)
     cout << "Book not found!" << endl;
     cout << "Press any key to continue..." << endl;
 
-    _getch();
+    getch();
     main();
 }
 
@@ -266,7 +266,7 @@ void editBook(int counter)
         cout << "There is no book to edit!" << endl;
         cout << "Press any key to continue..." << endl;
 
-        _getch();
+        getch();
         main();
     }
 
@@ -308,7 +308,7 @@ void editBook(int counter)
                 cout << "Book edited successfully!" << endl;
                 cout << "Press any key to continue..." << endl;
 
-                _getch();
+                getch();
                 editBook(counter);
             }
             else
@@ -320,7 +320,7 @@ void editBook(int counter)
     cout << "Book not found!" << endl;
     cout << "Press any key to continue..." << endl;
 
-    _getch();
+    getch();
     main();
 }
 
@@ -337,7 +337,7 @@ void searchBook(int counter)
         cout << "There is no book to search!" << endl;
         cout << "Press any key to continue..." << endl;
 
-        _getch();
+        getch();
         main();
     }
 
@@ -358,7 +358,7 @@ void searchBook(int counter)
     {
         cout << "Press any key to continue..." << endl;
 
-        _getch();
+        getch();
         main();
     }
     else
@@ -366,7 +366,7 @@ void searchBook(int counter)
         cout << "Book not found!" << endl;
         cout << "Press any key to continue..." << endl;
 
-        _getch();
+        getch();
         main();
     }
 }
@@ -387,11 +387,11 @@ void viewAllBooks(int counter)
 
     cout << "Press any key to continue..." << endl;
 
-    _getch();
+    getch();
     main();
 }
 
 void quit()
 {
-    _exit(1);
+    exit(1);
 }
