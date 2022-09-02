@@ -2,7 +2,7 @@
 // Created by Ahsan Ghani on 2022-09-01.
 //
 #include <iostream>
-#include <conio.h>
+#include <curses.h>
 #include <string>
 
 using namespace std;
