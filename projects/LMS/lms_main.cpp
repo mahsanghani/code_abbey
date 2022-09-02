@@ -247,3 +247,80 @@ void deleteBook(int counter)
     main();
 }
 
+void editBook(int counter)
+{
+    // variables
+    system("CLS");
+    string editIsbn;
+    string choice;
+    string isbn;
+    string title;
+    string author;
+    string edition;
+    string publication;
+
+    cout << "Edit Book" << endl;
+
+    if(counter==0)
+    {
+        cout << "There is no book to edit!" << endl;
+        cout << "Press any key to continue..." << endl;
+
+        _getch();
+        main();
+    }
+
+    cout << "Enter ISBN: " << endl;
+    getline(cin,editIsbn);
+
+    for(int i=0; i<counter; i++)
+    {
+        if(books[i].getIsbn()==editIsbn)
+        {
+            cout << "ISBN: " << books[i].getIsbn() << endl;
+            cout << "Title: " << books[i].getTitle() << endl;
+            cout << "Author: " << books[i].getAuthor() << endl;
+            cout << "Edition: " << books[i].getEdition() << endl;
+            cout << "Publication: " << books[i].getPublication() << endl;
+
+            cout << "Do you want to edit this book? \n[1] Yes\n[2] No\n\n Enter Choice: ";
+            getline(cin, choice);
+
+            if(choice=="1")
+            {
+                cout << "Enter ISBN: " << endl;
+                getline(cin, isbn);
+                cout << "Enter Title: " << endl;
+                getline(cin, title);
+                cout << "Enter Author: " << endl;
+                getline(cin, author);
+                cout << "Enter Edition: " << endl;
+                getline(cin, edition);
+                cout << "Enter Publication: " << endl;
+                getline(cin, publication);
+
+                books[i].setIsbn(isbn);
+                books[i].setTitle(title);
+                books[i].setAuthor(author);
+                books[i].setEdition(edition);
+                books[i].setPublication(publication);
+
+                cout << "Book edited successfully!" << endl;
+                cout << "Press any key to continue..." << endl;
+
+                _getch();
+                editBook(counter);
+            }
+            else
+            {
+                main();
+            }
+        }
+    }
+    cout << "Book not found!" << endl;
+    cout << "Press any key to continue..." << endl;
+
+    _getch();
+    main();
+}
+
