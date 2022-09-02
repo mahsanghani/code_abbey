@@ -324,3 +324,50 @@ void editBook(int counter)
     main();
 }
 
+void searchBook(int counter)
+{
+    string isbn;
+    int choice;
+    bool print = false;
+
+    cout << "Search Book" << endl;
+
+    if(counter==0)
+    {
+        cout << "There is no book to search!" << endl;
+        cout << "Press any key to continue..." << endl;
+
+        _getch();
+        main();
+    }
+
+    for(int i=0; i<counter; i++)
+    {
+        if (books[i].getIsbn() == isbn)
+        {
+            cout << "ISBN: " << books[i].getIsbn() << endl;
+            cout << "Title: " << books[i].getTitle() << endl;
+            cout << "Author: " << books[i].getAuthor() << endl;
+            cout << "Edition: " << books[i].getEdition() << endl;
+            cout << "Publication: " << books[i].getPublication() << endl;
+            print = true;
+        }
+    }
+
+    if(print)
+    {
+        cout << "Press any key to continue..." << endl;
+
+        _getch();
+        main();
+    }
+    else
+    {
+        cout << "Book not found!" << endl;
+        cout << "Press any key to continue..." << endl;
+
+        _getch();
+        main();
+    }
+}
+
