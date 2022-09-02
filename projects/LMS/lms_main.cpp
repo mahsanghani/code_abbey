@@ -183,3 +183,67 @@ void addBook(int counter)
     }
 }
 
+void deleteBook(int counter)
+{
+    string isbn;
+    int choice;
+    cout << "Delete Book" << endl;
+
+    if (counter == 0)
+    {
+        cout << "There are no more books left to delete!" << endl;
+        _getch();
+        main();
+    }
+
+    cout << "Enter ISBN: " << endl;
+    getline(cin, isbn);
+
+    for (int i = 0; i < counter; i++)
+    {
+        if (books[i].getIsbn() == isbn)
+        {
+            cout << "Book Found!" << endl;
+            cout << "Do you want to delete this book? \n[1] Yes\n[2] No\n\n Enter Choice: ";
+            cin >> choice;
+
+            if (choice == 1)
+            {
+                books[i].setIsbn("");
+                books[i].setTitle("");
+                books[i].setAuthor("");
+                books[i].setEdition("");
+                books[i].setPublication("");
+
+                for (int j = i; j < counter; j++)
+                {
+                    books[j] = books[j + 1];
+                }
+
+                books[9].setIsbn("");
+                books[9].setTitle("");
+                books[9].setAuthor("");
+                books[9].setEdition("");
+                books[9].setPublication("");
+
+                decrement(counter);
+
+                cout << "Book successfully deleted!" << endl;
+                cout << "Press any key to continue..." << endl;
+
+                _getch();
+                main();
+            } else
+            {
+                main();
+            }
+        }
+    }
+
+    cout << "Book not found!" << endl;
+    cout << "Press any key to continue..." << endl;
+
+    _getch();
+    main();
+}
+
