@@ -56,3 +56,18 @@ class DescentAlgorithm:
             Either of not to store history of iterations. Defaults to False.
         """
 
+        self.fun = fun
+
+        if gradient is None:
+            self.gradient = Gradient(fun, **nd)
+        else:
+            self.gradient = gradient
+
+        self.hess = hess
+        self.wolfe_coefs = wolfe_c1, wolfe_c2
+        self.x_tol = x_tol
+        self.f_tol = f_tol
+        self.max_iter = max_iter
+        self.save_history = save_history
+        self.history = []
+
