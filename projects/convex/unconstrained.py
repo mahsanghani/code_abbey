@@ -300,3 +300,26 @@ class QuasiNewton(Newton):
                          max_iter=max_iter,
                          save_history=save_history)
 
+    def prepare_next_step(self,
+                          xk,
+                          fk,
+                          gradk,
+                          pk,
+                          xnew,
+                          fnew,
+                          gradnew,
+                          *args,
+                          **kwargs):
+        self.hess.update(xnew - xk, gradnew - gradk)
+        H = self.hess.get_matrix()
+        return xnew, fnew, gradnew, np.linalg.solve(H, -gradnew)
+
+    def prepare_initial_step(self,
+                             xk,
+                             fk,
+                             gradk,
+                             *args,
+                             **kwargs):
+        self.hess.initialize(xk.shape[0], "hess")
+        H = self.hess.get_matrix()
+        return np.linalg.solve(H, -gradk)
