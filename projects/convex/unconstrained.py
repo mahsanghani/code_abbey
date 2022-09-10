@@ -4,6 +4,7 @@ from numdifftools import Gradient
 
 _small_number = np.sqrt(np.finfo(float).eps)
 
+
 class DescentAlgorithm:
 
     def __init__(self, fun,
@@ -189,6 +190,7 @@ class DescentAlgorithm:
                                      **kwargs):
                 pass
 
+
 class SteepestDescent(DescentAlgorithm):
 
     def prepare_next_step(self,
@@ -210,3 +212,17 @@ class SteepestDescent(DescentAlgorithm):
                              *args,
                              **kwargs):
         return -gradk
+
+
+class ConjugateGradient(SteepestDescent):
+    def prepare_next_step(self,
+                          xk,
+                          fk,
+                          gradk,
+                          pk,
+                          xnew,
+                          fnew,
+                          gradnew,
+                          *args,
+                          **kwargs):
+        return xnew, fnew, gradnew, -gradnew + pk * gradnew.dot(gradnew) / gradk.dot(gradk)
