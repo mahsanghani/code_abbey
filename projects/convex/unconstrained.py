@@ -274,3 +274,29 @@ class Newton(DescentAlgorithm):
         H = self.hess(xk, *args, **kwargs)
         return np.linalg.solve(H, -gradk)
 
+class QuasiNewton(Newton):
+    def __init__(self, fun,
+                 gradient=None,
+                 hess=None,
+                 nd={},
+                 wolfe_c1=1e-4,
+                 wolfe_c2=0.1,
+                 x_tol=1e-6,
+                 f_tol=1e-6,
+                 max_iter=50,
+                 save_history=False):
+        if hess is None:
+            hess = BFGS(exception_strategy="damp_update",
+                        min_curvature=0.2)
+
+        super().__init__(fun,
+                         gradient=gradient,
+                         hess=hess,
+                         nd=nd,
+                         wolfe_c1=wolfe_c1,
+                         wolfe_c2=wolfe_c2,
+                         x_tol=x_tol,
+                         f_tol=f_tol,
+                         max_iter=max_iter,
+                         save_history=save_history)
+
