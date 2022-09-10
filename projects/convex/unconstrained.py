@@ -4,6 +4,7 @@ from numdifftools import Gradient
 
 _small_number = np.sqrt(np.finfo(float).eps)
 
+
 class DescentAlgorithm:
 
     def __init__(self, fun,
@@ -57,6 +58,14 @@ class DescentAlgorithm:
         """
 
         self.fun = fun
+        self.x = None
+        self.f = None
+        self.grad = None
+        self.fc = None
+        self.gc = None
+        self.result = None
+        self.success = None
+        self.message = None
 
         if gradient is None:
             self.gradient = Gradient(fun, **nd)
@@ -71,3 +80,92 @@ class DescentAlgorithm:
         self.save_history = save_history
         self.history = []
 
+    def optimize(self, x0, *args, **kwargs):
+        x0 = np.atleast_1d(x0).astype(float)
+        self.history = []
+
+        xk = x0.copy()
+        fk = self.fun(x0, *args, **kwargs)
+        gradk = self.gradient(x0, *args, **kwargs)
+
+        fc, gc = 1, 1
+
+        pk = self.prepare_initial_step(xk, fk, gradk, *args, **kwargs)
+
+        advance_x, advance_f, advance_max = True, True, True
+
+        k = 0
+
+        if self.save_history:
+            self.history.append({"x": xk,
+                                 "f": fk,
+                                 "grad": gradk})
+
+        while (advance_x or advance_f) and (k <= self.max_iter):
+            alpha, fc_, gc_, fnew, fk, gradnew = line_search(self.fun,
+                                                             self.gradient,
+                                                             xk,
+                                                             pk,
+                                                             gradk,
+                                                             fk,
+                                                             args=args,
+                                                             c1=self.wolfe_coefs[0],
+                                                             c2=self.wolfe_coefs[1],
+                                                             maxiter=15)
+
+            if alpha is None:
+                alpha = 1
+                fnew = self.fun(xk + alpha * pk, *args, **kwargs)
+                gradnew = self.gradient(xk + alpha * pk, *args, **kwargs)
+
+            xnew = xk + alpha + pk
+            fc = fc + fc_
+            gc = gc + gc_
+
+            if gradnew is None:
+                gradnew = self.gradient(xnew)
+
+            advance_f = abs(fnew - fk) > self.f_tol
+            advance_x = np.linalg.norm(xnew - xk) > self.x_tol
+
+            xk, fk, gradk, pk = self.prepare_next_step(xk,
+                                                       fk,
+                                                       gradk,
+                                                       pk,
+                                                       xnew,
+                                                       fnew,
+                                                       gradnew,
+                                                       *args,
+                                                       **kwargs)
+
+            k = k + 1
+
+            if self.save_history:
+                self.history.append({"x": xk,
+                                     "f": fk,
+                                     "grad": gradk})
+
+            if np.linalg.norm(pk) < np.sqrt(np.finfo(float).eps):
+                self.message = "Negligible step"
+                self.success = True
+                break
+
+            if not (advance_x or advance_f):
+                self.success = True
+                self.message = "Tolerance reached"
+
+            elif k > self.max_iter:
+                self.success = False
+                self.message = "Max iterations reached"
+
+            self.x = xk
+            self.f = fk
+            self.grad = gradk
+            self.fc = fc
+            self.gc = gc
+            self.result = {"x": xk,
+                           "f": fk,
+                           "grad": gradk,
+                           "iter": k,
+                           "message": self.message,
+                           "success": self.success}
