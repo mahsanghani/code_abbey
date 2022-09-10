@@ -169,3 +169,23 @@ class DescentAlgorithm:
                            "iter": k,
                            "message": self.message,
                            "success": self.success}
+
+            def prepare_next_step(self,
+                                  xk,
+                                  fk,
+                                  gradk,
+                                  pk,
+                                  xnew,
+                                  fnew,
+                                  gradnew,
+                                  *args,
+                                  **kwargs):
+                pass
+
+            def prepare_initial_step(self,
+                                     xk,
+                                     fk,
+                                     gradk,
+                                     *args,
+                                     **kwargs):
+                pass
