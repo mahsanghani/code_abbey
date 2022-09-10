@@ -251,3 +251,26 @@ class Newton(DescentAlgorithm):
                  f_tol=f_tol,
                  max_iter=max_iter,
                  save_history=save_history)
+
+    def prepare_next_step(self,
+                          xk,
+                          fk,
+                          gradk,
+                          pk,
+                          xnew,
+                          fnew,
+                          gradnew,
+                          *args,
+                          **kwargs):
+        H = self.hess(xnew, *args, **kwargs)
+        return xnew, fnew, gradnew, np.linalg.solve(H, -gradnew)
+
+    def prepare_initial_step(self,
+                             xk,
+                             fk,
+                             gradk,
+                             *args,
+                             **kwargs):
+        H = self.hess(xk, *args, **kwargs)
+        return np.linalg.solve(H, -gradk)
+
