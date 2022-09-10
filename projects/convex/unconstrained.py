@@ -150,45 +150,45 @@ class DescentAlgorithm:
                 self.success = True
                 break
 
-            if not (advance_x or advance_f):
-                self.success = True
-                self.message = "Tolerance reached"
+        if not (advance_x or advance_f):
+            self.success = True
+            self.message = "Tolerance reached"
 
-            elif k > self.max_iter:
-                self.success = False
-                self.message = "Max iterations reached"
+        elif k > self.max_iter:
+            self.success = False
+            self.message = "Max iterations reached"
 
-            self.x = xk
-            self.f = fk
-            self.grad = gradk
-            self.fc = fc
-            self.gc = gc
-            self.result = {"x": xk,
-                           "f": fk,
-                           "grad": gradk,
-                           "iter": k,
-                           "message": self.message,
-                           "success": self.success}
+        self.x = xk
+        self.f = fk
+        self.grad = gradk
+        self.fc = fc
+        self.gc = gc
+        self.result = {"x": xk,
+                       "f": fk,
+                       "grad": gradk,
+                       "iter": k,
+                       "message": self.message,
+                       "success": self.success}
 
-            def prepare_next_step(self,
-                                  xk,
-                                  fk,
-                                  gradk,
-                                  pk,
-                                  xnew,
-                                  fnew,
-                                  gradnew,
-                                  *args,
-                                  **kwargs):
-                pass
+    def prepare_next_step(self,
+                          xk,
+                          fk,
+                          gradk,
+                          pk,
+                          xnew,
+                          fnew,
+                          gradnew,
+                          *args,
+                          **kwargs):
+        pass
 
-            def prepare_initial_step(self,
-                                     xk,
-                                     fk,
-                                     gradk,
-                                     *args,
-                                     **kwargs):
-                pass
+    def prepare_initial_step(self,
+                             xk,
+                             fk,
+                             gradk,
+                             *args,
+                             **kwargs):
+        pass
 
 
 class SteepestDescent(DescentAlgorithm):
