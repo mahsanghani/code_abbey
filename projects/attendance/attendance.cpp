@@ -179,3 +179,44 @@ void attend::calculate()
     }
 }
 
+int main()
+{
+    attend o1, o2, o3;
+    int a, w;
+    ifstream file1;
+    ofstream file2;
+    cout<<endl;
+    cout<<"                     STUDENT ATTENDANCE MAINTENANCE SYSTEM                "<<endl;
+    cout<<"                   ------------------------------------------              "<<endl<<endl;
+    cout<<":::::::::::::::::::      ENTER ANY KEY TO SELECT OPTIONS     :::::::::::::::::::"<<endl;
+    cin>>a;
+    cout<<endl;
+    while(a)
+    {
+        cout<<"********************************   OPTIONS   **********************************"<<endl<<endl;//printing options
+        cout<<"                            1.VIEW YOUR ATTENDANCE"<<endl<<endl<<"                           2.UPDATE YOUR ATTENDANCE"<<endl<<endl;
+        cout<<"*******************************************************************************"<<endl;
+        cin>>w;
+        switch(w)//perform options
+        {
+            case 1:
+                file1.open("attendance1.txt");
+                file1.read((char *)& o1, sizeof(o1));
+                o1.calculate();
+                file1.close();
+                break;
+            case 2:
+                file1.open("attendance1.txt");
+                file1.read((char *)& o2, sizeof(o2));
+                file1.close();
+                o2.enter();
+                file2.open("attendance1.txt");
+                file2.write((char *)& o2, sizeof(o2));
+                file2.close();
+                break;
+        }
+        cout<<">>ENTER 1 TO CONTINUE ELSE 0"<<endl;
+        cin>>a;
+    }
+    return 0;
+}
