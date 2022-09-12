@@ -198,3 +198,13 @@ public:
     friend void sortmark();
     friend void sortper();
 };
+
+void add()
+{
+    STUDENT s;
+    ofstream f("Record.dat",ios::binary|ios::app);
+    s.enter();
+    f.write((char*)&s,sizeof(s));
+    f.close();
+}
+
