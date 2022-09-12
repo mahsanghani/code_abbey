@@ -435,3 +435,72 @@ void sortper()
         getch();
     }
 }
+
+void sortmark()
+{
+    STUDENT s,t[100],temp;
+    ifstream f("Record.dat");
+    int x,y,n=0;
+    char ch[25];
+    if(!f)
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tFILE NOT FOUND!";
+        cout<<"\n\n\n\n\n\n\n\n";
+    }
+    else
+    {
+        {
+            while(f.read((char*)&s,sizeof(s)))
+            {
+                t[n++]=s;
+            }
+        }
+        f.close();
+
+        cout<<"\n\n\n\n\n\n";
+        cout<<"\t\t\t  ----------------------"<<"\n";
+        cout<<"\t\t\t     SELECT A SUBJECT"<<"\n";
+        cout<<"\t\t\t  ----------------------"<<"\n";
+        cout<<"\t\t\t       1. PHYSICS"<<"\n";
+        cout<<"\t\t\t       2. CHEMISTRY"<<"\n";
+        cout<<"\t\t\t       3. MATHS"<<"\n";
+        cout<<"\t\t\t       4. BIOLOGY OR COMPUTER"<<"\n";
+        cout<<"\t\t\t       5. ENGLISH"<<"\n\n";
+        cout<<"\t\t\t     ENTER YOUR OPTION: ";
+        cin>>y;
+        system("cls");
+        cout<<endl;
+        if(y>5)
+        {
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tWRONG OPTION!";
+            cout<<"\n\n\n\n\n\n\n\n";
+        }
+        else
+            x=y-1;
+
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n-1;j++)
+            {
+                if(t[j].marks[x]<t[j+1].marks[x])
+                {
+                    temp=t[j];
+                    t[j]=t[j+1];
+                    t[j+1]=temp;
+                }
+            }
+        }
+        cout<<"\n\n\n\n\n\n";
+        cout<<"\t\t\t"<<"-------------------------------"<<"\n";
+        cout<<"\t\t\t"<<"   SL. NO:"<<"\t"<<"MARKS"<<"\t"<<"NAME"<<"\n";
+        cout<<"\t\t\t"<<"-------------------------------"<<"\n\n";
+        for(int i=0;i<5;++i)
+        {
+            cout<<"\t\t\t   ";
+            cout<<i+1<<". "<<"\t\t";
+            cout<<t[i].marks[x]<<"\t"<<t[i].name;
+            cout<<endl;
+        }
+        cout<<"\n\n\n";
+    }
+}
