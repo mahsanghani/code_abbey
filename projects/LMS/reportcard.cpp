@@ -391,3 +391,47 @@ void search_student()
     }
     f.close();
 }
+
+void sortper()
+{
+    STUDENT s,t[100],temp;
+    ifstream f("Record.dat");
+    int n=0;
+    if(!f)
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tFILE NOT FOUND!";
+        cout<<"\n\n\n\n\n\n\n\n";
+    }
+    else
+    {
+        {
+            while(f.read((char*)&s,sizeof(s)))
+            {
+                t[n++]=s;
+            }
+        }
+        f.close();
+
+        for(int i=0;i< n; i++)
+        {
+            for(int j=0;j<n-1;j++)
+            {
+                if(t[j].per<t[j+1].per)
+                {
+                    temp=t[j];
+                    t[j]=t[j+1];
+                    t[j+1]=temp;
+                }
+            }
+        }
+        cout<<"\t\t\t  -----------------------------------"<<"\n";
+        cout<<"\t\t\t     LIST OF CLASS RECORDS(SORTED)"<<"\n";
+        cout<<"\t\t\t  -----------------------------------"<<"\n\n";
+        for(int i=0;i<n;i++)
+        {
+            t[i].display_all();
+            cout<<"\n\n\n\t\t---------------------------------------------\n\n\n";
+        }
+        getch();
+    }
+}
