@@ -174,5 +174,27 @@ public:
         cout<<"                -------------------        ------------\n\n";
     }
 
+    void display_all()
+    {
+        cout<<"\t\tNAME: "<<name<<"\n";
+        cout<<"\t\tFATHER: "<<fname<<"\t"<<"MOTHER: "<<mname<<"\n";
+        cout<<"\t\tROLL NO: "<<rno<<"\t"<<"SECURE CODE: "<<sec_code<<"\n";
+        cout<<"\t\tCLASS: "<<sclass<<" "<<div<<"\t";
+        cout<<"STREAM: "<<stream<<"\n";
+        cout<<"\t\tTELEPHONE NO: "<<telno<<"\n\n";
+        cout<<"\t\t                     MARKS"<<"\n";
+        cout<<"\t\tPHY\tCHEM\tMATHS\tBIO/COMP\tENG"<<"\n";
+        cout<<"\t\t"<<marks[0]<<"\t"<<marks[1]<<"\t"<<marks[2]<<"\t";
+        cout<<marks[3]<<"\t\t"<<marks[4]<<"\n\n";
+        cout<<"\t\tPERCENTAGE: "<<per<<"%\t\t"<<"GRADE: "<<grade<<"\n";
+        cout<<"\t\tATTENDANCE: "<<attct;
+    }
 
+    friend void del();
+    friend void modify();
+    friend void search();
+    friend void search_student();
+    friend void sort();
+    friend void sortmark();
+    friend void sortper();
 };
