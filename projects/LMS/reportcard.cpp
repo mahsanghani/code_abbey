@@ -52,4 +52,70 @@ private:
             grade='E';
     }
 
+public:
+    void enter()
+    {
+        cout<<"\t\t\t  -------------------------------"<<"\n";
+        cout<<"\t\t\t     ENTER THE STUDENT DETAILS"<<"\n";
+        cout<<"\t\t\t  -------------------------------"<<"\n\n";
+        cout<<"\t\tNAME OF THE STUDENT    : ";
+        cin.ignore();
+        cin.getline(name,50);
+        cout<<"\t\tFATHER'S NAME          : ";
+        cin.getline(fname,50);
+        cout<<"\t\tMOTHER'S NAME          : ";
+        cin.getline(mname,50);
+        cout<<"\t\tDATE OF BIRTH(DD/MM/YY): ";
+        cin.getline(date,15);
+        cout<<"\t\tTELEPHONE NUMBER       : ";
+        cin.getline(telno,15);
+        cout<<"\t\tSECURITY CODE          : ";
+        cin.getline(sec_code,5);
+        cout<<"\t\tCLASS                  : ";
+        cin>>sclass;
+        cout<<"\t\tDIVISION               : ";
+        cin>>div;
+        cout<<"\t\tROLL NUMBER            : ";
+        cin>>rno;
+        cout<<"\t\tDAYS PRESENT           : ";
+        cin>>attct;
+        cout<<"\n\t\tSTREAM('C' FOR COMPUTER OR 'B' FOR BIOLOGY): ";
+        cin>>stream;
+        cout<<"\n";
+        if(stream=='C')
+        {
+            cout<<"\t\t\t  -----------------------------"<<"\n";
+            cout<<"\t\t\t     ENTER THE SUBJECT MARKS"<<"\n";
+            cout<<"\t\t\t  -----------------------------"<<"\n\n";
+            cout<<"\t\t\t       PHYSICS    : ";
+            cin>>marks[0];
+            cout<<"\t\t\t       CHEMISTRY  : ";
+            cin>>marks[1];
+            cout<<"\t\t\t       MATHEMATICS: ";
+            cin>>marks[2];
+            cout<<"\t\t\t       COMPUTER   : ";
+            cin>>marks[3];
+            cout<<"\t\t\t       ENGLISH    : ";
+            cin>>marks[4];
+        }
+        else
+        {
+            cout<<"\t\t\t  -----------------------------"<<"\n";
+            cout<<"\t\t\t     ENTER THE SUBJECT MARKS"<<"\n";
+            cout<<"\t\t\t  -----------------------------"<<"\n\n";
+            cout<<"\t\t\t       PHYSICS    : ";
+            cin>>marks[0];
+            cout<<"\t\t\t       CHEMISTRY  : ";
+            cin>>marks[1];
+            cout<<"\t\t\t       MATHEMATICS: ";
+            cin>>marks[2];
+            cout<<"\t\t\t       BIOLOGY    : ";
+            cin>>marks[3];
+            cout<<"\t\t\t       ENGLISH    : ";
+            cin>>marks[4];
+        }
+        cout<<"\n\n";
+        getper();
+        getgrade();
+    }
 };
