@@ -118,4 +118,61 @@ public:
         getper();
         getgrade();
     }
+
+    void display_report()
+    {
+        cout<<"----------------------------------------";
+        cout<<"---------------------------------------\n";
+        cout<<"                        THE EMIRATES NATIONAL SCHOOL\n\n";
+        cout<<"                             STUDENT REPORT CARD\n";
+        cout<<"----------------------------------------";
+        cout<<"---------------------------------------\n\n";
+        cout<<"                         ------------------------\n";
+        cout<<"                             PERSONAL DETAILS\n";
+        cout<<"                         ------------------------\n\n";
+        cout<<"NAME: "<<name<<"\t\t";
+        cout<<"CLASS: "<<sclass<<"\t";
+        cout<<"DIV: "<<div<<"\t\t";
+        cout<<"ROLL NO: "<<rno<<"\n\n";
+        cout<<"DATE OF BIRTH: "<<date<<"\t";
+        if(stream=='C')
+        {
+            cout<<"STREAM: "<<"COMPUTER"<<"\t";
+        }
+        else if(stream=='B')
+        {
+            cout<<"STREAM: "<<"BIOLOGY"<<"\t";
+        }
+        cout<<"TELEPHONE: "<<telno<<"\n\n";
+        cout<<"FATHERS NAME: "<<fname<<"\t\t\t";
+        cout<<"MOTHERS NAME: "<<mname<<"\n\n";
+        cout<<"                        ----------------------------\n";
+        cout<<"                            ACADEMIC PERFORMANCE\n";
+        cout<<"                        ----------------------------\n\n";
+        cout<<"                 ---------------------------------------\n";
+        cout<<"                                  MARKS\n";
+        cout<<"                 ---------------------------------------\n";
+        if(stream=='C')
+        {
+            cout<<"\t\t\t  PHYSICS\t"<<marks[0]<<"\n";
+            cout<<"\t\t\t  CHEMISTRY\t"<<marks[1]<<"\n";
+            cout<<"\t\t\t  MATHS\t\t"<<marks[2]<<"\n";
+            cout<<"\t\t\t  COMPUTER\t"<<marks[3]<<"\n";
+            cout<<"\t\t\t  ENGLISH\t"<<marks[4]<<"\n";
+        }
+        else if(stream=='B')
+        {
+            cout<<"\t\t\t  PHYSICS\t"<<marks[0]<<"\n";
+            cout<<"\t\t\t  CHEMISTRY\t"<<marks[1]<<"\n";
+            cout<<"\t\t\t  MATHS\t\t"<<marks[2]<<"\n";
+            cout<<"\t\t\t  BIOLOGY\t"<<marks[3]<<"\n";
+            cout<<"\t\t\t  ENGLISH\t"<<marks[4]<<"\n";
+        }
+        cout<<"                -------------------        ------------\n";
+        cout<<"                 PERCENTAGE: "<<per<<"%"<<"           ";
+        cout<<"GRADE: "<<grade<<"\n";
+        cout<<"                -------------------        ------------\n\n";
+    }
+
+
 };
