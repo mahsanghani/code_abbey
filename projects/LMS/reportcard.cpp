@@ -321,3 +321,35 @@ void modify()
     rename("Temp.dat","Record.dat");
 }
 
+void search()
+{
+    STUDENT s;
+    ifstream f("Record.dat");
+    int n,flag=0;
+    if(!f)
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tFILE NOT FOUND!";
+        cout<<"\n\n\n\n\n\n\n\n";
+    }
+    else
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t";
+        cout<<"ENTER THE ROLL NUMBER OF THE STUDENT: ";
+        cin>>n;
+        system("cls");
+        while(f.read((char*)&s,sizeof(s)))
+        {
+            if(n==s.rno)
+            {
+                flag=1;
+                s.display_report();
+            }
+        }
+        if(flag==0)
+        {
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tRECORD NOT FOUND!";
+            cout<<"\n\n\n\n\n\n\n\n";
+        }
+    }
+    f.close();
+}
