@@ -274,3 +274,50 @@ void del()
     rename("Temp.dat","Record.dat");
 }
 
+void modify()
+{
+    STUDENT s;
+    ifstream f1("Record.dat");
+    ofstream f2("Temp.dat",ios::binary);
+    int n,flag=0;
+    if(!f1)
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tFILE NOT FOUND!";
+        cout<<"\n\n\n\n\n\n\n\n";
+    }
+    else
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t";
+        cout<<"ENTER THE ROLL NUMBER OF THE STUDENT: ";
+        cin>>n;
+        system("cls");
+        while(f1.read((char*)&s,sizeof(s)))
+        {
+            if(n==s.rno)
+            {
+                cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t";
+                cout<<"ENTER THE MODIFIED DETAILS OF THE STUDENT";
+                Sleep(3000);
+                system("cls");
+                s.enter();
+
+                f2.write((char*)&s,sizeof(s));
+                flag=1;
+            }
+            else
+            {
+                f2.write((char*)&s,sizeof(s));
+            }
+        }
+        if(flag==0)
+        {
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tRECORD NOT FOUND!";
+            cout<<"\n\n\n\n\n\n\n\n";
+        }
+    }
+    f1.close();
+    f2.close();
+    remove("Record.dat");
+    rename("Temp.dat","Record.dat");
+}
+
