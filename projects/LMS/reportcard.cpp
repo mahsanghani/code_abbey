@@ -527,3 +527,25 @@ void statistics()
             cout<<"\n\n\n\n\n\n\n\n";
     }
 }
+
+void Intro()
+{
+    cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\tA PROGRAM BY JOSHUA JOSEPH AND MASOOD AL ANSAR";
+    Sleep(3000);
+    system("cls");
+    for(int i=1;i<=100;++i)
+    {
+        Sleep(5);
+        system("cls");
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tWELCOME TO";
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tLOADING "<<i<<"%";
+        if(i==100)
+        {
+            Sleep(1000);
+        }
+    }
+    system("cls");
+    cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\tREPORT CARD MANAGEMENT SYSTEM";
+    Sleep(3000);
+    system("cls");
+}
