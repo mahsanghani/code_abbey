@@ -208,3 +208,25 @@ void add()
     f.close();
 }
 
+void dispall()
+{
+    STUDENT s;
+    ifstream f("Record.dat");
+    if(!f)
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tFILE NOT FOUND!";
+        cout<<"\n\n\n\n\n\n\n\n";
+    }
+    else
+    {
+        cout<<"\t\t\t  ---------------------------"<<"\n";
+        cout<<"\t\t\t     LIST OF CLASS RECORDS"<<"\n";
+        cout<<"\t\t\t  ---------------------------"<<"\n\n";
+        while(f.read((char*)&s,sizeof(s)))
+        {
+            s.display_all();
+            cout<<"\n\n\n\t\t---------------------------------------------\n\n\n";
+        }
+    }
+    f.close();
+}
