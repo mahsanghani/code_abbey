@@ -504,3 +504,26 @@ void sortmark()
         cout<<"\n\n\n";
     }
 }
+
+void statistics()
+{
+    int n;
+    cout<<"\n\n\n\n\n\n\n";
+    cout<<"\t\t              ----------------"<<"\n";
+    cout<<"\t\t                 STATISTICS"<<"\n";
+    cout<<"\t\t              ----------------"<<"\n";
+    cout<<"\t\t   1. VIEW ASCENDING ORDER OF PERCENTAGE"<<"\n";
+    cout<<"\t\t   2. VIEW TOP FIVE MARKS IN EACH SUBJECT"<<"\n\n";
+    cout<<"\t\t           ENTER YOUR OPTION: ";
+    cin>>n;
+    system("cls");
+    switch(n)
+    {
+        case 1: sortper();
+            break;
+        case 2: sortmark();
+            break;
+        default:cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tWRONG OPTION!";
+            cout<<"\n\n\n\n\n\n\n\n";
+    }
+}
