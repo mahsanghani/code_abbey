@@ -230,3 +230,47 @@ void dispall()
     }
     f.close();
 }
+
+void del()
+{
+    STUDENT s;
+    ifstream f1("Record.dat");
+    ofstream f2("Temp.dat",ios::binary);
+    int n,flag=0;
+    if(!f1)
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tFILE NOT FOUND!";
+        cout<<"\n\n\n\n\n\n\n\n";
+    }
+    else
+    {
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t";
+        cout<<"ENTER THE ROLL NUMBER OF THE STUDENT: ";
+        cin>>n;
+        system("cls");
+        while(f1.read((char*)&s,sizeof(s)))
+        {
+            if(n!=s.rno)
+            {
+                f2.write((char*)&s,sizeof(s));
+                flag=1;
+            }
+        }
+        if(flag==0)
+        {
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tRECORD NOT FOUND!";
+            cout<<"\n\n\n\n\n\n\n\n";
+        }
+        else
+        {
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t";
+            cout<<"THE RECORD WAS DELETED SUCCESSFULLY";
+            cout<<"\n\n\n\n\n\n\n\n";
+        }
+    }
+    f1.close();
+    f2.close();
+    remove("Record.dat");
+    rename("Temp.dat","Record.dat");
+}
+
