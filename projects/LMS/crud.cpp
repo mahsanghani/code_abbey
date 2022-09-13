@@ -40,18 +40,19 @@ void error()
     cout << " \n " ;
 }
 
-void  welcome ()        // Enter the password to enter the system, welcome interface
-{
-    char password [ 5 ];
-    char num [ 5 ];
+void welcome() {
+  char password[5];
+  char num[5];
 
-    strcpy (num, " 123 " );
-    loopback3: printf ( "  \n\n\n\n\n\n\n\n " );
-    system ( " color F1 " );
-    printf ( " \t\t\tWelcome to use the student performance management system! \n " );
-    printf ( " \t\t\t\tpassword : " );
-    scanf ( " %s " , &password);
-    if ( strcmp (password, num) == 0 )
+  strcpy(num, " 123 ");
+loopback3:
+  printf("  \n\n\n\n\n\n\n\n ");
+  system(" color F1 ");
+  printf(
+      " \t\t\tWelcome to use the student performance management system! \n ");
+  printf(" \t\t\t\tpassword : ");
+  scanf(" %s ", &password);
+  if ( strcmp (password, num) == 0 )
     {
         system ( " cls " );
         system ( " color F0 " );
@@ -80,53 +81,37 @@ void  welcome ()        // Enter the password to enter the system, welcome inter
     }
     else
     {
-        printf ( " \t\t\t\t password error! " );            // re-output the password error
-        Sleep ( 2000 );
-        system ( " cls " );
+      printf(" \t\t\t\t password error! ");
+      Sleep(2000);
+      system ( " cls " );
         goto loopback3;
     }
 }
 
-void  show ()           // 1. Browse student information
-{
-    system ( " cls " );                   // Clear the screen
-    int i;
-    cout << setiosflags (ios::left)   // left justified
-         << setw ( 2 ) << " student number " << "   "  //The output width is 2
-         << setw ( 10 ) << " Name " << "   "
-         << setw ( 12 ) << " Class "
-         << setw ( 8 ) << " Language "
-         << setw ( 8 ) << " English "
-         << setw ( 8 ) << " Mathematics "
-         << setw ( 8 ) << " Total score "
-         << setw ( 10 ) << " Average score "
-         << setw ( 10 ) << " variance "
-         << endl;                                     // Display the first line category
-    for (i = 0 ; i <e; i++)
-    {
-        m [i]. sum =
-                (
-                        m [i]. less . chinesegrade +
-                        m [i]. less . englishgrade +
-                        m [i]. less . mathgrade
-                );                             // Total score calculation formula
+void show() {
+  system(" cls ");
+  int i;
+  cout << setiosflags(ios::left) << setw(2) << " student number "
+       << "   " << setw(10) << " Name "
+       << "   " << setw(12) << " Class " << setw(8) << " Language " << setw(8)
+       << " English " << setw(8) << " Mathematics " << setw(8)
+       << " Total score " << setw(10) << " Average score " << setw(10)
+       << " variance " << endl;
+  for (i = 0; i < e; i++) {
+    m[i].sum =
+        (m[i].less.chinesegrade + m[i].less.englishgrade + m[i].less.mathgrade);
 
-        m [i]. average =
-                (
-                        m [i]. sum / 3
-                );                             // Average score calculation formula
+    m[i].average = (m[i].sum / 3);
 
-        m [i]. fangcha =
-                (
-                        (m [i]. less . chinesegrade -m [i]. average ) *
-                        (m [i]. less . chinesegrade -m [i]. average ) +
-                        (m [i]. less . englishgrade -m [i]. average ) *
-                        (m [i]. less . englishgrade -m [i]. average ) +
-                        (m [i]. less . mathgrade -m [i]. average ) *
-                        (m [i]. less . mathgrade -m [i]. average )
-                ) / 3 ;                           // Variance calculation formula
+    m[i].fangcha = ((m[i].less.chinesegrade - m[i].average) *
+                        (m[i].less.chinesegrade - m[i].average) +
+                    (m[i].less.englishgrade - m[i].average) *
+                        (m[i].less.englishgrade - m[i].average) +
+                    (m[i].less.mathgrade - m[i].average) *
+                        (m[i].less.mathgrade - m[i].average)) /
+                   3;
 
-        cout << setiosflags (ios::left)
+    cout << setiosflags (ios::left)
              << setw ( 5 ) << m [i]. num << "   "
              << setw ( 10 ) << m [i]. name
              << setw ( 14 ) << m [i]. clas
@@ -135,7 +120,7 @@ void  show ()           // 1. Browse student information
              << setw(8) << m[i].less.mathgrade << setw(8) << m[i].sum
              << setw(10) << m[i].average << setw(10) << m[i].fangcha << endl;
         if (m[i].num == 0) {
-          break; // output result
+          break;
         }
     }
 }
@@ -156,5 +141,64 @@ void input() {
     cin >> m[a].name >> m[a].clas >> m[a].less.chinesegrade >>
         m[a].less.englishgrade >> m[a].less.mathgrade;
     e++;
+  }
+}
+
+void delete() {
+  show();
+  cout << " ---Enter the student ID to be deleted: --- ";
+  int a;
+  cin >> a;
+  for (int i = 0; i < e; i++) {
+    if (a == m[i].num) {
+      int j;
+      for (j = i; j < e - 1; j++) {
+        strcpy(m[j].name, m[j + 1].name);
+        strcpy(m[j].clas, m[j + 1].clas);
+        m[j].less.chinesegrade = m[j + 1].less.chinesegrade;
+        m[j].less.englishgrade = m[j + 1].less.englishgrade;
+        m[j].less.mathgrade = m[j + 1].less.mathgrade;
+        m[j].num = m[j + 1].num;
+        m[j].sum = m[j + 1].sum;
+        m[j].average = m[j + 1].average;
+        m[j].fangcha = m[j + 1].fangcha;
+      }
+
+      for (i = 0; i < e - 1; i++) {
+        cout << setw(5) << m[i].num << setw(10) << m[i].name << setw(15)
+             << m[i].clas << setw(10) << m[i].less.chinesegrade << setw(10)
+             << m[i].less.englishgrade << setw(10) << m[i].less.mathgrade
+             << setw(10) << m[i].less.mathgrade << setw(8) << m[i].sum
+             << setw(10) << m[i].average << setw(10) << m[i].fangcha << endl;
+      }
+      cout << " ---Student information deleted successfully --- " << endl;
+      break;
+    }
+  }
+}
+
+void numsearch() {
+  show();
+  cout << " Please enter the student ID you are looking for: " << endl;
+  int a;
+  cin >> a;
+  int BOOL = 0;
+  for (int i = 0; i < n; i++) {
+    if (a == m[i].num) {
+      cout << setiosflags(ios::left) << setw(2) << " student number "
+           << "    " << setw(10) << " Name " << setw(10) << " Class "
+           << setw(10) << " Language " << setw(10) << " English " << setw(10)
+           << " Mathematics " << endl;
+      cout << setiosflags(ios::left) << setw(5) << m[i].num << "   " << setw(10)
+           << m[i].name << setw(10) << m[i].clas << setw(10)
+           << m[i].less.chinesegrade << setw(10) << m[i].less.englishgrade
+           << setw(10) << m[i].less.mathgrade << endl;
+      cout << endl;
+      BOOL = 1;
+    }
+  }
+
+  if (BOOL == 0) {
+    cout << " ---There is no information you want to query! --- " << endl;
   }
 }
