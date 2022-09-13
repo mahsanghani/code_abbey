@@ -132,13 +132,29 @@ void  show ()           // 1. Browse student information
              << setw ( 14 ) << m [i]. clas
              << setw ( 8 ) << m [i]. less . chinesegrade
              << setw ( 8 ) << m [i]. less . englishgrade
-             << setw ( 8 ) << m [i]. less . mathgrade
-             << setw ( 8 ) << m [i]. sum
-             << setw ( 10 ) << m [i]. average
-             << setw ( 10 ) << m [i]. fangcha << endl;
-        if (m [i]. num == 0 )
-        {
-            break ;                            // output result
+             << setw(8) << m[i].less.mathgrade << setw(8) << m[i].sum
+             << setw(10) << m[i].average << setw(10) << m[i].fangcha << endl;
+        if (m[i].num == 0) {
+          break; // output result
         }
     }
+}
+
+void input() {
+  system(" cls ");
+  int a;
+  cout << " -----Enter student information ----- " << endl;
+  cout << " Please enter the information, enter 0 to end the entry " << endl;
+  cout << " Enter one by one: student ID name, class, language, English, "
+          "mathematics "
+       << endl;
+  for (a = e; a < n; a++) {
+    cin >> m[a].num;
+    if (m[a].num == 0) {
+      break;
+    }
+    cin >> m[a].name >> m[a].clas >> m[a].less.chinesegrade >>
+        m[a].less.englishgrade >> m[a].less.mathgrade;
+    e++;
+  }
 }
