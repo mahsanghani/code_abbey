@@ -584,3 +584,45 @@ void Segregation()
     }
     goto start;
 }
+
+void Teacher()
+{
+    int n;
+    start:
+    system("cls");
+    cout<<"\n\n\n\n\n\n";
+    cout<<"\t\t\t\t  ------------"<<"\n";
+    cout<<"\t\t\t\t      MENU"<<"\n";
+    cout<<"\t\t\t\t  ------------"<<"\n";
+    cout<<"\t\t\t     1. ADD A NEW RECORD"<<"\n";
+    cout<<"\t\t\t     2. SEARCH FOR A RECORD"<<"\n";
+    cout<<"\t\t\t     3. MODIFY A RECORD"<<"\n";
+    cout<<"\t\t\t     4. DELETE A RECORD"<<"\n";
+    cout<<"\t\t\t     5. DISPLAY ALL THE RECORDS"<<"\n";
+    cout<<"\t\t\t     6. CLASS STATISTICS"<<"\n";
+    cout<<"\t\t\t     7. GO TO MAIN MENU"<<"\n\n";
+    cout<<"\t\t\t     ENTER YOUR OPTION: ";
+    cin>>n;
+    system("cls");
+    switch(n)
+    {
+        case 1: add();
+            break;
+        case 2: search();
+            break;
+        case 3: modify();
+            break;
+        case 4: del();
+            break;
+        case 5: dispall();
+            break;
+        case 6: statistics();
+            break;
+        case 7: Segregation();
+            break;
+        default:cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tWRONG OPTION!";
+            cout<<"\n\n\n\n\n\n\n\n";
+    }
+    system("PAUSE");
+    goto start;
+}
