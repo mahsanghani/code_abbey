@@ -64,3 +64,28 @@ template <typename T> void addMember(const string filePath, T schoolMember) {
   file.close();
   basicNavigation();
 }
+
+template <typename T>
+void viewData(const string filePath, const T schoolMember) {
+  system("cls");
+  ifstream fileToRead(filePath, ios::binary);
+  fileToRead.seekg(0);
+  int inputId = 0;
+  short flag = 0;
+
+  cout << "Enter ID of person whose data records you want to see: " << endl;
+  cin >> inputId;
+
+  while (fileToRead.read((char *)&schoolMember, sizeof(schoolMember))) {
+    if (inputId == schoolMember.getId()) {
+      ++flag;
+      break;
+    }
+  }
+  if (flag > 0) {
+    schoolMember.displayData();
+  } else {
+    cout << "No math found." << endl;
+  }
+  basicNavigation();
+}
