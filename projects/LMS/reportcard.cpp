@@ -720,3 +720,10 @@ void Password()
         goto start;
     }
 }
+
+void SEQUENCE()
+{
+    Intro();
+    Segregation();
+}
+
