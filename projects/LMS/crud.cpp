@@ -769,3 +769,28 @@ void statistics() // 8. Student information statistics tool, calculate the
     }
   }
 }
+void save() // 9. Write student information to file
+{
+  int i;
+  ofstream outfile(" Student.dat ", ios::out);
+
+  if (!outfile) {
+    cerr << " open Student.dat error! " << endl;
+    exit(1);
+  }
+  outfile << e << endl;
+  for (i = 0; i < e; i++) {
+    outfile << m[i].num << '  ';
+    outfile << m[i].name << '  ';
+    outfile << m[i].clas << '  ';
+    outfile << m[i].less.chinesegrade << '  ';
+    outfile << m[i].less.englishgrade << '  ';
+    outfile << m[i].less.mathgrade << '  ';
+    outfile << m[i].sum << '  ';
+    outfile << m[i].average << '  ';
+    outfile << endl;
+  }
+  outfile.close();
+  cout << endl;
+  cout << " ---Data has been successfully saved --- " << endl;
+}
