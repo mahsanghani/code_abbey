@@ -56,3 +56,11 @@ void removeMember(const string filePath, const string tempFilePath,
   rename(tempFilePath.c_str(), filePath.c_str());
   basicNavigation();
 }
+
+template <typename T> void addMember(const string filePath, T schoolMember) {
+  fstream file(filePath, ios::in | ios::out | ios::app | ios::binary);
+  schoolMember.inputDetails();
+  file.write((char *)&schoolMember, sizeof(schoolMember));
+  file.close();
+  basicNavigation();
+}
