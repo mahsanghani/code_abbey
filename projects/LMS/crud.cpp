@@ -202,3 +202,28 @@ void numsearch() {
     cout << " ---There is no information you want to query! --- " << endl;
   }
 }
+
+void namesearch() {
+  show();
+  cout << " Please enter the name you are looking for: " << endl;
+  string a;
+  cin >> a;
+  int BOOL = 0;
+  for (int i = 0; i < n; i++) {
+    if (a == m[i].name) {
+      cout << setiosflags(ios::left) << setw(2) << " student number "
+           << "    " << setw(10) << " Name " << setw(10) << " Class "
+           << setw(10) << " Language " << setw(10) << " English " << setw(10)
+           << " Mathematics " << endl;
+      cout << setiosflags(ios::left) << setw(5) << m[i].num << "   " << setw(10)
+           << m[i].name << setw(10) << m[i].clas << setw(10)
+           << m[i].less.chinesegrade << setw(10) << m[i].less.englishgrade
+           << setw(10) << m[i].less.mathgrade << endl;
+      cout << endl;
+      BOOL = 1;
+    }
+  }
+  if (BOOL == 0) {
+    cout << " ---Sorry there is no information you want to query --- " << endl;
+  }
+}
