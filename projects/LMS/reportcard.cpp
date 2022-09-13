@@ -727,3 +727,11 @@ void SEQUENCE()
     Segregation();
 }
 
+int main()
+{
+    system("title REPORT CARD MANAGEMENT SYSTEM");
+    system("COLOR F0");
+    SEQUENCE();
+    getch();
+    return 0;
+}
