@@ -227,3 +227,35 @@ void namesearch() {
     cout << " ---Sorry there is no information you want to query --- " << endl;
   }
 }
+
+void lesssearch() // 6. Find output information by course
+{
+  show();
+  cout << " ---Please enter the course you are looking for: --- " << endl;
+  cout << " 1. Language " << endl;
+  cout << " 2. English " << endl;
+  cout << " 3. Mathematics " << endl;
+  string a;
+  cin >> a;
+  cout << setiosflags(ios::left) << setw(2) << setw(10) << " Name " << setw(10)
+       << " Result: " << endl;
+  int BOOL = 0;
+  for (int i = 0; i < e; i++) {
+    if (a == " 1 ") {
+      cout << setiosflags(ios::left) << setw(5) << setw(10) << m[i].name
+           << setw(10) << m[i].less.chinesegrade << endl;
+      BOOL = 1;
+    } else if (a == " 2 ") {
+      cout << setiosflags(ios::left) << setw(5) << setw(10) << m[i].name
+           << setw(10) << m[i].less.englishgrade << endl;
+      BOOL = 1;
+    } else if (a == " 3 ") {
+      cout << setiosflags(ios::left) << setw(5) << setw(10) << m[i].name
+           << setw(10) << m[i].less.mathgrade << endl;
+      BOOL = 1;
+    }
+  }
+  if (BOOL == 0) {
+    cout << " ---There is no information you want to query! --- " << endl;
+  }
+}
