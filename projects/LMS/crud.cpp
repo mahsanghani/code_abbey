@@ -820,3 +820,107 @@ void load() // Load interface load
     infile >> m[i].average;
   }
 }
+
+int main() // Main interface main
+{
+  system(" cls ");
+  system(" color F1 ");
+  welcome(); // Call the welcome interface
+  load();    // Call the loading interface
+  for (;;) {
+    // system("cls"); //Clear the screen
+    cout << "  \n\n\n\n\n\n\n\t\t\t    "
+         << " ************************* " << endl;
+    cout << "                           | Welcome to the student achievement "
+            "management system | "
+         << endl;
+    cout << "                           |************************| " << endl;
+    cout << "                           | Basic functions | " << endl;
+    cout << "                           | 1. View student achievement "
+            "information | "
+         << endl;
+    cout << "                           | 2. Enter student achievement "
+            "information | "
+         << endl;
+    cout << "                           | 3. Delete student achievement "
+            "information | "
+         << endl;
+    cout << "                           | 4. Student ID information query "
+            "results | "
+         << endl;
+    cout << "                           | 5. Name information query results | "
+         << endl;
+    cout
+        << "                           | 6. Course information query results | "
+        << endl;
+    cout << "                           | | " << endl;
+    cout << "                           | Other tools | " << endl;
+    cout << "                           | 7. Student grades sorting tool | "
+         << endl;
+    cout << "                           | 8. Student performance statistics "
+            "tool | "
+         << endl;
+    cout << "                           | 9. Write student scores to file | "
+         << endl;
+    cout << "                           | | " << endl;
+    cout << "                           | End operation | " << endl;
+    cout << "                           | 0. Exit the student management "
+            "system | "
+         << endl;
+    cout << "                           |************************| " << endl;
+    cout << "                            Enter " 0 -
+                9 " to enter the corresponding function "
+         << endl;
+    int n;
+    cin >> n;
+    if ((n >= 0) && (n <= 9)) // Enter different functions
+    {
+      switch (n) {
+      case 1:
+        show();
+        break; // Browse student information
+
+      case 2:
+        input();
+        save();
+        break; // Enter student information
+
+      case 3:
+        delate();
+        break; // Delete student information
+
+      case 4:
+        numsearch();
+        break; // Student ID query
+
+      case 5:
+        namesearch();
+        break; // Name query
+
+      case 6:
+        lesssearch();
+        break; // course query
+
+      case 7:
+        sort();
+        break; // sort
+
+      case 8:
+        statistics();
+        break; // Statistics
+
+      case 9:
+        save();
+        break; // write to file
+
+      case 0:
+        cout << " Welcome to use " << endl;
+        exit(0); // Exit
+
+      default:
+        break;
+      }
+      cout << endl;
+    }
+  }
+}
