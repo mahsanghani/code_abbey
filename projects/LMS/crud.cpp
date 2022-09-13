@@ -228,8 +228,7 @@ void namesearch() {
   }
 }
 
-void lesssearch() // 6. Find output information by course
-{
+void lesssearch() {
   show();
   cout << " ---Please enter the course you are looking for: --- " << endl;
   cout << " 1. Language " << endl;
@@ -260,8 +259,7 @@ void lesssearch() // 6. Find output information by course
   }
 }
 
-void sort1() // 7.1. Sort by English score
-{
+void sort1() {
   int j, i;
   char t1[20], t2[20];
   int t4, t5, t6;
@@ -300,8 +298,7 @@ void sort1() // 7.1. Sort by English score
   sort();
 }
 
-void sort2() // 7.2. Sort by language score
-{
+void sort2() {
   int j, i;
   char t1[20], t2[20];
   int t4, t5, t6;
@@ -340,8 +337,7 @@ void sort2() // 7.2. Sort by language score
   sort();
 }
 
-void sort3() // 7.3. Sort by math score
-{
+void sort3() {
   int j, i;
   char t1[20], t2[20];
   float t4, t5, t6;
@@ -380,8 +376,7 @@ void sort3() // 7.3. Sort by math score
   sort();
 }
 
-void sort4() // 7.4. Sort by student number
-{
+void sort4() {
   int j, i;
   char t1[20], t2[20];
   float t4, t5, t6;
@@ -420,8 +415,7 @@ void sort4() // 7.4. Sort by student number
   sort();
 }
 
-void sort5() // 7.5. Sort by total score from smallest to largest (bubble sort)
-{
+void sort5() {
   int j, i;
   char t1[20], t2[20];
   int t4, t5, t6;
@@ -462,8 +456,7 @@ void sort5() // 7.5. Sort by total score from smallest to largest (bubble sort)
   sort();
 }
 
-void sort6() // 7.6. Sort by total score from highest to lowest (bubble sort)
-{
+void sort6() {
   int j, i;
   char t1[20], t2[20];
   int t4, t5, t6;
@@ -504,8 +497,7 @@ void sort6() // 7.6. Sort by total score from highest to lowest (bubble sort)
   sort();
 }
 
-void sort() // 7. Student grades sorting tool
-{
+void sort() {
   cout << "  \n\n\n\n\n\n\n\t\t\tWelcome to   use the student grade ranking "
           "tool "
        << endl;
@@ -563,13 +555,8 @@ void sort() // 7. Student grades sorting tool
   }
 }
 
-void statistics() // 8. Student information statistics tool, calculate the
-                  // highest score, lowest score, average score, variance
-{
-  system(" cls "); // System clear screen
-
-  /* ---Define various information--- */
-
+void statistics() {
+  system(" cls ");
   float sumc = 0, sume = 0, summ = 0;
   static float sum = 0;
   static float average = 0;
@@ -577,25 +564,14 @@ void statistics() // 8. Student information statistics tool, calculate the
   char max_class[20], max_name[20], min_class[20], min_name[20];
   int i, j, c = 0;
   float count1 = 0, count2 = 0, count3 = 0;
-  float maxc = m[0].less.chinesegrade, // Maximum language
-      minc = m[0].less.chinesegrade,   // Minimum language
-      pc,
-        maxe = m[0].less.englishgrade, // English maximum
-      mine = m[0].less.englishgrade,   // English minimum
-      pe,
-        maxm = m[0].less.mathgrade, // Maximum value
-      minm = m[0].less.mathgrade,   // mathematical minimum
-      pm,
-        max_score = maxc + maxe + maxm, // Maximum total score
-      min_score = minc + mine + minm,   // Minimum total score
-      max_chinesegrade = 0, max_englishgrade = 0, max_mathgrade = 0, max_num,
+  float maxc = m[0].less.chinesegrade, minc = m[0].less.chinesegrade, pc,
+        maxe = m[0].less.englishgrade, mine = m[0].less.englishgrade, pe,
+        maxm = m[0].less.mathgrade, minm = m[0].less.mathgrade, pm,
+        max_score = maxc + maxe + maxm, min_score = minc + mine + minm,
+        max_chinesegrade = 0, max_englishgrade = 0, max_mathgrade = 0, max_num,
         min_chinesegrade = 0, min_englishgrade = 0, min_mathgrade = 0, min_num;
 
-  /* ---Calculate student scores--- */
-
-  for (i = 1; i < e; i++) // Maximum, minimum, maximum total score, minimum
-                          // total score student score
-  {
+  for (i = 1; i < e; i++) {
     if (minc > m[i].less.chinesegrade) {
       minc = m[i].less.chinesegrade;
     }
@@ -615,8 +591,6 @@ void statistics() // 8. Student information statistics tool, calculate the
       maxm = m[i].less.mathgrade;
     }
 
-    /* ---Calculate the maximum value--- */
-
     if (max_score < (m[i].less.chinesegrade + m[i].less.englishgrade +
                      m[i].less.mathgrade)) {
       max_score =
@@ -628,8 +602,6 @@ void statistics() // 8. Student information statistics tool, calculate the
       max_englishgrade = m[i].less.englishgrade;
       max_mathgrade = m[i].less.mathgrade;
     }
-
-    /* ---Calculate the minimum value--- */
 
     if (min_score > (m[i].less.chinesegrade + m[i].less.englishgrade +
                      m[i].less.mathgrade)) {
@@ -644,27 +616,23 @@ void statistics() // 8. Student information statistics tool, calculate the
     }
   }
 
-  /* ---Calculate the pass rate--- */
-
   for (j = 0; j < e; j++) {
     sumc = sumc + m[j].less.chinesegrade;
     if (m[j].less.chinesegrade >= 60) {
       ++count1;
-    } // Language score
+    }
     sume = sume + m[j].less.englishgrade;
     if (m[j].less.englishgrade >= 60) {
       ++count2;
-    } // English score
+    }
     summ = summ + m[j].less.mathgrade;
     if (m[j].less.mathgrade >= 60) {
       ++count3;
-    } // Math score
+    }
   }
-  pc = count1; // The Chinese score is assigned to pc
-  pe = count2; // The English score is assigned to pe
-  pm = count3; // The mathematics score is assigned to pm
-
-  /* ---Display prompt--- */
+  pc = count1;
+  pe = count2;
+  pm = count3;
 
   cout << " 1. Calculate the total score, average score, and variance of a "
           "student "
@@ -672,12 +640,9 @@ void statistics() // 8. Student information statistics tool, calculate the
   cout << " 2. Calculate the total grade information of the whole class "
        << endl;
 
-  /* ---Read input--- */
-
   int k;
-  cin >> k;   // Enter a k
-  if (k == 1) // Display the total score and average score of a student
-  {
+  cin >> k;
+  if (k == 1) {
     cout << " Please enter student ID: " << endl;
     int t;
     cin >> t;
@@ -702,8 +667,7 @@ void statistics() // 8. Student information statistics tool, calculate the
     if (c == 0) {
       error();
     }
-  } else // The lowest and highest average pass rate of each subject
-  {
+  } else {
     cout << " 1. Chinese Achievement " << endl;
     cout << " 2. English results " << endl;
     cout << " 3. Mathematics Achievement " << endl;
@@ -761,16 +725,13 @@ void statistics() // 8. Student information statistics tool, calculate the
       cout << " ---Return--- " << endl;
       return;
 
-      break;
-
     default:
       error();
       break;
     }
   }
 }
-void save() // 9. Write student information to file
-{
+void save() {
   int i;
   ofstream outfile(" Student.dat ", ios::out);
 
@@ -795,19 +756,13 @@ void save() // 9. Write student information to file
   cout << " ---Data has been successfully saved --- " << endl;
 }
 
-void load() // Load interface load
-{
+void load() {
   system(" cls ");
   cout << setiosflags(ios::left) << setw(2) << " student number "
        << "    " << setw(10) << " Name " << setw(10) << " Class " << setw(10)
        << " Language " << setw(10) << " English " << setw(10) << " Mathematics "
        << endl;
   ifstream infile(" Student.dat ", ios::in);
-  //     if(!infile)
-  // 	{
-  // 			cerr<<"open Student.dat error!"<<endl;
-  // 			exit(1);
-  // 	}
   infile >> e;
   for (int i = 0; i < e; i++) {
     infile >> m[i].num;
@@ -821,14 +776,12 @@ void load() // Load interface load
   }
 }
 
-int main() // Main interface main
-{
+int main() {
   system(" cls ");
   system(" color F1 ");
-  welcome(); // Call the welcome interface
-  load();    // Call the loading interface
+  welcome();
+  load();
   for (;;) {
-    // system("cls"); //Clear the screen
     cout << "  \n\n\n\n\n\n\n\t\t\t    "
          << " ************************* " << endl;
     cout << "                           | Welcome to the student achievement "
@@ -873,49 +826,48 @@ int main() // Main interface main
          << endl;
     int n;
     cin >> n;
-    if ((n >= 0) && (n <= 9)) // Enter different functions
-    {
+    if ((n >= 0) && (n <= 9)) {
       switch (n) {
       case 1:
         show();
-        break; // Browse student information
+        break;
 
       case 2:
         input();
         save();
-        break; // Enter student information
+        break;
 
       case 3:
         delete ();
-        break; // Delete student information
+        break;
 
       case 4:
         numsearch();
-        break; // Student ID query
+        break;
 
       case 5:
         namesearch();
-        break; // Name query
+        break;
 
       case 6:
         lesssearch();
-        break; // course query
+        break;
 
       case 7:
         sort();
-        break; // sort
+        break;
 
       case 8:
         statistics();
-        break; // Statistics
+        break;
 
       case 9:
         save();
-        break; // write to file
+        break;
 
       case 0:
         cout << " Welcome to use " << endl;
-        exit(0); // Exit
+        exit(0);
 
       default:
         break;
