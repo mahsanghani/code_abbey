@@ -562,3 +562,210 @@ void sort() // 7. Student grades sorting tool
     error();
   }
 }
+
+void statistics() // 8. Student information statistics tool, calculate the
+                  // highest score, lowest score, average score, variance
+{
+  system(" cls "); // System clear screen
+
+  /* ---Define various information--- */
+
+  float sumc = 0, sume = 0, summ = 0;
+  static float sum = 0;
+  static float average = 0;
+  static float fangcha = 0;
+  char max_class[20], max_name[20], min_class[20], min_name[20];
+  int i, j, c = 0;
+  float count1 = 0, count2 = 0, count3 = 0;
+  float maxc = m[0].less.chinesegrade, // Maximum language
+      minc = m[0].less.chinesegrade,   // Minimum language
+      pc,
+        maxe = m[0].less.englishgrade, // English maximum
+      mine = m[0].less.englishgrade,   // English minimum
+      pe,
+        maxm = m[0].less.mathgrade, // Maximum value
+      minm = m[0].less.mathgrade,   // mathematical minimum
+      pm,
+        max_score = maxc + maxe + maxm, // Maximum total score
+      min_score = minc + mine + minm,   // Minimum total score
+      max_chinesegrade = 0, max_englishgrade = 0, max_mathgrade = 0, max_num,
+        min_chinesegrade = 0, min_englishgrade = 0, min_mathgrade = 0, min_num;
+
+  /* ---Calculate student scores--- */
+
+  for (i = 1; i < e; i++) // Maximum, minimum, maximum total score, minimum
+                          // total score student score
+  {
+    if (minc > m[i].less.chinesegrade) {
+      minc = m[i].less.chinesegrade;
+    }
+    if (maxc < m[i].less.chinesegrade) {
+      maxc = m[i].less.chinesegrade;
+    }
+    if (mine > m[i].less.englishgrade) {
+      mine = m[i].less.englishgrade;
+    }
+    if (maxe < m[i].less.englishgrade) {
+      maxe = m[i].less.englishgrade;
+    }
+    if (minm > m[i].less.mathgrade) {
+      minm = m[i].less.mathgrade;
+    }
+    if (maxm < m[i].less.mathgrade) {
+      maxm = m[i].less.mathgrade;
+    }
+
+    /* ---Calculate the maximum value--- */
+
+    if (max_score < (m[i].less.chinesegrade + m[i].less.englishgrade +
+                     m[i].less.mathgrade)) {
+      max_score =
+          m[i].less.chinesegrade + m[i].less.englishgrade + m[i].less.mathgrade;
+      max_num = m[i].num;
+      strcpy(max_name, m[i].name);
+      strcpy(max_class, m[i].clas);
+      max_chinesegrade = m[i].less.chinesegrade;
+      max_englishgrade = m[i].less.englishgrade;
+      max_mathgrade = m[i].less.mathgrade;
+    }
+
+    /* ---Calculate the minimum value--- */
+
+    if (min_score > (m[i].less.chinesegrade + m[i].less.englishgrade +
+                     m[i].less.mathgrade)) {
+      min_score =
+          m[i].less.chinesegrade + m[i].less.englishgrade + m[i].less.mathgrade;
+      min_num = m[i].num;
+      strcpy(min_name, m[i].name);
+      strcpy(min_class, m[i].clas);
+      min_chinesegrade = m[i].less.chinesegrade;
+      min_englishgrade = m[i].less.englishgrade;
+      min_mathgrade = m[i].less.mathgrade;
+    }
+  }
+
+  /* ---Calculate the pass rate--- */
+
+  for (j = 0; j < e; j++) {
+    sumc = sumc + m[j].less.chinesegrade;
+    if (m[j].less.chinesegrade >= 60) {
+      ++count1;
+    } // Language score
+    sume = sume + m[j].less.englishgrade;
+    if (m[j].less.englishgrade >= 60) {
+      ++count2;
+    } // English score
+    summ = summ + m[j].less.mathgrade;
+    if (m[j].less.mathgrade >= 60) {
+      ++count3;
+    } // Math score
+  }
+  pc = count1; // The Chinese score is assigned to pc
+  pe = count2; // The English score is assigned to pe
+  pm = count3; // The mathematics score is assigned to pm
+
+  /* ---Display prompt--- */
+
+  cout << " 1. Calculate the total score, average score, and variance of a "
+          "student "
+       << endl;
+  cout << " 2. Calculate the total grade information of the whole class "
+       << endl;
+
+  /* ---Read input--- */
+
+  int k;
+  cin >> k;   // Enter a k
+  if (k == 1) // Display the total score and average score of a student
+  {
+    cout << " Please enter student ID: " << endl;
+    int t;
+    cin >> t;
+    for (i = 0; i < e; i++) {
+      if (t == m[i].num) {
+        sum = m[i].less.chinesegrade + m[i].less.englishgrade +
+              m[i].less.mathgrade;
+        average = sum / 3;
+        fangcha = ((m[i].less.chinesegrade - average) *
+                       (m[i].less.chinesegrade - average) +
+                   (m[i].less.englishgrade - average) *
+                       (m[i].less.englishgrade - average) +
+                   (m[i].less.mathgrade - average) *
+                       (m[i].less.mathgrade - average)) /
+                  3;
+        cout << " Name: " << m[i].name << "      Total score: " << sum
+             << "      Average score: " << average
+             << "      Variance: " << fangcha << endl;
+        c++;
+      }
+    }
+    if (c == 0) {
+      error();
+    }
+  } else // The lowest and highest average pass rate of each subject
+  {
+    cout << " 1. Chinese Achievement " << endl;
+    cout << " 2. English results " << endl;
+    cout << " 3. Mathematics Achievement " << endl;
+    cout << " 4. Class results " << endl;
+    cout << " 5. Return      " << endl;
+    cout << " Please enter the serial number: " << endl;
+    int r;
+    cin >> r;
+    switch (r) {
+    case 1:
+      cout << " Highest score in Chinese:   " << maxc << endl;
+      cout << "The lowest score in Chinese:   " << minc << endl;
+      cout << "The average score of the whole Chinese class:   " << sumc / e
+           << endl;
+      cout << " Language passing rate:   " << pc / e << endl;
+      break;
+
+    case 2:
+      cout << " Highest score in English:   " << maxe << endl;
+      cout << "The lowest score in English:   " << mine << endl;
+      cout << " English class average score:   " << sume / e << endl;
+      cout << " English passing rate: " << pe / e << endl;
+      break;
+
+    case 3:
+      cout << " Highest score in mathematics:   " << maxm << endl;
+      cout << " Minimum score in mathematics:   " << minm << endl;
+      cout << "The average score of the whole mathematics class:   " << summ / e
+           << endl;
+      cout << " Mathematics passing rate:   " << pm / e << endl;
+      break;
+
+    case 4:
+      cout << " Highest score in the class:   " << max_score << endl;
+      cout << " His information is:   " << endl;
+      cout << setiosflags(ios::left) << setw(2) << " student number "
+           << "    " << setw(10) << " Name " << setw(10) << " Class "
+           << setw(10) << " Language " << setw(10) << " English " << setw(10)
+           << " Mathematics " << endl;
+      cout << setiosflags(ios::left) << setw(5) << max_num << "   " << setw(10)
+           << max_name << setw(10) << max_class << setw(10) << max_chinesegrade
+           << setw(10) << max_englishgrade << setw(10) << max_mathgrade << endl;
+      cout << "The lowest score of the whole class:   " << min_score << endl;
+      cout << " His information is:   " << endl;
+      cout << setiosflags(ios::left) << setw(2) << " student number "
+           << "    " << setw(10) << " Name " << setw(10) << " Class "
+           << setw(10) << " Language " << setw(10) << " English " << setw(10)
+           << " Mathematics " << endl;
+      cout << setiosflags(ios::left) << setw(5) << min_num << "   " << setw(10)
+           << min_name << setw(10) << min_class << setw(10) << min_chinesegrade
+           << setw(10) << min_englishgrade << setw(10) << min_mathgrade << endl;
+      break;
+
+    case 5:
+      cout << " ---Return--- " << endl;
+      return;
+
+      break;
+
+    default:
+      error();
+      break;
+    }
+  }
+}
