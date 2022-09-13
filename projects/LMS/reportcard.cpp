@@ -684,3 +684,39 @@ void Public()
     goto start;
 }
 
+void Password()
+{
+    char pass[7];
+    pass[6]='\0';
+    int t=0;
+    start:
+    cout<<"\n\n\n\n\n\n\n\n\n\t\t\tENTER THE PASSWORD: ";
+    for(int i=0;i<6;++i)
+    {
+        pass[i]=getch();
+        cout<<"*";
+    }
+    cout<<"\n\n";
+    if(strcmp(pass,"ADCDEF")==0)
+    {
+        cout<<"\t\t\t      ACCESS GRANTED";
+        Sleep(3000);
+        system("cls");
+        Teacher();
+    }
+    else
+    {
+        if(t==2)
+        {
+            cout<<"\t\t\t      ACCESS DENIED"<<"\n\n\n\n\n\n\n\n";
+            system("PAUSE");
+            system("cls");
+            Segregation();
+        }
+        cout<<"\t\t\t      TRY AGAIN";
+        ++t;
+        Sleep(3000);
+        system("cls");
+        goto start;
+    }
+}
