@@ -503,3 +503,62 @@ void sort6() // 7.6. Sort by total score from highest to lowest (bubble sort)
   cout << endl;
   sort();
 }
+
+void sort() // 7. Student grades sorting tool
+{
+  cout << "  \n\n\n\n\n\n\n\t\t\tWelcome to   use the student grade ranking "
+          "tool "
+       << endl;
+  cout << "                           ************************* " << endl;
+  cout << "                           * 1. Sort by English score * " << endl;
+  cout << "                           * 2. Sort by language score * " << endl;
+  cout << "                           * 3. Sort by math score * " << endl;
+  cout << "                           * 4. Sort by student number * " << endl;
+  cout << "                           * 5. Sort by total score from smallest "
+          "to largest * "
+       << endl;
+  cout << "                           * 6. Sort by total score from highest to "
+          "lowest * "
+       << endl;
+  cout << "                           * 7. Exit the program * " << endl;
+  cout << "                           ************************* " << endl;
+  cout << "                           * Enter " 0 -
+              7 " to enter the corresponding function * "
+       << endl;
+  int r;
+  cin >> r;
+  switch (r) {
+  case 1:
+    sort1();
+    break;
+
+  case 2:
+    sort2();
+    break;
+
+  case 3:
+    sort3();
+    break;
+
+  case 4:
+    sort4();
+    break;
+
+  case 5:
+    sort5();
+    break;
+
+  case 6:
+    sort6();
+    break;
+
+  case 7:
+    cout << " ---Exit to the home page --- " << endl;
+    return;
+
+    break;
+
+  default:
+    error();
+  }
+}
