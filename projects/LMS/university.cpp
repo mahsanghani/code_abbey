@@ -45,7 +45,7 @@ void removeMember(const string filePath, const string tempFilePath,
   }
 
   if (flag == 0) {
-    cout << "Sorry, No Math Found." << endl;
+    cout << "Sorry, no match found." << endl;
   } else {
     cout << "Data of ID " << inputId << " has been removed from file.";
   }
@@ -85,7 +85,46 @@ void viewData(const string filePath, const T schoolMember) {
   if (flag > 0) {
     schoolMember.displayData();
   } else {
-    cout << "No math found." << endl;
+    cout << "Sorry, no match found." << endl;
   }
+  basicNavigation();
+}
+
+template <typename T>
+void updateMemberData(const string filePath, T schoolMember) {
+  system("cls");
+  int inputId = 0;
+  short flag = 0;
+  long filePosition = 0;
+  fstream file(filePath, ios::in | ios::out | ios::binary);
+
+  if (file) {
+    file.seekg(0);
+    cout << "Enter ID or roll number of person whose data has to be updated: ";
+    cin >> inputId;
+
+    while (!file.eof()) {
+      filePosition = file.tellg();
+      file.read((char *)&schoolMember, sizeof(schoolMember));
+
+      if (inputId == schoolMember.getId()) {
+        ++flag;
+        break;
+      }
+    }
+
+    if (flag > 0) {
+      schoolMember.updateData();
+      file.seekg(filePosition);
+      file.write((char *)&schoolMember, sizeof(schoolMember));
+      cout << "\nFile has been successfullly updated." << endl;
+    } else {
+      cout << "Sorry, no match found." << endl;
+    }
+  } else {
+    cout << "\nOops! There is something wrong with this file " << filePath
+         << ". Please make sure it is in the right directory." << endl;
+  }
+
   basicNavigation();
 }
