@@ -259,3 +259,43 @@ void lesssearch() // 6. Find output information by course
     cout << " ---There is no information you want to query! --- " << endl;
   }
 }
+
+void sort1() // 7.1. Sort by English score
+{
+  int j, i;
+  char t1[20], t2[20];
+  int t4, t5, t6;
+  float t7;
+
+  for (i = 0; i < e - 1; i++) {
+    for (j = 0; j < e - i - 1; j++) {
+      if (m[j].less.englishgrade < m[j + 1].less.englishgrade) // bubble sort
+      {
+        strcpy(t1, m[j].name);
+        strcpy(t2, m[j].clas);
+        t4 = m[j].less.chinesegrade;
+        t5 = m[j].less.englishgrade;
+        t6 = m[j].less.mathgrade;
+        t7 = m[j].num;
+
+        strcpy(m[j].name, m[j + 1].name);
+        strcpy(m[j].clas, m[j + 1].clas);
+        m[j].less.chinesegrade = m[j + 1].less.chinesegrade;
+        m[j].less.englishgrade = m[j + 1].less.englishgrade;
+        m[j].less.mathgrade = m[j + 1].less.mathgrade;
+        m[j].num = m[j + 1].num;
+
+        strcpy(m[j + 1].name, t1);
+        strcpy(m[j + 1].clas, t2);
+        m[j + 1].less.chinesegrade = t4;
+        m[j + 1].less.englishgrade = t5;
+        m[j + 1].less.mathgrade = t6;
+        m[j + 1].num = t7;
+      }
+    }
+  }
+  show();
+  cout << " sort sucess! " << endl;
+  cout << endl;
+  sort();
+}
