@@ -794,3 +794,29 @@ void save() // 9. Write student information to file
   cout << endl;
   cout << " ---Data has been successfully saved --- " << endl;
 }
+
+void load() // Load interface load
+{
+  system(" cls ");
+  cout << setiosflags(ios::left) << setw(2) << " student number "
+       << "    " << setw(10) << " Name " << setw(10) << " Class " << setw(10)
+       << " Language " << setw(10) << " English " << setw(10) << " Mathematics "
+       << endl;
+  ifstream infile(" Student.dat ", ios::in);
+  //     if(!infile)
+  // 	{
+  // 			cerr<<"open Student.dat error!"<<endl;
+  // 			exit(1);
+  // 	}
+  infile >> e;
+  for (int i = 0; i < e; i++) {
+    infile >> m[i].num;
+    infile >> m[i].name;
+    infile >> m[i].clas;
+    infile >> m[i].less.chinesegrade;
+    infile >> m[i].less.englishgrade;
+    infile >> m[i].less.mathgrade;
+    infile >> m[i].sum;
+    infile >> m[i].average;
+  }
+}
