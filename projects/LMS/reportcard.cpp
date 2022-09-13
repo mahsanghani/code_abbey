@@ -549,3 +549,38 @@ void Intro()
     Sleep(3000);
     system("cls");
 }
+
+void Segregation()
+{
+    int n;
+    start:
+    system("cls");
+    cout<<"\n\n\n\n\n";
+    cout<<"\t\t\t      ---------------"<<"\n";
+    cout<<"\t\t\t         MAIN MENU"<<"\n";
+    cout<<"\t\t\t      ---------------"<<"\n\n\n";
+    cout<<"\t\t\t     SELECT DESIGNATION"<<"\n\n";
+    cout<<"\t\t-------------------------------------------"<<"\n";
+    cout<<"\t\t  1. TEACHER\t2. STUDENT\t3. PUBLIC"<<"\n";
+    cout<<"\t\t-------------------------------------------"<<"\n\n";
+    cout<<"\t\t             (PRESS 4 TO EXIT)"<<"\n\n\n";
+    cout<<"\t\t       ENTER AN OPTION: ";
+    cin>>n;
+    system("cls");
+    switch(n)
+    {
+        case 1: system("cls");
+            Password();
+            break;
+        case 2: Student();
+            break;
+        case 3: Public();
+            break;
+        case 4: exit(0);
+            break;
+        default:cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tWRONG OPTION!";
+            cout<<"\n\n\n\n\n\n\n\n";
+            system("PAUSE");
+    }
+    goto start;
+}
