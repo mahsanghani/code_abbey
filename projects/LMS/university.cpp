@@ -117,7 +117,7 @@ void updateMemberData(const string filePath, T schoolMember) {
       schoolMember.updateData();
       file.seekg(filePosition);
       file.write((char *)&schoolMember, sizeof(schoolMember));
-      cout << "\nFile has been successfullly updated." << endl;
+      cout << "\nFile has been successfully updated." << endl;
     } else {
       cout << "Sorry, no match found." << endl;
     }
@@ -126,5 +126,57 @@ void updateMemberData(const string filePath, T schoolMember) {
          << ". Please make sure it is in the right directory." << endl;
   }
 
+  basicNavigation();
+}
+
+template <typename T>
+void paySalaryToMember(const string filePath, T schoolMember) {
+  system("cls");
+  int inputId = 0;
+  int salaryPaid = 0;
+  long filePosition = 0;
+  short flag = 0;
+  fstream file(filePath, ios::in | ios::out | ios::binary);
+  file.seekg(0);
+  cout << "Enter ID to pay salary: " << endl;
+  cin >> inputId;
+
+  while (!file.eof()) {
+    filePosition = file.tellg();
+    file.read((char *)&schoolMember, sizeof(schoolMember));
+
+    if (inputId == schoolMember.getId()) {
+      ++flag;
+      break;
+    }
+  }
+
+  if (flag == 0) {
+    cout << "Sorry, ID " << inputId << " not found.";
+  } else if (schoolMember.getSalary() == 0) {
+    cout << "Congratulations! Total annual salary has been paid to "
+         << schoolMember.getId() << ".";
+  } else {
+    cout << "Remaining salary to be paid to " << schoolMember.getId()
+         << " is $ " << schoolMember.getSalary()
+         << ". Enter the salary to be paid ($): ";
+    cin >> salaryPaid;
+
+    while (salaryPaid > schoolMember.getSalary() || salaryPaid < 0) {
+      cout << "You have entered invalid salary. Please enter a valid salary "
+              "($): "
+           << endl;
+      cin >> salaryPaid;
+    }
+
+    schoolMember.deductSalary(salaryPaid);
+    file.seekg(filePosition);
+    file.write((char *)&schoolMember, sizeof(schoolMember));
+    cout << "You have successfully paid " << salaryPaid
+         << ". Now remaining salary for " << schoolMember.getId() << " is: $ "
+         << schoolMember.getSalary();
+  }
+
+  file.close();
   basicNavigation();
 }
