@@ -886,7 +886,7 @@ int main() // Main interface main
         break; // Enter student information
 
       case 3:
-        delate();
+        delete ();
         break; // Delete student information
 
       case 4:
