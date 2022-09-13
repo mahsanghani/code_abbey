@@ -86,3 +86,59 @@ void  welcome ()        // Enter the password to enter the system, welcome inter
         goto loopback3;
     }
 }
+
+void  show ()           // 1. Browse student information
+{
+    system ( " cls " );                   // Clear the screen
+    int i;
+    cout << setiosflags (ios::left)   // left justified
+         << setw ( 2 ) << " student number " << "   "  //The output width is 2
+         << setw ( 10 ) << " Name " << "   "
+         << setw ( 12 ) << " Class "
+         << setw ( 8 ) << " Language "
+         << setw ( 8 ) << " English "
+         << setw ( 8 ) << " Mathematics "
+         << setw ( 8 ) << " Total score "
+         << setw ( 10 ) << " Average score "
+         << setw ( 10 ) << " variance "
+         << endl;                                     // Display the first line category
+    for (i = 0 ; i <e; i++)
+    {
+        m [i]. sum =
+                (
+                        m [i]. less . chinesegrade +
+                        m [i]. less . englishgrade +
+                        m [i]. less . mathgrade
+                );                             // Total score calculation formula
+
+        m [i]. average =
+                (
+                        m [i]. sum / 3
+                );                             // Average score calculation formula
+
+        m [i]. fangcha =
+                (
+                        (m [i]. less . chinesegrade -m [i]. average ) *
+                        (m [i]. less . chinesegrade -m [i]. average ) +
+                        (m [i]. less . englishgrade -m [i]. average ) *
+                        (m [i]. less . englishgrade -m [i]. average ) +
+                        (m [i]. less . mathgrade -m [i]. average ) *
+                        (m [i]. less . mathgrade -m [i]. average )
+                ) / 3 ;                           // Variance calculation formula
+
+        cout << setiosflags (ios::left)
+             << setw ( 5 ) << m [i]. num << "   "
+             << setw ( 10 ) << m [i]. name
+             << setw ( 14 ) << m [i]. clas
+             << setw ( 8 ) << m [i]. less . chinesegrade
+             << setw ( 8 ) << m [i]. less . englishgrade
+             << setw ( 8 ) << m [i]. less . mathgrade
+             << setw ( 8 ) << m [i]. sum
+             << setw ( 10 ) << m [i]. average
+             << setw ( 10 ) << m [i]. fangcha << endl;
+        if (m [i]. num == 0 )
+        {
+            break ;                            // output result
+        }
+    }
+}
