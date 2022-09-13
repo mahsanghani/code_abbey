@@ -656,3 +656,31 @@ void Student()
     system("PAUSE");
     goto start;
 }
+
+void Public()
+{
+    int n;
+    start:
+    system("cls");
+    cout<<"\n\n\n\n\n\n\n\n";
+    cout<<"\t\t\t\t ------------"<<"\n";
+    cout<<"\t\t\t\t     MENU"<<"\n";
+    cout<<"\t\t\t\t ------------"<<"\n";
+    cout<<"\t\t\t   1. VIEW CLASS STATISTICS"<<"\n";
+    cout<<"\t\t\t   2. GO TO MAIN MENU"<<"\n\n";
+    cout<<"\t\t\t   ENTER AN OPTION: ";
+    cin>>n;
+    system("cls");
+    switch(n)
+    {
+        case 1: statistics();
+            break;
+        case 2: Segregation();
+            break;
+        default:cout<<"\n\n\n\n\n\n\n\n\n\n\n\t\t\t\tWRONG OPTION!!";
+            cout<<"\n\n\n\n\n\n\n\n";
+    }
+    system("PAUSE");
+    goto start;
+}
+
