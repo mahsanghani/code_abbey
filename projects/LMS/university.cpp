@@ -320,3 +320,65 @@ void receiveStudentFee() {
   studentFile.close();
   basicNavigation();
 }
+
+void Student::updateData() {
+  char userChoice = ' ';
+  cout << "Press '+' to update student name or press 'Enter' key to retain old "
+          "data: ";
+  cin.ignore();
+  cin.get(userChoice);
+  if (userChoice == '+' &&
+      userChoice != 10) // 10 is ASCII value of linefeed (enter key)
+  {
+    cout << "Enter new name (max. 28 characters): ";
+    cin.ignore();
+    gets(name);
+  }
+  cout << "\nPress '+' to update student class or press 'Enter' key to retain "
+          "old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new class (1 - 12): ";
+    cin.ignore();
+    cin >> studentClass;
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update student section or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new section ('A' to 'D'): ";
+    cin.ignore();
+    cin >> studentSection;
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update student annual fee or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new annual fee (in Rs.): ";
+    cin.ignore();
+    cin >> studentFee;
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update student father's name or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter father's name (max. 28 characters): ";
+    cin.ignore();
+    gets(fatherName);
+  }
+  cout << "\nPress '+' to update student mother's name or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter mother's name (max. 28 characters): ";
+    cin.ignore();
+    gets(motherName);
+  }
+  generateRollNumber();
+  cout
+      << "\nGenerated roll number is " << getId()
+      << ". Please, note it safely as it'll be asked during data modification.";
+}
