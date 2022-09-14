@@ -427,3 +427,50 @@ void Teacher::generateTeacherId() {
   if (flag == 0)
     id = (teacherClass * 1000) + (teacherSubjectCode * 100) + id;
 }
+
+void Teacher::inputDetails() {
+  system("cls");
+  cout << "Enter teacher name (max. 28 characters): ";
+  cin.ignore();
+  gets(name);
+  cout << "Enter the class to be taught (1 to 12): ";
+  cin >> teacherClass;
+  cout << "\nSubject Code\tSubject\n     1\t\tScience\n     2\t\tMaths\n     "
+          "3\t\tEnglish\n     4\t\tHindi\n     5\t\tSocial Studies";
+  cout << "\nEnter the subject code from the above list to choose subject the "
+          "teacher will teach, for e.g. Press '1' to choose 'Science': ";
+  cin >> teacherSubjectCode;
+  while (teacherSubjectCode > 5 || teacherSubjectCode < 1) {
+    cout << "\nSorry, we received a wrong subject code. Please enter valid "
+            "subject code viz. 1, 2, 3, 4 or 5: ";
+    cin >> teacherSubjectCode;
+  }
+  switch (teacherSubjectCode) {
+  case 1:
+    strcpy(teacherSubject, "Science");
+    break;
+  case 2:
+    strcpy(teacherSubject, "Maths");
+    break;
+  case 3:
+    strcpy(teacherSubject, "English");
+    break;
+  case 4:
+    strcpy(teacherSubject, "Hindi");
+    break;
+  case 5:
+    strcpy(teacherSubject, "Social Studies");
+    break;
+  }
+  cout << "\nEnter teacher annual salary (in Rs.): ";
+  cin >> teacherSalary;
+  cout << "Enter teacher work experience (in years): ";
+  cin >> teacherExperience;
+  cout << "Enter teacher educational qualification (max. 8 characters): ";
+  cin.ignore();
+  gets(teacherQualification);
+  generateTeacherId();
+  cout
+      << "\nGenerated teacher ID is " << getId()
+      << ". Please, note it safely as it'll be asked during data modification.";
+}
