@@ -382,3 +382,32 @@ void Student::updateData() {
       << "\nGenerated roll number is " << getId()
       << ". Please, note it safely as it'll be asked during data modification.";
 }
+
+class Teacher : public SchoolMember {
+private:
+  char teacherSubject[17], teacherQualification[9];
+  short teacherExperience, teacherClass, teacherSubjectCode;
+  int teacherSalary;
+
+public:
+  Teacher() {
+    teacherSubjectCode = 0;
+    id = 1;
+  }
+  void inputDetails();
+  void generateTeacherId();
+  void updateData();
+  void deductSalary(int salaryPaid) {
+    teacherSalary = teacherSalary - salaryPaid;
+  }
+  void displayData() const {
+    displayNameInUpper(name, strlen(name));
+    cout << "\nID: " << id
+         << "\nTeacher Qualification: " << teacherQualification
+         << "\nExperience: " << teacherExperience << " years"
+         << "\nClass taught: " << teacherClass
+         << "\nSubject taught: " << teacherSubject << "\nSalary to be paid: Rs."
+         << teacherSalary;
+  }
+  int getSalary() const { return teacherSalary; }
+};
