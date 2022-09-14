@@ -594,3 +594,41 @@ void Staff::generateStaffId() {
   }
   id = (staffDepartmentCode * 1000) + tempId;
 }
+
+void Staff::inputDetails() {
+  system("cls");
+  cout << "Enter staff name (max. 28 characters): ";
+  cin.ignore();
+  gets(name);
+  cout << "\nDepartment Code\t\tName of "
+          "Department\n\t1\t\tCleaning\n\t2\t\tManagement\n\t3\t\tOffice "
+          "work\n\t4\t\tOthers";
+  cout << "\nEnter department code from above list to assign staff to that "
+          "department: ";
+  cin >> staffDepartmentCode;
+  while (staffDepartmentCode > 4 || staffDepartmentCode < 1) {
+    cout << "\nSorry, we received a wrong department code. Please enter valid "
+            "department code viz. 1, 2, 3 or 4: ";
+    cin >> staffDepartmentCode;
+  }
+  switch (staffDepartmentCode) {
+  case 1:
+    strcpy(staffDepartment, "Cleaning");
+    break;
+  case 2:
+    strcpy(staffDepartment, "Management");
+    break;
+  case 3:
+    strcpy(staffDepartment, "Office Work");
+    break;
+  case 4:
+    strcpy(staffDepartment, "Others");
+    break;
+  }
+  cout << "Enter staff annual salary (in Rs.): ";
+  cin >> staffSalary;
+  generateStaffId();
+  cout
+      << "Generated staff ID is " << getId()
+      << ". Please, note it safely as it'll be asked during data modification.";
+}
