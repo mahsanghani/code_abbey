@@ -277,3 +277,46 @@ void Student::inputDetails() {
       << "\nGenerated roll number is " << getId()
       << ". Please, note it safely as it'll be asked during data modification.";
 }
+
+void receiveStudentFee() {
+  system("cls");
+  Student schoolStudent;
+  int inputRollNumber = 0, amountPaid = 0;
+  short flag = 0;
+  long filePosition = 0;
+  fstream studentFile("data/student.dat", ios::in | ios::out | ios::binary);
+  cout << "Enter the roll number of student whose fees you want to receive: ";
+  cin >> inputRollNumber;
+  while (!studentFile.eof()) {
+    filePosition = studentFile.tellg();
+    studentFile.read((char *)&schoolStudent, sizeof(schoolStudent));
+    if (inputRollNumber == schoolStudent.getId()) {
+      flag++;
+      break;
+    }
+  }
+  if (flag == 0)
+    cout << "Sorry, Roll number not found.";
+  else if (schoolStudent.getStudentFee() == 0)
+    cout << "Congratulations! All dues are clear for student "
+         << schoolStudent.getId() << ".";
+  else {
+    cout << "Remaining fees to be paid by student " << schoolStudent.getId()
+         << " is Rs." << schoolStudent.getStudentFee()
+         << ". Enter fee you want to receive (in Rs.): ";
+    cin >> amountPaid;
+    while (amountPaid > schoolStudent.getStudentFee() || amountPaid < 0) {
+      cout
+          << "Sorry, we received an invalid fee. Please enter again (in Rs.): ";
+      cin >> amountPaid;
+    }
+    schoolStudent.deductFee(amountPaid);
+    studentFile.seekg(filePosition);
+    studentFile.write((char *)&schoolStudent, sizeof(schoolStudent));
+    cout << "We have successfully received " << amountPaid
+         << ". Now remaining fee for student " << schoolStudent.getId()
+         << " is: " << schoolStudent.getStudentFee();
+  }
+  studentFile.close();
+  basicNavigation();
+}
