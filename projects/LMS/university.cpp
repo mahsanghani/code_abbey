@@ -411,3 +411,19 @@ public:
   }
   int getSalary() const { return teacherSalary; }
 };
+
+void Teacher::generateTeacherId() {
+  Teacher schoolTeacherRead;
+  ifstream teacherFile("data/teacher.dat", ios::binary);
+  short flag = 0;
+  while (
+      teacherFile.read((char *)&schoolTeacherRead, sizeof(schoolTeacherRead))) {
+    if (teacherSubjectCode == schoolTeacherRead.teacherSubjectCode &&
+        teacherClass == schoolTeacherRead.teacherClass) {
+      ++flag;
+      id = schoolTeacherRead.id + 1;
+    }
+  }
+  if (flag == 0)
+    id = (teacherClass * 1000) + (teacherSubjectCode * 100) + id;
+}
