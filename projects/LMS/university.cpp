@@ -17,7 +17,6 @@ protected:
   char name[NAME_LENGTH];
   int id;
 
-private:
 public:
   SchoolMember() { id = 0; }
 
@@ -180,3 +179,41 @@ void paySalaryToMember(const string filePath, T schoolMember) {
   file.close();
   basicNavigation();
 }
+
+class Student : public SchoolMember {
+private:
+  int studentFee;
+
+protected:
+  using SchoolMember::id;
+
+public:
+  using SchoolMember::name;
+  short studentClass;
+  char motherName[NAME_LENGTH];
+  char fatherName[NAME_LENGTH];
+  char studentSection;
+
+  Student() {
+    id = 1;
+    studentFee = 0;
+  }
+
+  int getId() const { SchoolMember::getId(); }
+
+  void inputDetails();
+  void updateData();
+  void generateRollNumber();
+  void displayData() const {
+    displayNameInUpper(name, strlen(name));
+    cout << "\nRoll Number: " << id << "\nClass: " << studentClass << " '"
+         << char(toupper(studentSection)) << "' "
+         << "\nMother's name: " << motherName
+         << "\nFather's name: " << fatherName << "\nRemaining fee: Rs."
+         << studentFee;
+  }
+
+  void deductFee(int amountPaid) { studentFee = studentFee - amountPaid; }
+
+  int getStudentFee() const { return studentFee; }
+};
