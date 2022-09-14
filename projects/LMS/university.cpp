@@ -584,9 +584,6 @@ public:
   int getSalary() const { return staffSalary; }
 };
 
-// Generate staff id in format as explained:
-// First digit indicates staff department, it is multiplied by 1000
-// Then if same staff department is found, id is incremented by 1
 void Staff::generateStaffId() {
   Staff staffRead;
   short tempId = 1;
