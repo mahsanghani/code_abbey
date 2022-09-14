@@ -632,3 +632,64 @@ void Staff::inputDetails() {
       << "Generated staff ID is " << getId()
       << ". Please, note it safely as it'll be asked during data modification.";
 }
+
+void Staff::updateData() {
+  char userChoice = ' ';
+  cout << "Press '+' to update staff name or press 'Enter' key to retain old "
+          "data: ";
+  cin.ignore();
+  cin.get(userChoice);
+  if (userChoice == '+' &&
+      userChoice != 10) // 10 is ASCII value of linefeed (enter key)
+  {
+    cout << "Enter new name (max. 28 characters): ";
+    cin.ignore();
+    gets(name);
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update staff department code or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "\nDepartment Code\t\tName of "
+            "Department\n\t1\t\tCleaning\n\t2\t\tManagement\n\t3\t\tOffice "
+            "work\n\t4\t\tOthers";
+    cout << "\nEnter department code from above list to assign staff to that "
+            "department: ";
+    cin.ignore();
+    cin >> staffDepartmentCode;
+    cin.ignore();
+    while (staffDepartmentCode > 4 || staffDepartmentCode < 1) {
+      cout << "\nSorry, we received a wrong department code. Please enter "
+              "valid department code viz. 1, 2, 3 or 4: ";
+      cin >> staffDepartmentCode;
+    }
+    switch (staffDepartmentCode) {
+    case 1:
+      strcpy(staffDepartment, "Cleaning");
+      break;
+    case 2:
+      strcpy(staffDepartment, "Management");
+      break;
+    case 3:
+      strcpy(staffDepartment, "Office Work");
+      break;
+    case 4:
+      strcpy(staffDepartment, "Others");
+      break;
+    }
+  }
+  cout << "\nPress '+' to update staff annual salary or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new annual salary (in Rs.): ";
+    cin.ignore();
+    cin >> staffSalary;
+    cin.ignore();
+  }
+  generateStaffId();
+  cout
+      << "\nGenerated ID is " << getId()
+      << ". Please, note it safely as it'll be asked during data modification.";
+}
