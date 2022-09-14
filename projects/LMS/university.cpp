@@ -217,3 +217,38 @@ public:
 
   int getStudentFee() const { return studentFee; }
 };
+
+void Student::generateRollNumber() {
+  Student schoolStudentTemp;
+  fstream studentFile("data/student.dat",
+                      ios::in | ios::out | ios::app | ios::binary);
+  short flag = 0;
+  while (
+      studentFile.read((char *)&schoolStudentTemp, sizeof(schoolStudentTemp))) {
+    if (studentClass == schoolStudentTemp.studentClass &&
+        studentSection == schoolStudentTemp.studentSection) {
+      ++flag;
+      sanitizeCharArray(name, NAME_LENGTH);
+      sanitizeCharArray(name, NAME_LENGTH);
+      if (strcmp(name, schoolStudentTemp.name) == 0) {
+        id = schoolStudentTemp.id + 1;
+        break;
+      } else {
+        for (short i = 0; i < 5; ++i) {
+          if (schoolStudentTemp.name[i] > name[i]) {
+            schoolStudentTemp.id++;
+            id = schoolStudentTemp.id - 1;
+            break;
+          } else if (schoolStudentTemp.name[i] < name[i]) {
+            id = schoolStudentTemp.id + 1;
+            break;
+          } else {
+            continue;
+          }
+        }
+      }
+    }
+  }
+  if (flag == 0)
+    id = (studentClass * 1000) + (studentSection - 96) * 100 + id;
+}
