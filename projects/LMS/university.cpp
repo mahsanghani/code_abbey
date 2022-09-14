@@ -252,3 +252,28 @@ void Student::generateRollNumber() {
   if (flag == 0)
     id = (studentClass * 1000) + (studentSection - 96) * 100 + id;
 }
+
+void Student::inputDetails() {
+  system("cls");
+  cout << "Enter student name (max. 28 characters): ";
+  // fixes skipping of input; this must be used when `cin` precedes `getline()`
+  // or `cin.get()`
+  cin.ignore();
+  gets(name);
+  cout << "Enter the class (1 to 12): ";
+  cin >> studentClass;
+  cout << "Enter the section ('A' to 'D'): ";
+  cin >> studentSection;
+  studentSection = tolower(studentSection);
+  cout << "Enter the annual fee student needs to pay (in Rs.): ";
+  cin >> studentFee;
+  cout << "Enter student father's name (max. 28 characters): ";
+  cin.ignore();
+  gets(fatherName);
+  cout << "Enter student mother's name (max. 28 characters): ";
+  gets(motherName);
+  generateRollNumber();
+  cout
+      << "\nGenerated roll number is " << getId()
+      << ". Please, note it safely as it'll be asked during data modification.";
+}
