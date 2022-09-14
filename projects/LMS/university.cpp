@@ -474,3 +474,93 @@ void Teacher::inputDetails() {
       << "\nGenerated teacher ID is " << getId()
       << ". Please, note it safely as it'll be asked during data modification.";
 }
+
+void Teacher::updateData() {
+  char userChoice = ' ';
+  cout << "Press '+' to update teacher name or press 'Enter' key to retain old "
+          "data: ";
+  cin.ignore();
+  cin.get(userChoice);
+  if (userChoice == '+' &&
+      userChoice != 10) // 10 is ASCII value of linefeed (enter key)
+  {
+    cout << "Enter new name (max. 28 characters): ";
+    cin.ignore();
+    gets(name);
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update teacher class or press 'Enter' key to retain "
+          "old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new class (1 to 12): ";
+    cin.ignore();
+    cin >> teacherClass;
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update teacher subject code or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "\nSubject Code\tSubject\n     1\t\tScience\n     2\t\tMaths\n     "
+            "3\t\tEnglish\n     4\t\tHindi\n     5\t\tSocial Studies";
+    cout << "\nEnter the subject code from the above list to choose subject "
+            "the teacher will teach, for e.g. Press '1' to choose 'Science': ";
+    cin.ignore();
+    cin >> teacherSubjectCode;
+    cin.ignore();
+    while (teacherSubjectCode > 5 || teacherSubjectCode < 1) {
+      cout << "\nSorry, we received a wrong subject code. Please enter valid "
+              "subject code viz. 1, 2, 3, 4 or 5: ";
+      cin >> teacherSubjectCode;
+    }
+    switch (teacherSubjectCode) {
+    case 1:
+      strcpy(teacherSubject, "Science");
+      break;
+    case 2:
+      strcpy(teacherSubject, "Maths");
+      break;
+    case 3:
+      strcpy(teacherSubject, "English");
+      break;
+    case 4:
+      strcpy(teacherSubject, "Hindi");
+      break;
+    case 5:
+      strcpy(teacherSubject, "Social Studies");
+      break;
+    }
+  }
+  cout << "\nPress '+' to update teacher annual salary or press 'Enter' key to "
+          "retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new annual salary (in Rs.): ";
+    cin.ignore();
+    cin >> teacherSalary;
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update teacher work experience or press 'Enter' key "
+          "to retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new work experience (in years): ";
+    cin.ignore();
+    cin >> teacherExperience;
+    cin.ignore();
+  }
+  cout << "\nPress '+' to update teacher educational qualification or press "
+          "'Enter' key to retain old data: ";
+  cin.get(userChoice);
+  if (userChoice == '+' && userChoice != 10) {
+    cout << "Enter new educational qualification (max. 8 characters): ";
+    cin.ignore();
+    gets(teacherQualification);
+    cin.ignore();
+  }
+  generateTeacherId();
+  cout
+      << "\nGenerated ID is " << getId()
+      << ". Please, note it safely as it'll be asked during data modification.";
+}
