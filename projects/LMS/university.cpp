@@ -564,3 +564,36 @@ void Teacher::updateData() {
       << "\nGenerated ID is " << getId()
       << ". Please, note it safely as it'll be asked during data modification.";
 }
+
+class Staff : public SchoolMember {
+private:
+  char staffDepartment[NAME_LENGTH];
+  int staffSalary;
+  short staffDepartmentCode;
+
+public:
+  void inputDetails();
+  void updateData();
+  void generateStaffId();
+  void displayData() const {
+    displayNameInUpper(name, strlen(name));
+    cout << "\nID: " << id << "\nDepartment: " << staffDepartment
+         << "\nSalary to be paid: Rs. " << staffSalary;
+  }
+  void deductSalary(int salaryPaid) { staffSalary = staffSalary - salaryPaid; }
+  int getSalary() const { return staffSalary; }
+};
+
+// Generate staff id in format as explained:
+// First digit indicates staff department, it is multiplied by 1000
+// Then if same staff department is found, id is incremented by 1
+void Staff::generateStaffId() {
+  Staff staffRead;
+  short tempId = 1;
+  ifstream fileToRead("data/staff.dat", ios::binary);
+  while (fileToRead.read((char *)&staffRead, sizeof(staffRead))) {
+    if (staffDepartmentCode == staffRead.staffDepartmentCode)
+      tempId++;
+  }
+  id = (staffDepartmentCode * 1000) + tempId;
+}
