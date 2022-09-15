@@ -930,3 +930,29 @@ void displayAddDataScreen() {
     break;
   }
 }
+
+void displayRemoveDataScreen() {
+  system("cls");
+  int userChoice = 0;
+  Student schoolStudent;
+  Teacher schoolTeacher;
+  Staff schoolStaff;
+  cout << "1. Remove an existing student";
+  cout << "\n2. Remove an existing teacher";
+  cout << "\n3. Remove an existing staff";
+  cout << "\n\n=> Enter your choice to proceed. For e.g. Press '1' to 'Remove "
+          "an existing student': ";
+  cin >> userChoice;
+  switch (userChoice) {
+  case 1:
+    removeMember("data/student.dat", "data/temp_student.dat", schoolStudent);
+    break;
+  case 2:
+    removeMember("data/teacher.dat.dat", "data/temp_teacher.dat",
+                 schoolTeacher);
+    break;
+  case 3:
+    removeMember("data/staff.dat", "data/temp_staff.dat", schoolStaff);
+    break;
+  }
+}
