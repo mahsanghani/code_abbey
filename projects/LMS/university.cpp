@@ -797,3 +797,37 @@ void Academic::generateAcademicReport(Student &studentRead, short &flag) {
   } else
     cout << "No match found.";
 }
+
+void Academic::generateAttendanceReport(Student &studentRead, short &flag) {
+  system("cls");
+  int inputRollNumber = 0;
+  cout << "Enter student roll number whose attendance report you want to "
+          "generate: ";
+  cin >> inputRollNumber;
+  ifstream fileToRead("data/student.dat", ios::binary);
+  while (fileToRead.read((char *)&studentRead, sizeof(studentRead))) {
+    if (inputRollNumber == studentRead.getId()) {
+      Academic::id = inputRollNumber;
+      Academic::studentClass = studentRead.studentClass;
+      Academic::studentSection = studentRead.studentSection;
+      strcpy(Academic::name, studentRead.name);
+      strcpy(Academic::fatherName, studentRead.fatherName);
+      strcpy(Academic::motherName, studentRead.motherName);
+      ++flag;
+      break;
+    }
+  }
+  if (flag > 0) {
+    cout << "\nEnter total number of working days (1 - 366): ";
+    cin >> totalWorkingDays;
+    validateDays(totalWorkingDays);
+    cout << "Enter number of days student " << inputRollNumber
+         << " was present (1 - 366): ";
+    cin >> daysPresent;
+    validateDays(daysPresent);
+    attendancePercentage = ((daysPresent / totalWorkingDays) * 100.00);
+    cout << fixed << setprecision(1)
+         << "Attendance Percentage = " << attendancePercentage << "%";
+  } else
+    cout << "No match found.";
+}
