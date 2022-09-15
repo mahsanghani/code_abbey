@@ -693,3 +693,62 @@ void Staff::updateData() {
       << "\nGenerated ID is " << getId()
       << ". Please, note it safely as it'll be asked during data modification.";
 }
+
+class Academic : public Student {
+private:
+  short marks[5];
+  float daysPresent, totalWorkingDays, attendancePercentage, averageMarks;
+  using Student::id;
+  using Student::name;
+
+public:
+  Academic() {
+    marks[0] = 0;
+    marks[1] = 0;
+    marks[2] = 0;
+    marks[3] = 0;
+    marks[4] = 0;
+    daysPresent = 0.0f;
+    totalWorkingDays = 0.0f;
+    averageMarks = 0.0f;
+    attendancePercentage = 0.0f;
+  }
+
+  int getId() const { Student::getId(); }
+  void generateAcademicReport(Student &, short &);
+  void generateAttendanceReport(Student &, short &);
+  void displayAcademicReport() const {
+    cout << "\n\t\t\t\t\t-------------------";
+    cout << "\n\t\t\t\t\t  ACADEMIC REPORT";
+    cout << "\n\t\t\t\t\t-------------------\n";
+    displayNameInUpper(name, strlen(name));
+    cout << "\nClass: " << studentClass << " '" << char(toupper(studentSection))
+         << "' "
+         << "\nMother's name: " << motherName
+         << "\nFather's name: " << fatherName;
+    // Subject codes: 1 = Science, 2 = Maths, 3 = English, 4 = Hindi, 5 = Social
+    // Studies
+    cout << "\n\nSubject Code\t\tSubject\t\t\tMarks (out of 100)";
+    cout << "\n     1\t\t\tScience\t\t\t\t" << marks[0];
+    cout << "\n     2\t\t\tMaths\t\t\t\t" << marks[1];
+    cout << "\n     3\t\t\tEnglish\t\t\t\t" << marks[2];
+    cout << "\n     4\t\t\tHindi\t\t\t\t" << marks[3];
+    cout << "\n     5\t\t\tSocial Studies\t\t\t" << marks[4];
+    cout << fixed << setprecision(1)
+         << "\n\n\t\t\tAverage Percentage = " << averageMarks << "%";
+  }
+  void displayAttendanceReport() const {
+    cout << "\n\t\t\t\t\t---------------------";
+    cout << "\n\t\t\t\t\t  ATTENDANCE REPORT";
+    cout << "\n\t\t\t\t\t---------------------\n";
+    displayNameInUpper(name, strlen(name));
+    cout << "\nClass: " << studentClass << " '" << char(toupper(studentSection))
+         << "' "
+         << "\nMother's name: " << motherName
+         << "\nFather's name: " << fatherName;
+    cout << "\n\nTotal Number of Working Days = " << totalWorkingDays;
+    cout << "\nTotal days student " << id << " was present = " << daysPresent;
+    cout << fixed << setprecision(1)
+         << "\nAttendance percentage = " << attendancePercentage << "%";
+  }
+};
