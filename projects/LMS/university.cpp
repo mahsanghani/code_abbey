@@ -844,3 +844,16 @@ void academicReport() {
   academicFile.close();
   basicNavigation();
 }
+
+void attendanceReport() {
+  short flag = 0;
+  Academic studentAcademics;
+  Student studentRead;
+  fstream attendanceFile("data/attendance_report.dat",
+                         ios::in | ios::out | ios::app | ios::binary);
+  studentAcademics.generateAttendanceReport(studentRead, flag);
+  if (flag > 0)
+    attendanceFile.write((char *)&studentAcademics, sizeof(studentAcademics));
+  attendanceFile.close();
+  basicNavigation();
+}
