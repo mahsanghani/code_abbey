@@ -981,3 +981,74 @@ void displayUpdateDataScreen() {
     break;
   }
 }
+
+void HomeScreen() {
+  Student schoolStudent;
+  Teacher schoolTeacher;
+  Staff schoolStaff;
+  system("cls");
+  char menuOption;
+  cout << "1. WORK WITH DATA RECORDS\t\t\t\t\t\t2. VIEW DATA RECORDS";
+  cout << "\nA. Add a new student, teacher or staff\t\t\t\t\tD. View student "
+          "data records";
+  cout << "\nB. Remove an existing student, teacher or staff \t\t\tE. View "
+          "teacher data records";
+  cout << "\nC. Update data of an existing student, teacher or staff\t\t\tF. "
+          "View staff data records";
+  cout << "\n\n3. ACCOUNTING AND FINANCE\t\t\t\t\t\t4. STUDENT ACADEMICS";
+  cout << "\nG. Receive student fee\t\t\t\t\t\t\tJ. View student academic or "
+          "attendance report";
+  cout << "\nH. Pay salary to school teacher\t\t\t\t\t\tK. Generate student "
+          "academic report";
+  cout << "\nI. Pay salary to school staff\t\t\t\t\t\tL. Generate student "
+          "attendance report";
+  cout << "\n\n=> You can choose from the above displayed menu options. For "
+          "e.g. Press 'A' to 'Add a new student, teacher or staff'.";
+  cout << "\nOR\n=> Press 'Z' to quit.\n=> Enter your choice to proceed: ";
+  char expectedInput[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
+                          'h', 'i', 'j', 'k', 'l', 'z'};
+  cin >> menuOption;
+  validateCharInput(menuOption, expectedInput, 13);
+  switch (menuOption) {
+  case 'a':
+    displayAddDataScreen();
+    break;
+  case 'b':
+    displayRemoveDataScreen();
+    break;
+  case 'c':
+    displayUpdateDataScreen();
+    break;
+  case 'd':
+    viewData("data/student.dat", schoolStudent);
+    break;
+  case 'e':
+    viewData("data/teacher.dat", schoolTeacher);
+    break;
+  case 'f':
+    viewData("data/staff.dat", schoolStaff);
+    break;
+  case 'g':
+    receiveStudentFee();
+    break;
+  case 'h':
+    paySalaryToMember("data/teacher.dat", schoolTeacher);
+    break;
+  case 'i':
+    paySalaryToMember("data/staff.dat", schoolStaff);
+    break;
+  case 'j':
+    viewAcademicReports();
+    break;
+  case 'k':
+    academicReport();
+    break;
+  case 'l':
+    attendanceReport();
+    break;
+  case 'z':
+    exit(0);
+    break;
+    // Congratulations! Default case will never get executed ;)
+  }
+}
