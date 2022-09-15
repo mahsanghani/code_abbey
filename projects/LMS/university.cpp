@@ -905,3 +905,28 @@ void viewAcademicReports() {
   }
   basicNavigation();
 }
+
+void displayAddDataScreen() {
+  system("cls");
+  int userChoice = 0;
+  Student schoolStudent;
+  Teacher schoolTeacher;
+  Staff schoolStaff;
+  cout << "1. Add a new student";
+  cout << "\n2. Add a new teacher";
+  cout << "\n3. Add a new staff";
+  cout << "\n\n=> Enter your choice to proceed. For e.g. Press '1' to 'Add a "
+          "new student': ";
+  cin >> userChoice;
+  switch (userChoice) {
+  case 1:
+    addMember("data/student.dat", schoolStudent);
+    break;
+  case 2:
+    addMember("data/teacher.dat", schoolTeacher);
+    break;
+  case 3:
+    addMember("data/staff.dat", schoolStaff);
+    break;
+  }
+}
