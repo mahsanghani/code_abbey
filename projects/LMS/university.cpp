@@ -857,3 +857,51 @@ void attendanceReport() {
   attendanceFile.close();
   basicNavigation();
 }
+
+void viewAcademicReports() {
+  system("cls");
+  Academic academicRead;
+  ifstream attendanceFile("data/attendance_report.dat", ios::binary);
+  ifstream academicFile("data/academic_report.dat", ios::binary);
+  int inputRollNumber = 0;
+  short userChoice = 0, flag = 0;
+  cout << "1. View academic report";
+  cout << "\n2. View attendance report";
+  cout << "\nEnter your choice (1 or 2): ";
+  cin >> userChoice;
+  switch (userChoice) {
+  case 1:
+    cout << "\nEnter student roll number whose academic report you want to "
+            "see: ";
+    cin >> inputRollNumber;
+    while (academicFile.read((char *)&academicRead, sizeof(academicRead))) {
+      if (inputRollNumber == academicRead.getId()) {
+        ++flag;
+        break;
+      }
+    }
+    if (flag > 0)
+      academicRead.displayAcademicReport();
+    else
+      cout << "sorry, no academic report found for student " << inputRollNumber
+           << ".";
+    break;
+  case 2:
+    cout << "\nEnter student roll number whose attendance report you want to "
+            "see: ";
+    cin >> inputRollNumber;
+    while (attendanceFile.read((char *)&academicRead, sizeof(academicRead))) {
+      if (inputRollNumber == academicRead.getId()) {
+        ++flag;
+        break;
+      }
+    }
+    if (flag > 0)
+      academicRead.displayAttendanceReport();
+    else
+      cout << "sorry, no attendance report found for student "
+           << inputRollNumber << ".";
+    break;
+  }
+  basicNavigation();
+}
