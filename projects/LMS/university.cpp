@@ -1052,3 +1052,5 @@ void HomeScreen() {
     // Congratulations! Default case will never get executed ;)
   }
 }
+
+int main(void) { HomeScreen(); }
