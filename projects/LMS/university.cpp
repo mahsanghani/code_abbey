@@ -831,3 +831,16 @@ void Academic::generateAttendanceReport(Student &studentRead, short &flag) {
   } else
     cout << "No match found.";
 }
+
+void academicReport() {
+  short flag = 0;
+  Academic studentAcademics;
+  Student studentRead;
+  fstream academicFile("data/academic_report.dat",
+                       ios::in | ios::out | ios::app | ios::binary);
+  studentAcademics.generateAcademicReport(studentRead, flag);
+  if (flag > 0)
+    academicFile.write((char *)&studentAcademics, sizeof(studentAcademics));
+  academicFile.close();
+  basicNavigation();
+}
