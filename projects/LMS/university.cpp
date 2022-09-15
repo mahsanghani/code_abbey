@@ -956,3 +956,28 @@ void displayRemoveDataScreen() {
     break;
   }
 }
+
+void displayUpdateDataScreen() {
+  system("cls");
+  int userChoice = 0;
+  Student schoolStudent;
+  Teacher schoolTeacher;
+  Staff schoolStaff;
+  cout << "1. Update data of an existing student";
+  cout << "\n2. Update data of an existing teacher";
+  cout << "\n3. Update data of an existing staff";
+  cout << "\n\n=> Enter your choice to proceed. For e.g. Press '1' to 'Update "
+          "data of an existing student': ";
+  cin >> userChoice;
+  switch (userChoice) {
+  case 1:
+    updateMemberData("data/student.dat", schoolStudent);
+    break;
+  case 2:
+    updateMemberData("data/teacher.dat", schoolTeacher);
+    break;
+  case 3:
+    updateMemberData("data/staff.dat", schoolStaff);
+    break;
+  }
+}
