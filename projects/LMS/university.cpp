@@ -752,3 +752,48 @@ public:
          << "\nAttendance percentage = " << attendancePercentage << "%";
   }
 };
+
+void Academic::generateAcademicReport(Student &studentRead, short &flag) {
+  system("cls");
+  int inputRollNumber = 0;
+  cout << "Enter student roll number whose academic report you want to "
+          "generate: ";
+  cin >> inputRollNumber;
+  ifstream fileToRead("data/student.dat", ios::binary);
+  while (fileToRead.read((char *)&studentRead, sizeof(studentRead))) {
+    if (inputRollNumber == studentRead.getId()) {
+      Academic::id = inputRollNumber;
+      Academic::studentClass = studentRead.studentClass;
+      Academic::studentSection = studentRead.studentSection;
+      strcpy(Academic::name, studentRead.name);
+      strcpy(Academic::fatherName, studentRead.fatherName);
+      strcpy(Academic::motherName, studentRead.motherName);
+      ++flag;
+      break;
+    }
+  }
+  if (flag > 0) {
+    cout << "\nEnter marks of student " << inputRollNumber
+         << " between 0 to 100 in subjects asked below: ";
+    cout << "\n1. Science = ";
+    cin >> marks[0];
+    validateSubjectMarks(marks, 0);
+    cout << "2. Maths = ";
+    cin >> marks[1];
+    validateSubjectMarks(marks, 1);
+    cout << "3. English = ";
+    cin >> marks[2];
+    validateSubjectMarks(marks, 2);
+    cout << "4. Hindi = ";
+    cin >> marks[3];
+    validateSubjectMarks(marks, 3);
+    cout << "5. Social Studies = ";
+    cin >> marks[4];
+    validateSubjectMarks(marks, 4);
+    averageMarks =
+        (marks[0] + marks[1] + marks[2] + marks[3] + marks[4]) / 5.00;
+    cout << fixed << setprecision(1) << "Average Percentage = " << averageMarks
+         << "%";
+  } else
+    cout << "No match found.";
+}
