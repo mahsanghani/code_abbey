@@ -38,3 +38,16 @@ private:
   string model;
   string trim;
 };
+
+class Truck : public Car {
+public:
+  Truck(string brand, string model, string trim)
+      : brand(brand), model(model), trim(trim) {
+    cout << "Truck Initialized Successfully!" << endl;
+  }
+
+private:
+  string brand;
+  string model;
+  string trim;
+};
