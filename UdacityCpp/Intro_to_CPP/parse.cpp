@@ -39,3 +39,11 @@ void PrintBoard(const vector<vector<int>> board) {
     cout << endl;
   }
 }
+
+#include "test.cpp"
+
+int main() {
+  ReadBoardFile("1.board");
+  TestParseLine();
+  PrintBoard(board);
+}
