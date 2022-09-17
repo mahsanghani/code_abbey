@@ -51,3 +51,25 @@ private:
   string model;
   string trim;
 };
+
+int main() {
+  Car car1 = Car("green", 1);
+  Car car2 = Car("blue", 2);
+  Car car3 = Car("green", 3);
+  Car car4 = Car("red", 4);
+
+  Sedan sedan1 = Sedan("gray", 1, "BMW", "3", "330i");
+  Sedan sedan2 = Sedan("blue", 2, "Benz", "C", "C300");
+
+  Truck truck1 = Truck("Ford", "F-150", "Raptor");
+
+  car1.IncrementDistance();
+  car2.IncrementDistance();
+  car3.IncrementDistance();
+  car4.IncrementDistance();
+
+  car1.PrintCarData();
+  car2.PrintCarData();
+  car3.PrintCarData();
+  car4.PrintCarData();
+}
