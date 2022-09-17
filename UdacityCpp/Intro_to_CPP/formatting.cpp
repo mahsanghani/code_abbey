@@ -34,3 +34,21 @@ vector<vector<int>> ReadBoardFile(string path) {
   }
   return board;
 }
+
+string CellString(State state) {
+  switch (state) {
+  case State::kEmpty:
+    cout << "0  ";
+    break;
+  case State::kObstacle:
+    cout << "⛰  ";
+    break;
+  }
+
+  switch (state) {
+  case State::kObstacle:
+    return "⛰  ";
+  default:
+    return "0  ";
+  }
+}
