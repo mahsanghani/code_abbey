@@ -61,3 +61,8 @@ void PrintBoard(const vector<vector<int>> board) {
     cout << endl;
   }
 }
+
+int main() {
+  auto board = ReadBoardFile("1.board");
+  PrintBoard(board);
+}
