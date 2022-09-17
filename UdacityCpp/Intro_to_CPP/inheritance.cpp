@@ -25,3 +25,16 @@ private:
   int distance = 0;
   int number;
 };
+
+class Sedan : public Car {
+public:
+  Sedan(string color, int number, string brand, string model, string trim)
+      : Car(color, number), brand(brand), model(model), trim(trim) {
+    cout << "Sedan Initialized Successfully!" << endl;
+  }
+
+private:
+  string brand;
+  string model;
+  string trim;
+};
