@@ -18,3 +18,10 @@ Abstraction::Abstraction(int var1, double var2) : var1_(var1), var2_(var2){};
 void Abstraction::printVal() {
   cout << "var1 = " << this->var1_ << " var2 = " << this->var2_ << endl;
 }
+
+int main() {
+  Abstraction abs(1, 2.0);
+  abs.printVal();
+
+  return 0;
+}
