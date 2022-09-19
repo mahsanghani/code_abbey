@@ -62,3 +62,10 @@ string Date::PrintDate(int day, std::string month_name, int year) {
   cout << "Using string month_name version!" << endl;
   return result;
 }
+
+int main() {
+  Date date;
+  date.SetDate(1, 10, 2019);
+  cout << date.PrintDate(1, 2, 2003) << endl;
+  cout << date.PrintDate(1, "Feb", 2003) << endl;
+}
