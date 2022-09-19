@@ -41,3 +41,11 @@ void Date::SetDate(int day, int month, int year) {
   Date::year = year;
   Date::month_name = month_names[month - 1];
 }
+
+int Date::GetDay() { return day; }
+
+int Date::GetMonth() { return month; }
+
+string Date::GetMonthName() { return month_name; }
+
+int Date::GetYear() { return year; }
