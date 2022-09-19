@@ -21,3 +21,13 @@ public:
   void setName(string name);
   void setAge(int age);
 };
+
+class Cat : public Animal {
+private:
+  double height_;
+
+public:
+  double getHeight() const;
+
+  void setHeight(double height);
+};
