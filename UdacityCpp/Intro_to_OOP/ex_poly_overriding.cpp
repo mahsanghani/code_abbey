@@ -22,3 +22,13 @@ public:
 
   void Print() { cout << "This displays the derived class." << endl; }
 };
+
+int main() {
+  Base_Class *pointer;
+  Derived_Class der;
+  pointer = &der;
+
+  pointer->PrintVirtual();
+
+  pointer->Print();
+}
