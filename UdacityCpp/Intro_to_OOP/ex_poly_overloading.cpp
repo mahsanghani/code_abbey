@@ -22,4 +22,22 @@ public:
   string PrintDate(int day, int month, int year);
 };
 
-void Date::SetDate(int day, int month, int year) {}
+void Date::SetDate(int day, int month, int year) {
+  int day_numbers[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  string month_names[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+  if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+    day_numbers[1]++;
+  }
+
+  if (year < 1 || day < 1 || month < 1 || month > 12 ||
+      day > day_numbers[month - 1]) {
+    throw std::domain_error("Invalid date!");
+  }
+
+  Date::day = day;
+  Date::month = month;
+  Date::year = year;
+  Date::month_name = month_names[month - 1];
+}
