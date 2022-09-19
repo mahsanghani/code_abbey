@@ -60,6 +60,12 @@ double Cat::getHeight() const { return this->height_; }
 
 void Cat::setHeight(double height) { this->height_ = height; }
 
+double Snake::getLength() const { return this->length_; }
+
+void Snake::setLength(double length) { this->length_ = length; }
+
+void Snake::makeSound() { cout << "Hiss-" << endl; }
+
 int main() {
   Cat c;
   c.setName("ketty");
