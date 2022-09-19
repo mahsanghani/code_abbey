@@ -49,3 +49,16 @@ int Date::GetMonth() { return month; }
 string Date::GetMonthName() { return month_name; }
 
 int Date::GetYear() { return year; }
+
+string Date::PrintDate(int day, int month, int year) {
+  string result =
+      to_string(day) + "/" + to_string(month) + "/" + to_string(year);
+  cout << "Using int month version!" << endl;
+  return result;
+}
+
+string Date::PrintDate(int day, std::string month_name, int year) {
+  string result = month_name + " " + to_string(day) + ", " + to_string(year);
+  cout << "Using string month_name version!" << endl;
+  return result;
+}
