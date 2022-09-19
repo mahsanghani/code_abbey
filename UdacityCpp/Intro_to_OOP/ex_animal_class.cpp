@@ -31,3 +31,15 @@ public:
 
   void setHeight(double height);
 };
+
+class Snake : public Animal {
+private:
+  double length_;
+
+public:
+  double getLength() const;
+
+  void setLength(double length);
+
+  void makeSound();
+};
