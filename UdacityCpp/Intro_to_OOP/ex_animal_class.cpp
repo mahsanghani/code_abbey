@@ -56,6 +56,10 @@ void Animal::setName(string name) { this->name_ = name; }
 
 void Animal::setAge(int age) { this->age_ = age; }
 
+double Cat::getHeight() const { return this->height_; }
+
+void Cat::setHeight(double height) { this->height_ = height; }
+
 int main() {
   Cat c;
   c.setName("ketty");
