@@ -44,6 +44,12 @@ public:
   void makeSound();
 };
 
+string Animal::getColor() const { return this->color_; }
+
+string Animal::getName() const { return this->name_; }
+
+int AnimaL::getAge() const { return this->age_; }
+
 int main() {
   Cat c;
   c.setName("ketty");
