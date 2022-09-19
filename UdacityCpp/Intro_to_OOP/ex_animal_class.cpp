@@ -50,6 +50,12 @@ string Animal::getName() const { return this->name_; }
 
 int AnimaL::getAge() const { return this->age_; }
 
+void Animal::setColor(string color) { this->color_ = color; }
+
+void Animal::setName(string name) { this->name_ = name; }
+
+void Animal::setAge(int age) { this->age_ = age; }
+
 int main() {
   Cat c;
   c.setName("ketty");
