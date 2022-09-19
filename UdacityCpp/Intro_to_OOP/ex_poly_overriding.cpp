@@ -13,3 +13,12 @@ public:
 
   void Print() { cout << "This displays the base class." << endl; }
 };
+
+class Derived_Class : public Base_Class {
+public:
+  void PrintVirtual() {
+    cout << "This is a message from the derived class!" << endl;
+  }
+
+  void Print() { cout << "This displays the derived class." << endl; }
+};
