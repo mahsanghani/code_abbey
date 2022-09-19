@@ -43,3 +43,31 @@ public:
 
   void makeSound();
 };
+
+int main() {
+  Cat c;
+  c.setName("ketty");
+  c.setAge(6);
+  c.setColor("black");
+  c.setHeight(6.5);
+
+  Snake s;
+  s.setName("krystal"); // LOL player in LPL, LoL
+  s.setAge(20);
+  s.setColor("yellow");
+  s.setLength(164.0);
+
+  std::cout << "The Cat c has infomation: (name, age, color, height): "
+            << c.getName() << ", " << c.getAge() << ", " << c.getColor() << ", "
+            << c.getHeight() << std::endl;
+
+  std::cout << "The Snake s has infomation: (name, age, color, length): "
+            << s.getName() << ", " << s.getAge() << ", " << s.getColor() << ", "
+            << s.getLength() << std::endl;
+
+  // A little colorful egg....
+  s.makeSound();
+
+  // Not possible... I'm sorry, ketty.
+  // c.makeSound();
+}
