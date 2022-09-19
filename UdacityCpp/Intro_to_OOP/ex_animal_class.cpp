@@ -48,7 +48,7 @@ string Animal::getColor() const { return this->color_; }
 
 string Animal::getName() const { return this->name_; }
 
-int AnimaL::getAge() const { return this->age_; }
+int Animal::getAge() const { return this->age_; }
 
 void Animal::setColor(string color) { this->color_ = color; }
 
