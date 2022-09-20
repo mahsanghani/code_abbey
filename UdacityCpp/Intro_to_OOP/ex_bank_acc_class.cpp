@@ -21,3 +21,16 @@ public:
   string getOwnerName() const;
   double getAvailableFunds() const;
 };
+
+int main() {
+  BankAccount bank_account;
+  bank_account.setAccountNumber(12);
+  bank_account.setOwnerName("Jacky Chan");
+  bank_account.setAvailableFunds(123.34);
+
+  std::cout << "this bank account has account number: "
+            << bank_account.getAccountNumber() << std::endl
+            << "which belongs to : " << bank_account.getOwnerName() << std::endl
+            << "and it contains available funds: "
+            << bank_account.getAvailableFunds() << std::endl;
+}
