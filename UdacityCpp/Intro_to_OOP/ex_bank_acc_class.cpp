@@ -22,6 +22,16 @@ public:
   double getAvailableFunds() const;
 };
 
+void BankAccount::setAccountNumber(int account_num) {
+  this->account_number = account_num;
+}
+
+void BankAccount::setOwnerName(std::string name) { this->owner_name = name; }
+
+void BankAccount::setAvailableFunds(double funds) {
+  this->available_funds = funds;
+}
+
 int main() {
   BankAccount bank_account;
   bank_account.setAccountNumber(12);
