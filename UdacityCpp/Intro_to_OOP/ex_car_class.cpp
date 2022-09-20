@@ -31,3 +31,12 @@ void Car::setWeight(int wt) { this->wt = wt; }
 void Car::setBrand(string brand) {
   this->brand = new char[brand.length() + 1] strcpy(this->brand, brand.c_str());
 }
+
+int Car::getHorsepower() const { return this->hp; }
+
+int Car::getWeight() const { return this->wt; }
+
+string Car::getBrand() const {
+  string brand_res;
+  return brand_res + this->brand;
+}
