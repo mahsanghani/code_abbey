@@ -40,3 +40,9 @@ string Car::getBrand() const {
   string brand_res;
   return brand_res + this->brand;
 }
+
+int main() {
+  Car car;
+  car.setBrand("Peugeot");
+  cout << car.getBrand() << endl;
+}
