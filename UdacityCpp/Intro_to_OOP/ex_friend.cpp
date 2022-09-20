@@ -18,3 +18,13 @@ public:
 };
 
 Square::Square(double square_side) { this->side = square_side; }
+
+class Rectangle {
+private:
+  double rw;
+  double rh;
+
+public:
+  double Rec_Area() const;
+  void Convert_SquToRec(Square sq);
+};
