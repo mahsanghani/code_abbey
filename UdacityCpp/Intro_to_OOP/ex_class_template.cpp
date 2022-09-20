@@ -25,3 +25,13 @@ public:
     cout << endl << "Container:: size: " << Container::s_ << endl;
   }
 };
+
+int main() {
+  Container<double> obj;
+  obj.add(2.00329132);
+  obj.print();
+  obj.add(8.83);
+  obj.print();
+
+  return 0;
+}
