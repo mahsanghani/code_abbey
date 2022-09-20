@@ -87,9 +87,5 @@ int main() {
             << s.getName() << ", " << s.getAge() << ", " << s.getColor() << ", "
             << s.getLength() << std::endl;
 
-  // A little colorful egg....
   s.makeSound();
-
-  // Not possible... I'm sorry, ketty.
-  // c.makeSound();
 }

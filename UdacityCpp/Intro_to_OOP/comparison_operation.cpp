@@ -24,11 +24,11 @@ int main() {
   double n2 = 100.45;
 
   double res2 = ReturnMax(n1, n2);
-  cou t << "Bigger on is: " << res2 << endl;
+  cout << "Bigger on is: " << res2 << endl;
 
   char char1 = 'c';
   char char2 = 'y';
 
   char char3 = ReturnMax(char1, char2);
-  cout << "Bigger one is: " << res3 << endl;
+  cout << "Bigger one is: " << char3 << endl;
 }
