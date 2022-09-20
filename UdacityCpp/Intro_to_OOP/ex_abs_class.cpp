@@ -3,6 +3,8 @@
 //
 #include <iostream>
 
+using namespace std;
+
 class Abstraction {
 private:
   int var1_;
