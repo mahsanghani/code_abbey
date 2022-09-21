@@ -27,3 +27,12 @@ public:
   void PrintAB(void);
   int GetB(void);
 };
+
+void B::SetAB(int val_a, int val_b) {
+  B::SetA(val_a);
+  b_attr = val_b;
+}
+
+void B::PrintAB() { cout << B::GetA() << B::b_attr << endl; }
+
+int B::GetB() { return B::b_attr; }
