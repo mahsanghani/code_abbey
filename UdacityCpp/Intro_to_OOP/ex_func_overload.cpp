@@ -16,3 +16,18 @@ public:
   void Print(double x) const;
   void Print(double x, double y) const;
 };
+
+void Point::Print() const {
+  std::cout << "The point has a coordinate (x, y) = (" << this->x_ << ", "
+            << this->y_ << ").\n";
+}
+
+void Point::Print(double x) const {
+  std::cout << "(NOT intuitive) The point has a coordinate (x, y) = (" << x
+            << ", " << this->y_ << ").\n";
+}
+
+void Point::Print(double x, double y) const {
+  std::cout << "(NOT intuitive) The point has a coordinate (x, y) = (" << x
+            << ", " << y << ").\n";
+}
