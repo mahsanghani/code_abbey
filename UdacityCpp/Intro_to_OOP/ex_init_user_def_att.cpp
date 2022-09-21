@@ -21,3 +21,23 @@ private:
   double attr2;
   char attr3;
 };
+
+class B {
+public:
+  B(int num, int a, double b, char c)
+      : number(num),
+        attr(a, b, c) // In the initialization list,
+                      // call the constructor of user defined attribute A
+  {
+    std::cout << "B constructor"
+              << "\n";
+  }
+  void print() const {
+    std::cout << "B: " << number << " ";
+    attr.print();
+  }
+
+private:
+  int number;
+  A attr;
+};
