@@ -15,3 +15,14 @@ private:
   int &ref;
   const char c;
 };
+
+int main() {
+  int var = 10;
+  InitList obj(var, 'A');
+  obj.print();
+
+  var += 10;
+  obj.print();
+
+  return 0;
+}
