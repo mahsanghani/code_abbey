@@ -31,3 +31,12 @@ void Point::Print(double x, double y) const {
   std::cout << "(NOT intuitive) The point has a coordinate (x, y) = (" << x
             << ", " << y << ").\n";
 }
+
+int main() {
+  Point p(3.5, 2.8);
+  p.Print();
+  p.Print(1.2);
+  p.Print(1.2, 3);
+
+  return 0;
+}
