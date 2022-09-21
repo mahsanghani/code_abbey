@@ -35,3 +35,10 @@ void Rectangle::Convert_SquToRec(Square sq) {
   this->rw = sq.side;
   this->rh = sq.side;
 }
+
+int main() {
+  Square sq(3.3);
+  Rectangle rec;
+  rec.Convert_SquToRec(sq);
+  cout << "The rectangle has an area of : " << rec.Rec_Area() << endl;
+}
