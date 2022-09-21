@@ -28,3 +28,10 @@ public:
   double Rec_Area() const;
   void Convert_SquToRec(Square sq);
 };
+
+double Rectangle::Rec_Area() const { return this->rw * this->rh; }
+
+void Rectangle::Convert_SquToRec(Square sq) {
+  this->rw = sq.side;
+  this->rh = sq.side;
+}
