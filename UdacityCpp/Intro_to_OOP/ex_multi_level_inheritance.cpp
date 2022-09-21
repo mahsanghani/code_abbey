@@ -36,3 +36,12 @@ void B::SetAB(int val_a, int val_b) {
 void B::PrintAB() { cout << B::GetA() << B::b_attr << endl; }
 
 int B::GetB() { return B::b_attr; }
+
+class C : public B {
+private:
+  int c_attr;
+
+public:
+  void SetABC(int val_a, int val_b, int val_c);
+  void PrintABC(void);
+};
