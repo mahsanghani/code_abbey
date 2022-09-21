@@ -54,3 +54,9 @@ void C::SetABC(int val_a, int val_b, int val_c) {
 }
 
 void C::PrintABC() { cout << C::c_attr << C::GetB() << C::GetA() << endl; }
+
+int main() {
+  C c;
+  c.SetABC(1, 2, 3);
+  c.PrintABC();
+}
