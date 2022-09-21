@@ -45,3 +45,12 @@ public:
   void SetABC(int val_a, int val_b, int val_c);
   void PrintABC(void);
 };
+
+void C::SetABC(int val_a, int val_b, int val_c) {
+  // multilevel inheritance
+
+  C::SetAB(val_a, val_b);
+  C::c_attr = val_c;
+}
+
+void C::PrintABC() { cout << C::c_attr << C::GetB() << C::GetA() << endl; }
