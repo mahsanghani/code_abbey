@@ -28,3 +28,11 @@ void Abstraction::ProcessAttributes() {
   number_ *= 6;
   character_ += 1;
 }
+
+int main() {
+  Abstraction abs;
+  abs.SetAttributes(5, 'c');
+  abs.GetAttributes();
+
+  return 0;
+}
