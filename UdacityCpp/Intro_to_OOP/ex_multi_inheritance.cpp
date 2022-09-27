@@ -27,3 +27,19 @@ public:
   string eye_color_;
   int age_;
 };
+
+int main() {
+  Dog d;
+  d.has_long_fur = true;
+  d.weight = 10;
+  d.size = 43;
+  d.owner = "me";
+  cout << d.has_long_fur << endl;
+  cout << d.owner << endl;
+
+  Cat c;
+  c.eye_color_ = "red";
+  c.age_ = 4;
+  cout << c.eye_color_ << endl;
+  cout << c.age_ << endl;
+}
