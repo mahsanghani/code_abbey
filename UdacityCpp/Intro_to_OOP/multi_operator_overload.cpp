@@ -28,3 +28,15 @@ Point Point::operator+(const Point &pt) {
 void Point::Print() {
   cout << '(' << this->x_ << ", " << this->y_ << ")" << endl;
 }
+
+int main() {
+  Point pt(1.5, 2.5);
+  Point another_pt(1, -1);
+
+  pt = pt + another_pt;
+
+  cout << "current point: " << endl;
+  pt.Print();
+
+  return 0;
+}
