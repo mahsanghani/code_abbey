@@ -24,3 +24,7 @@ Point Point::operator+(const Point &pt) {
 
   return *this;
 }
+
+void Point::Print() {
+  cout << '(' << this->x_ << ", " << this->y_ << ")" << endl;
+}
