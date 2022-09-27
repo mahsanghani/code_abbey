@@ -15,3 +15,9 @@ public:
   string name;
   string owner;
 };
+
+class Dog : public Animal, public Pet {
+public:
+  bool has_long_fur;
+  bool has_short_fur;
+};
