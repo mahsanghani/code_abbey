@@ -23,3 +23,8 @@ void Abstraction::GetAttributes() {
   this->ProcessAttributes();
   cout << this->number_ << endl << this->character_ << endl;
 }
+
+void Abstraction::ProcessAttributes() {
+  number_ *= 6;
+  character_ += 1;
+}
