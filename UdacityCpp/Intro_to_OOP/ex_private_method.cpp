@@ -18,3 +18,8 @@ void Abstraction::SetAttributes(int number, char character) {
   this->number_ = number;
   this->character_ = character;
 }
+
+void Abstraction::GetAttributes() {
+  this->ProcessAttributes();
+  cout << this->number_ << endl << this->character_ << endl;
+}
