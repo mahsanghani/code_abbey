@@ -13,3 +13,8 @@ private:
   char character_;
   void ProcessAttributes();
 };
+
+void Abstraction::SetAttributes(int number, char character) {
+  this->number_ = number;
+  this->character_ = character;
+}
