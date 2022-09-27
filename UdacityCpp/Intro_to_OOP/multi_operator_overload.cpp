@@ -17,3 +17,10 @@ public:
 
   void Print();
 };
+
+Point Point::operator+(const Point &pt) {
+  this->x_ = pt.x_;
+  this->y_ = pt.y_;
+
+  return *this;
+}
