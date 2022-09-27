@@ -9,3 +9,9 @@ public:
   double weight;
   double size;
 };
+
+class Pet {
+public:
+  string name;
+  string owner;
+};
