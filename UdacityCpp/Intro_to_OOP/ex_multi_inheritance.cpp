@@ -21,3 +21,9 @@ public:
   bool has_long_fur;
   bool has_short_fur;
 };
+
+class Cat : public Animal, Pet {
+public:
+  string eye_color_;
+  int age_;
+};
