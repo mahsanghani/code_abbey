@@ -24,3 +24,11 @@ void Abstraction::PrintNumberPlusOne(int num) {
   num++;
   cout << num << endl;
 }
+
+int main() {
+  char c = 'x';
+  int one = 1;
+
+  Abstraction::PrintCharAsNumber(c);
+  Abstraction::PrintNumberPlusOne(one);
+}
