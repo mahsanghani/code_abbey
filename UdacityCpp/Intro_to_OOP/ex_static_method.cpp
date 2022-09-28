@@ -14,3 +14,13 @@ public:
   void static PrintCharAsNumber(char c);
   void static PrintNumberPlusOne(int num);
 };
+
+void Abstraction::PrintCharAsNumber(char c) {
+  int result = c;
+  cout << result << endl;
+}
+
+void Abstraction::PrintNumberPlusOne(int num) {
+  num++;
+  cout << num << endl;
+}
