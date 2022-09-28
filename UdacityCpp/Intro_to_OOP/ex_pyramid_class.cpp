@@ -44,4 +44,13 @@ void Pyramid::setBaseLength(double base_length) { base_length_ = base_length; }
 
 void Pyramid::setBaseWidth(double base_width) { base_width_ = base_width; }
 
-void Pyramid::getHeight(double height) const { height_ = height; }
+void Pyramid::setHeight(double height) { height_ = height; }
+
+double Pyramid::SurfaceArea() const {
+  double bl = this->base_length_;
+  double bw = this->base_width_;
+  double h = this->height_;
+
+  return (bl * bw + bl * sqrt((bw / 2) * (bw / 2) + h * h) +
+          bw * sqrt((bl / 2) * (bl / 2) + h * h));
+}
