@@ -35,3 +35,15 @@ void Abstraction::SetMyValues(int n, char c) {
 }
 
 int Abstraction::GetCounter() { return Abstraction::counter; }
+
+int main() {
+  Abstraction abstract;
+  abstract.SetMyValues(100, 'x');
+  abstract.GetMyValues();
+  cout << abstract.GetCounter() << endl;
+
+  Abstraction abstract2;
+  abstract2.SetMyValues(10, 'a');
+  abstract.GetMyValues();
+  cout << abstract2.GetCounter() << endl;
+}
