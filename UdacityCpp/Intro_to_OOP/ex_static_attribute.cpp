@@ -21,3 +21,17 @@ public:
   void GetMyValues(void);
   int GetCounter(void);
 };
+
+int Abstraction::counter = 0;
+
+void Abstraction::ProcessAttributes() {
+  Abstraction::number *= 6;
+  Abstraction::character++;
+}
+
+void Abstraction::SetMyValues(int n, char c) {
+  Abstraction::number = n;
+  Abstraction::character = c;
+}
+
+int Abstraction::GetCounter() { return Abstraction::counter; }
