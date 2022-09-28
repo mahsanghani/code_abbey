@@ -62,3 +62,19 @@ double Pyramid::Volume() const {
 bool Pyramid::isAllPositive() const {
   return this->base_length_ >= 0 && this->base_width_ >= 0 && this->height >= 0;
 }
+
+int main() {
+  Pyramid p1(11.1, 22.2, 55.5);
+  Pyramid p2;
+
+  p2.setBaseLength(12);
+  p2.setHeight(50);
+  p2.setBaseWidth(23);
+
+  cout << p1.getBaseWidth() << p1.getBaseLength() << p1.getHeight() << endl;
+  cout << p2.getBaseWidth() << p2.getBaseLength() << p2.getHeight() << endl;
+
+  cout << p1.Volume() << endl;
+
+  return 0;
+}
