@@ -19,6 +19,8 @@ public:
   void calc();
 };
 
-void Base::calc() { cout << "calc" << endl; }
+void Base::calc() { cout << "base calc" << endl; }
 
-void Derived::Print() { cout << "print" << endl; }
+void Derived::Print() { cout << "derived print" << endl; }
+
+void Derived::calc() { cout << "derived calc" << endl; }
