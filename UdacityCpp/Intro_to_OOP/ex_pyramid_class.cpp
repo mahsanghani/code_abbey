@@ -28,3 +28,14 @@ public:
   double SurfaceArea() const;
   bool isAllPositive() const;
 };
+
+Pyramid::Pyramid(double base_length, double base_width, double height)
+    : base_length_(base_length), base_width_(base_width), height_(height) {}
+
+Pyramid::Pyramid() {}
+
+double Pyramid::getBaseLength() const { return this->base_length_; }
+
+double Pyramid::getBaseWidth() const { return this->base_width_; }
+
+double Pyramid::getHeight() const { return this->height_ }
