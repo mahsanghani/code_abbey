@@ -24,3 +24,12 @@ void Base::calc() { cout << "base calc" << endl; }
 void Derived::Print() { cout << "derived print" << endl; }
 
 void Derived::calc() { cout << "derived calc" << endl; }
+
+int main() {
+  Base *base_ptr;
+  Derived derived;
+  base_ptr = &derived;
+
+  base_ptr->Print();
+  base_ptr->calc();
+}
