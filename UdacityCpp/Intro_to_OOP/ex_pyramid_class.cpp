@@ -54,3 +54,7 @@ double Pyramid::SurfaceArea() const {
   return (bl * bw + bl * sqrt((bw / 2) * (bw / 2) + h * h) +
           bw * sqrt((bl / 2) * (bl / 2) + h * h));
 }
+
+double Pyramid::Volume() const {
+  return this->base_length_ * this->base_width_ * this->height_ / 3;
+}
