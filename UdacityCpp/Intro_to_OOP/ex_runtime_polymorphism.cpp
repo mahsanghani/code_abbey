@@ -20,3 +20,5 @@ public:
 };
 
 void Base::calc() { cout << "calc" << endl; }
+
+void Derived::Print() { cout << "print" << endl; }
