@@ -18,3 +18,5 @@ public:
   void Print();
   void calc();
 };
+
+void Base::calc() { cout << "calc" << endl; }
