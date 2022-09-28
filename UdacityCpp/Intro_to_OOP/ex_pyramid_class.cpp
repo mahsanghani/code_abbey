@@ -39,3 +39,9 @@ double Pyramid::getBaseLength() const { return this->base_length_; }
 double Pyramid::getBaseWidth() const { return this->base_width_; }
 
 double Pyramid::getHeight() const { return this->height_ }
+
+void Pyramid::setBaseLength(double base_length) { base_length_ = base_length; }
+
+void Pyramid::setBaseWidth(double base_width) { base_width_ = base_width; }
+
+void Pyramid::getHeight(double height) const { height_ = height; }
