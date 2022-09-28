@@ -11,3 +11,10 @@ public:
   void virtual Print() = 0;
   void calc();
 };
+
+class Derived : public Base {
+public:
+  Derived(){};
+  void Print();
+  void calc();
+};
