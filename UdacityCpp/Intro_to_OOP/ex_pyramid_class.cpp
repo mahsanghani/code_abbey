@@ -58,3 +58,7 @@ double Pyramid::SurfaceArea() const {
 double Pyramid::Volume() const {
   return this->base_length_ * this->base_width_ * this->height_ / 3;
 }
+
+bool Pyramid::isAllPositive() const {
+  return this->base_length_ >= 0 && this->base_width_ >= 0 && this->height >= 0;
+}
