@@ -34,3 +34,9 @@ Student::Student(std::string name, int grade, double gpa) {
 }
 
 Student::Student() {}
+
+string Student::getName() const { return this->name_; }
+
+int Student::getGrade() const { return this->grade_; }
+
+double Student::getGPA() const { return this->gpa_; }
