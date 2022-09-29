@@ -61,3 +61,36 @@ void Student::setGPA(double gpa) {
   }
   this->gpa_ = gpa;
 }
+
+int main() {
+  try {
+    Student s1("jacky chan", 8, -1.0);
+  } catch (const char *msg) {
+    cerr << msg << endl;
+  }
+
+  Student s2;
+
+  try {
+    s2.setName("bruce lee");
+  } catch (const char *msg) {
+    cerr << msg << endl;
+  }
+
+  try {
+    s2.setGrade(-2);
+  } catch (const char *msg) {
+    cerr << msg << endl;
+  }
+
+  try {
+    s2.setGPA(4.3);
+  } catch (const char *msg) {
+    cerr << msg << endl;
+  }
+
+  cout << s1.getName() << endl;
+  cout << s2.getName() << endl;
+
+  return 0;
+}
