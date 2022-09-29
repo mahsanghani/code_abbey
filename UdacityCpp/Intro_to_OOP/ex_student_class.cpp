@@ -23,3 +23,14 @@ public:
   void setGrade(int grade);
   void setGPA(double gpa);
 };
+
+Student::Student(std::string name, int grade, double gpa) {
+  if (grade < 0 || gpa > 4.0 || gpa < 0.0) {
+    throw "n/a";
+  }
+  this->name_ = name;
+  this->grade_ = grade;
+  this->gpa_ = gpa;
+}
+
+Student::Student() {}
