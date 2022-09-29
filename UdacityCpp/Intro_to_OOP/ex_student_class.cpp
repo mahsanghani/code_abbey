@@ -40,3 +40,24 @@ string Student::getName() const { return this->name_; }
 int Student::getGrade() const { return this->grade_; }
 
 double Student::getGPA() const { return this->gpa_; }
+
+void Student::setName(std::string name) {
+  if (name.length() <= 0) {
+    throw "n/a";
+  }
+  this->name_ = name;
+}
+
+void Student::setGrade(int grade) {
+  if (grade < 0) {
+    throw "n/a";
+  }
+  this->grade_ = grade;
+}
+
+void Student::setGPA(double gpa) {
+  if (gpa > 4.0 || gpa < 0.0) {
+    throw "n/a";
+  }
+  this->gpa_ = gpa;
+}
