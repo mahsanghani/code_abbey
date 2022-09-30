@@ -14,10 +14,11 @@ public:
 
 class Rectangle : public Shape {
 private:
-  double radius_;
+  double width_;
+  double height_;
 
 public:
-  Circle(double radius);
+  Rectangle(double width, double height);
   double Area() const;
   double PerimeterLength() const;
 };
