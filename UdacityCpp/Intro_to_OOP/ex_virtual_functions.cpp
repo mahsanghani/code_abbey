@@ -21,3 +21,13 @@ public:
   double Area() const;
   double PerimeterLength() const;
 };
+
+class Circle : pubilc Shape {
+private:
+  double radius_;
+
+public:
+  Circle(double radius);
+  double Area() const;
+  double PerimeterLength() const;
+};
