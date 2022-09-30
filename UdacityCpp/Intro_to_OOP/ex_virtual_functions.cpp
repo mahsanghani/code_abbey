@@ -43,3 +43,9 @@ double Rectangle::Area() const { return this->width_ * this->height_; }
 double Rectangle::PerimeterLength() const {
   return 2 * (this->width_ + this->height_);
 }
+
+Circle::Circle(double radius) { this->radius_ = radius; }
+
+double Circle::Area() const { return PI * this->radius_ * this->radius_; }
+
+double Circle::PerimeterLength() const { return 2 * PI * this->radius_; }
