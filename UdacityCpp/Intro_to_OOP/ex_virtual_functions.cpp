@@ -32,3 +32,14 @@ public:
   double Area() const;
   double PerimeterLength() const;
 };
+
+Rectangle::Rectangle(double width, double height) {
+  this->width_ = width;
+  this->height_ = height;
+}
+
+double Rectangle::Area() const { return this->width_ * this->height_; }
+
+double Rectangle::PerimeterLength() const {
+  return 2 * (this->width_ + this->height_);
+}
