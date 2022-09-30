@@ -11,3 +11,13 @@ public:
   virtual double Area() const = 0;
   virtual double PermiterLength() const = 0;
 };
+
+class Rectangle : public Shape {
+private:
+  double radius_;
+
+public:
+  Circle(double radius);
+  double Area() const;
+  double PerimeterLength() const;
+};
