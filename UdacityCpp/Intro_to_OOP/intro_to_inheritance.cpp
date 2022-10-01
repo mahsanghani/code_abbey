@@ -16,3 +16,9 @@ protected:
 private:
   int var3;
 };
+
+class ChildClass_1 : public ParentClass {};
+
+class ChildClass_2 : protected ParentClass {};
+
+class ChildClass_3 : private ParentClass {};
