@@ -14,3 +14,5 @@ public:
               << "\n";
   }
 };
+
+int main() { A<char> a; }
