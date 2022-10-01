@@ -30,3 +30,10 @@ void Date::SetDate(int day, int month, int year) {
   Date::month = month;
   Date::year = year;
 }
+
+int main() {
+  Date date;
+  date.SetDate(29, 2, 2020);
+  cout << date.GetDay() << '/' << date.GetMonth() << '/' << date.GetYear()
+       << endl;
+}
