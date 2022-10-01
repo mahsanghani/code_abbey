@@ -41,3 +41,10 @@ int Date::GetDay() const { return day; }
 int Date::GetMonth() const { return month; }
 
 int Date::GetYear() const { return Date::year; }
+
+int main() {
+  Date date;
+  date.SetDate(29, 2, 2020);
+  cout << date.GetDay() << '/' << date.GetMonth() << '/' << date.GetYear()
+       << endl;
+}
