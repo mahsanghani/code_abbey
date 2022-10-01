@@ -35,3 +35,9 @@ void Date::SetDate(int day, int month, int year) {
   Date::month = month;
   Date::year = year;
 }
+
+int Date::GetDay() const { return day; }
+
+int Date::GetMonth() const { return month; }
+
+int Date::GetYear() const { return Date::year; }
