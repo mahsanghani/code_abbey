@@ -3,6 +3,8 @@
 //
 #include <iostream>
 
+using namespace std;
+
 int main() {
   int *int_arr_ptr = new int[5];
 
@@ -14,7 +16,7 @@ int main() {
   }
 
   for (int i = 0; i < 5; i++) {
-    cout << "number " << int_arr_ptr[i] << "stored " << {int_arr_ptr + i}
+    cout << "number " << int_arr_ptr[i] << "stored " << (int_arr_ptr + i)
          << " address." << endl;
   }
 
