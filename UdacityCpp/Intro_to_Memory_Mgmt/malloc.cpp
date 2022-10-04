@@ -12,7 +12,7 @@ int main() {
 
   ptr = new (nothrow) int;
 
-  ptr = malloc(4 * sizeof(int));
+  ptr = static_cast<int *>(malloc(4 * sizeof(int)));
   for (int i = 0; i < 4; i++) {
     cout << &ptr[i] << ptr[i] << endl;
   }
