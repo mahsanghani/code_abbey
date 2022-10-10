@@ -1,37 +1,36 @@
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
-        adj = {char: set() for word in words for char in word}
+        adj = {i: set() for j in words for i in j}
 
         for i in range(len(words) - 1):
-            w1, w2 = words[i], words[i + 1]
-            minLen = min(len(w1), len(w2))
-            if len(w1) > len(w2) and w1[:minLen] == w2[:minLen]:
+            w1 = words[i]
+            w2 = words[i + 1]
+
+            minlen = min(len(w1), len(w2))
+
+            if len(w1) > len(w2) and w1[:minlen] == w2[:minlen]:
                 return ""
-            for j in range(minLen):
+            for j in range(minlen):
                 if w1[j] != w2[j]:
-                    print(w1[j], w2[j])
                     adj[w1[j]].add(w2[j])
                     break
 
-        visited = {}  # {char: bool} False visited, True current path
-        res = []
+        visit = {}
+        results = []
 
-        def dfs(char):
-            if char in visited:
-                return visited[char]
+        def dfs(c):
+            if c in visit:
+                return visit[c]
 
-            visited[char] = True
-
-            for neighChar in adj[char]:
-                if dfs(neighChar):
+            visit[c] = True
+            for n in adj[c]:
+                if dfs(n):
                     return True
+            visit[c] = False
+            results.append(c)
 
-            visited[char] = False
-            res.append(char)
-
-        for char in adj:
-            if dfs(char):
+        for c in adj:
+            if dfs(c):
                 return ""
 
-        res.reverse()
-        return "".join(res)
+        return "".join(results[::-1])
