@@ -1,6 +1,12 @@
 //
 // Created by Ahsan Ghani on 2022-10-15.
 //
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 template <class _Tc> class PtrDetails {
 public:
   int ref_count_;
@@ -8,7 +14,6 @@ public:
   int array_size_;
   PtrDetails(_Tc *obj, int size);
 };
-// operator== defines a comparison between two objects
 
 template <class _Tc>
 bool operator==(const PtrDetails<T> &obj_1, const PtrDetails<T> &obj_2) {

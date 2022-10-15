@@ -6,7 +6,6 @@
 
 using namespace std;
 
-// Define class List
 template <class _Tc> class List {
 public:
   List() : head_(nullptr), tail_(nullptr) {}
@@ -31,49 +30,41 @@ private:
   Node *tail_;
 };
 
-// Define List::~List
 template <class _Tc> List<_Tc>::~List() {
   while (head_) {
-    // use the copy constructor to create a new pointer
     Node *current(head_);
     head_ = head_->next;
-    // delete the Node that is no longer on the List
     delete current;
   }
 }
 
-// Define List::PushFront()
 template <class _Tc> void List<_Tc>::PushFront(_Tc val) {
   Node *front_node = new Node(val, nullptr, head_);
-  // corner case:
-  if (tail_ == nullptr) { // which means head_ is also nullptr
+  if (tail_ == nullptr) {
     tail_ = front_node;
     head_ = front_node;
-  } else { // both head_ and tail_ are not nullptr
+  } else {
     head_->prev = front_node;
     head_ = front_node;
   }
 }
 
-// Declare List::PushBack()
 template <class _Tc> void List<_Tc>::PushBack(_Tc val) {
   Node *back_node = new Node(val, tail_, nullptr);
-  // corner case:
-  if (head_ == nullptr) { // which means tail_ is also nullptr
+  if (head_ == nullptr) {
     head_ = back_node;
     tail_ = back_node;
-  } else { // both head_ and tail_ are not nullptr
+  } else {
     tail_->next = back_node;
     tail_ = back_node;
   }
 }
 
-// Declare List::PopFront()
 template <class _Tc> _Tc List<_Tc>::PopFront() {
   if (this->Empty())
     throw("Cannot List::PopFront() when List::Empty() is true");
 
-  Node *temp(head_); // again, copy ctor
+  Node *temp(head_);
   _Tc val = head_->val;
   head_ = head_->next;
   if (head_)
@@ -84,12 +75,12 @@ template <class _Tc> _Tc List<_Tc>::PopFront() {
   delete temp;
   return val;
 }
-// Declare List::PopBack()
+
 template <class _Tc> _Tc List<_Tc>::PopBack() {
   if (this->Empty())
     throw("Cannot List::PopBack() when List::Empty() is true");
 
-  Node *temp(tail_); // agin, copy ctor
+  Node *temp(tail_);
   _Tc val = tail_->val;
   tail_ = tail_->prev;
   if (tail_)
@@ -101,10 +92,9 @@ template <class _Tc> _Tc List<_Tc>::PopBack() {
   return val;
 }
 
-// Define List::Size()
 template <class _Tc> int List<_Tc>::Size() const {
   int size = 0;
-  Node *current(head_); // again, copy ctor
+  Node *current(head_);
   while (current) {
     size++;
     current = current->next;
@@ -112,7 +102,6 @@ template <class _Tc> int List<_Tc>::Size() const {
   return size;
 }
 
-// Define List::Print()
 template <class _Tc> void List<_Tc>::Print() const {
   Node *current(head_);
   while (current) {
@@ -121,25 +110,17 @@ template <class _Tc> void List<_Tc>::Print() const {
   }
 }
 
-// Design a doubly linked list to pass these tests
 int main() {
-  // Sanity test
   List<int> list1;
-  list1.PushBack(9); // list1.Print();
+  list1.PushBack(9);
   assert(list1.Size() == 1);
 
-  // Deeper test
   List<int> list2;
-  list2.PushFront(9); // list2.Print();
-  list2.PushBack(10); // list2.Print();
+  list2.PushFront(9);
+  list2.PushBack(10);
   assert(list2.Size() == 2);
   assert(list2.PopBack() == 10);
   assert(list2.PopFront() == 9);
   assert(list2.Size() == 0);
-
-  // print out to check
-  // list1.Print();
-  // list2.Print();
-
   return 0;
 }
