@@ -13,19 +13,15 @@ public:
 
 int main() {
   shared_ptr<A> p1(new A);
-  cout << p1.get() << endl; // show address
+  cout << p1.get() << endl;
 
   shared_ptr<A> p2(p1);
   cout << p1.get() << endl;
   cout << p2.get() << endl;
 
-  // return the number of shared_ptr objects
-  // referring to the same managed object
   cout << p1.use_count() << endl;
   cout << p2.use_count() << endl;
 
-  // relinquishes ownership of p1 on the object
-  // and pointer becomes NULL
   p1.reset();
   cout << "p1 after reset: " << p1.get() << endl; // p1 becomes NULL
   cout << p2.use_count() << endl;
