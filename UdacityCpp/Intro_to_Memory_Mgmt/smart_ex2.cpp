@@ -6,27 +6,30 @@
 
 using namespace std;
 
-class MyClass {
+class A {
 public:
-  void classMethod() { cout << "MyClass::classMethod()" << endl; }
+  void classAMethod() { cout << "A::classAMethod()" << endl; }
 };
 
 int main() {
-  unique_ptr<MyClass> ptr_1(new MyClass);
-  ptr_1->classMethod();
+  shared_ptr<A> p1(new A);
+  cout << p1.get() << endl; // show address
 
-  cout << ptr_1.get() << endl;
+  shared_ptr<A> p2(p1);
+  cout << p1.get() << endl;
+  cout << p2.get() << endl;
 
-  unique_ptr<MyClass> ptr_2 = std::move(ptr_1); // needs to use std::move()
-  ptr_2->classMethod();
-  cout << ptr_1.get() << endl;
-  cout << ptr_2.get() << endl;
+  // return the number of shared_ptr objects
+  // referring to the same managed object
+  cout << p1.use_count() << endl;
+  cout << p2.use_count() << endl;
 
-  unique_ptr<MyClass> ptr_3 = std::move(ptr_2);
-  ptr_3->classMethod();
-  cout << ptr_1.get() << endl;
-  cout << ptr_2.get() << endl;
-  cout << ptr_3.get() << endl;
+  // relinquishes ownership of p1 on the object
+  // and pointer becomes NULL
+  p1.reset();
+  cout << "p1 after reset: " << p1.get() << endl; // p1 becomes NULL
+  cout << p2.use_count() << endl;
+  cout << p2.get() << endl;
 
   return 0;
 }
