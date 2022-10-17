@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 class Graph:
     def __init__(self, vertices):
         self.vertices = vertices
@@ -14,8 +13,7 @@ class Graph:
 
     def isReachable(self, source, destination):
         visit = [False] * (self.vertices)
-        queue = []
-        queue.append(source)
+        queue = [source]
         visit[source] = True
 
         while queue:
