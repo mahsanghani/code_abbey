@@ -26,3 +26,16 @@ vector<State> ParseLine(string line) {
   }
   return row;
 }
+
+vector<vector<State>> ReadBoardFile(string path) {
+  ifstream myfile(path);
+  vector<vector<State>> board{};
+  if (myfile) {
+    string line;
+    while (getline(myfile, line)) {
+      vector<State> row = ParseLine(line);
+      board.push_back(row);
+    }
+  }
+  return board;
+}
