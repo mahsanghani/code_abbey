@@ -49,3 +49,12 @@ vector<vector<State>> Search(vector<vector<State>> grid, int init[2],
        << "\n";
   return std::vector<vector<State>>{};
 }
+
+string CellString(State cell) {
+  switch (cell) {
+  case State::kObstacle:
+    return "⛰️   ";
+  default:
+    return "0   ";
+  }
+}
