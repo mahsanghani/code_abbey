@@ -48,3 +48,7 @@ bool Compare(const vector<int> a, const vector<int> b) {
 }
 
 void CellSort(vector<vector<int>> *v) { sort(v->begin(), v->end(), Compare); }
+
+int Heuristic(int x1, int y1, int x2, int y2) {
+  return abs(x2 - x1) + abs(y2 - y1);
+}
