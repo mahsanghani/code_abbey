@@ -67,3 +67,19 @@ void AddToOpen(int x, int y, int g, int h, vector<vector<int>> &openlist,
   openlist.push_back(vector<int>{x, y, g, h});
   grid[x][y] = State::kClosed;
 }
+
+void ExpandNeighbors(vector<int> curNode, int goal[2],
+                     vector<vector<int>> &openlist,
+                     vector<vector<State>> &grid) {
+  int curX = curNode[0];
+  int curY = curNode[1];
+  int g = curNode[2];
+  for (int i = 0; i < 4; i++) {
+    int nextX = curX + delta[i][0];
+    int nextY = curY + delta[i][1];
+    if (CheckValidCell(nextX, nextY, grid)) {
+      int h = Heuristic(nextX, nextY, goal[0], goal[1]);
+      AddToOpen(nextX, nextY, g + 1, h, openlist, grid);
+    }
+  }
+}
