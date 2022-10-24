@@ -44,3 +44,5 @@ bool Compare(const vector<int> a, const vector<int> b) {
   int f2 = b[2] + b[3]; // f2 = g2 + h2
   return f1 > f2;
 }
+
+void CellSort(vector<vector<int>> *v) { sort(v->begin(), v->end(), Compare); }
