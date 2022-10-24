@@ -60,3 +60,9 @@ bool CheckValidCell(int x, int y, vector<vector<State>> &grid) {
     return grid[x][y] == State::kEmpty;
   return false;
 }
+
+void AddToOpen(int x, int y, int g, int h, vector<vector<int>> &openlist,
+               vector<vector<State>> &grid) {
+  openlist.push_back(vector<int>{x, y, g, h});
+  grid[x][y] = State::kClosed;
+}
