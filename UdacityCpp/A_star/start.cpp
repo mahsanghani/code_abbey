@@ -45,3 +45,12 @@ vector<vector<State>> Search(vector<vector<State>> board, int start[],
   cout << "No path found!" << std::endl;
   return std::vector<vector<State>>{};
 }
+
+string CellString(State cell) {
+  switch (cell) {
+  case State::kObstacle:
+    return "⛰   ";
+  default:
+    return "0   ";
+  }
+}
