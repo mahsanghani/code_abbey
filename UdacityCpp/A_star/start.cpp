@@ -39,3 +39,9 @@ vector<vector<State>> ReadBoardFile(string path) {
   }
   return board;
 }
+
+vector<vector<State>> Search(vector<vector<State>> board, int start[],
+                             int goal[]) {
+  cout << "No path found!" << std::endl;
+  return std::vector<vector<State>>{};
+}
