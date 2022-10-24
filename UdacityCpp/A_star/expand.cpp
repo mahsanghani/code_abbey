@@ -8,3 +8,5 @@
 #include <vector>
 
 using namespace std;
+
+enum class State { kEmpty, kObstacle, kClosed, kPath };
