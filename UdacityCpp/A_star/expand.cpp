@@ -83,3 +83,29 @@ void ExpandNeighbors(vector<int> curNode, int goal[2],
     }
   }
 }
+
+vector<vector<State>> Search(vector<vector<State>> grid, int init[2],
+                             int goal[2]) {
+  vector<vector<int>> open{};
+  int x = init[0];
+  int y = init[1];
+  int g = 0;
+  int h = Heuristic(x, y, goal[0], goal[1]);
+  AddToOpen(x, y, g, h, open, grid);
+
+  while (open.size() > 0) {
+    CellSort(&open);
+    auto current = open.back();
+    open.pop_back();
+    x = current[0];
+    y = current[1];
+    grid[x][y] = State::kPath;
+    if (x == goal[0] && y == goal[1]) {
+      return grid;
+    }
+    ExpandNeighbors(current, goal, open, grid);
+  }
+  cout << "No path found!"
+       << "\n";
+  return std::vector<vector<State>>{};
+}
