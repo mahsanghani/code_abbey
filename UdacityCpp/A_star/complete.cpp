@@ -130,3 +130,18 @@ vector<vector<State>> Search(vector<vector<State>> grid, int init[2],
        << "\n";
   return std::vector<vector<State>>{};
 }
+
+string CellString(State cell) {
+  switch (cell) {
+  case State::kObstacle:
+    return "⛰   ";
+  case State::kPath:
+    return "🚗   ";
+  case State::kStart:
+    return "🚦   ";
+  case State::kFinish:
+    return "🏁   ";
+  default:
+    return "0   ";
+  }
+}
