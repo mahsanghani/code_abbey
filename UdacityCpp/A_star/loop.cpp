@@ -56,3 +56,28 @@ void AddToOpen(int x, int y, int g, int h, vector<vector<int>> &openlist,
   openlist.push_back(vector<int>{x, y, g, h});
   grid[x][y] = State::kClosed;
 }
+
+vector<vector<State>> Search(vector<vector<State>> grid, int init[2],
+                             int goal[2]) {
+  vector<vector<int>> open{};
+  int x = init[0];
+  int y = init[1];
+  int g = 0;
+  int h = Heuristic(x, y, goal[0], goal[1]);
+  AddToOpen(x, y, g, h, open, grid);
+
+  while (!open.empty()) {
+    CellSort(&open);
+    vector<int> cur_node = open.back();
+    open.pop_back();
+
+    x = cur_node[0];
+    y = cur_node[1];
+    grid[x][y] = State::kPath;
+    if (x == goal[0] && y == goal[1])
+      return grid;
+  }
+  cout << "No path found!"
+       << "\n";
+  return std::vector<vector<State>>{};
+}
