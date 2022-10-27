@@ -210,3 +210,13 @@ template <class T, int size> void Pointer<T, size>::showlist() {
   }
   std::cout << std::endl;
 }
+
+template <class T, int size>
+typename std::list<PtrDetails<T>>::iterator
+Pointer<T, size>::findPtrInfo(T *ptr) {
+  typename std::list<PtrDetails<T>>::iterator p;
+  for (p = ref_countainer.begin(); p != ref_countainer.end(); p++)
+    if (p->mem_ptr == ptr)
+      return p;
+  return p;
+}
