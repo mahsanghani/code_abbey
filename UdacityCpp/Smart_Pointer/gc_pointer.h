@@ -82,3 +82,24 @@ template <class T, int size> Pointer<T, size>::Pointer(T *t) {
     std::cout << std::endl;
 #endif
 }
+
+template <class T, int size> Pointer<T, size>::Pointer(const Pointer &ob) {
+  typename std::list<PtrDetails<T>>::iterator p;
+  p = findPtrInfo(ob.addr);
+  p->ref_count++;
+
+  addr = ob.addr;
+  array_size = ob.array_size;
+  if (array_size > 0)
+    is_array = true;
+  else
+    is_array = false;
+
+#ifdef DISPLAY
+  std::cout << "Consturcting copy.";
+  if (is_array)
+    std::cout << " Size is " << array_size << endl;
+  else
+    std::cout << std::endl;
+#endif
+}
