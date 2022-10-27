@@ -120,4 +120,46 @@ void Dealloc(void *ptr, bool isArray) {
               ptr);
   }
 }
+
+void Terminator();
+struct Reporter {
+  void (*old_terminator)();
+  Reporter() : old_terminator(std::set_terminate(Terminator)) {}
+  ~Reporter() {
+    std::fprintf(
+        output,
+        "\n\n+---------------+\n| FINAL REPORT: |\n"
+        "+---------------+\n\nTotal number of allocations: %d\nTotal number of "
+        "deallocations: %d\nTotal number of allocations in bytes: %ld\n"
+        "Total number of deallocations in bytes: %ld\nMaximum "
+        "memory occupation during runtime in bytes: %ld\nMemory occupation "
+        "upon completion: %ld\n",
+        alloc_count, dealloc_count, alloc_total, dealloc_total, alloc_max,
+        alloc_current);
+    if (alloc_map) {
+      std::fprintf(output,
+                   "\n\nLEAK! YOU HAVE MEMORY LEAKAGE ON FOLLOWING PLACES: \n");
+      for (Info *current = alloc_map; current; current = current->link)
+        if (current->line == -2)
+          std::fprintf(output,
+                       " - address %p, %lu bytes, allocated internally\n",
+                       current->address, (ULong)current->_size);
+        else
+          std::fprintf(output,
+                       " - address %p, %lu bytes, allocated in %ld. "
+                       "line\n",
+                       current->address, (ULong)current->_size, current->line);
+      std::fprintf(output, "\n");
+    } else
+      std::fprintf(output, "\n\nGREAT JOB! YOU DO NOT HAVE MEMORY LEAKAGE\n\n");
+    if (output != stdout)
+      fclose(output);
+    std::system("PAUSE");
+  }
+} reporter;
+void Terminator() {
+  reporter.Reporter::~Reporter();
+  reporter.old_terminator();
+}
+}
 } // namespace __Tester__
