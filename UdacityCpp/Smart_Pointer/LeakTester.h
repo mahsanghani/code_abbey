@@ -169,6 +169,11 @@ void *operator new(std::size_t _size, long line) // throw(std::bad_alloc)
   return __Tester__::Alloc(line, _size, false);
 }
 
+void *operator new[](std::size_t _size, long line) // throw(std::bad_alloc)
+{
+  return __Tester__::Alloc(line, _size, true);
+}
+
 #define new new (__LINE__)
 
 #endif
