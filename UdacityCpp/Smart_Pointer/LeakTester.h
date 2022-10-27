@@ -75,4 +75,49 @@ void *Alloc(long line, std::size_t _size, bool isArray) {
   *alloc_map = info;
   return address;
 }
+
+void Dealloc(void *ptr, bool isArray) {
+  Info *current(alloc_map), *previous(0);
+  for (; current && current->address != ptr; current = current->link)
+    previous = current;
+  if (current) {
+    if (current->line != -1) {
+      std::size_t _size(current->_size);
+      dealloc_count++;
+      dealloc_total += _size;
+      alloc_current -= _size;
+      if (notifications) {
+        std::fprintf(output, ">>> Releasing %lu bytes on address %p\n",
+                     (ULong)_size, ptr);
+      }
+      if (isArray != current->isArray)
+        std::fprintf(output,
+                     "*** ERROR: Releasing on address %p %s "
+                     "should be done with delete[]!\n",
+                     ptr, isArray ? "no" : "yes");
+    }
+    if (previous)
+      previous->link = current->link;
+    else
+      alloc_map = current->link;
+    std::free(current);
+    std::free(ptr);
+  } else if (ptr) {
+    const std::size_t pomak(sizeof(std::size_t));
+    void *ptr1((char *)ptr + (isArray ? pomak : -pomak));
+    for (current = alloc_map; current && current->address != ptr1;
+         current = current->link)
+      ;
+    if (current)
+      std::fprintf(output,
+                   "*** ERROR: Releasing on address %p %s should "
+                   "be done with delete[]!\n",
+                   ptr1, isArray ? "no" : "yes");
+    else
+      fprintf(output,
+              "*** ERROR: You are trying to release already released space "
+              "on address %p!\n",
+              ptr);
+  }
+}
 } // namespace __Tester__
