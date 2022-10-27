@@ -116,3 +116,48 @@ template <class T, int size> Pointer<T, size>::~Pointer() {
 #endif
   collect();
 }
+
+template <class T, int size> bool Pointer<T, size>::collect() {
+  bool mem_freed = false;
+
+#ifdef DISPLAY
+  std::cout << "Before garbage collection for ";
+  showlist();
+#endif
+
+  typename std::list<PtrDetails<T>>::iterator p;
+  do {
+    for (p = ref_countainer.begin(); p != ref_countainer.end(); p++) {
+      if (p->ref_count > 0)
+        continue;
+
+      mem_freed = true;
+
+      ref_countainer.remove(*p);
+
+      if (p->mem_ptr) {
+        if (p->is_array) {
+#ifdef DISPLAY
+          std::cout << "Deleting array of size " << p->array_size << std::endl;
+#endif
+          delete[] p->mem_ptr;
+        } else {
+#ifdef DISPLAY
+          std::cout << "Deleting: " << *(T *)p->mem_ptr << std::endl;
+#endif
+          delete p->mem_ptr;
+        }
+      }
+
+      break;
+    }
+
+  } while (p != ref_countainer.end());
+
+#ifdef DISPLAY
+  std::cout << "After garbage collection for ";
+  showlist();
+#endif
+
+  return mem_freed;
+}
