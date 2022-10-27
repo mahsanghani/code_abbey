@@ -192,6 +192,10 @@ void operator delete(void *ptr, long) throw() { // placement delete!!!
   __Tester__::Dealloc(ptr, false);
 }
 
+void operator delete[](void *ptr, long) throw() {
+  __Tester__::Dealloc(ptr, true);
+}
+
 #define new new (__LINE__)
 
 #endif
