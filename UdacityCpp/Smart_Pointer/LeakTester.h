@@ -186,6 +186,8 @@ void *operator new[](std::size_t _size) // throw(std::bad_alloc)
 
 void operator delete(void *ptr) throw() { __Tester__::Dealloc(ptr, false); }
 
+void operator delete[](void *ptr) throw() { __Tester__::Dealloc(ptr, true); }
+
 #define new new (__LINE__)
 
 #endif
