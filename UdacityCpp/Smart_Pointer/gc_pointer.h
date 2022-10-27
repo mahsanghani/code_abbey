@@ -103,3 +103,16 @@ template <class T, int size> Pointer<T, size>::Pointer(const Pointer &ob) {
     std::cout << std::endl;
 #endif
 }
+
+template <class T, int size> Pointer<T, size>::~Pointer() {
+  typename std::list<PtrDetails<T>>::iterator p;
+
+  p = findPtrInfo(addr);
+  if (p->ref_count)
+    p->ref_count--; // decrement ref_count
+
+#ifdef DISPLAY
+  std::cout "Pointer (w/ garbage collection) going out of scope.\n";
+#endif
+  collect();
+}
