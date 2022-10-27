@@ -191,3 +191,22 @@ Pointer<T, size> &Pointer<T, size>::operator=(Pointer &rv) {
 
   return rv;
 }
+
+template <class T, int size> void Pointer<T, size>::showlist() {
+  typename std::list<PtrDetails<T>>::iterator p;
+  std::cout << "ref_countainer<" << typeid(T).name() << ", " << size << ">:\n";
+  std::cout << "memPtr refcount value\n ";
+  if (ref_countainer.begin() == ref_countainer.end()) {
+    std::cout << " Container is empty!\n\n ";
+  }
+  for (p = ref_countainer.begin(); p != ref_countainer.end(); p++) {
+    std::cout << "[" << (void *)p->memPtr << "]"
+              << " " << p->refcount << " ";
+    if (p->memPtr)
+      std::cout << " " << *p->memPtr;
+    else
+      std::cout << "---";
+    std::cout << std::endl;
+  }
+  std::cout << std::endl;
+}
