@@ -161,3 +161,20 @@ template <class T, int size> bool Pointer<T, size>::collect() {
 
   return mem_freed;
 }
+
+template <class T, int size> T *Pointer<T, size>::operator=(T *t) {
+  typename std::list<PtrDetails<T>>::iterator p;
+  p = findPtrInfo(addr);
+  p->ref_count--;
+  p = findPtrInfo(t);
+  if (p != ref_countainer.end())
+    p->ref_count++;
+  else {
+    PtrDetails<T> gcObj(t, size);
+    ref_countainer.push_front(gcObj);
+  }
+
+  addr = t;
+
+  return t;
+}
