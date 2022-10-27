@@ -31,4 +31,20 @@ long alloc_total(0), dealloc_total(0), alloc_current(0), alloc_max(0);
 bool notifications(false);
 char previous_name[1000] = "";
 FILE *output(stdout);
+
+void redirect_output(const char name[]) {
+  if (output != stdout)
+    fclose(output);
+  if (name) {
+    if (strcmp(name, previous_name))
+      output = fopen(name, "w");
+    else
+      output = fopen(name, "a");
+    if (output) {
+      strcpy(previous_name, name);
+      return;
+    }
+  }
+  output = stdout;
+}
 } // namespace __Tester__
