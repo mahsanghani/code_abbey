@@ -54,3 +54,31 @@ public:
 template <class T, int size>
 std::list<PtrDetails<T>> Pointer<T, size>::ref_countainer;
 template <class T, int size> bool Pointer<T, size>::first = true;
+
+template <class T, int size> Pointer<T, size>::Pointer(T *t) {
+  if (first)
+    atexit(shutdown);
+  first = false;
+  typename std::list<PtrDetails<T>>::iterator p;
+  p = findPtrInfo(t);
+  if (p != ref_countainer.end())
+    p->ref_count++; // increment ref count
+  else {
+    PtrDetails<T> gcObj(t, size);
+    ref_countainer.push_front(gcObj); // insert before the head of the list
+  }
+
+  addr = t;
+  array_size = size;
+  if (size > 0)
+    is_array = true;
+  else
+    is_array = false;
+#ifdef DISPLAY
+  std::cout << "Constructing Pointer (w/ garbage collector).";
+  if (is_array)
+    std::cout << " Size is " << array_size << std::endl;
+  else
+    std::cout << std::endl;
+#endif
+}
