@@ -47,4 +47,32 @@ void redirect_output(const char name[]) {
   }
   output = stdout;
 }
+
+void *Alloc(long line, std::size_t _size, bool isArray) {
+  void *address(std::malloc(_size));
+  if (!address)
+    throw std::bad_alloc();
+  if (line != -1) {
+    alloc_count++;
+    alloc_total += _size;
+    alloc_current += _size;
+    if (alloc_current > alloc_max)
+      alloc_max = alloc_current;
+    if (notifications) {
+      if (line == -2)
+        std::fprintf(output, ">>> Internally allocated ");
+      else
+        std::fprintf(output,
+                     ">>> in %ld. line of the script we have allocated memory "
+                     "with the line: ",
+                     line);
+      std::fprintf(output, "%lu bytes, on address %p\n", (ULong)_size, address);
+    }
+  }
+  Info info = {address, line, _size, isArray, alloc_map};
+  if (!(alloc_map = (Info *)std::malloc(sizeof(Info))))
+    throw std::bad_alloc();
+  *alloc_map = info;
+  return address;
+}
 } // namespace __Tester__
