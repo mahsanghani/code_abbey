@@ -220,3 +220,13 @@ Pointer<T, size>::findPtrInfo(T *ptr) {
       return p;
   return p;
 }
+
+template <class T, int size> void Pointer<T, size>::shutdown() {
+  if (refContainerSize() == 0)
+    return;
+  typename std::list<PtrDetails<T>>::iterator p;
+  for (p = ref_countainer.begin(); p != ref_countainer.end(); p++) {
+    p->ref_count = 0;
+  }
+  collect();
+}
