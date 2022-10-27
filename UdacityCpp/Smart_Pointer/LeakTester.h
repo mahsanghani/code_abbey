@@ -162,4 +162,8 @@ void Terminator() {
   reporter.old_terminator();
 }
 }
-} // namespace __Tester__
+}
+
+#define new new (__LINE__)
+
+#endif
