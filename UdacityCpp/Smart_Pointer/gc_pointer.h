@@ -50,3 +50,7 @@ public:
   static void showlist();
   static void shutdown();
 };
+
+template <class T, int size>
+std::list<PtrDetails<T>> Pointer<T, size>::ref_countainer;
+template <class T, int size> bool Pointer<T, size>::first = true;
