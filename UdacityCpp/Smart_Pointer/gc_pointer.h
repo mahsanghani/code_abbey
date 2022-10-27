@@ -178,3 +178,16 @@ template <class T, int size> T *Pointer<T, size>::operator=(T *t) {
 
   return t;
 }
+
+template <class T, int size>
+Pointer<T, size> &Pointer<T, size>::operator=(Pointer &rv) {
+  typename std::list<PtrDetails<T>>::iterator p;
+  p = findPtrInfo(addr);
+  p->ref_count--;
+  p = findPtrInfo(rv.addr);
+  p->ref_count++; // increment ref count
+
+  addr = rv.addr;
+
+  return rv;
+}
