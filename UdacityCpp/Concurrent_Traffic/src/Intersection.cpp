@@ -55,3 +55,26 @@ Intersection::queryStreets(shared_ptr<Street> incoming) {
   }
   return outgoings;
 }
+
+void Intersection::addVehicleToQueue(shared_ptr<Vehicle> vehicle) {
+  unique_lock<mutex> lck(mtx_);
+  cout << "Intersection #" << id_
+       << "::addVehicleToQueue: thread id = " << this_thread::get_id() << endl;
+  lck.unlock();
+
+  promise<void> prmsVehicleAllowedToEnter;
+  future<void> ftrVehicleAllowedToEnter =
+      prmsVehicleAllowedToEnter.get_future();
+  waiting_vehicles_.pushBack(vehicle, move(prmsVehicleAllowedToEnter));
+
+  ftrVehicleAllowedToEnter.wait();
+  lck.lock();
+  cout << "Intersection #" << id_ << ": Vehicle #" << vehicle->getID()
+       << " is granted entry." << endl;
+
+  lck.unlock();
+
+  if (traffic_light_.getCurrentPhase() == TrafficLightPhase::kRed) {
+    traffic_light_.waitForGreen();
+  }
+}
