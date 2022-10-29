@@ -99,3 +99,11 @@ void Intersection::processVehicleQueue() {
     }
   }
 }
+
+bool Intersection::trafficLightIsGreen() {
+  if (traffic_light_.getCurrentPhase() == TrafficLightPhase::kGreen) {
+    return true;
+  } else {
+    return false;
+  }
+}
