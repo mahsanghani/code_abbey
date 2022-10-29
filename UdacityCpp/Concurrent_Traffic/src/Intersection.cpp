@@ -78,3 +78,7 @@ void Intersection::addVehicleToQueue(shared_ptr<Vehicle> vehicle) {
     traffic_light_.waitForGreen();
   }
 }
+
+void Intersection::vehicleHasLeft(shared_ptr<Vehicle> vehicle) {
+  this->setIsBlocked(false);
+}
