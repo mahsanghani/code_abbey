@@ -12,3 +12,8 @@
 #include "Vehicle.h"
 
 using namespace std;
+
+int WaitingVehicles::getSize() {
+  lock_guard<mutex> lock(mutex_);
+  return vehicles_.size();
+}
