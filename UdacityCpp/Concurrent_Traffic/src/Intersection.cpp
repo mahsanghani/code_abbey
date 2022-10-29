@@ -24,3 +24,14 @@ void WaitingVehicles::pushBack(shared_ptr<Vehicle> vehicle,
   vehicles_.push_back(vehicle);
   promises_.push_back(move(promise));
 }
+
+void WaitingVehicles::permitEntryToFirstInQueue() {
+  lock_guard<mutex> lock(mutex_);
+  auto firstPromise = promises_.begin();
+  auto firstVehicle = vehicles_.begin();
+
+  firstPromise->set_value();
+
+  vehicles_.erase(firstVehicle);
+  promises_.erase(firstPromise);
+}
