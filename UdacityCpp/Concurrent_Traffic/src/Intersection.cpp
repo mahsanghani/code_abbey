@@ -44,3 +44,14 @@ Intersection::Intersection() {
 void Intersection::addStreet(shared_ptr<Street> street) {
   streets_.push_back(street);
 }
+
+vector<shared_ptr<Street>>
+Intersection::queryStreets(shared_ptr<Street> incoming) {
+  vector<shared_ptr<Street>> outgoings;
+  for (auto it : streets_) {
+    if (incoming->getID() != it->getID()) {
+      outgoings.push_back(it);
+    }
+  }
+  return outgoings;
+}
