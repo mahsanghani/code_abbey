@@ -35,3 +35,8 @@ void WaitingVehicles::permitEntryToFirstInQueue() {
   vehicles_.erase(firstVehicle);
   promises_.erase(firstPromise);
 }
+
+Intersection::Intersection() {
+  type_ = ObjectType::objectIntersection;
+  is_blocked_ = false;
+}
