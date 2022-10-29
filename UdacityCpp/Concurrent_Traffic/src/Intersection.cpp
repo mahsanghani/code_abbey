@@ -40,3 +40,7 @@ Intersection::Intersection() {
   type_ = ObjectType::objectIntersection;
   is_blocked_ = false;
 }
+
+void Intersection::addStreet(shared_ptr<Street> street) {
+  streets_.push_back(street);
+}
