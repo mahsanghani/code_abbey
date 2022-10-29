@@ -89,3 +89,13 @@ void Intersection::simulate() {
   traffic_light_.simulate();
   threads_.emplace_back(thread(&Intersection::processVehicleQueue, this));
 }
+
+void Intersection::processVehicleQueue() {
+  while (true) {
+    this_thread::sleep_for(chrono::milliseconds(1));
+    if (waiting_vehicles_.getSize() > 0 && !is_blocked_) {
+      this->setIsBlocked(true);
+      waiting_vehicles_.permitEntryToFirstInQueue();
+    }
+  }
+}
