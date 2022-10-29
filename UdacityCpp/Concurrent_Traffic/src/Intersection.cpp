@@ -82,3 +82,5 @@ void Intersection::addVehicleToQueue(shared_ptr<Vehicle> vehicle) {
 void Intersection::vehicleHasLeft(shared_ptr<Vehicle> vehicle) {
   this->setIsBlocked(false);
 }
+
+void Intersection::setIsBlocked(bool isBlocked) { is_blocked_ = isBlocked; }
