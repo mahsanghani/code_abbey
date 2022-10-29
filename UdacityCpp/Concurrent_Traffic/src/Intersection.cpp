@@ -84,3 +84,8 @@ void Intersection::vehicleHasLeft(shared_ptr<Vehicle> vehicle) {
 }
 
 void Intersection::setIsBlocked(bool isBlocked) { is_blocked_ = isBlocked; }
+
+void Intersection::simulate() {
+  traffic_light_.simulate();
+  threads_.emplace_back(thread(&Intersection::processVehicleQueue, this));
+}
