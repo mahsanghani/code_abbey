@@ -30,4 +30,26 @@ private:
   mutex mutex_;
 };
 
+class Intersection : public TrafficObject {
+public:
+  Intersection();
+
+  void setIsBlocked(bool isBlocked);
+
+  void addVehicleToQueue(shared_ptr<Vehicle> vehicle);
+  void addStreet(shared_ptr<Street> street);
+  vector<shared_ptr<Street>> queryStreets(shared_ptr<Street> incoming);
+  void simulate();
+  void vehicleHasLeft(shared_ptr<Vehicle> vehicle);
+  bool trafficLightIsGreen();
+
+private:
+  void processVehicleQueue();
+
+  TrafficLight traffic_light_;
+  vector<shared_ptr<Street>> streets_;
+  WaitingVehicles waiting_vehicles_;
+  bool is_blocked_;
+};
+
 #endif
