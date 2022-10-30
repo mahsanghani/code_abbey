@@ -30,3 +30,12 @@ TrafficLight::TrafficLight() {
   current_phase_ = TrafficLightPhase::kRed;
   msg_queue_ = make_shared<MessageQueue<TrafficLightPhase>>();
 }
+
+void TrafficLight::waitForGreen() {
+  while (1) {
+    this_thread::sleep_for(chrono::milliseconds(1));
+    auto cur_phase =
+        msg_queue_->receive() if (cur_phase ==
+                                  TrafficLightPhase::kGreen) return;
+  }
+}
