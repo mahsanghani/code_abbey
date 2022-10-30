@@ -43,3 +43,7 @@ void TrafficLight::waitForGreen() {
 TrafficLightPhase TrafficLight::getCurrentPhase() const {
   return current_phase_;
 }
+
+void TrafficLight::setCurrentPhase(const TrafficLightPhase color) {
+  current_phase_ = color;
+}
