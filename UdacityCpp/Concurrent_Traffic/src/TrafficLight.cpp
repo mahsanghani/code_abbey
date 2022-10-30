@@ -47,3 +47,7 @@ TrafficLightPhase TrafficLight::getCurrentPhase() const {
 void TrafficLight::setCurrentPhase(const TrafficLightPhase color) {
   current_phase_ = color;
 }
+
+void TrafficLight::simulate() {
+  threads_.emplace_back(thread(&TrafficLight::cycleThroughPhases, this));
+}
