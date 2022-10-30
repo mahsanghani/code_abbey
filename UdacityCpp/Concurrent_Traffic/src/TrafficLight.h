@@ -15,3 +15,14 @@ using namespace std;
 class Vehicle;
 
 enum class TrafficLightPhase { kRed = 0; kGreen = 1; };
+
+template <class T> class MessageQueue {
+public:
+  T receive();
+  void send(T &&msg);
+
+private:
+  mutex mutex_;
+  condition_variable cond_;
+  deque<T> queue_;
+};
