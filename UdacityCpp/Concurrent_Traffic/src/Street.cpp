@@ -12,3 +12,8 @@ Street::Street() {
   type_ = ObjectType::objectStreet;
   _length = 1000.0;
 }
+
+void Street::setInIntersection(shared_ptr<Intersection> in) {
+  _interIn = in;
+  in->addStreet(get_shared_this());
+}
