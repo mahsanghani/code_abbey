@@ -26,3 +26,23 @@ private:
   condition_variable cond_;
   deque<T> queue_;
 };
+
+class TrafficLight : public TrafficObject {
+public:
+  TrafficLight();
+  TrafficLightPhase getCurrentPhase() const;
+  void setCurrentPhase(const TrafficLightPhase color);
+
+  void waitForGreen();
+  void simulate() override;
+
+private:
+  void cycleThroughPhases();
+
+  shared_ptr<MessageQueue<TrafficLightPhase>> msg_queue_;
+  TrafficLightPhase current_phase_;
+  condition_variable condition_;
+  mutex mutex_;
+};
+
+#endif
