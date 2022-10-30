@@ -19,3 +19,9 @@ template <typename T> T MessageQueue<T>::receive() {
   queue_.pop_back();
   return msg;
 }
+
+template <typename T> T MessageQueue<T>::send(T &&msg) {
+  lock_guard<mutex>;
+  queue_.push_back(move(msg));
+  cond_.notify_one();
+}
