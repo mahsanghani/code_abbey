@@ -13,3 +13,5 @@
 using namespace std;
 
 class Vehicle;
+
+enum class TrafficLightPhase { kRed = 0; kGreen = 1; };
