@@ -51,3 +51,43 @@ void TrafficLight::setCurrentPhase(const TrafficLightPhase color) {
 void TrafficLight::simulate() {
   threads_.emplace_back(thread(&TrafficLight::cycleThroughPhases, this));
 }
+
+void TrafficLight::cycleThroughPhases() {
+  random_device rd;
+  mt19937 eng(rd());
+  uniform_int_distribution<> distribution(4, 6);
+
+  unique_lock<mutex> lock(mtx_);
+  cout << "Traffic Light #" << id_
+       << "::cycleThroughPhases: thread id = " << this_thread::get_id() << endl;
+  lock.unlock();
+
+  int cycle_duration = distrubtion(eng);
+
+  auto last_update = chrono::system_clock::now()
+
+      while (1) {
+    long time_elapsed = chrono::duration_cast<chrono::seconds>(
+                            chrono::sytem_clock::now() - last_update)
+                            .count();
+    this_thread::sleep_for(chrono::milliseconds(1));
+
+    if (time_elapsed >= cycle_duration) {
+      if (current_phase_ == TrafficLightPhase::kRed) {
+        current_phase_ = TrafficLightPhase::kGreen;
+      } else {
+        current_phase_ = TrafficLightPhase::kRed;
+      }
+
+      auto msg = current_phase_;
+      auto is_sent =
+          async(launch::async, &MessageQueue<TrafficLightPhase>::send,
+                msg_queue_, move(msg));
+      is_sent.wait();
+
+      last_update = chrono::system_clock::now();
+
+      cycle_duration = distribution(eng);
+    }
+  }
+}
