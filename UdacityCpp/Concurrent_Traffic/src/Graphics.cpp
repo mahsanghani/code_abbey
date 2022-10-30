@@ -17,3 +17,13 @@ void Graphics::simulate() {
     this->drawTrafficObjects();
   }
 }
+
+void Graphics::loadBackgroundImg() {
+  _windowName = "Concurrency Traffic Simulation";
+  cv::namedWindow(_windowName, cv::WINDOW_NORMAL);
+
+  cv::Mat background = cv::imread(_bgFilename);
+  _images.push_back(background);
+  _images.push_back(background.clone());
+  _images.push_back(background.clone());
+}
