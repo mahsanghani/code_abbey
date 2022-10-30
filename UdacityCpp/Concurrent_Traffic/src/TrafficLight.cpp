@@ -13,7 +13,7 @@ using namespace std;
 
 template <typename T> T MessageQueue<T>::receive() {
   unique_lock<mutex> u_lock(mutex_);
-  cond_.wait(u_lock, [this] { return !queue.empty(); });
+  cond_.wait(u_lock, [this] { return !queue_.empty(); });
 
   T msg = move(queue_.back());
   queue_.pop_back();
@@ -38,4 +38,8 @@ void TrafficLight::waitForGreen() {
     if (cur_phase == TrafficLightPhase::kGreen)
       return;
   }
+}
+
+TrafficLightPhase TrafficLight::getCurrentPhase() const {
+  return current_phase_;
 }
