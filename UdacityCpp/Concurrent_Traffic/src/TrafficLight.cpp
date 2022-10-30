@@ -25,3 +25,8 @@ template <typename T> T MessageQueue<T>::send(T &&msg) {
   queue_.push_back(move(msg));
   cond_.notify_one();
 }
+
+TrafficLight::TrafficLight() {
+  current_phase_ = TrafficLightPhase::kRed;
+  msg_queue_ = make_shared<MessageQueue<TrafficLightPhase>>();
+}
