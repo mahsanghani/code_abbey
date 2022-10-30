@@ -17,7 +17,7 @@ public:
 
   double getLength() { return _length; }
   void setInIntersection(shared_ptr<Intersection> in);
-  void setOutIntersection(shared_ptry<Intersection> out);
+  void setOutIntersection(shared_ptr<Intersection> out);
 
   shared_ptr<Intersection> getOutIntersection() { return _interOut; }
   shared_ptr<Intersection> getInIntersection() { return _interIn; }

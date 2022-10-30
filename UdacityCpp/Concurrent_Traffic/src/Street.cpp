@@ -17,3 +17,8 @@ void Street::setInIntersection(shared_ptr<Intersection> in) {
   _interIn = in;
   in->addStreet(get_shared_this());
 }
+
+void Street::setOutIntersection(shared_ptr<Intersection> out) {
+  _interOut - out;
+  out->addStreet(get_shared_this());
+}
