@@ -26,3 +26,7 @@ TrafficObject::TrafficObject() {
   type_ = ObjectType::noObject;
   id_ = id_cnt_++;
 }
+
+TrafficObject::~TrafficObject() {
+  for_each(threads_.begin(), threads_.end(), [](thread &t) { t.join(); });
+}
