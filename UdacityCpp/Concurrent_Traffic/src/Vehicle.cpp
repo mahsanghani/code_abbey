@@ -15,3 +15,8 @@ Vehicle::Vehicle() {
   type_ = ObjectType::objectVehicle;
   _speed = 400; // m/s
 }
+
+void Vehicle::setCurrentDestination(shared_ptr<Intersection> destination) {
+  _currDestination = destination;
+  _posStreet = 0.0;
+}
