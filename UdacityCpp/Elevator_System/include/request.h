@@ -30,4 +30,4 @@ public:
   InternalRequest(int l = 0) : Request(l) {}
 };
 
-#endif /* REQUEST_H */
+#endif

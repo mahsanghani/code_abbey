@@ -50,4 +50,4 @@ public:
   int getCurLevel() const { return current_level_; }
 };
 
-#endif /* ELEVATOR_H */
+#endif
