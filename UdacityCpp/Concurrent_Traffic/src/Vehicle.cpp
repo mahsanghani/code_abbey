@@ -71,21 +71,33 @@ void Vehicle::drive() {
       }
 
       if (completion >= 1.0 && hasEnteredIntersection) {
-        // choose next street and destination
         std::vector<std::shared_ptr<Street>> streetOptions =
             _currDestination->queryStreets(_currStreet);
         std::shared_ptr<Street> nextStreet;
         if (streetOptions.size() > 0) {
-          // pick one street at random and query intersection to enter this
-          // street
           std::random_device rd;
           std::mt19937 eng(rd());
           std::uniform_int_distribution<> distr(0, streetOptions.size() - 1);
           nextStreet = streetOptions.at(distr(eng));
         } else {
-          // this street is a dead-end, so drive back the same way
           nextStreet = _currStreet;
         }
+        std::shared_ptr<Intersection> nextIntersection =
+            nextStreet->getInIntersection()->getID() ==
+                    _currDestination->getID()
+                ? nextStreet->getOutIntersection()
+                : nextStreet->getInIntersection();
+
+        _currDestination->vehicleHasLeft(get_shared_this());
+
+        this->setCurrentDestination(nextIntersection);
+        this->setCurrentStreet(nextStreet);
+
+        _speed *= 10.0;
+        hasEnteredIntersection = false;
       }
+
+      lastUpdate = std::chrono::system_clock::now();
     }
   }
+}
