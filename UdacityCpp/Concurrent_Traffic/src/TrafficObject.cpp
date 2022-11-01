@@ -11,3 +11,8 @@ using namespace std;
 int TrafficObject::id_cnt_ = 0;
 
 mutex TrafficObject::mtx_;
+
+void TrafficObject::setPosition(double x, double y) {
+  posX_ = x;
+  posY_ = y;
+}
