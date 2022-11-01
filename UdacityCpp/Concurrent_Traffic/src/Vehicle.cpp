@@ -20,3 +20,7 @@ void Vehicle::setCurrentDestination(shared_ptr<Intersection> destination) {
   _currDestination = destination;
   _posStreet = 0.0;
 }
+
+void Vehicle::simulate() {
+  threads_.emplace_back(thread(&Vehicle::drive, this));
+}
