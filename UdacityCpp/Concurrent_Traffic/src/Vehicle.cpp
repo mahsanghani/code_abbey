@@ -45,7 +45,6 @@ void Vehicle::drive() {
       _posStreet += _speed * timeSinceLastUpdate / 1000;
       double completion = _posStreet / _currStreet->getLength();
 
-      // compute current pixel position on street based on driving direction
       std::shared_ptr<Intersection> i1, i2;
       i2 = _currDestination;
       i1 = i2->getID() == _currStreet->getInIntersection()->getID()
@@ -58,25 +57,35 @@ void Vehicle::drive() {
       dx = x2 - x1;
       dy = y2 - y1;
       l = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (x1 - x2));
-      xv = x1 + completion *
-                    dx; // new position based on line equation in parameter form
+      xv = x1 + completion * dx;
       yv = y1 + completion * dy;
       this->setPosition(xv, yv);
 
-      /* Task L2.1 */
-      // check wether halting position in front of destination has been reached
       if (completion >= 0.9 && !hasEnteredIntersection) {
-        // request entry to the current intersection (using async)
         auto ftrEntryGranted = std::async(&Intersection::addVehicleToQueue,
                                           _currDestination, get_shared_this());
 
-        // wait until entry has been granted
         ftrEntryGranted.get();
-
-        // slow down and set intersection flag
         _speed /= 10.0;
         hasEnteredIntersection = true;
       }
+
+      if (completion >= 1.0 && hasEnteredIntersection) {
+        // choose next street and destination
+        std::vector<std::shared_ptr<Street>> streetOptions =
+            _currDestination->queryStreets(_currStreet);
+        std::shared_ptr<Street> nextStreet;
+        if (streetOptions.size() > 0) {
+          // pick one street at random and query intersection to enter this
+          // street
+          std::random_device rd;
+          std::mt19937 eng(rd());
+          std::uniform_int_distribution<> distr(0, streetOptions.size() - 1);
+          nextStreet = streetOptions.at(distr(eng));
+        } else {
+          // this street is a dead-end, so drive back the same way
+          nextStreet = _currStreet;
+        }
+      }
     }
   }
-}
