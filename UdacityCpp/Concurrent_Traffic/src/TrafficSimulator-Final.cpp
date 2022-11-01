@@ -96,3 +96,37 @@ void createTrafficObjects_NYC(vector<shared_ptr<Street>> &streets,
     vehicles.at(nv)->setCurrentDestination(intersections.at(nv));
   }
 }
+
+int main() {
+  vector<shared_ptr<Street>> streets;
+  vector<shared_ptr<Intersection>> intersections;
+  vector<shared_ptr<Vehicle>> vehicles;
+  string backgroundImg;
+  int nVehicles = 5;
+  createTrafficObjects_Paris(streets, intersections, vehicles, backgroundImg,
+                             nVehicles);
+  for_each(intersections.begin(), intersections.end(),
+           [](shared_ptr<Intersection> &i) { i->simulate(); });
+
+  for_each(vehicles.begin(), vehicles.end(),
+           [](shared_ptr<Vehicle> &v) { v->simulate(); });
+
+  vector<shared_ptr<TrafficObject>> trafficObjects;
+  for_each(intersections.begin(), intersections.end(),
+           [&trafficObjects](shared_ptr<Intersection> &intersection) {
+             shared_ptr<TrafficObject> trafficObject =
+                 dynamic_pointer_cast<TrafficObject>(intersection);
+             trafficObjects.push_back(trafficObject);
+           });
+
+  for_each(vehicles.begin(), vehicles.end(),
+           [&trafficObjects](shared_ptr<Vehicle> &vehicles) {
+             shared_ptr<TrafficObject> trafficObject =
+                 dynamic_pointer_cast<TrafficObject>(vehicles);
+             trafficObjects.push_back(trafficObject);
+           });
+  Graphics *graphics = new Graphics();
+  graphics->setBgFilename(backgroundImg);
+  graphics->setTrafficObjects(trafficObjects);
+  graphics->simulate();
+}
