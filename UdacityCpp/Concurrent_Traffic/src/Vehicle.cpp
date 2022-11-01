@@ -33,4 +33,17 @@ void Vehicle::drive() {
   bool hasEnteredIntersection = false;
   double cycleDuration = 1;
   chrono::time_point<std::chrono::system_clock> lastUpdate;
+
+  lastUpdate = std::chrono::system_clock::now();
+  while (true) {
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    long timeSinceLastUpdate =
+        std::chrono::duration_cast<std::chrono::milliseconds>(
+            std::chrono::system_clock::now() - lastUpdate)
+            .count();
+    if (timeSinceLastUpdate >= cycleDuration) {
+      _posStreet += _speed * timeSinceLastUpdate / 1000;
+      double completion = _posStreet / _currStreet->getLength();
+    }
+  }
 }
