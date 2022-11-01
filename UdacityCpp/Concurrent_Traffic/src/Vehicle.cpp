@@ -24,3 +24,13 @@ void Vehicle::setCurrentDestination(shared_ptr<Intersection> destination) {
 void Vehicle::simulate() {
   threads_.emplace_back(thread(&Vehicle::drive, this));
 }
+
+void Vehicle::drive() {
+  unique_lock<mutex> lck(mtx_);
+  cout << "Vehicle #" << id_ << "::drive: thread id = " << this_thread::get_id()
+       << endl;
+  lck.unlock();
+  bool hasEnteredIntersection = false;
+  double cycleDuration = 1;
+  chrono::time_point<std::chrono::system_clock> lastUpdate;
+}
