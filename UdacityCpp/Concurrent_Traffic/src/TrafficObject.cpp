@@ -21,3 +21,8 @@ void TrafficObject::getPosition(double &x, double &y) {
   x = posX_;
   y = posY_;
 }
+
+TrafficObject::TrafficObject() {
+  type_ = ObjectType::noObject;
+  id_ = id_cnt_++;
+}
