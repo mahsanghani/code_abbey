@@ -17,6 +17,14 @@ public:
   public:
   };
 
+  RouteModel(const vector<byte> &xml);
+  vector<Node> path;
+  vector<Node> &SNodes() { return m_Nodes; }
+  unordered_map<int, vector<const Model::Road *>> &GetNodeToRoadMap() {
+    return node_to_road;
+  }
+  RouteModel::Node &FindClosestNode(float, float);
+
 private:
   vector<Node> m_Nodes;
   unordered_map<int, vector<const Model::Road *>> node_to_road;
