@@ -46,4 +46,26 @@ public:
     vector<int> outer;
     vector<int> inner;
   };
+
+  struct Building : Multipolygon {};
+
+  struct Leisure : Multipolygon {};
+
+  struct Water : Multipolygon {};
+
+  struct Landuse : Multipolygon {
+    enum Type {
+      Invalid,
+      Commercial,
+      Construction,
+      Grass,
+      Forest,
+      Industrial,
+      Railway,
+      Residential
+    };
+    Type type;
+  };
+
+  Model(const std::vector<std::byte> &xml);
 }
