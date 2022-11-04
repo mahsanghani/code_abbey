@@ -1,8 +1,16 @@
 //
 // Created by Ahsan Ghani on 2022-11-03.
 //
+#pragma once
 
-#ifndef CODE_ABBEY_REDNER_H
-#define CODE_ABBEY_REDNER_H
+#include "route_model.h"
+#include <io2d.h>
+#include <unordered_map>
 
-#endif // CODE_ABBEY_REDNER_H
+using namespace std::experimental;
+
+class Render {
+public:
+  Render(RouteModel &model);
+  void Display(io2d::output_surface &surface);
+};
