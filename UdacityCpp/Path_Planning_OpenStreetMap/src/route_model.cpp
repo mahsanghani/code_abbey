@@ -50,3 +50,13 @@ RouteModel::Node *RouteModel::Node::FindNeighbor(vector<int> node_indices) {
   }
   return closest_node;
 }
+
+void RouteModel::Node::FindNeighbors() {
+  for (const Model::Road *&road : parent_model->node_to_road[this->index]) {
+    RouteModel::Node *node_ptr =
+        FindNeighbor(parent_model->Ways()[road->way].nodes);
+    if (node_ptr) {
+      this->neighbors.push_back(node_ptr);
+    }
+  }
+}
