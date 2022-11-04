@@ -16,7 +16,7 @@ public:
   class Node : public Model::Node {
   public:
     Node() {}
-    Node(int idx, RouteMode *search_model, Model::Node node)
+    Node(int idx, RouteModel *search_model, Model::Node node)
         : Model::Node(node), parent_model(search_model), index(idx) {}
     Node *parent = nullptr;
     float h_value = numeric_limits<float>::max();
