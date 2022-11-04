@@ -1,8 +1,49 @@
 //
 // Created by Ahsan Ghani on 2022-11-03.
 //
+#pragma once
 
-#ifndef CODE_ABBEY_MODEL_H
-#define CODE_ABBEY_MODEL_H
+#include <cstddef>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
-#endif // CODE_ABBEY_MODEL_H
+using namespace std;
+
+class Model {
+public:
+  struct Node {
+    double x = 0.f;
+    double y = 0.f;
+  };
+
+  struct Way {
+    vector<int> nodes;
+  };
+
+  struct Road {
+    enum Type {
+      Invalid,
+      Unclassified,
+      Service,
+      Residential,
+      Tertiary,
+      Secondary,
+      Primary,
+      Trunk,
+      Motorway,
+      Footway
+    };
+    int way;
+    Type type;
+  };
+
+  struct Railway {
+    int way;
+  };
+
+  struct Multipolygon {
+    vector<int> outer;
+    vector<int> inner;
+  };
+}
