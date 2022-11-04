@@ -53,4 +53,13 @@ private:
   io2d::dashes m_RailwayDashes{0.f, {3.f, 3.f}};
   float m_RailwayOuterWidth = 3.f;
   float m_RailwayInnerWidth = 2.f;
+
+  struct RoadRep {
+    io2d::brush brush{io2d::rgba_color::black};
+    io2d::dashes dashes{};
+    float metric_width = 1.f;
+  };
+  std::unordered_map<Model::Road::Type, RoadRep> m_RoadReps;
+
+  std::unordered_map<Model::Landuse::Type, io2d::brush> m_LanduseBrushes;
 };
