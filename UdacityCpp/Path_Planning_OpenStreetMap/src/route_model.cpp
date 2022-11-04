@@ -14,3 +14,8 @@ RouteModel::RouteModel(const vector<byte> &xml) : Model(xml) {
   }
   CreateNodeToRoadHashmap();
 }
+
+float RouteModel::Node::distance(RouteModel::Node anotherNode) const {
+  return sqrt(pow(this->x - anotherNode.x, 2) +
+              pow(this->y - anotherNode.y, 2));
+}
