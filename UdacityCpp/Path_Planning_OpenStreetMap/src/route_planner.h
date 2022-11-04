@@ -9,3 +9,11 @@
 #include <vector>
 
 using namespace std;
+
+class RoutePlanner {
+public:
+  RoutePlanner(RoutePlanner &model, float start_x, float start_y, float end_x,
+               float end_y);
+  float GetDistance() { return distance; }
+  void AStarSearch();
+};
