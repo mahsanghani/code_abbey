@@ -78,4 +78,24 @@ public:
   auto &Waters() const noexcept { return m_Waters; }
   auto &Landuses() const noexcept { return m_Landuses; }
   auto &Railways() const noexcept { return m_Railways; }
-}
+
+private:
+  void AdjustCoordinates();
+  void BuildRings(Multipolygon &mp);
+  void LoadData(const std::vector<std::byte> &xml);
+
+  std::vector<Node> m_Nodes;
+  std::vector<Way> m_Ways;
+  std::vector<Road> m_Roads;
+  std::vector<Railway> m_Railways;
+  std::vector<Building> m_Buildings;
+  std::vector<Leisure> m_Leisures;
+  std::vector<Water> m_Waters;
+  std::vector<Landuse> m_Landuses;
+
+  double m_MinLat = 0.;
+  double m_MaxLat = 0.;
+  double m_MinLon = 0.;
+  double m_MaxLon = 0.;
+  double m_MetricScale = 1.f;
+};
