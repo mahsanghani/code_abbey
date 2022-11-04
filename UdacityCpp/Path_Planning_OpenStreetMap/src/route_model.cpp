@@ -32,3 +32,21 @@ void RouteModel::CreateNodeToRoadHashmap() {
     }
   }
 }
+
+RouteModel::Node *RouteModel::Node::FindNeighbor(vector<int> node_indices) {
+  Node *closest_node = nullptr;
+
+  for (int node_index : node_indices) {
+    RouteModel::Node &evalNode = parent_model->SNodes()[node_index];
+
+    if (!evalNode.visited && this->distance(evalNode) > 0) {
+      if (!closest_node) {
+        closest_node = &evalNode;
+      } else {
+        if (this->distance(*closest_node) > this->distance(evalNode))
+          closest_node = &evalNode;
+      }
+    }
+  }
+  return closest_node;
+}
