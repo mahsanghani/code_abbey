@@ -61,3 +61,8 @@ RouteModel::Node *RoutePlanner::NextNode() {
   this->open_list.pop_back();
   return lowest_f_val_node;
 }
+
+bool RoutePlanner::compareFValue(const RouteModel::Node *node_a,
+                                 const RouteModel::Node *node_b) {
+  return node_a->g_value + node_a->h_value > node_b->g_value + node_b->h_value;
+}
