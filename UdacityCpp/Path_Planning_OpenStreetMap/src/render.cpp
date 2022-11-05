@@ -225,3 +225,28 @@ void Render::BuildLanduseBrushes() {
       Model::Landuse::Residential,
       io2d::brush{io2d::rgba_color{209, 209, 209}});
 }
+
+static float RoadMetricWidth(Model::Road::Type type) {
+  switch (type) {
+  case Model::Road::Motorway:
+    return 6.f;
+  case Model::Road::Trunk:
+    return 6.f;
+  case Model::Road::Primary:
+    return 5.f;
+  case Model::Road::Secondary:
+    return 5.f;
+  case Model::Road::Tertiary:
+    return 4.f;
+  case Model::Road::Residential:
+    return 2.5f;
+  case Model::Road::Unclassified:
+    return 2.5f;
+  case Model::Road::Service:
+    return 1.f;
+  case Model::Road::Footway:
+    return 0.f;
+  default:
+    return 1.f;
+  }
+}
