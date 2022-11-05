@@ -280,3 +280,7 @@ static io2d::dashes RoadDashes(Model::Road::Type type) {
   return type == Model::Road::Footway ? io2d::dashes{0.f, {1.f, 2.f}}
                                       : io2d::dashes{};
 }
+
+static io2d::point_2d ToPoint2D(const Model::Node &node) noexcept {
+  return io2d::point_2d(static_cast<float>(node.x), static_cast<float>(node.y));
+}
