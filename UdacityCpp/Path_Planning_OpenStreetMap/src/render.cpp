@@ -15,3 +15,23 @@ Render::Render(RouteModel &model) : m_Model(model) {
   BuildRoadReps();
   BuildLanduseBrushes();
 }
+
+void Render::Display(io2d::output_surface &surface) {
+  m_Scale = static_cast<float>(
+      std::min(surface.dimensions().x(), surface.dimensions().y()));
+  m_PixelsInMeter = static_cast<float>(m_Scale / m_Model.MetricScale());
+  m_Matrix = io2d::matrix_2d::create_scale({m_Scale, -m_Scale}) *
+             io2d::matrix_2d::create_translate(
+                 {0.f, static_cast<float>(surface.dimensions().y())});
+
+  surface.paint(m_BackgroundFillBrush);
+  DrawLanduses(surface);
+  DrawLeisure(surface);
+  DrawWater(surface);
+  DrawRailways(surface);
+  DrawHighways(surface);
+  DrawBuildings(surface);
+  DrawPath(surface);
+  DrawStartPosition(surface);
+  DrawEndPosition(surface);
+}
