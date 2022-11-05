@@ -193,3 +193,16 @@ io2d::interpreted_path Render::PathFromMP(const Model::Multipolygon &mp) const {
 
   return io2d::interpreted_path{pb};
 }
+
+void Render::BuildRoadReps() {
+  using R = Model::Road;
+  auto types = {R::Motorway,  R::Trunk,        R::Primary,
+                R::Secondary, R::Tertiary,     R::Residential,
+                R::Service,   R::Unclassified, R::Footway};
+  for (auto type : types) {
+    auto &rep = m_RoadReps[type];
+    rep.brush = io2d::brush{RoadColor(type)};
+    rep.metric_width = RoadMetricWidth(type);
+    rep.dashes = RoadDashes(type);
+  }
+}
