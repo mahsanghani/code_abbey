@@ -152,8 +152,9 @@ void Model::LoadData(const vector<byte> &xml) {
         }
       }
     }
+  }
 
-    for (const auto &relation : doc.select_nodes("/osm/relation")) {
+  for (const auto &relation : doc.select_nodes("/osm/relation")) {
       auto node = relation.node();
       auto noode_id = std::string_view{node.attribute("id").as_string()};
       std::vector<int> outer, inner;
@@ -174,8 +175,30 @@ void Model::LoadData(const vector<byte> &xml) {
             else
               inner.emplace_back(way_num);
           }
+        } else if (name == "tag") {
+          auto category = std::string_view{child.attribute("k").as_string()};
+          auto type = std::string_view{child.attribute("v").as_string()};
+          if (category == "building") {
+            commit(m_Buildings.emplace_back());
+            break;
+          }
+          if (category == "natural" && type == "water") {
+            commit(m_Waters.emplace_back());
+            BuildRings(m_Waters.back());
+            break;
+          }
+          if (category == "landuse") {
+            if (auto landuse_type = String2LanduseType(type);
+                landuse_type != Landuse::Invalid) {
+              commit(m_Landuses.emplace_back());
+              m_Landuses.back().type = landuse_type;
+              BuildRings(m_Landuses.back());
+            }
+            break;
+          }
         }
       }
+  }
     }
 
     void Model::AdjustCoordinates() {
