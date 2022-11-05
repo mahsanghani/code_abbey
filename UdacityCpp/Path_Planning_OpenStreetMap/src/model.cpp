@@ -72,6 +72,34 @@ Model::Model(const std::vector<std::byte> &xml) {
             });
 }
 
+void Model::LoadData(const vector<byte> &xml) {
+  using namespace pugi;
+
+  xml_document doc;
+  if (!doc.load_buffer(xml.data(), xml.size())) {
+    throw logic_error("failed to parse the xml file");
+  }
+
+  if (auto bounds = doc.select_nodes("/osm/bounds"); !bounds.empty()) {
+    auto node = bounds.first().node();
+    m_MinLat = atof(node.attribute("minlat").as_string());
+    m_MaxLat = atof(node.attribute("maxlat").as_string());
+    m_MinLon = atof(node.attribute("minlon").as_string());
+    m_MaxLon = atof(node.attribute("maxlon").as_string());
+  } else {
+    throw logic_error("map's bounds are not defined");
+  }
+
+  unordered_map<string, int> node_id_to_num;
+  for (const auto &node : doc.select_nodes("/osm/node")) {
+    node_id_to_num[node.node().attribute("id").as_string()] =
+        (int)m_Nodes.size();
+    m_Nodes.emplace_back();
+    m_Nodes.back().y = atof(node.node().attribute("lat").as_string());
+    m_Nodes.back().x = atof(node.node().attribute("lon").as_string());
+  }
+}
+
 void Model::AdjustCoordinates() {
   const auto pi = 3.14159265358979323846264338327950288;
   const auto deg_to_rad = 2. * pi / 360.;
