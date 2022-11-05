@@ -56,8 +56,6 @@ int main(int argc, const char **argv) {
   float start_x, start_y, end_x, end_y;
   std::cout << "Please type in start_x from 0-100 : " << std::endl;
   std::cin >> start_x;
-  // Checking for invalid input (almost necessary to have, same for the code
-  // snippets below)
   while (!(std::cin) || start_x < 0 || start_x > 100) {
     std::cout << "Invalid entry. Enter a start_x from 0 to 100: ";
     std::cin.clear();
@@ -89,13 +87,10 @@ int main(int argc, const char **argv) {
     std::cin >> end_y;
   }
 
-  // Build Model.
   RouteModel model{osm_data};
 
-  // Perform search and render results.
   RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
 
-  // Perform the A Star Search Algorithm
   route_planner.AStarSearch();
   std::cout << "The total distance is : " << route_planner.GetDistance()
             << std::endl;
