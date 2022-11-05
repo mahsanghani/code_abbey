@@ -14,3 +14,19 @@
 
 using namespace std;
 using namespace experimental;
+
+static optional<vector<byte>> ReadFile(const string &path) {
+  ifstream is{path, ios::binary | ios::ate};
+  if (!is)
+    return nullopt;
+
+  auto size = is.tellg();
+  vector<byte> contents(size);
+
+  is.seekg(0);
+  is.read((char *)contents.data(), size);
+
+  if (contents.empty())
+    return nullopt;
+  return move(contents);
+}
