@@ -153,3 +153,35 @@ static vector<int> Track(vector<int> &open_ways, const Model::Way *ways) {
   }
   return nodes;
 }
+
+void Model::BuildRings(Multipolygon &mp) {
+  auto is_closed = [](const Model::Way &way) {
+    return way.nodes.size() > 1 && way.nodes.front() == way.nodes.back();
+  };
+
+  auto process = [&](vector<int> &ways_nums) {
+    auto ways = m_Ways.data();
+    vector<int> closed, open;
+
+    for (auto &way_num : ways_nums) {
+      (is_closed(ways[way_num]) ? closed : open).emplace_back(way_num);
+    }
+
+    while (!open.empty()) {
+      auto new_nodes = Track(open, ways);
+      if (new_nodes.empty()) {
+        break;
+      }
+      open.erase(
+          remove_if(open.begin(), open.end(), [](auto v) { return v < 0; }),
+          open.end());
+      closed.emplace_back((int)m_Ways.size());
+      Model::Way new_way;
+      new_way.nodes = move(new_nodes);
+      m_Ways.emplace_back(new_way);
+    }
+    swap(ways_nums, closed);
+  };
+  process(mp.outer);
+  process(mp.inner);
+}
