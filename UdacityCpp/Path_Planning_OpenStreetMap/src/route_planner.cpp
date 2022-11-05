@@ -33,3 +33,19 @@ RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
   this->distance *= m_Model.MetricScale();
   return path_found;
 }
+
+void RoutePlanner::AStarSearch() {
+  this->start_node->visited = true;
+  this->open_list.push_back(this->start_node);
+
+  RouteModel::Node *current_node = nullptr;
+  while (!open_list.empty()) {
+    current_node = this->NextNode();
+    if (current_node->distance(*this->end_node) == 0) {
+      m_Model.path = this->ConstructFinalPath(current_node);
+      return;
+    } else {
+      AddNeighbors(current_node);
+    }
+  }
+}
