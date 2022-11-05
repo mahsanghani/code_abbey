@@ -139,3 +139,17 @@ static bool TrackRec(const vector<int> &open_ways, const Model::Way *ways,
     }
   }
 }
+
+static vector<int> Track(vector<int> &open_ways, const Model::Way *ways) {
+  assert(!open_ways.empty());
+  vector<bool> used(open_ways.size(), false);
+  vector<int> nodes;
+  if (TrackRec(open_ways, ways, used, nodes)) {
+    for (int i = 0; i < open_ways.size(); ++i) {
+      if (used[i]) {
+        open_ways[i] = -1;
+      }
+    }
+  }
+  return nodes;
+}
