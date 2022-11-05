@@ -206,3 +206,22 @@ void Render::BuildRoadReps() {
     rep.dashes = RoadDashes(type);
   }
 }
+
+void Render::BuildLanduseBrushes() {
+  m_LanduseBrushes.insert_or_assign(
+      Model::Landuse::Commercial, io2d::brush{io2d::rgba_color{233, 195, 196}});
+  m_LanduseBrushes.insert_or_assign(
+      Model::Landuse::Construction,
+      io2d::brush{io2d::rgba_color{187, 188, 165}});
+  m_LanduseBrushes.insert_or_assign(
+      Model::Landuse::Grass, io2d::brush{io2d::rgba_color{197, 236, 148}});
+  m_LanduseBrushes.insert_or_assign(
+      Model::Landuse::Forest, io2d::brush{io2d::rgba_color{158, 201, 141}});
+  m_LanduseBrushes.insert_or_assign(
+      Model::Landuse::Industrial, io2d::brush{io2d::rgba_color{223, 197, 220}});
+  m_LanduseBrushes.insert_or_assign(
+      Model::Landuse::Railway, io2d::brush{io2d::rgba_color{223, 197, 220}});
+  m_LanduseBrushes.insert_or_assign(
+      Model::Landuse::Residential,
+      io2d::brush{io2d::rgba_color{209, 209, 209}});
+}
