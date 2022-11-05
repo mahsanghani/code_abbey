@@ -35,3 +35,11 @@ void Render::Display(io2d::output_surface &surface) {
   DrawStartPosition(surface);
   DrawEndPosition(surface);
 }
+
+void Render::DrawPath(io2d::output_surface &surface) const {
+  io2d::render_props aliased{io2d::antialias::none};
+  io2d::brush foreBrush{io2d::rgba_color::orange};
+  float width = 5.0f;
+  surface.stroke(foreBrush, PathLine(), std::nullopt,
+                 io2d::stroke_props{width});
+}
