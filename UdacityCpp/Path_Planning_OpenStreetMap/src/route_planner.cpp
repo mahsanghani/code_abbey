@@ -17,3 +17,19 @@ RoutePlanner::RoutePlanner(RoutePlanner &model, float start_x, float start_y,
   start_node = &m_Model.FindClosestNode(start_x, start_y);
   end_node = &m_Model.FindClosestNode(end_x, end_y);
 }
+
+vector<RouteModel::Node>
+RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
+  vector<RouteModel::Node> path_found;
+  RouteModel::Node *curNode = current_node;
+
+  while (curNode) {
+    path_found.push_back(*curNode);
+    if (curNode->parent)
+      this->distance += curNode->distance(*curNode->parent);
+    curNode = curNode->parent;
+  }
+
+  this->distance *= m_Model.MetricScale();
+  return path_found;
+}
