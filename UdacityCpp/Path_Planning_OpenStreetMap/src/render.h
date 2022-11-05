@@ -7,7 +7,8 @@
 #include <io2d.h>
 #include <unordered_map>
 
-using namespace std::experimental;
+using namespace std;
+using namespace experimental;
 
 class Render {
 public:

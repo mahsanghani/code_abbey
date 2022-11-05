@@ -67,7 +67,7 @@ public:
     Type type;
   };
 
-  Model(const std::vector<std::byte> &xml);
+  Model(const vector<byte> &xml);
 
   auto MetricScale() const noexcept { return m_MetricScale; }
   auto &Nodes() const noexcept { return m_Nodes; }
@@ -82,16 +82,16 @@ public:
 private:
   void AdjustCoordinates();
   void BuildRings(Multipolygon &mp);
-  void LoadData(const std::vector<std::byte> &xml);
+  void LoadData(const vector<byte> &xml);
 
-  std::vector<Node> m_Nodes;
-  std::vector<Way> m_Ways;
-  std::vector<Road> m_Roads;
-  std::vector<Railway> m_Railways;
-  std::vector<Building> m_Buildings;
-  std::vector<Leisure> m_Leisures;
-  std::vector<Water> m_Waters;
-  std::vector<Landuse> m_Landuses;
+  vector<Node> m_Nodes;
+  vector<Way> m_Ways;
+  vector<Road> m_Roads;
+  vector<Railway> m_Railways;
+  vector<Building> m_Buildings;
+  vector<Leisure> m_Leisures;
+  vector<Water> m_Waters;
+  vector<Landuse> m_Landuses;
 
   double m_MinLat = 0.;
   double m_MaxLat = 0.;
