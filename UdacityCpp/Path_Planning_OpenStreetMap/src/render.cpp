@@ -126,3 +126,16 @@ void Render::DrawHighways(io2d::output_surface &surface) const {
       surface.stroke(rep.brush, PathFromWay(way), std::nullopt, sp, rep.dashes);
     }
 }
+
+void Render::DrawRailways(io2d::output_surface &surface) const {
+  auto ways = m_Model.Ways().data();
+  for (auto &railway : m_Model.Railways()) {
+    auto &way = ways[railway.way];
+    auto path = PathFromWay(way);
+    surface.stroke(m_RailwayStrokeBrush, path, std::nullopt,
+                   io2d::stroke_props{m_RailwayOuterWidth * m_PixelsInMeter});
+    surface.stroke(m_RailwayDashBrush, path, std::nullopt,
+                   io2d::stroke_props{m_RailwayInnerWidth * m_PixelsInMeter},
+                   m_RailwayDashes);
+  }
+}
