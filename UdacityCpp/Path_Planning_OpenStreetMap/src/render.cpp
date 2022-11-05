@@ -169,3 +169,27 @@ io2d::interpreted_path Render::PathFromWay(const Model::Way &way) const {
     pb.line(ToPoint2D(nodes[*it]));
   return io2d::interpreted_path{pb};
 }
+
+io2d::interpreted_path Render::PathFromMP(const Model::Multipolygon &mp) const {
+  const auto nodes = m_Model.Nodes().data();
+  const auto ways = m_Model.Ways().data();
+
+  auto pb = io2d::path_builder{};
+  pb.matrix(m_Matrix);
+
+  auto commit = [&](const Model::Way &way) {
+    if (way.nodes.empty())
+      return;
+    pb.new_figure(ToPoint2D(nodes[way.nodes.front()]));
+    for (auto it = ++way.nodes.begin(); it != std::end(way.nodes); ++it)
+      pb.line(ToPoint2D(nodes[*it]));
+    pb.close_figure();
+  };
+
+  for (auto way_num : mp.outer)
+    commit(ways[way_num]);
+  for (auto way_num : mp.inner)
+    commit(ways[way_num]);
+
+  return io2d::interpreted_path{pb};
+}
