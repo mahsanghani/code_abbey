@@ -139,3 +139,19 @@ void Render::DrawRailways(io2d::output_surface &surface) const {
                    m_RailwayDashes);
   }
 }
+
+io2d::interpreted_path Render::PathLine() const {
+  if (m_Model.path.empty())
+    return {};
+
+  const auto nodes = m_Model.path;
+
+  auto pb = io2d::path_builder{};
+  pb.matrix(m_Matrix);
+  pb.new_figure(ToPoint2D(m_Model.path[0]));
+
+  for (int i = 1; i < m_Model.path.size(); i++)
+    pb.line(ToPoint2D(m_Model.path[i]));
+
+  return io2d::interpreted_path{pb};
+}
