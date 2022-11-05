@@ -11,7 +11,7 @@
 
 using namespace std;
 
-static Model::Road::Type String2RoadType(std::string_view type) {
+static Model::Road::Type String2RoadType(string_view type) {
   if (type == "motorway")
     return Model::Road::Motorway;
   if (type == "trunk")
@@ -43,7 +43,7 @@ static Model::Road::Type String2RoadType(std::string_view type) {
   return Model::Road::Invalid;
 }
 
-static Model::Landuse::Type String2LanduseType(std::string_view type) {
+static Model::Landuse::Type String2LanduseType(string_view type) {
   if (type == "commercial")
     return Model::Landuse::Commercial;
   if (type == "construction")
@@ -61,15 +61,14 @@ static Model::Landuse::Type String2LanduseType(std::string_view type) {
   return Model::Landuse::Invalid;
 }
 
-Model::Model(const std::vector<std::byte> &xml) {
+Model::Model(const vector<byte> &xml) {
   LoadData(xml);
 
   AdjustCoordinates();
 
-  std::sort(m_Roads.begin(), m_Roads.end(),
-            [](const auto &_1st, const auto &_2nd) {
-              return (int)_1st.type < (int)_2nd.type;
-            });
+  sort(m_Roads.begin(), m_Roads.end(), [](const auto &_1st, const auto &_2nd) {
+    return (int)_1st.type < (int)_2nd.type;
+  });
 }
 
 void Model::LoadData(const vector<byte> &xml) {
@@ -156,27 +155,27 @@ void Model::LoadData(const vector<byte> &xml) {
 
   for (const auto &relation : doc.select_nodes("/osm/relation")) {
     auto node = relation.node();
-    auto noode_id = std::string_view{node.attribute("id").as_string()};
-    std::vector<int> outer, inner;
+    auto noode_id = string_view{node.attribute("id").as_string()};
+    vector<int> outer, inner;
     auto commit = [&](Multipolygon &mp) {
-      mp.outer = std::move(outer);
-      mp.inner = std::move(inner);
+      mp.outer = move(outer);
+      mp.inner = move(inner);
     };
     for (auto child : node.children()) {
-      auto name = std::string_view{child.name()};
+      auto name = string_view{child.name()};
       if (name == "member") {
-        if (std::string_view{child.attribute("type").as_string()} == "way") {
+        if (string_view{child.attribute("type").as_string()} == "way") {
           if (!way_id_to_num.count(child.attribute("ref").as_string()))
             continue;
           auto way_num = way_id_to_num[child.attribute("ref").as_string()];
-          if (std::string_view{child.attribute("role").as_string()} == "outer")
+          if (string_view{child.attribute("role").as_string()} == "outer")
             outer.emplace_back(way_num);
           else
             inner.emplace_back(way_num);
         }
       } else if (name == "tag") {
-        auto category = std::string_view{child.attribute("k").as_string()};
-        auto type = std::string_view{child.attribute("v").as_string()};
+        auto category = string_view{child.attribute("k").as_string()};
+        auto type = string_view{child.attribute("v").as_string()};
         if (category == "building") {
           commit(m_Buildings.emplace_back());
           break;
@@ -214,7 +213,7 @@ void Model::AdjustCoordinates() {
   const auto dy = lat2ym(m_MaxLat) - lat2ym(m_MinLat);
   const auto min_y = lat2ym(m_MinLat);
   const auto min_x = lon2xm(m_MinLon);
-  m_MetricScale = std::min(dx, dy);
+  m_MetricScale = min(dx, dy);
   for (auto &node : m_Nodes) {
     node.x = (lon2xm(node.x) - min_x) / m_MetricScale;
     node.y = (lat2ym(node.y) - min_y) / m_MetricScale;
