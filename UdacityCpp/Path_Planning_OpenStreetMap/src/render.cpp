@@ -275,3 +275,8 @@ static io2d::rgba_color RoadColor(Model::Road::Type type) {
     return io2d::rgba_color::grey;
   }
 }
+
+static io2d::dashes RoadDashes(Model::Road::Type type) {
+  return type == Model::Road::Footway ? io2d::dashes{0.f, {1.f, 2.f}}
+                                      : io2d::dashes{};
+}
