@@ -250,3 +250,28 @@ static float RoadMetricWidth(Model::Road::Type type) {
     return 1.f;
   }
 }
+
+static io2d::rgba_color RoadColor(Model::Road::Type type) {
+  switch (type) {
+  case Model::Road::Motorway:
+    return io2d::rgba_color{226, 122, 143};
+  case Model::Road::Trunk:
+    return io2d::rgba_color{245, 161, 136};
+  case Model::Road::Primary:
+    return io2d::rgba_color{249, 207, 144};
+  case Model::Road::Secondary:
+    return io2d::rgba_color{244, 251, 173};
+  case Model::Road::Tertiary:
+    return io2d::rgba_color{244, 251, 173};
+  case Model::Road::Residential:
+    return io2d::rgba_color{254, 254, 254};
+  case Model::Road::Service:
+    return io2d::rgba_color{254, 254, 254};
+  case Model::Road::Footway:
+    return io2d::rgba_color{241, 106, 96};
+  case Model::Road::Unclassified:
+    return io2d::rgba_color{254, 254, 254};
+  default:
+    return io2d::rgba_color::grey;
+  }
+}
