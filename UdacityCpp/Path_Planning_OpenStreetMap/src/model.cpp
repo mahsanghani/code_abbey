@@ -115,6 +115,40 @@ void Model::LoadData(const vector<byte> &xml) {
         if (auto it = node_id_to_num.find(ref); it != end(node_id_to_num)) {
           new_way.nodes.emplace_back(it->second);
         } else if (name == "tag") {
+          auto category = string_view{child.attribute("k").as_string()};
+          auto type = string_view{child.attribute("v").as_string()};
+          if (category == "highway") {
+            if (auto road_type = String2RoadType(type);
+                road_type != Road::Invalid) {
+              m_Roads.emplace_back();
+              m_Roads.back().way = way_num;
+              m_Roads.back().type = road_type;
+            }
+          }
+          if (category == "railway") {
+            m_Railways.emplace_back();
+            m_Railways.back().way = way_num;
+          } else if (category == "building") {
+            m_Buildings.emplace_back();
+            m_Buildings.back().outer = {way_num};
+          } else if (category == "leisure" ||
+                     (category == "natural" &&
+                      (type == "wood" || type == "tree_row" ||
+                       type == "scrub" || type == "grassland")) ||
+                     (category == "landcover" && type == "grass")) {
+            m_Leisures.emplace_back();
+            m_Leisures.back().outer = {way_num};
+          } else if (category == "natural" && type == "water") {
+            m_Waters.emplace_back();
+            m_Waters.back().outer = {way_num};
+          } else if (category == "landuse") {
+            if (auto landuse_type = String2LanduseType(type);
+                landuse_type != Landuse::Invalid) {
+              m_Landuses.emplace_back();
+              m_Landuses.back().outer = {way_num};
+              m_Landuses.back().type = landuse_type;
+            }
+          }
         }
       }
     }
