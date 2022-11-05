@@ -152,17 +152,40 @@ void Model::LoadData(const vector<byte> &xml) {
         }
       }
     }
-  }
-}
 
-void Model::AdjustCoordinates() {
-  const auto pi = 3.14159265358979323846264338327950288;
-  const auto deg_to_rad = 2. * pi / 360.;
-  const auto earth_radius = 6378137.;
-  const auto lat2ym = [&](double lat) {
-    return log(tan(lat * deg_to_rad / 2 + pi / 4)) / 2 * earth_radius;
-  };
-  const auto lon2xm = [&](double lon) {
+    for (const auto &relation : doc.select_nodes("/osm/relation")) {
+      auto node = relation.node();
+      auto noode_id = std::string_view{node.attribute("id").as_string()};
+      std::vector<int> outer, inner;
+      auto commit = [&](Multipolygon &mp) {
+        mp.outer = std::move(outer);
+        mp.inner = std::move(inner);
+      };
+      for (auto child : node.children()) {
+        auto name = std::string_view{child.name()};
+        if (name == "member") {
+          if (std::string_view{child.attribute("type").as_string()} == "way") {
+            if (!way_id_to_num.count(child.attribute("ref").as_string()))
+              continue;
+            auto way_num = way_id_to_num[child.attribute("ref").as_string()];
+            if (std::string_view{child.attribute("role").as_string()} ==
+                "outer")
+              outer.emplace_back(way_num);
+            else
+              inner.emplace_back(way_num);
+          }
+        }
+      }
+    }
+
+    void Model::AdjustCoordinates() {
+      const auto pi = 3.14159265358979323846264338327950288;
+      const auto deg_to_rad = 2. * pi / 360.;
+      const auto earth_radius = 6378137.;
+      const auto lat2ym = [&](double lat) {
+        return log(tan(lat * deg_to_rad / 2 + pi / 4)) / 2 * earth_radius;
+      };
+      const auto lon2xm = [&](double lon) {
     return lon * deg_to_rad / 2 * earth_radius;
   };
   const auto dx = lon2xm(m_MaxLon) - lon2xm(m_MinLon);
