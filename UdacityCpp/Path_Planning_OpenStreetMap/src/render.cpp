@@ -113,3 +113,16 @@ void Render::DrawLanduses(io2d::output_surface &surface) const {
         br != m_LanduseBrushes.end())
       surface.fill(br->second, PathFromMP(landuse));
 }
+
+void Render::DrawHighways(io2d::output_surface &surface) const {
+  auto ways = m_Model.Ways().data();
+  for (auto road : m_Model.Roads())
+    if (auto rep_it = m_RoadReps.find(road.type); rep_it != m_RoadReps.end()) {
+      auto &rep = rep_it->second;
+      auto &way = ways[road.way];
+      auto width =
+          rep.metric_width > 0.f ? (rep.metric_width * m_PixelsInMeter) : 1.f;
+      auto sp = io2d::stroke_props{width, io2d::line_cap::round};
+      surface.stroke(rep.brush, PathFromWay(way), std::nullopt, sp, rep.dashes);
+    }
+}
