@@ -83,3 +83,12 @@ void Render::DrawStartPosition(io2d::output_surface &surface) const {
   surface.stroke(foreBrush, io2d::interpreted_path{pb}, std::nullopt,
                  std::nullopt, std::nullopt, aliased);
 }
+
+void Render::DrawBuildings(io2d::output_surface &surface) const {
+  for (auto &building : m_Model.Buildings()) {
+    auto path = PathFromMP(building);
+    surface.fill(m_BuildingFillBrush, path);
+    surface.stroke(m_BuildingOutlineBrush, path, std::nullopt,
+                   m_BuildingOutlineStrokeProps);
+  }
+}
