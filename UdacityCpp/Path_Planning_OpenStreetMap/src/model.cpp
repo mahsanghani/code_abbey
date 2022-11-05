@@ -71,3 +71,24 @@ Model::Model(const std::vector<std::byte> &xml) {
               return (int)_1st.type < (int)_2nd.type;
             });
 }
+
+void Model::AdjustCoordinates() {
+  const auto pi = 3.14159265358979323846264338327950288;
+  const auto deg_to_rad = 2. * pi / 360.;
+  const auto earth_radius = 6378137.;
+  const auto lat2ym = [&](double lat) {
+    return log(tan(lat * deg_to_rad / 2 + pi / 4)) / 2 * earth_radius;
+  };
+  const auto lon2xm = [&](double lon) {
+    return lon * deg_to_rad / 2 * earth_radius;
+  };
+  const auto dx = lon2xm(m_MaxLon) - lon2xm(m_MinLon);
+  const auto dy = lat2ym(m_MaxLat) - lat2ym(m_MinLat);
+  const auto min_y = lat2ym(m_MinLat);
+  const auto min_x = lon2xm(m_MinLon);
+  m_MetricScale = std::min(dx, dy);
+  for (auto &node : m_Nodes) {
+    node.x = (lon2xm(node.x) - min_x) / m_MetricScale;
+    node.y = (lat2ym(node.y) - min_y) / m_MetricScale;
+  }
+}
