@@ -92,3 +92,50 @@ void Model::AdjustCoordinates() {
     node.y = (lat2ym(node.y) - min_y) / m_MetricScale;
   }
 }
+
+static bool TrackRec(const vector<int> &open_ways, const Model::Way *ways,
+                     vector<bool> &used, vector<int> &nodes) {
+  if (nodes.empty()) {
+    for (int i = 0; i < open_ways.size(); ++i) {
+      if (!used[i]) {
+        used[i] = true;
+        const auto &way_nodes = ways[open_ways[i]].nodes;
+        nodes = way_nodes;
+        if (TrackRec(open_ways, ways, used, nodes)) {
+          return true;
+        }
+        nodes.clear();
+        used[i] = false;
+      }
+    }
+    return false;
+  } else {
+    const auto head = nodes.front();
+    const auto tail = nodes.back();
+    if (head == tail && nodes.size() > 1) {
+      return true;
+    }
+    for (int i = 0; i < open_ways.size(); ++i) {
+      if (!used[i]) {
+        const auto &way_nodes = ways[open_ways[i]].nodes;
+        const auto way_head = way_nodes.front();
+        const auto way_tail = way_nodes.back();
+        if (way_head == tail || way_tail == tail) {
+          used[i] = true;
+          const auto len = nodes.size();
+          if (way_head == tail) {
+            nodes.insert(nodes.end(), way_nodes.begin(), way_nodes.end());
+          } else {
+            nodes.insert(nodes.end(), way_nodes.begin(), way_nodes.rend());
+          }
+          if (TrackRec(open_ways, ways, used, nodes)) {
+            return true;
+          }
+          nodes.resize(len);
+          used[i] = false;
+        }
+      }
+      return false;
+    }
+  }
+}
