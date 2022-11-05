@@ -60,3 +60,14 @@ static Model::Landuse::Type String2LanduseType(std::string_view type) {
     return Model::Landuse::Residential;
   return Model::Landuse::Invalid;
 }
+
+Model::Model(const std::vector<std::byte> &xml) {
+  LoadData(xml);
+
+  AdjustCoordinates();
+
+  std::sort(m_Roads.begin(), m_Roads.end(),
+            [](const auto &_1st, const auto &_2nd) {
+              return (int)_1st.type < (int)_2nd.type;
+            });
+}
