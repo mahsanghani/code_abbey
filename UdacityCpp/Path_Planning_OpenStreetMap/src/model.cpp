@@ -98,6 +98,27 @@ void Model::LoadData(const vector<byte> &xml) {
     m_Nodes.back().y = atof(node.node().attribute("lat").as_string());
     m_Nodes.back().x = atof(node.node().attribute("lon").as_string());
   }
+
+  unordered_map<string, int> way_id_to_num;
+  for (const auto &way : doc.select_nodes("/osm/way")) {
+    auto node = way.node();
+
+    const auto way_num = (int)m_Ways.size();
+    way_id_to_num[node.attribute("id").as_string()] = way_num;
+    m_Ways.emplace_back();
+    auto &new_way = m_Ways.back();
+
+    for (auto child : node.children()) {
+      auto name = string_view{child.name()};
+      if (name == "nd") {
+        auto ref = child.attribute("ref").as_string();
+        if (auto it = node_id_to_num.find(ref); it != end(node_id_to_num)) {
+          new_way.nodes.emplace_back(it->second);
+        } else if (name == "tag") {
+        }
+      }
+    }
+  }
 }
 
 void Model::AdjustCoordinates() {
