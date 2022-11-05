@@ -101,3 +101,8 @@ void Render::DrawLeisure(io2d::output_surface &surface) const {
                    m_LeisureOutlineStrokeProps);
   }
 }
+
+void Render::DrawWater(io2d::output_surface &surface) const {
+  for (auto &water : m_Model.Waters())
+    surface.fill(m_WaterFillBrush, PathFromMP(water));
+}
