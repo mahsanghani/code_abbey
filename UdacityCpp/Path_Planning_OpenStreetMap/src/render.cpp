@@ -106,3 +106,10 @@ void Render::DrawWater(io2d::output_surface &surface) const {
   for (auto &water : m_Model.Waters())
     surface.fill(m_WaterFillBrush, PathFromMP(water));
 }
+
+void Render::DrawLanduses(io2d::output_surface &surface) const {
+  for (auto &landuse : m_Model.Landuses())
+    if (auto br = m_LanduseBrushes.find(landuse.type);
+        br != m_LanduseBrushes.end())
+      surface.fill(br->second, PathFromMP(landuse));
+}
