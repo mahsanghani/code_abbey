@@ -155,3 +155,17 @@ io2d::interpreted_path Render::PathLine() const {
 
   return io2d::interpreted_path{pb};
 }
+
+io2d::interpreted_path Render::PathFromWay(const Model::Way &way) const {
+  if (way.nodes.empty())
+    return {};
+
+  const auto nodes = m_Model.Nodes().data();
+
+  auto pb = io2d::path_builder{};
+  pb.matrix(m_Matrix);
+  pb.new_figure(ToPoint2D(nodes[way.nodes.front()]));
+  for (auto it = ++way.nodes.begin(); it != std::end(way.nodes); ++it)
+    pb.line(ToPoint2D(nodes[*it]));
+  return io2d::interpreted_path{pb};
+}
