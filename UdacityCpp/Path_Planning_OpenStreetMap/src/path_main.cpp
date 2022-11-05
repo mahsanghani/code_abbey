@@ -32,59 +32,59 @@ static optional<vector<byte>> ReadFile(const string &path) {
 }
 
 int main(int argc, const char **argv) {
-  std::string osm_data_file = "";
+  string osm_data_file = "";
   if (argc > 1) {
     for (int i = 1; i < argc; ++i)
-      if (std::string_view{argv[i]} == "-f" && ++i < argc)
+      if (string_view{argv[i]} == "-f" && ++i < argc)
         osm_data_file = argv[i];
   } else {
-    std::cout << "Usage: [executable] [-f filename.osm]" << std::endl;
+    cout << "Usage: [executable] [-f filename.osm]" << endl;
   }
 
-  std::vector<std::byte> osm_data;
+  vector<byte> osm_data;
 
   if (osm_data.empty() && !osm_data_file.empty()) {
-    std::cout << "Reading OpenStreetMap data from the following file: "
-              << osm_data_file << std::endl;
+    cout << "Reading OpenStreetMap data from the following file: "
+         << osm_data_file << endl;
     auto data = ReadFile(osm_data_file);
     if (!data)
-      std::cout << "Failed to read." << std::endl;
+      cout << "Failed to read." << endl;
     else
-      osm_data = std::move(*data);
+      osm_data = move(*data);
   }
 
   float start_x, start_y, end_x, end_y;
-  std::cout << "Please type in start_x from 0-100 : " << std::endl;
-  std::cin >> start_x;
-  while (!(std::cin) || start_x < 0 || start_x > 100) {
-    std::cout << "Invalid entry. Enter a start_x from 0 to 100: ";
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cin >> start_x;
+  cout << "Please type in start_x from 0-100 : " << endl;
+  cin >> start_x;
+  while (!(cin) || start_x < 0 || start_x > 100) {
+    cout << "Invalid entry. Enter a start_x from 0 to 100: ";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin >> start_x;
   }
-  std::cout << "Please type in start_y from 0-100 : " << std::endl;
-  std::cin >> start_y;
-  while (!(std::cin) || start_y < 0 || start_y > 100) {
-    std::cout << "Invalid entry. Enter a start_y from 0 to 100: ";
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cin >> start_y;
+  cout << "Please type in start_y from 0-100 : " << endl;
+  cin >> start_y;
+  while (!(cin) || start_y < 0 || start_y > 100) {
+    cout << "Invalid entry. Enter a start_y from 0 to 100: ";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin >> start_y;
   }
-  std::cout << "Please type in end_x from 0-100 : " << std::endl;
-  std::cin >> end_x;
-  while (!(std::cin) || end_x < 0 || end_x > 100) {
-    std::cout << "Invalid entry. Enter a end_x from 0 to 100: ";
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cin >> end_x;
+  cout << "Please type in end_x from 0-100 : " << endl;
+  cin >> end_x;
+  while (!(cin) || end_x < 0 || end_x > 100) {
+    cout << "Invalid entry. Enter a end_x from 0 to 100: ";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin >> end_x;
   }
-  std::cout << "Please type in end_y from 0-100 : " << std::endl;
-  std::cin >> end_y;
-  while (!(std::cin) || end_y < 0 || end_y > 100) {
-    std::cout << "Invalid entry. Enter a end_y from 0 to 100: ";
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cin >> end_y;
+  cout << "Please type in end_y from 0-100 : " << endl;
+  cin >> end_y;
+  while (!(cin) || end_y < 0 || end_y > 100) {
+    cout << "Invalid entry. Enter a end_y from 0 to 100: ";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin >> end_y;
   }
 
   RouteModel model{osm_data};
@@ -92,8 +92,7 @@ int main(int argc, const char **argv) {
   RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
 
   route_planner.AStarSearch();
-  std::cout << "The total distance is : " << route_planner.GetDistance()
-            << std::endl;
+  cout << "The total distance is : " << route_planner.GetDistance() << endl;
 
   Render render{model};
 
