@@ -42,3 +42,21 @@ static Model::Road::Type String2RoadType(std::string_view type) {
     return Model::Road::Footway;
   return Model::Road::Invalid;
 }
+
+static Model::Landuse::Type String2LanduseType(std::string_view type) {
+  if (type == "commercial")
+    return Model::Landuse::Commercial;
+  if (type == "construction")
+    return Model::Landuse::Construction;
+  if (type == "grass")
+    return Model::Landuse::Grass;
+  if (type == "forest")
+    return Model::Landuse::Forest;
+  if (type == "industrial")
+    return Model::Landuse::Industrial;
+  if (type == "railway")
+    return Model::Landuse::Railway;
+  if (type == "residential")
+    return Model::Landuse::Residential;
+  return Model::Landuse::Invalid;
+}
