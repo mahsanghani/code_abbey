@@ -199,9 +199,9 @@ void Model::LoadData(const vector<byte> &xml) {
         }
       }
   }
-    }
+}
 
-    void Model::AdjustCoordinates() {
+void Model::AdjustCoordinates() {
       const auto pi = 3.14159265358979323846264338327950288;
       const auto deg_to_rad = 2. * pi / 360.;
       const auto earth_radius = 6378137.;
