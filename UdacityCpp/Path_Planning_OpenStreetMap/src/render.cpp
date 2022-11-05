@@ -92,3 +92,12 @@ void Render::DrawBuildings(io2d::output_surface &surface) const {
                    m_BuildingOutlineStrokeProps);
   }
 }
+
+void Render::DrawLeisure(io2d::output_surface &surface) const {
+  for (auto &leisure : m_Model.Leisures()) {
+    auto path = PathFromMP(leisure);
+    surface.fill(m_LeisureFillBrush, path);
+    surface.stroke(m_LeisureOutlineBrush, path, std::nullopt,
+                   m_LeisureOutlineStrokeProps);
+  }
+}
