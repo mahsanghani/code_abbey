@@ -88,4 +88,30 @@ int main(int argc, const char **argv) {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin >> end_y;
   }
+
+  // Build Model.
+  RouteModel model{osm_data};
+
+  // Perform search and render results.
+  RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
+
+  // Perform the A Star Search Algorithm
+  route_planner.AStarSearch();
+  std::cout << "The total distance is : " << route_planner.GetDistance()
+            << std::endl;
+
+  Render render{model};
+
+  auto display = io2d::output_surface{400,
+                                      400,
+                                      io2d::format::argb32,
+                                      io2d::scaling::none,
+                                      io2d::refresh_style::fixed,
+                                      30};
+  display.size_change_callback([](io2d::output_surface &surface) {
+    surface.dimensions(surface.display_dimensions());
+  });
+  display.draw_callback(
+      [&](io2d::output_surface &surface) { render.Display(surface); });
+  display.begin_show();
 }
