@@ -67,3 +67,13 @@ TEST_F(RouteModelTest, NodeDistance) {
   RouteModel::Node test_node_2 = model.SNodes()[4];
   EXPECT_FLOAT_EQ(test_node.distance(test_node_2), 0.10309877);
 }
+
+TEST_F(RouteModelTest, NodeToRoad) {
+  auto node_to_road = model.GetNodeToRoadMap();
+  EXPECT_EQ(node_to_road[0].size(), 2);
+  EXPECT_EQ(node_to_road[30].size(), 2);
+  EXPECT_EQ(node_to_road[90].size(), 2);
+  EXPECT_EQ(node_to_road[0][0]->way, 500);
+  EXPECT_EQ(node_to_road[30][1]->way, 613);
+  EXPECT_EQ(node_to_road[90][1]->way, 475);
+}
