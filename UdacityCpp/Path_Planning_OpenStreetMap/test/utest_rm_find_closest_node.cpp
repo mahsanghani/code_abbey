@@ -39,3 +39,10 @@ vector<byte> ReadOSMData(const string &path) {
   }
   return osm_data;
 }
+
+class RouteModelTest : public ::testing::Test {
+protected:
+  string osm_data_file = "../map.osm";
+  vector<byte> osm_data = ReadOSMData(osm_data_file);
+  RouteModel model{osm_data};
+};
