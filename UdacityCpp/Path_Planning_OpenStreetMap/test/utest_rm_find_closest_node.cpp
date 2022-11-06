@@ -63,3 +63,9 @@ TEST_F(RouteModelTest, RouteModelNode) {
   EXPECT_EQ(test_node.neighbors.size(), 0);
   RouteModel::Node test_node_2 = RouteModel::Node();
 }
+
+TEST_F(RouteModelTest, NodeDistance) {
+  RouteModel::Node test_node = model.SNodes()[1];
+  RouteModel::Node test_node_2 = model.SNodes()[4];
+  EXPECT_FLOAT_EQ(test_node.distance(test_node_2), 0.10309877);
+}
