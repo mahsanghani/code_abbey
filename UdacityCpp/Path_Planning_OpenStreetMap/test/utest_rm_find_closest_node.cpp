@@ -28,3 +28,14 @@ static optional<vector<byte>> ReadFile(const string &path) {
   }
   return move(contents);
 }
+
+vector<byte> ReadOSMData(const string &path) {
+  vector<byte> osm_data;
+  auto data = ReadFile(path);
+  if (!data) {
+    cout << "Failed to read OSM data." << endl;
+  } else {
+    osm_data = move(*data);
+  }
+  return osm_data;
+}
