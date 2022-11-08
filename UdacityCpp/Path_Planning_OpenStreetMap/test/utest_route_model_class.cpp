@@ -11,37 +11,37 @@
 
 using namespace std;
 
-static std::optional<std::vector<std::byte>> ReadFile(const std::string &path) {
-  std::ifstream is{path, std::ios::binary | std::ios::ate};
+static optional<vector<byte>> ReadFile(const string &path) {
+  ifstream is{path, ios::binary | ios::ate};
   if (!is)
-    return std::nullopt;
+    return nullopt;
 
   auto size = is.tellg();
-  std::vector<std::byte> contents(size);
+  vector<byte> contents(size);
 
   is.seekg(0);
   is.read((char *)contents.data(), size);
 
   if (contents.empty())
-    return std::nullopt;
-  return std::move(contents);
+    return nullopt;
+  return move(contents);
 }
 
-std::vector<std::byte> ReadOSMData(const std::string &path) {
-  std::vector<std::byte> osm_data;
+vector<byte> ReadOSMData(const string &path) {
+  vector<byte> osm_data;
   auto data = ReadFile(path);
   if (!data) {
-    std::cout << "Failed to read OSM data." << std::endl;
+    cout << "Failed to read OSM data." << endl;
   } else {
-    osm_data = std::move(*data);
+    osm_data = move(*data);
   }
   return osm_data;
 }
 
 class RouteModelTest : public ::testing::Test {
 protected:
-  std::string osm_data_file = "../map.osm";
-  std::vector<std::byte> osm_data = ReadOSMData(osm_data_file);
+  string osm_data_file = "../map.osm";
+  vector<byte> osm_data = ReadOSMData(osm_data_file);
   RouteModel model{osm_data};
 };
 
