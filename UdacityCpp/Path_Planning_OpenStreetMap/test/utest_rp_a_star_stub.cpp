@@ -26,3 +26,14 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path) {
     return std::nullopt;
   return std::move(contents);
 }
+
+std::vector<std::byte> ReadOSMData(const std::string &path) {
+  std::vector<std::byte> osm_data;
+  auto data = ReadFile(path);
+  if (!data) {
+    std::cout << "Failed to read OSM data." << std::endl;
+  } else {
+    osm_data = std::move(*data);
+  }
+  return osm_data;
+}
