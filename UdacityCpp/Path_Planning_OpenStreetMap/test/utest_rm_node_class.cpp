@@ -37,3 +37,10 @@ std::vector<std::byte> ReadOSMData(const std::string &path) {
   }
   return osm_data;
 }
+
+class RouteModelTest : public ::testing::Test {
+protected:
+  std::string osm_data_file = "../map.osm";
+  std::vector<std::byte> osm_data = ReadOSMData(osm_data_file);
+  RouteModel model{osm_data};
+};
