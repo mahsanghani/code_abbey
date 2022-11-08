@@ -44,3 +44,8 @@ protected:
   std::vector<std::byte> osm_data = ReadOSMData(osm_data_file);
   RouteModel model{osm_data};
 };
+
+TEST_F(RouteModelTest, RouteModelData) {
+  EXPECT_EQ(model.path.size(), 0);
+  EXPECT_EQ(model.Nodes().size(), model.SNodes().size());
+}
