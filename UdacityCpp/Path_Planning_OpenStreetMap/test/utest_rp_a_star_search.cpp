@@ -92,3 +92,18 @@ TEST_F(RouteModelTest, FindNeighbors) {
   EXPECT_FLOAT_EQ(test_node.neighbors[0]->y, 0.52004427);
   test_node.neighbors.clear();
 }
+
+TEST_F(RouteModelTest, FindClosestNode) {
+  float x = 0.023456;
+  float y = 0.567890;
+  auto &test_node = model.FindClosestNode(x, y);
+  EXPECT_EQ(&test_node, &model.SNodes()[10155]);
+  EXPECT_FLOAT_EQ(test_node.x, 0.030928569);
+  EXPECT_FLOAT_EQ(test_node.y, 0.58042318);
+  x = 0.555555;
+  y = 0.333333;
+  auto &test_node_2 = model.FindClosestNode(x, y);
+  EXPECT_EQ(&test_node_2, &model.SNodes()[600]);
+  EXPECT_FLOAT_EQ(test_node_2.x, 0.58249766);
+  EXPECT_FLOAT_EQ(test_node_2.y, 0.34965551);
+}
