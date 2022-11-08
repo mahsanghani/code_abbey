@@ -123,3 +123,16 @@ protected:
   RouteModel::Node *start_node = &model.FindClosestNode(start_x, start_y);
   RouteModel::Node *end_node = &model.FindClosestNode(end_x, end_y);
 };
+
+TEST_F(RoutePlannerTest, AStarSearch) {
+  route_planner.AStarSearch();
+  EXPECT_EQ(model.path.size(), 33);
+  RouteModel::Node path_start = model.path.back();
+  RouteModel::Node path_end = model.path.front();
+  // The start_node and end_node x, y values should be the same as in the path.
+  EXPECT_FLOAT_EQ(start_node->x, path_start.x);
+  EXPECT_FLOAT_EQ(start_node->y, path_start.y);
+  EXPECT_FLOAT_EQ(end_node->x, path_end.x);
+  EXPECT_FLOAT_EQ(end_node->y, path_end.y);
+  EXPECT_FLOAT_EQ(route_planner.GetDistance(), 873.41565);
+}
