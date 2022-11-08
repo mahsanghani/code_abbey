@@ -107,3 +107,19 @@ TEST_F(RouteModelTest, FindClosestNode) {
   EXPECT_FLOAT_EQ(test_node_2.x, 0.58249766);
   EXPECT_FLOAT_EQ(test_node_2.y, 0.34965551);
 }
+
+class RoutePlannerTest : public ::testing::Test {
+protected:
+  std::string osm_data_file = "../map.osm";
+  std::vector<std::byte> osm_data = ReadOSMData(osm_data_file);
+  RouteModel model{osm_data};
+  RoutePlanner route_planner{model, 10, 10, 90, 90};
+
+  // Construct start_node and end_node as in the model.
+  float start_x = 0.1;
+  float start_y = 0.1;
+  float end_x = 0.9;
+  float end_y = 0.9;
+  RouteModel::Node *start_node = &model.FindClosestNode(start_x, start_y);
+  RouteModel::Node *end_node = &model.FindClosestNode(end_x, end_y);
+};
