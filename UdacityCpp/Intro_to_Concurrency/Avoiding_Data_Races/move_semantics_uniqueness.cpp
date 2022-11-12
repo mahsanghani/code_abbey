@@ -35,3 +35,15 @@ private:
   int id_;
   unique_ptr<string> name_;
 };
+
+int main() {
+  Vehicle v0;
+  Vehicle v1(1, "Vehicle 1");
+
+  future<void> ftr = async([](Vehicle v) { v.setName("Vehicle 2"); }, move(v0));
+
+  ftr.wait();
+  cout << v0.getName() << endl;
+
+  return 0;
+}
