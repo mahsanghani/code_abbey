@@ -30,3 +30,22 @@ private:
   int id_;
   string *name_;
 };
+
+int main() {
+  Vehicle v0;
+  Vehicle v1(1, "Vehicle 1");
+
+  future<void> ftr = async(
+      [](Vehicle v) {
+        this_thread::sleep_for(chrono::milliseconds(500));
+        v.setName("Vehicle 2");
+      },
+      v0);
+
+  v0.setName("Vehicle 3");
+
+  ftr.wait();
+  cout << v0.getName() << endl;
+
+  return 0;
+}
