@@ -18,5 +18,22 @@ public:
     cout << "Vehicle #" << id_ << " Initializing constructor called!" << endl;
   }
 
+  Vehicle(const Vehicle &src) {
+    id_ = src.id_;
+    if (src.name_ != nullptr) {
+      name_ = new string;
+      *name_ = *src.name_;
+    }
+    cout << "Vehicle #" << id_ << " Copy constructor called!" << endl;
+  }
+
+  Vehicle(Vehicle &&src) {
+    id_ = src.getID();
+    name_ = new string(src.getName());
+    src.setID(0);
+    src.setName("Default Name");
+    cout << "Vehicle #" << id_ << " Move constructor called!" << endl;
+  }
+
 private:
 };
