@@ -10,5 +10,13 @@ using namespace std;
 
 class Vehicle {
 public:
+  Vehicle() : id_(0), name_(new string("Default Name")) {
+    cout << "Vehicle #" << id_ << " Default constructor called!" << endl;
+  }
+
+  Vehicle(int id, string name) : id_(id), name(new string(name)) {
+    cout << "Vehicle #" << id_ << " Initializing constructor called!" << endl;
+  }
+
 private:
 };
