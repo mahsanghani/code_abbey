@@ -24,3 +24,22 @@ public:
 private:
   int id_;
 };
+
+int main() {
+  Vehicle v0;
+  Vehicle v1(1);
+
+  future<void> ftr = async(
+      [](Vehicle v) {
+        this_thread::sleep_for(chrono::milliseconds(500));
+        v.setID(2);
+      },
+      v0);
+
+  v0.setID(3);
+
+  ftr.wait();
+  cout << "Vehicle #" << v0.getID() << endl;
+
+  return 0;
+}
