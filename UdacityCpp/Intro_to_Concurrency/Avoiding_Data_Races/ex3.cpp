@@ -35,5 +35,15 @@ public:
     cout << "Vehicle #" << id_ << " Move constructor called!" << endl;
   }
 
+  void setID(int id) { id_ = id; }
+
+  int getID() { return id_; }
+
+  void setName(string name) { *name_ = name; }
+
+  string getName() { return *name_; }
+
 private:
+  int id_;
+  string *name_;
 };
