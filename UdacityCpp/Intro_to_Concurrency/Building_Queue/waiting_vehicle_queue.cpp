@@ -43,6 +43,9 @@ public:
   }
 
 private:
+  mutex mutex_;
+  condition_variable cond_;
+  vector<Vehicle> vehicles_;
 };
 
 int main() { return 0; }
