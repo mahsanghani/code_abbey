@@ -21,6 +21,16 @@ private:
 
 class WaitingVehicles {
 public:
+  WaitingVehicles() {}
+
+  void printIDs() {
+    lock_guard<mutex> my_lock(mutex_);
+    for (auto &v : vehicles_) {
+      cout << " Vehicle #" << v.getID() << " is now waiting in the queue."
+           << endl;
+    }
+  }
+
 private:
   vector<Vehicle> vehicles_;
   mutex mutex_;
