@@ -21,10 +21,17 @@ private:
 
 class WaitingVehicles {
 public:
+  WaitingVehicles() : num_vehicles_(0) {}
+
+  int getNumVehicles() {
+    lock_guard<mutex> u_lock(mutex_);
+    return num_vehicles_;
+  }
+
 private:
   vector<Vehicle> vehicles_;
   mutex mutex_;
-  int num_vehicles;
+  int num_vehicles_;
 };
 
 int main() { return 0; }
