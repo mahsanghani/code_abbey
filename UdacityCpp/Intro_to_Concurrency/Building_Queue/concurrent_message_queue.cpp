@@ -19,4 +19,11 @@ public:
     messages_.pop_back();
     return msg;
   }
+
+  void send(T &&msg) {
+    this_thread::sleep_for(chrono::milliseconds(100));
+    lock_guard<mutex> u_lock(mutex_);
+    cout << " Message #" << msg << " has been sent to the queue" << endl;
+    messages_.push_back(move(msg));
+  }
 };
