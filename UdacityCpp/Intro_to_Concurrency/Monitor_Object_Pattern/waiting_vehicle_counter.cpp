@@ -22,6 +22,9 @@ private:
 class WaitingVehicles {
 public:
 private:
+  vector<Vehicle> vehicles_;
+  mutex mutex_;
+  int num_vehicles;
 };
 
 int main() { return 0; }
