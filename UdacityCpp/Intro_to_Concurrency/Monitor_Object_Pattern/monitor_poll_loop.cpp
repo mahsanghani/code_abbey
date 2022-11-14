@@ -18,3 +18,10 @@ public:
 private:
   int id_;
 };
+
+class WaitingVehicles {
+public:
+private:
+};
+
+int main() { return 0; }
