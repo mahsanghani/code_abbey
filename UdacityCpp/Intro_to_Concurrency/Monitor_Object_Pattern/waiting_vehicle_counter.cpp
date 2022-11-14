@@ -56,4 +56,35 @@ private:
   int num_vehicles_;
 };
 
-int main() { return 0; }
+int main() {
+  shared_ptr<WaitingVehicles> queue(new WaitingVehicles);
+  cout << "Spawning threads..." << endl;
+  vector<future<void>> futures;
+
+  for (int i = 0; i < 10; ++i) {
+    Vehicle v(i);
+    futures.emplace_back(
+        async(launch::async, &WaitingVehicles::pushBack, queuee, move(v)));
+  }
+
+  cout << "Collecting results..." << endl;
+  while (true) {
+    if (queue->dataIsAvailable()) {
+      Vehicle v = queue->popBack();
+      cout << " Vehicle #" << v.getID() << " has been removed from the queue"
+           << endl;
+
+      if (queue->getNumVehicles() <= 0) {
+        this_thread::sleep_for(chrono::milliseconds(200));
+        break;
+      }
+    }
+  }
+
+  for_each(futures.begin(), futures.end(),
+           [](future<void> &ftr) { ftr.wait(); });
+  cout << "Finished : " << queue->getNumVehicles()
+       << " vehicle(s) left in the queue" << endl;
+
+  return 0;
+}
