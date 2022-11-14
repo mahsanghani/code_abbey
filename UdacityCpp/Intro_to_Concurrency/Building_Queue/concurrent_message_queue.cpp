@@ -26,4 +26,9 @@ public:
     cout << " Message #" << msg << " has been sent to the queue" << endl;
     messages_.push_back(move(msg));
   }
+
+private:
+  mutex mutex_;
+  condition_variable cond_;
+  deque<T> messages_;
 };
