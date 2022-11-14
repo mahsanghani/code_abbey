@@ -31,6 +31,13 @@ public:
     }
   }
 
+  void pushBack(Vehicle &&v) {
+    lock_guard<mutex> uLock(mutex_);
+    cout << " Vehicle #" << v.getID() << " will be added to the queue" << endl;
+    vehicles_.emplace_back(move(v));
+    this_thread::sleep_for(chrono::milliseconds(800));
+  }
+
 private:
   vector<Vehicle> vehicles_;
   mutex mutex_;
