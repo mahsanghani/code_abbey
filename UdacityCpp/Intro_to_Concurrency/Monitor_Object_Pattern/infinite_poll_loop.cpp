@@ -21,6 +21,12 @@ private:
 
 class WaitingVehicles {
 public:
+  WaitingVehicles() {}
+  bool dataIsAvailable() {
+    lock_guard<mutex> my_lock(mutex_);
+    return !vehicles_.empty();
+  }
+
 private:
   vector<Vehicle> vehicles_;
   mutex mutex_;
