@@ -18,3 +18,16 @@ public:
 private:
   int id_;
 };
+
+class WaitingVehicles {
+public:
+  WaitingVehicles() {}
+
+  Vehicle popBack() {}
+
+  void pushBack(Vehicle &&v) {}
+
+private:
+};
+
+int main() { return 0; }
