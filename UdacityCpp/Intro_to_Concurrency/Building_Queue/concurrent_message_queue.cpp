@@ -32,3 +32,30 @@ private:
   condition_variable cond_;
   deque<T> messages_;
 };
+
+int main() {
+  shared_ptr<MessageQueue<int>> queue(new MessageQueue<int>);
+  cout << "Spawning Threads..." << endl;
+  vector<future<void>> futures;
+
+  for (int i = 0; i < 10; i++) {
+    int messages = i;
+    futures.emplace_back(
+        async(launch::async, &MessageQueue<int>::send, queue, move(message)));
+  }
+
+  cout << "Collecting Results..." << endl;
+
+  while (true) {
+    int message = queue->receive();
+    cout << " Message #" << message << " has been removed from the queue"
+         << endl;
+  }
+
+  for_each(futures.begin(), futures.end(),
+           [](future<void> &ftr) { ftr.wait(); });
+
+  cout << "Finished!" << endl;
+
+  return 0;
+}
