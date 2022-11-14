@@ -33,7 +33,14 @@ public:
     return v;
   }
 
-  void pushBack(Vehicle &&v) {}
+  void pushBack(Vehicle &&v) {
+    this_thread::sleep_for(chrono::milliseconds(100));
+    lock_guard<mutex> uLock(mutex_);
+
+    cout << " Vehicle #" << v.getID() << " will be added to the queue" << endl;
+    vehicles_.push_back(move(v));
+    cond_.notify_one();
+  }
 
 private:
 };
