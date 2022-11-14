@@ -48,4 +48,29 @@ private:
   vector<Vehicle> vehicles_;
 };
 
-int main() { return 0; }
+int main() {
+  shared_ptr<WaitingVehicles> queue(new WaitingVehicles);
+  cout << "Spawning threads..." << endl;
+  vector<future<void>> futures;
+
+  for (int i = 0; i < 10; ++i) {
+    Vehicle v(i);
+    futures.emplace_back(
+        async(launch::async, &WaitingVehicles::pushBack, queue, move(v)));
+  }
+
+  cout << "Collecting results..." << endl;
+  while (true) {
+    Vehicle v = queue->popBack();
+    cout << " Vehicle #" << v.getID() << " has been removed from the queue"
+         << endl;
+  }
+
+  for_each(futures.begin(), futures.end(),
+           [](future<void> &ftr) { ftr.wait(); })
+
+          cout
+      << "Finished!" << endl;
+
+  return 0;
+}
