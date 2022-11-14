@@ -26,6 +26,12 @@ public:
     lock_guard<mutex> my_lock(mutex_);
     return !vehicles_.empty();
   }
+  Vehicle popBack() {
+    lock_guard<mutex> u_lock(mutex_);
+    Vehicle v = move(vehicles_.back());
+    vehicles_.pop_back();
+    return v;
+  }
 
 private:
   vector<Vehicle> vehicles_;
