@@ -12,8 +12,7 @@ using namespace std;
 double result;
 
 void printResult(int denom) {
-  std::cout << "for denom = " << denom << ", the result is " << result
-            << std::endl;
+  cout << "for denom = " << denom << ", the result is " << result << endl;
 }
 
 void divideByNumber(double num, double denom) {
