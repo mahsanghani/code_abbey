@@ -18,3 +18,16 @@ public:
 private:
   int id_;
 };
+
+class WaitingVehicles {
+public:
+  WaitingVehicles() {}
+
+  void printSize() {
+    mutex_.lock();
+    cout << "#vehicles = " << vehicles_.size() << endl;
+    mutex_.unlock();
+  }
+
+private:
+};
