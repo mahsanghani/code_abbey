@@ -27,6 +27,12 @@ public:
     mutex_.unlock();
   }
 
+  void pushBack(Vehicle &&v) {
+    mutex_.lock();
+    vehicles_.emplace_back(move(v));
+    mutex_.unlock();
+  }
+
 private:
   vector<Vehicle> vehicles_;
   mutex mutex_;
