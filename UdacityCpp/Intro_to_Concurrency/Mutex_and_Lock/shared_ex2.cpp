@@ -13,7 +13,6 @@ using namespace std;
 class Vehicle {
 public:
   Vehicle(int id) : id_(id) {}
-
 private:
   int id_;
 };
@@ -21,6 +20,12 @@ private:
 class WaitingVehicles {
 public:
   WaitingVehicles() {}
+
+  void printSize() {
+    mutex_.lock();
+    cout << "# Vehicles = " << vehicles_.size() << endl;
+    mutex_.unlock();
+  }
 
 private:
   vector<Vehicle> vehicles_;
