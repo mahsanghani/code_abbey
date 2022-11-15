@@ -29,6 +29,20 @@ public:
     mutex_.unlock();
   }
 
+  void pushBack(Vehicle &&v) {
+    for (size_t i = 0; i < 3; i++) {
+      if (mutex_.try_lock_for(chrono::milliseconds(100))) {
+        vehicles_.emplace_back(move(v));
+        mutex_.unlock();
+        break;
+      } else {
+        cout << "Error! Vehicle #" << v.getID()
+             << " could not be added to the vector" << endl;
+        this_thread::sleep_for(chrono::milliseconds(100));
+      }
+    }
+  }
+
 private:
   vector<Vehicle> vehicles_;
   timed_mutex mutex_;
