@@ -16,3 +16,12 @@ public:
 private:
   int id_;
 };
+
+class WaitingVehicles {
+public:
+private:
+  int tmp_vehicles_;
+  vector<Vehicle> vehicles_;
+};
+
+int main() { return 0; }
