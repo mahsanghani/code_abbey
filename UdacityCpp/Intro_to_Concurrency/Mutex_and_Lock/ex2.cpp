@@ -10,10 +10,9 @@
 
 using namespace std;
 
-std::mutex mtx;
+mutex mtx;
 double result;
 
 void printResult(int denom) {
-  std::cout << "for denom = " << denom << ", the result is " << result
-            << std::endl;
+  cout << "for denom = " << denom << ", the result is " << result << endl;
 }
