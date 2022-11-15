@@ -30,4 +30,6 @@ public:
   }
 
 private:
+  vector<Vehicle> vehicles_;
+  timed_mutex mutex_;
 };
