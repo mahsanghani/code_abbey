@@ -19,6 +19,10 @@ private:
 
 class WaitingVehicles {
 public:
+  WaitingVehicles() : tmp_vehicles_(0) {}
+
+  void printSize() { cout << "# Vehicles = " << tmp_vehicles_ << endl; }
+
 private:
   int tmp_vehicles_;
   vector<Vehicle> vehicles_;
