@@ -38,4 +38,20 @@ private:
   mutex mutex_;
 };
 
-int main() { return 0; }
+int main() {
+  shared_ptr<WaitingVehicles> queue(new WaitingVehicles);
+  vector<future<void>> futures;
+
+  for (int i = 0; i < 1000; i++) {
+    Vehicle v(i);
+    futures.emplace_back(
+        async(launch::async, &WaitingVehicles::pushBack, queue, move(v)));
+  }
+
+  for_each(futures.begin(), futures.end(),
+           [](future<void> &ftr) { ftr.wait(); });
+
+  queue->printSize();
+
+  return 0;
+}
