@@ -23,6 +23,12 @@ public:
 
   void printSize() { cout << "# Vehicles = " << tmp_vehicles_ << endl; }
 
+  void pushBack(Vehicle &&v) {
+    int old_num = tmp_vehicles_;
+    this_thread::sleep_for(chrono::milliseconds(1));
+    tmp_vehicles_ = old_num + 1;
+  }
+
 private:
   int tmp_vehicles_;
   vector<Vehicle> vehicles_;
