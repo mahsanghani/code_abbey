@@ -17,3 +17,14 @@ public:
 private:
   int id_;
 };
+
+class WaitingVehicles {
+public:
+  WaitingVehicles() {}
+
+private:
+  vector<Vehicle> vehicles_;
+  mutex mutex_;
+};
+
+int main() { return 0; }
