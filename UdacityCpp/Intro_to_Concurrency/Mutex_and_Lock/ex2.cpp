@@ -34,3 +34,16 @@ void divideByNumber(double num, double denom) {
 
   mtx.unlock();
 }
+
+int main() {
+  vector<future<void>> futures;
+
+  for (double i = -5; i <= +5; i++) {
+    futures.emplace_back(async(launch::async, divideByNumber, 50.0, i));
+  }
+
+  for_each(futures.begin(), futures.end(),
+           [](future<void> &ftr) { ftr.wait(); });
+
+  return 0;
+}
