@@ -18,3 +18,11 @@ void ThreadA() {
   mutex_2.unlock();
   mutex_1.unlock();
 }
+
+void ThreadB() {
+  mutex_1.lock();
+  cout << "Thread B" << endl;
+  mutex_2.lock();
+  mutex_1.unlock();
+  mutex_2.unlock();
+}
