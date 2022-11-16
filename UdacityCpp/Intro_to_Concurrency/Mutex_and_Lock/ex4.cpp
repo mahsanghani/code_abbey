@@ -26,3 +26,13 @@ void ThreadB() {
   mutex_1.unlock();
   mutex_2.unlock();
 }
+
+void ExecuteThreads() {
+  thread t1(ThreadA);
+  thread t2(ThreadB);
+
+  t1.join();
+  t2.join();
+
+  cout << "Finished!" << endl;
+}
