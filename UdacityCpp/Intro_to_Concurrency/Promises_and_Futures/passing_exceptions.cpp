@@ -21,3 +21,24 @@ void divideByNumber(promise<double> &&promise, double num, double denom) {
     promise.set_exceptions(current_exception());
   }
 }
+
+int main() {
+  promise<double> prms;
+  future<double> ftr = prms.get_future();
+
+  double num = 42.0;
+  double denom = 0.0;
+
+  thread t(divideByNumber, move(prms), num, denom);
+
+  try {
+    double result = ftr.get();
+    cout << "Result = " << result << endl;
+  } catch (const exception &e) {
+    cout << e.what() << endl;
+  }
+
+  t.join();
+
+  return 0;
+}
