@@ -11,6 +11,11 @@ void threadFunctionEven() {
   cout << "Even thread!" << endl;
 }
 
+void threadFunctionOdd() {
+  this_thread::sleep_for(chrono::milliseconds(1));
+  cout << "Odd thread!" << endl;
+}
+
 int main() {
 
   for (int i = 0; i < 6; i++) {
