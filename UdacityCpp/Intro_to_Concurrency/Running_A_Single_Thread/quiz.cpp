@@ -6,6 +6,11 @@
 
 using namespace std;
 
+void threadFunctionEven() {
+  this_thread::sleep_for(chrono::milliseconds(1));
+  cout << "Even thread!" << endl;
+}
+
 int main() {
 
   for (int i = 0; i < 6; i++) {
