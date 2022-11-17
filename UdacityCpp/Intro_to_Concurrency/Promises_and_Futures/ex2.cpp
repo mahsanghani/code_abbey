@@ -12,3 +12,19 @@ void modifyMessage(promise<string> &&promises, string message) {
   string modifiedMessage = message + " has been modified";
   promises.set_value(modifiedMessage);
 }
+
+int main() {
+  string messageToThread = "My Message";
+
+  promise<string> prms;
+  future<string> ftr = prms.get_future();
+
+  thread t(modifyMessage, move(prms), messageToThread);
+
+  cout << "Original message from main(): " << messageToThread << endl;
+  string messageToThread = ftr.get();
+  cout << "Modified message from thread(): " << messageToThread << endl;
+
+  t.join();
+  return 0;
+}
