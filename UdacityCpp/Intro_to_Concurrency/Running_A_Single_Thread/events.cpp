@@ -13,3 +13,16 @@ void threadFunction() {
   this_thread::sleep_for(chrono::milliseconds(50));
   cout << "Finished work 2 in thread!" << endl;
 }
+
+int main() {
+  thread t(threadFunction);
+
+  this_thread::sleep_for(chrono::milliseconds(50));
+  cout << "Finished work 1 in main!" << endl;
+
+  this_thread::sleep_for(chrono::milliseconds(50));
+  cout << "Finished work 2 in main!" << endl;
+
+  t.join();
+  return 0;
+}
