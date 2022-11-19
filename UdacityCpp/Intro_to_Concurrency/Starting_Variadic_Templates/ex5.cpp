@@ -15,3 +15,12 @@ public:
 private:
   int id_;
 };
+
+int main() {
+  shared_ptr<Vehicle v>(new Vehicle);
+  thread t = thread(&Vehicle::addID, v, 2);
+
+  t.join();
+  v->printID();
+  return 0;
+}
