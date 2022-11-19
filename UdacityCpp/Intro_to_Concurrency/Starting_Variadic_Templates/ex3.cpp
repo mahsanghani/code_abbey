@@ -14,3 +14,14 @@ void printName(string &name,
   name += " (from Thread)";
   cout << name << endl;
 }
+
+int main() {
+  string name("MyThread");
+  thread t(printName, ref(name), 50);
+  t.join();
+
+  name += " (from Main)";
+  cout << name << endl;
+
+  return 0;
+}
