@@ -16,3 +16,14 @@ void printIDAndName(int id, string name) {
   this_thread::sleep_for(chrono::milliseconds(100));
   cout << "ID = " << id << ", name = " << name << endl;
 }
+
+int main() {
+  int id = 0;
+
+  thread t1(printID, id);
+  thread t2(printIDAndName, ++id, "MyString");
+
+  t1.join();
+  t2.join();
+  return 0;
+}
