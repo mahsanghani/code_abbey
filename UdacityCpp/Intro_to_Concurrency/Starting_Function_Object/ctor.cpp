@@ -14,3 +14,10 @@ public:
 private:
   int id_;
 };
+
+int main() {
+  thread t(Vehicle(1));
+  cout << "Finishing work in main()!" << endl;
+  t.join();
+  return 0;
+}
