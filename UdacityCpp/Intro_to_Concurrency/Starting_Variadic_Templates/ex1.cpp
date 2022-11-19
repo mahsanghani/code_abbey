@@ -22,8 +22,9 @@ int main() {
 
   thread t1(printID, id);
   thread t2(printIDAndName, ++id, "MyString");
-
+  // thread t3(printIDAndName,++id);
   t1.join();
   t2.join();
+  // t3.join();
   return 0;
 }
