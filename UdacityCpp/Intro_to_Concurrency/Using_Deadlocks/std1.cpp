@@ -31,3 +31,8 @@ void ExecuteThreads() {
 
   cout << "Finished" << endl;
 }
+
+int main() {
+  ExecuteThreads();
+  return 0;
+}
