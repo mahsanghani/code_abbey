@@ -17,3 +17,19 @@ double divideNumber(double num, double denom) {
   }
   return num / denom;
 }
+
+int main() {
+  cout << "Main thread id = " << this_thread::get_id() << endl;
+  double num = 42.0;
+  double denom = 2.0;
+  future<double> ftr = async(launch::deferred, divideNumber, num, denom);
+
+  try {
+    double result = ftr.get();
+    cout << "Result = " << result << endl;
+  } catch (const exception &e) {
+    cout << e.what() << endl;
+  }
+
+  return 0;
+}
