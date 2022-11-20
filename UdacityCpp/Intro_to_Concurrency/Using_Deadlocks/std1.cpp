@@ -21,3 +21,13 @@ void ThreadB() {
   cout << "Thread B" << endl;
   lock_guard<mutex> lock_2(mutex_2);
 }
+
+void ExecuteThreads() {
+  thread t1(ThreadA);
+  thread t2(ThreadB);
+
+  t1.join();
+  t2.join();
+
+  cout << "Finished" << endl;
+}
