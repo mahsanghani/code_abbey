@@ -18,7 +18,7 @@ void printResult(int denom) {
 }
 
 void divideByNumber(double num, double denom) {
-  lock_guard<mutex>;
+  lock_guard<mutex> lck(mtx);
   try {
     if (denom != 0) {
       result = num / denom;
