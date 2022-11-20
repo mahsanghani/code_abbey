@@ -15,3 +15,9 @@ void ThreadA() {
   cout << "Thread A" << endl;
   lock_guard<mutex> lock_1(mutex_1);
 }
+
+void ThreadB() {
+  lock_guard<mutex> lock_1(mutex_1);
+  cout << "Thread B" << endl;
+  lock_guard<mutex> lock_2(mutex_2);
+}
