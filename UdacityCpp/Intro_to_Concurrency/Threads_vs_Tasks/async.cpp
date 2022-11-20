@@ -16,3 +16,19 @@ double divideByNumber(double num, double denom) {
   }
   return num / denom;
 }
+
+int main() {
+  double num = 42.0;
+  double denom = 0.0;
+
+  future<double> ftr = async(divideByNumber, num, denom);
+
+  try {
+    double result = ftr.get();
+    cout << "Result = " << result << endl;
+  } catch (const exception &e) {
+    cout << e.what() << endl;
+  }
+
+  return 0;
+}
