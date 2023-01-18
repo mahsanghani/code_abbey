@@ -2,8 +2,6 @@
 ---
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-### *December 2020 to June 2021 course work By Ian Whittal, P.Eng*
-
 <p align="center">
 <img width="700" height="500" src="https://github.com/udacity/self-driving-car/blob/master/images/car.jpeg"</p>    
 
@@ -21,15 +19,15 @@ Here, I first become an expert in applying Computer Vision and Deep Learning on 
 car to detect lane lines, predict steering angle, and more all based on just camera data, along with working with lidar
 and radar data.
 
-Project: [Finding Lane Lines](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%201%20-%20Finding%20Lane%20Lines)
+Project: [Finding Lane Lines]()
 - Camera Computer Vision   
-Project: [Advanced Lane Finding](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%202%20-%20Advanced%20Lane%20Finding)
+Project: [Advanced Lane Finding]()
 - Camera Computer Vision      
-Project: [Traffic Sign Classifier](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%203%20-%20Traffic%20Sign%20Classifier)
+Project: [Traffic Sign Classifier]()
 - Deep Learning - Classifier        
-Project: [Behavioral Cloning](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%204%20-%20Behavioural%20Cloning)
+Project: [Behavioral Cloning]()
 - Deep Learning - Regression    
-Project: [Extended Kalman Filters](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%205%20-%20Extended%20Kalman%20Filter)
+Project: [Extended Kalman Filters]()
 - Sensor Fusion - LIDAR / RADAR data
 
 PART 2  
@@ -38,13 +36,13 @@ Here, I expand on my sensor knowledge to localize and control the vehicle. I eva
 lidar, and GPS, and use these in closed-loop controllers that actuate the vehicle, finishing by combining all my skills
 on a real self-driving car under system integration!
 
-Project: [Kidnapped Vehicle](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%206%20-%20Kidnapped%20Vehicle%20-%20Particle%20Filter)
+Project: [Kidnapped Vehicle]()
 - Particle Filter - Vehicle Localization - GPS/LIDAR data   
-Project: [Highway Driving Path Planning](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%207%20-%20Highway%20Driving%20Path%20Planning)
+Project: [Highway Driving Path Planning]()
 - Trajectory Generation  
-Project: [PID Controller](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%208%20-%20PID%20Controller)
+Project: [PID Controller]()
 - Control Theory  
-Project: [System Integration](https://github.com/silverwhere/Self-Driving-Car-Nanodegree---Udacity/tree/main/Project%209%20-%20Program%20a%20Self%20Driving%20Vehicle%20-%20CAPSTONE%20-%20System%20Integration)
+Project: [System Integration]()
 - Capstone - Programming a Real Self Driving Vehicle    
-Project: [Optimize Your GitHub Profile](http://www.github.com/silverwhere)  
-Project: [Improve Your LinkedIn Profile](http://www.linkedin.com/in/ianwhittal/)    
+Project: [Optimize Your GitHub Profile](http://www.github.com/mahsanghani)  
+Project: [Improve Your LinkedIn Profile](http://www.linkedin.com/in/mahsanghani/)    
