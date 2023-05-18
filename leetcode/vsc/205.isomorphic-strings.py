@@ -8,14 +8,11 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         ST, TS = {}, {}
-
         for c1, c2 in zip(s,t):
             if ((c1 in ST and ST[c1]!=c2) or (c2 in TS and TS[c2]!=c1)):
                 return False
-            
             ST[c1] = c2
             TS[c2] = c1
-
         return True
 # @lc code=end
 
