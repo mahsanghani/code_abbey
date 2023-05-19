@@ -7,16 +7,11 @@
 # @lc code=start
 class Solution:
     def maxNumberOfBalloons(self, text: str) -> int:
-        res=0
+        res=len(text)
         d=Counter(text)
-        while d['b']>0:
-            if d['b']>=1 and d['a']>=1 and d['l']>=2 and d['o']>=2 and d['n']>=1:
-                res+=1
-                d['b']-=1
-                d['a']-=1
-                d['l']-=2
-                d['o']-=2
-                d['n']-=1
+        b=Counter("balloon")
+        for c in b:
+            res = min(res, d[c]//b[c])
         return res
 # @lc code=end
 
