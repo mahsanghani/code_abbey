@@ -6,7 +6,7 @@
 
 # @lc code=start
 class ListNode:
-    def __init__(self, key, val, next):
+    def __init__(self, key=-1, val=-1, next=None):
         self.key = key
         self.val = val
         self.next = next
@@ -38,7 +38,11 @@ class MyHashMap:
 
     def remove(self, key: int) -> None:
         cur = self.map[self.hash(key)]
-        
+        while cur.next and cur.next.key != key:
+            cur = cur.next
+        if cur and cur.next:
+            cur.next = cur.next.next
+        return
 
 
 # Your MyHashMap object will be instantiated and called as such:
