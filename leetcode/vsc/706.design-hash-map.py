@@ -29,7 +29,12 @@ class MyHashMap:
         cur.next = ListNode(key, value)
 
     def get(self, key: int) -> int:
-        cur = self.map[self.hash(key)]
+        cur = self.map[self.hash(key)].next
+        while cur and cur.key != key:
+            cur = cur.next
+        if cur:
+            return cur.val
+        return -1
 
     def remove(self, key: int) -> None:
         cur = self.map[self.hash(key)]
