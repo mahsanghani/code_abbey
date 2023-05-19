@@ -7,7 +7,6 @@
 # @lc code=start
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        check = set(range(1,len(nums)+1))
-        return list(set(range(1,len(nums)+1)).difference(set(nums)))
+        return set(range(1,len(nums)+1)).difference(set(nums))
 # @lc code=end
 
