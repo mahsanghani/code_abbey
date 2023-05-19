@@ -21,6 +21,12 @@ class MyHashMap:
 
     def put(self, key: int, value: int) -> None:
         cur = self.map[self.hash(key)]
+        while cur.next:
+            if cur.next.key == key:
+                cur.next.val = value
+                return
+            cur = cur.next
+        cur.next = ListNode(key, value)
 
     def get(self, key: int) -> int:
         cur = self.map[self.hash(key)]
