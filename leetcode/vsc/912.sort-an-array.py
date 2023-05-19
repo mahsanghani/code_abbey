@@ -5,12 +5,37 @@
 #
 
 # @lc code=start
-from queue import PriorityQueue as pq
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
-        q = pq()
-        for i in nums: q.put(i)
-        for i in range(len(nums)): nums[i] = q.get()
+        def mergesort(arr = nums):
+            if len(arr) - 1:
+                mid = len(arr) // 2
+                left = arr[:mid]
+                right = arr[mid:]
+                mergesort(left)
+                mergesort(right)
+
+                i = j = k = 0
+
+                while i < len(left) and j < len(right):
+                    if left[i] <= right[j]:
+                        arr[k] = left[i]
+                        i += 1
+                    else:
+                        arr[k] = right[j]
+                        j += 1
+                    k += 1
+                
+                while i < len(left):
+                    arr[k] = left[i]
+                    i += 1
+                    k += 1
+                
+                while j < len(right):
+                    arr[k] = right[j]
+                    j += 1
+                    k += 1
+        mergesort()
         return nums
 # @lc code=end
 
