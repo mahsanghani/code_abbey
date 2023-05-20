@@ -7,11 +7,10 @@
 # @lc code=start
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        res=[]
+        results=[]
         for i in range(len(nums)):
-            nums1=nums[:i]+nums[i+1:]
-            res.append(math.prod(nums1))
-        return res
-        
+            nums2=nums[:i]+nums[i+1:]
+            results.append(math.prod(nums2))
+        return results
 # @lc code=end
 
