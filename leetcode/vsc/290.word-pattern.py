@@ -10,23 +10,23 @@ class Solution:
         dp=defaultdict(set)
         ds=defaultdict(set)
 
-        if len(list(p))!=len(s.split(" ")):
+        if len(list(p))!=len(list(s.split(" "))):
             return False
-
+        
         for i,j in zip(list(p),s.split(" ")):
             dp[i].add(j)
-            
-        for i,j in zip(s.split(" "),list(p)):
-            ds[i].add(j)
-        
+
+        for i,j in zip(list(p),s.split(" ")):
+            ds[j].add(i)
+
         for k,v in dp.items():
-            if len(v)!=1:
+            if len(v)>1:
                 return False
-            
+        
         for k,v in ds.items():
-            if len(v)!=1:
+            if len(v)>1:
                 return False
-            
+        
         return True
 # @lc code=end
 
