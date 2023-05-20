@@ -19,10 +19,9 @@ class Solution:
                     board[r][c] in cols[c] or
                     board[r][c] in squares[(r//3,c//3)]):
                     return False
-                cols[c].add(board[r][c])
                 rows[r].add(board[r][c])
+                cols[c].add(board[r][c])
                 squares[(r//3,c//3)].add(board[r][c])
         return True
-
 # @lc code=end
 
