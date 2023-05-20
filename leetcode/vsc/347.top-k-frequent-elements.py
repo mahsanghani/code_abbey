@@ -7,6 +7,6 @@
 # @lc code=start
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        return list(dict(sorted(Counter(nums).items(), key=lambda t:t[1], reverse=True)).keys())[:k]
+        return list(dict(sorted(Counter(nums).items(),key=lambda t:t[1],reverse=True))).keys())[:k]
 # @lc code=end
 
