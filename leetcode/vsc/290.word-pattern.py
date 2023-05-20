@@ -7,24 +7,24 @@
 # @lc code=start
 class Solution:
     def wordPattern(self, p: str, s: str) -> bool:
-        dp=defaultdict(set)
-        ds=defaultdict(set)
+        dp=defaultdict(list)
+        ds=defaultdict(list)
 
         if len(list(p))!=len(list(s.split(" "))):
             return False
         
         for i,j in zip(list(p),s.split(" ")):
-            dp[i].add(j)
+            dp[i].append(j)
 
         for i,j in zip(list(p),s.split(" ")):
-            ds[j].add(i)
+            ds[j].append(i)
 
         for k,v in dp.items():
-            if len(v)>1:
+            if len(set(v))>1:
                 return False
         
         for k,v in ds.items():
-            if len(v)>1:
+            if len(set(v))>1:
                 return False
         
         return True
