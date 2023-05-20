@@ -11,8 +11,8 @@ class Solution:
         cols = collections.defaultdict(set)
         squares = collections.defaultdict(set)
 
-        for r in rows:
-            for c in cols:
+        for r in range(9):
+            for c in range(9):
                 if board[r][c]==".":
                     continue
                 if (board[r][c] in rows[r] or
