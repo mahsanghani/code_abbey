@@ -8,9 +8,7 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         d=Counter(nums)
-        print(d)
-        d=dict(sorted(d.items(),key=lambda k: k[1],reverse=True))
-        print(list(d.keys()))
+        d=dict(sorted(d.items(), key=lambda k:k[1], reverse=True))
         return list(d.keys())[:k]
 # @lc code=end
 
