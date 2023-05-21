@@ -7,14 +7,13 @@
 # @lc code=start
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        l=0
-        m=0
+        l,m=0,0
         numset=set(nums)
 
-        for n in nums:
-            if n-1 not in numset:
+        for num in nums:
+            if num-1 not in numset:
                 l=0
-                while n+l in numset:
+                while num+l in numset:
                     l+=1
                 if l>m:
                     m=l
