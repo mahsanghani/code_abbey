@@ -22,12 +22,12 @@ class Codec:
         i=0
         results=[]
 
-        while i<len(s):
+        while i<len(shortUrl):
             j=i
-            while s[j]!="#":
+            while shortUrl[j]!="#":
                 j+=1
-            length=int(s[i:j])
-            results.append(s[j+1:j+1+length])
+            length=int(shortUrl[i:j])
+            results.append(shortUrl[j+1:j+1+length])
             i=j+1+length
         return results
         
