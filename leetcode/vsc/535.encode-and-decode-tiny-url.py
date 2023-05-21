@@ -11,7 +11,7 @@ class Codec:
         """Encodes a URL to a shortened URL.
         """
         results=""
-        for s in strs:
+        for s in longUrl:
             results+=str(len(s))+"#"+s
         return results
         
