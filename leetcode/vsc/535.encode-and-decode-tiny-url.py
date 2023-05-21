@@ -29,7 +29,7 @@ class Codec:
             length=int(shortUrl[i:j])
             results.append(shortUrl[j+1:j+1+length])
             i=j+1+length
-        return results
+        return "".join(results)
         
 
 # Your Codec object will be instantiated and called as such:
