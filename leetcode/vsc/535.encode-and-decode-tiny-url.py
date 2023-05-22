@@ -24,7 +24,7 @@ class Codec:
             j=i
             while shortUrl[j]!="#":
                 j+=1
-            length = int(len(shortUrl[i:j]))
+            length = int(shortUrl[i:j])
             results.append(shortUrl[j+1:j+1+length])
             i=j+1+length
         return "".join(results)
