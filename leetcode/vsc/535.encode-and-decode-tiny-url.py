@@ -10,7 +10,7 @@ class Codec:
     def encode(self, longUrl: str) -> str:
         """Encodes a URL to a shortened URL.
         """
-        results = ""
+        results=""
         for c in longUrl:
             results+=str(len(c))+"#"+c
         return results
@@ -18,17 +18,17 @@ class Codec:
     def decode(self, shortUrl: str) -> str:
         """Decodes a shortened URL to its original URL.
         """
-        i,j = 0,0
+        i,j=0,0
         results=[]
         while i<len(shortUrl):
-            j=i #length counter
+            j=i
             while shortUrl[j]!="#":
                 j+=1
-            length = int(shortUrl[i:j])
+            length = int(len(shortUrl[i:j]))
             results.append(shortUrl[j+1:j+1+length])
-            i = j+1+length
+            i=j+1+length
         return "".join(results)
-
+        
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
 # codec.decode(codec.encode(url))

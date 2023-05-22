@@ -10,12 +10,13 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        i,l,r=0,0,len(nums)-1
+        i,l=0,0
+        r=len(nums)-1
 
         def swap(l,r):
-            temp = nums[l]
-            nums[l] = nums[r]
-            nums[r] = temp
+            temp=nums[l]
+            nums[l]=nums[r]
+            nums[r]=temp
 
         while i<=r:
             if nums[i]==0:
