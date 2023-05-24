@@ -15,4 +15,3 @@ class Solution:
                 gap[t]=1+gap.get(t,0)
         return len(wall) - max(gap.values())
 # @lc code=end
-
