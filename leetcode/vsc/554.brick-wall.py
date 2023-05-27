@@ -7,11 +7,12 @@
 # @lc code=start
 class Solution:
     def leastBricks(self, wall: List[List[int]]) -> int:
-        gap={0:0}
-        for r in wall:
-            t=0
-            for b in r[:-1]:
-                t+=b
-                gap[t]=1+gap.get(t,0)
+        gap = {0:0}
+        for row in wall:
+            total = 0
+            for brick in row[:-1]:
+                total += brick
+                gap[total] = 1 + gap.get(total,0)
+            
         return len(wall) - max(gap.values())
 # @lc code=end
