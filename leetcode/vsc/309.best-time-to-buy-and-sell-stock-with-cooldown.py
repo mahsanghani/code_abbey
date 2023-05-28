@@ -12,16 +12,15 @@ class Solution:
         def dfs(i, buying):
             if i>=len(prices):
                 return 0
-            if (i, buying) in dp:
+            elif (i, buying) in dp:
                 return dp[(i, buying)]
-        
+            
+            cool = dfs(i+1, buying)
             if buying:
                 buy = dfs(i+1, not buying) - prices[i]
-                cool = dfs(i+1, buying)
                 dp[(i, buying)] = max(buy, cool) # cache
             else:
                 sell = dfs(i+2, not buying) + prices[i]
-                cool = dfs(i+1, buying)
                 dp[(i, buying)] = max(sell, cool) # cache
             return dp[(i, buying)]
         
