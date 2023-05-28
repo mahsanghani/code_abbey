@@ -12,7 +12,7 @@ class Solution:
             total = 0
             for brick in row[:-1]:
                 total += brick
-                gap[total] = 1 + gap.get(total,0)
-            
+                gap[total] = 1+gap.get(total,0)
+        
         return len(wall) - max(gap.values())
 # @lc code=end
