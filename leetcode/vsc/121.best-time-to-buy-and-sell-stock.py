@@ -9,7 +9,7 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         p,l,r = 0,0,1
         while r<len(prices):
-            p=max(prices[r]-prices[l],p)
+            p = max(p, prices[r]-prices[l])
             if prices[r]<prices[l]:
                 l=r
             r+=1
