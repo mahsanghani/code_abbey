@@ -8,13 +8,13 @@
 class Solution:
     def maxProfit(self, prices: List[int], fee: int) -> int:
         length = len(prices)
-        hold, free = -prices[0], 0
-
+        hold, free = [0]*length, [0]*length
+        hold[0] = -prices[0]
+        
         for i in range(1, length):
-            temp = hold
-            hold = max(hold, free - prices[i])
-            free = max(free, temp + prices[i] - fee)
+            hold[i] = max(hold[i-1], free[i-1] - prices[i])
+            free[i] = max(free[i-1], hold[i-1] + prices[i] - fee)
 
-        return free
+        return free[-1]
 # @lc code=end
 
