@@ -7,14 +7,16 @@
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        p1,p2,c1,c2 = 0,0,float("inf"), float("inf")
-        
-        for p in prices:
-            c1 = min(c1,p)
-            p1 = max(p1,p-c1)
+        profit1 = 0
+        profit2 = 0
+        cost1 = float("inf")
+        cost2 = float("inf")
 
-            c2 = min(c2,p-p1)
-            p2 = max(p2,p-c2)
+        for price in prices:
+            cost1 = min(cost1,price)
+            profit1 = max(profit1, price-cost1)
+            cost2 = min(cost2,price-profit1)
+            profit2 = max(profit2, price-cost2)
 
-        return p2
+        return profit2
 # @lc code=end
