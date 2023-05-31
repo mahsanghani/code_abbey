@@ -7,13 +7,12 @@
 # @lc code=start
 class Solution:
     def interchangeableRectangles(self, rectangles: List[List[int]]) -> int:
-        results = 0
         d = Counter(list(map(lambda x: x[0]/x[1], rectangles)))
 
+        results = 0
         for c in d.values():
             if c>1:
                 results+=(c*(c-1))//2
-        
         return results
 # @lc code=end
 
