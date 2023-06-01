@@ -7,8 +7,8 @@
 # @lc code=start
 class Solution:
     def maxProduct(self, s: str) -> int:
-        p = {}
         n = len(s)
+        pali = {}
 
         for mask in range(1,1<<n):
             sub = ""
@@ -16,13 +16,13 @@ class Solution:
                 if mask & (1<<i):
                     sub += s[i]
             if sub == sub[::-1]:
-                p[mask] = len(sub)
-        
+                pali[mask] = len(sub)
+
         results = 0
-        for m in p:
-            for n in p:
+        for m in pali:
+            for n in pali:
                 if m & n == 0:
-                    results = max(results, p[m]*p[n])
+                    results = max(results, pali[m] * pali[n])
         
         return results
 # @lc code=end
