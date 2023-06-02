@@ -7,26 +7,11 @@
 # @lc code=start
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
-        start = 0
+        cp = Counter(p)
         results = []
-        cp, cs = {}, {}
-
-        for c in p:
-            cp[c] = 1 + cp.get(c, 0)
-
-        for i in range(len(s)):
-            cs[s[i]] = 1 + cs.get(s[i], 0)
-
-            if i >= len(p) - 1:
-                if cs == cp:
-                    results.append(start)
-            
-                if s[start] in cs:
-                    cs[s[start]] -= 1
-                    if cs[s[start]] == 0:
-                        del cs[s[start]]
-                start += 1
-
+        for i in range(len(s)-len(p)+1):
+            if Counter(s[i:i+len(p)])==cp:
+                results.append(i)
         return results
 # @lc code=end
 
