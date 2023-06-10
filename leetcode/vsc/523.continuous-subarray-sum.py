@@ -19,10 +19,5 @@ class Solution:
                 return True
             
         return False
-        # for k,v in d.items():
-        #     if len(v)>1:
-        #         return True
-        #     else:
-        #         return False
 # @lc code=end
 
