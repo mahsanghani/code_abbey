@@ -8,18 +8,16 @@
 import collections
 class Solution:
     def largestNumber(self, nums: List[int]) -> str:
-        results = ""
-        d=collections.defaultdict(list)
+        for i,j in enumerate(nums):
+            nums[i] = str(j)
+
+        def compare(n,m):
+            if n+m>m+n:
+                return -1
+            else:
+                return 1
         
-        for num in nums:
-            d[str(num)[:1]].append(num)
-        print(d)
-
-        for k,v in sorted(list(d.items()), key=lambda x:x[0].lower(), reverse=True):
-            for i,j in reversed(list(enumerate(v))):
-                print(j)
-                results+=str(j)
-
-        return results
+        nums = sorted(nums,key=functools.cmp_to_key(compare))
+        return str(int("".join(nums)))
 # @lc code=end
 
