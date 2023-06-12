@@ -12,10 +12,9 @@ class Solution:
 
         for i in range(len(s)-9):
             current = s[i:i+10]
-            if current not in seen:
-                seen.add(current)
-            else:
+            if current in seen:
                 results.add(current)
+            seen.add(current)
         return list(results)
 # @lc code=end
 
