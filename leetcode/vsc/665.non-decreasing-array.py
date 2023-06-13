@@ -8,14 +8,16 @@
 class Solution:
     def checkPossibility(self, nums: List[int]) -> bool:
         d=-1
-        for i in range(1,len(nums)-1):
-            if nums[i]>nums[i-1] or nums[i]>nums[i+1]:
-                if d==0:
-                    return False
-                else:
-                    d+=1
-            else:
+        for i in range(len(nums)-1):
+            if nums[i]<=nums[i+1]:
                 continue
+            if d==0:
+                return False
+            if i==0 or nums[i+1] >= nums[i-1]:
+                nums[i] = nums[i+1]
+            else:
+                nums[i+1] = nums[i]
+            d+=1
         return True
 
 # @lc code=end
