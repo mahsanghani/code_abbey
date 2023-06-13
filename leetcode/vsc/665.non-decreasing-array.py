@@ -17,5 +17,6 @@ class Solution:
             else:
                 continue
         return True
+
 # @lc code=end
 
