@@ -12,5 +12,6 @@ class Solution:
             if i not in nums:
                 return i
         return len(nums)+1
+    
 # @lc code=end
 
