@@ -15,9 +15,7 @@ class Solution:
             if c in cur:
                 results+=1
                 cur = set()
-                cur.add(c)
-            else:
-                cur.add(c)
+            cur.add(c)
         return results
 # @lc code=end
 
