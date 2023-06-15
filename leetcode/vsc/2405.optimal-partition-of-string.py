@@ -8,14 +8,16 @@
 import math
 class Solution:
     def partitionString(self, s: str) -> int:
-        i,j = 0,1
-        results=0
-        while i < len(s):
-            if len(s[i:j]) == len(set(s[i:j])):
-                results += 1
-                i+=1
+        cur = set()
+        results = 0
+
+        for c in s:
+            if c in cur:
+                results+=1
+                cur = set()
+                cur.add(c)
             else:
-                j+=1
+                cur.add(c)
         return results
 # @lc code=end
 
