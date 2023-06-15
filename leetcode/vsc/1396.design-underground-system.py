@@ -12,7 +12,7 @@ class UndergroundSystem:
         self.total = {} # (start, end)
 
     def checkIn(self, id: int, start: str, time: int) -> None:
-        
+        self.check[id] = (start, time)
 
     def checkOut(self, id: int, stationName: str, t: int) -> None:
         
