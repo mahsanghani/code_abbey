@@ -16,10 +16,11 @@ class UndergroundSystem:
         
     def checkOut(self, id: int, end: str, t: int) -> None:
         start, time = self.check[id]
-        if (start, end) not in self.total:
-            self.total[(start, end)] = [0, 0]
-        self.total[(start, end)][0] += t - time
-        self.total[(start, end)][1] += 1
+        route = (start, end)
+        if route not in self.total:
+            self.total[route] = [0, 0]
+        self.total[route][0] += t - time
+        self.total[route][1] += 1
         
     def getAverageTime(self, start: str, end: str) -> float:
         total, count = self.total[(start, end)]
