@@ -14,11 +14,12 @@ class UndergroundSystem:
     def checkIn(self, id: int, start: str, time: int) -> None:
         self.check[id] = (start, time)
 
-    def checkOut(self, id: int, stationName: str, t: int) -> None:
+    def checkOut(self, id: int, end: str, time: int) -> None:
         
 
-    def getAverageTime(self, startStation: str, endStation: str) -> float:
-        
+    def getAverageTime(self, start: str, end: str) -> float:
+        total, count = self.total([start, end])
+        return total / count
 
 
 # Your UndergroundSystem object will be instantiated and called as such:
