@@ -11,9 +11,9 @@ class Solution:
         for i in range(len(nums)):
             if nums[i]==0:
                 counts+=1
-                results+=counts
             else:
                 counts = 0
+            results+=counts
         return results
 # @lc code=end
 
