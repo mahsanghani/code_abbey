@@ -9,7 +9,7 @@ import math
 class Solution:
     def partitionString(self, s: str) -> int:
         cur = set()
-        results = 0
+        results = 1
 
         for c in s:
             if c in cur:
