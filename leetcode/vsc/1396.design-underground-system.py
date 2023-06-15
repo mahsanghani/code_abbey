@@ -23,7 +23,7 @@ class UndergroundSystem:
         self.total[route][1] += 1
 
     def getAverageTime(self, start: str, end: str) -> float:
-        total, count = self.total([start, end])
+        total, count = self.total[(start, end)]
         return total / count
 
 
