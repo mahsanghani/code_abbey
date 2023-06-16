@@ -10,11 +10,10 @@ class Solution:
     def partitionString(self, s: str) -> int:
         cur = set()
         results = 1
-
         for c in s:
             if c in cur:
-                results+=1
                 cur = set()
+                results += 1
             cur.add(c)
         return results
 # @lc code=end
