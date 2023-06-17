@@ -18,8 +18,5 @@ class Solution:
             l+=1
             r-=1
         return True
-          
-    def isPalindrome(self, s: str) -> bool:
-        return [''.join(c.lower()) for c in s if c.isalnum()][::-1] == [''.join(c.lower()) for c in s if c.isalnum()]
 # @lc code=end
 
