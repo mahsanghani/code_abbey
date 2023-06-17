@@ -7,14 +7,14 @@
 # @lc code=start
 class Solution:
     def minimumDifference(self, nums: List[int], k: int) -> int:
-        difference = float("inf")
+        res = float("inf")
         nums.sort()
         l,r = 0,k-1
         while r<len(nums):
-            difference = min(difference, nums[r]-nums[l])
+            res = min(res, nums[r]-nums[l])
             l+=1
             r+=1
-        return difference
+        return res
 
 # @lc code=end
 
