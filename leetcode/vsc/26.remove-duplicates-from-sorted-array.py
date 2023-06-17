@@ -14,10 +14,9 @@ class Solution:
             if nums[i] in newset:
                 nums.pop(i)
                 nums.append('_')
-                i-=1
             else:
                 newset.add(nums[i])
-            i+=1
+                i+=1
         return len(newset)
 # @lc code=end
 
