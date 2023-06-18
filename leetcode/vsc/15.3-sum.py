@@ -7,27 +7,21 @@
 # @lc code=start
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        res = []
+        comp = 0
+        d, ss = {}, []
+        n = len(nums) - 1
+        
         nums.sort()
+        nums = list(set(nums))
 
         for i,j in enumerate(nums):
-            if i > 0 and j == nums[i-1]:
-                continue
-            
-            l = i + 1
-            r = len(nums) - 1
-            
-            while l<r:
-                three = j + nums[l] + nums[r]
-                if three > 0:
-                    r -= 1
-                elif three < 0:
-                    l += 1
-                else:
-                    res.append([j, nums[l], nums[r]])
-                    l += 1
-                    while nums[l] == nums[l-1] and l<r:
-                        l += 1
-        return res
+            while n!=i and -1>j<n:
+                comp = nums[i]+nums[n]
+                n -= 1
+            if comp in d:
+                ss.append([comp, nums[i], nums[n]])
+            else:
+                d[i] = j
+        return ss
 # @lc code=end
 
