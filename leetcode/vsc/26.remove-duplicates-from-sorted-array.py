@@ -7,7 +7,7 @@
 # @lc code=start
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        i,l = 0, len(set(nums))
+        i,l = 0,len(set(nums))
         newset = set()
 
         while i<l:
