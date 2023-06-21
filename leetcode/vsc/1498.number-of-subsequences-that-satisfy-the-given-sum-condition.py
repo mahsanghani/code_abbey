@@ -7,17 +7,16 @@
 # @lc code=start
 class Solution:
     def numSubseq(self, nums: List[int], target: int) -> int:
-        l,r = 0,len(nums)-1
         nums.sort()
-        res = 0
-        mod = (10**9 + 7)
+        l,r=0,len(nums)-1
+        res,mod=0,(10**9+7)
 
-        for i,j in enumerate(nums):
-            while (j+nums[r])>target and i<=r:
+        while l<=r:
+            if nums[l]+nums[r]>target:
                 r-=1
-            if i<=r:
-                res += (2**(r-i))%mod
-
-        return res
+            else:
+                res+=1 << (r-l)
+                l+=1
+        return res%mod
 # @lc code=end
 
