@@ -7,12 +7,20 @@
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        p,l,r = 0,0,1
-        while r<len(prices):
-            p = max(p, prices[r]-prices[l])
-            if prices[r]<prices[l]:
-                l=r
-            r+=1
-        return p
+        profit = 0
+        maxProfit = 0
+        day_new = 0
+        day1 = 0
+
+        while day1<len(prices):
+            profit = (prices[day1] - prices[day_new])
+            day_new+=1
+
+            if day_new == len(prices):
+                day_new = 0
+                day1 += 1
+            if profit<maxProfit and day_new>day1:
+                maxProfit = profit
+        return (maxProfit*-1)
 # @lc code=end
 
