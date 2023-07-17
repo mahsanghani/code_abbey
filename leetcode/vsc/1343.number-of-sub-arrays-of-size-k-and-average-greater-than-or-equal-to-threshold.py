@@ -10,11 +10,13 @@ class Solution:
         results = 0
         current = sum(arr[:k-1])
 
-        for L in range(len(arr)-k+1):
-            current += arr[L+k-1]
-            if (current/k)>=threshold:
-                results+=1
-            current-=arr[L]
+        for num in range(len(arr)-k+1):
+            current += arr[num + k - 1]
+            if (current/k) >= threshold:
+                results += 1
+            current -= arr[num]
+
         return results
+        
 # @lc code=end
 
