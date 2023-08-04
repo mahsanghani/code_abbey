@@ -13,8 +13,8 @@ class Solution:
         for num in range(len(arr)-k+1):
             current += arr[num+k-1]
             if (current/k) >= threshold:
-                results+=1
-            current-=arr[num]
+                results += 1
+            current -= arr[num]
 
         return results
 # @lc code=end
