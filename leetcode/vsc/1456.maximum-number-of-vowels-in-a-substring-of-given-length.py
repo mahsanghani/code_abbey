@@ -13,7 +13,7 @@ class Solution:
             total += 1 if s[r] in vowels else 0
             while (r-l+1)>k:
                 total -= 1 if s[l] in vowels else 0
-                l += 1
+                l+=1
             results = max(results, total)
         return results
 # @lc code=end
