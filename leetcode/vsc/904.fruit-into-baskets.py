@@ -13,13 +13,17 @@ class Solution:
 
         for r in range(len(fruits)):
             count[fruits[r]] += 1
+            total += 1
             
             if len(count) > 2:
                 count[fruits[l]] -= 1
-                if count[fruits[l]] == 0:
-                    del count[fruits[l]]
+                total -= 1
+                if not count[fruits[l]]:
+                    count.pop(fruits[l])
                 l+=1
-        return r-l+1
+            results = max(results, total)
+
+        return results
 
 # @lc code=end
 
