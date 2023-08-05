@@ -5,11 +5,21 @@
 #
 
 # @lc code=start
-from collections import Counter
+from collections import defaultdict
 class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
-        fruits = Counter(fruits)
-        fruits = sorted((v,k) for k,v in fruits.items())
-        return fruits[-1][0] + fruits[-2][0]
+        l,r,total,results = 0,0,0,0
+        count = defaultdict(int)
+
+        for r in range(len(fruits)):
+            count[fruits[r]] += 1
+            
+            if len(count) > 2:
+                count[fruits[l]] -= 1
+                if count[fruits[l]] == 0:
+                    del count[fruits[l]]
+                l+=1
+        return r-l+1
+
 # @lc code=end
 
