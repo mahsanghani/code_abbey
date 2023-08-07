@@ -11,7 +11,7 @@ class Solution:
         s = s + s
         results = len(s)
         alt1, alt2 = "", ""
-        l, r, diff1, diff2 = 0,0,0,0
+        l, diff1, diff2 = 0,0,0
 
         for i in range(len(s)):
             alt1 += "0" if i % 2 else "1"
