@@ -1,0 +1,3 @@
+C:/Users/ghani/source/repos/mahsanghani/code_abbey/out/build/x64-Debug/CMakeFiles/test.dir
+C:/Users/ghani/source/repos/mahsanghani/code_abbey/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/ghani/source/repos/mahsanghani/code_abbey/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
