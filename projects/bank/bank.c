@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stddef.h>
+#include <locale.h>
 #include <stdlib.h>
 #include <windows.h>
 
@@ -40,7 +42,7 @@ void new_acc() {
 	FILE* ptr;
 
 	ptr = fopen("record.dat", "a+");
-	account_no;
+account_no:
 	system("cls");
 
 	printf("\t\t\t\xB2\xB2\xB2\ ADD RECORD  \xB2\xB2\xB2\xB2");
@@ -461,9 +463,9 @@ void see(void)
 	}
 }
 
-void close(void) {
+/*void closed(void) {
 	printf("Great Job Team!");
-}
+}*/
 
 void menu(void) {
 	int choice;
@@ -490,7 +492,6 @@ void menu(void) {
 		break;
 	case 7:close();
 		break;
-
 	}
 }
 

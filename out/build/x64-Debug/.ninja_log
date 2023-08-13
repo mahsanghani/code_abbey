@@ -1,3 +1,5 @@
 # ninja log v5
 3	1686	7136539920292218	CMakeFiles/test.dir/Source1.cpp.obj	fc18320e8a9a9a1e
 1688	2123	7136539924444738	test.exe	e5ca4ee143433c69
+1	559	7136642583697658	CMakeFiles/test.dir/projects/bank/bank.c.obj	50680c31e0034d6a
+2	380	7136643842404764	CMakeFiles/test.dir/projects/bank/bank.c.obj	50680c31e0034d6a
