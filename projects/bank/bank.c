@@ -22,3 +22,19 @@ struct {
 	struct date withdraw;
 } add, upd, rem, check, transaction;
 
+float interest(float t, float amount, int rate) {
+	float SI;
+	SI = (rate * t * amount) / 100.0;
+	return (SI);
+}
+
+void fordelay(int j) {
+	int i, k;
+	for (int i = 0; i < j; i++) {
+		k = i;
+	}
+}
+
+void new_acc() {
+
+}
