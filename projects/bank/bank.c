@@ -48,10 +48,8 @@ void new_acc() {
 	scanf("%d/%d/%d", &add.deposit.month, &add.deposit.day, &add.deposit.year);
 	printf("\nEnter the account number:");
 	scanf("%d", &check.acc_no);
-	while (fscanf(ptr, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF)
-	{
-		if (check.acc_no == add.acc_no)
-		{
+	while (fscanf(ptr, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF) {
+		if (check.acc_no == add.acc_no) {
 			printf("Account no. already in use!");
 			fordelay(1000000000);
 			goto account_no;
@@ -107,8 +105,7 @@ void view_list() {
 	system("cls");
 	printf("\nACC. NO.\tNAME\t\t\tADDRESS\t\t\tPHONE\n");
 
-	while (fscanf(view, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF)
-	{
+	while (fscanf(view, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF) {
 		printf("\n%6d\t %10s\t\t\t%10s\t\t%.0lf", add.acc_no, add.name, add.address, add.phone);
 		test++;
 	}
@@ -143,24 +140,20 @@ void edit() {
 
 	printf("\nEnter the account no. of the customer whose info you want to change:");
 	scanf("%d", &upd.acc_no);
-	while (fscanf(old, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF)
-	{
-		if (add.acc_no == upd.acc_no)
-		{
+	while (fscanf(old, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF) {
+		if (add.acc_no == upd.acc_no) {
 			test = 1;
 			printf("\nWhich information do you want to change?\n1.Address\n2.Phone\n\nEnter your choice(1 for address and 2 for phone):");
 			scanf("%d", &choice);
 			system("cls");
-			if (choice == 1)
-			{
+			if (choice == 1) {
 				printf("Enter the new address:");
 				scanf("%s", upd.address);
 				fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, upd.address, add.citizenship, add.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
 				system("cls");
 				printf("Changes saved!");
 			}
-			else if (choice == 2)
-			{
+			else if (choice == 2) {
 				printf("Enter the new phone number:");
 				scanf("%lf", &upd.phone);
 				fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, upd.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
@@ -219,42 +212,33 @@ void transact(void) {
 
 	printf("Enter the account no. of the customer:");
 	scanf("%d", &transaction.acc_no);
-	while (fscanf(old, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF)
-	{
-
-		if (add.acc_no == transaction.acc_no)
-		{
+	while (fscanf(old, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF) {
+		if (add.acc_no == transaction.acc_no) {
 			test = 1;
-			if (strcmpi(add.acc_type, "fixed1") == 0 || strcmpi(add.acc_type, "fixed2") == 0 || strcmpi(add.acc_type, "fixed3") == 0)
-			{
+			if (strcmpi(add.acc_type, "fixed1") == 0 || strcmpi(add.acc_type, "fixed2") == 0 || strcmpi(add.acc_type, "fixed3") == 0) {
 				printf("\a\a\a\n\nYOU CANNOT DEPOSIT OR WITHDRAW CASH IN FIXED ACCOUNTS!!!!!");
 				fordelay(1000000000);
 				system("cls");
 				menu();
-
 			}
 			printf("\n\nDo you want to\n1.Deposit\n2.Withdraw?\n\nEnter your choice(1 for deposit and 2 for withdraw):");
 			scanf("%d", &choice);
-			if (choice == 1)
-			{
+			if (choice == 1) {
 				printf("Enter the amount you want to deposit:$ ");
 				scanf("%f", &transaction.amt);
 				add.amt += transaction.amt;
 				fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
 				printf("\n\nDeposited successfully!");
 			}
-			else
-			{
+			else {
 				printf("Enter the amount you want to withdraw:$ ");
 				scanf("%f", &transaction.amt);
 				add.amt -= transaction.amt;
 				fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
 				printf("\n\nWithdrawn successfully!");
 			}
-
 		}
-		else
-		{
+		else {
 			fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
 		}
 	}
@@ -262,8 +246,7 @@ void transact(void) {
 	fclose(newrec);
 	remove("record.dat");
 	rename("new.dat", "record.dat");
-	if (test != 1)
-	{
+	if (test != 1) {
 		printf("\n\nRecord not found!!");
 	transact_invalid:
 		printf("\n\n\nEnter 0 to try again,1 to return to main menu and 2 to exit:");
@@ -283,8 +266,59 @@ void transact(void) {
 			goto transact_invalid;
 		}
 	}
-	else 
-	{
+	else {
+		printf("\nEnter 1 to go to the main menu and 0 to exit:");
+		scanf("%d", &main_exit);
+		system("cls");
+		if (main_exit == 1) {
+			menu();
+		}
+		else {
+			close();
+		}
+	}
+}
+
+void erase(void) {
+	FILE* old, * newrec;
+	int test = 0;
+	old = fopen("record.dat", "r");
+	newrec = fopen("new.dat", "w");
+	printf("Enter the account no. of the customer you want to delete:");
+	scanf("%d", &rem.acc_no);
+	while (fscanf(old, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d", &add.acc_no, add.name, &add.dob.month, &add.dob.day, &add.dob.year, &add.age, add.address, add.citizenship, &add.phone, add.acc_type, &add.amt, &add.deposit.month, &add.deposit.day, &add.deposit.year) != EOF) {
+		if (add.acc_no != rem.acc_no) {
+			fprintf(newrec, "%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n", add.acc_no, add.name, add.dob.month, add.dob.day, add.dob.year, add.age, add.address, add.citizenship, add.phone, add.acc_type, add.amt, add.deposit.month, add.deposit.day, add.deposit.year);
+		}
+		else {
+			test++;
+			printf("\nRecord deleted successfully!\n");
+		}
+	}
+	fclose(old);
+	fclose(newrec);
+	remove("record.dat");
+	rename("new.dat", "record.dat");
+	if (test == 0) {
+		printf("\nRecord not found!!\a\a\a");
+	erase_invalid:
+		printf("\nEnter 0 to try again,1 to return to main menu and 2 to exit:");
+		scanf("%d", &main_exit);
+		if (main_exit == 1) {
+			menu();
+		}
+		else if (main_exit == 2) {
+			close();
+		}
+		else if (main_exit == 0) {
+			erase();
+		}
+		else {
+			printf("\nInvalid!\a");
+			goto erase_invalid;
+		}
+	}
+	else {
 		printf("\nEnter 1 to go to the main menu and 0 to exit:");
 		scanf("%d", &main_exit);
 		system("cls");
