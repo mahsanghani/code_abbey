@@ -61,3 +61,9 @@ void SetColorAndBackground(int ForgC, int BackC) {
 	return;
 }
 
+int check_leapYear(int year) {
+	if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
+		return 1;
+	}
+	return 0;
+}
