@@ -76,3 +76,15 @@ void increase_month(int* mm, int* yy) {
 	}
 }
 
+void decrease_month(int* mm, int* yy) {
+	--*mm;
+	if (*mm < 1) {
+		--*yy;
+		if (*yy < 1600) {
+			print("No record available");
+			return;
+		}
+		*mm += 12;
+	}
+}
+
