@@ -7,21 +7,16 @@
 # @lc code=start
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
-        length = len(nums)
-        nums = nums + nums
-        results = [-1]*length
-        count = 0
+        n = len(nums)
+        results = [-1]*n
+        stack = nums[::-1]
 
-        for i in range(len(nums)):
-            for j in range(i+1,i+length):
-                if nums[j]>nums[i]:
-                    results[i] = nums[j]
-                    break
-            count+=1
-
-            if count==1:
-                break
-
+        for i in range(n-1,-1,-1):
+            while stack and stack[-1]<=nums[i]:
+                stack.pop()
+            if stack:
+                results[i] = stack[-1]
+            stack.append(nums[i])
         return results
 # @lc code=end
 
