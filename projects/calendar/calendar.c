@@ -13,7 +13,7 @@ struct Remainder {
 	int dd, mm;
 	char note[50];
 };
-struct Remainder r;
+struct Remainder R;
 
 COORD xy = { 0,0 };
 
