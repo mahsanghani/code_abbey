@@ -144,7 +144,7 @@ void print_date(int mm, int yy) { //prints the name of month and year
 	printf("---------------------------");
 }
 
-int getDayNumber(int day, int mon, int year) { //retuns the day number
+int getDayNumber(int day, int mon, int year) {
 	int res = 0, t1, t2, y = year;
 	year = year - 1600;
 	while (year >= 100) {
@@ -170,5 +170,23 @@ int getDayNumber(int day, int mon, int year) { //retuns the day number
 		res = res + 1;
 	res = res % 7;
 	return res;
+}
+
+char* getDay(int dd, int mm, int yy) {
+	int day;
+	if (!(mm >= 1 && mm <= 12)) {
+		return("Invalid month value");
+	}
+	if (!(dd >= 1 && dd <= getNumberOfDays(mm, yy))) {
+		return("Invalid date");
+	}
+	if (yy >= 1600) {
+		day = getDayNumber(dd, mm, yy);
+		day = day % 7;
+		return(getName(day));
+	}
+	else {
+		return("Please give year more than 1600");
+	}
 }
 
