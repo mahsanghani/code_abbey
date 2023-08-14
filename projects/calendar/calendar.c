@@ -67,3 +67,12 @@ int check_leapYear(int year) {
 	}
 	return 0;
 }
+
+void increase_month(int* mm, int* yy) {
+	++*mm;
+	if (*mm > 12) {
+		++*yy;
+		*mm -= 12;
+	}
+}
+
