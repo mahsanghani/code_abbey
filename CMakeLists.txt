@@ -3,4 +3,4 @@ project(test)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(test "projects/contact/contact.c" "projects/cricket/welcome.h" "projects/cricket/menu.h")
+add_executable(test "projects/contact/contact.c" "projects/cricket/welcome.h" "projects/cricket/menu.h" "projects/cricket/newscoresheet.h")
