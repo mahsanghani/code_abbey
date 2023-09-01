@@ -32,8 +32,8 @@ class Solution:
                         c in range(cols) and 
                         grid[r][c] == "1" and
                         (r,c) not in visit):
-                        q.append((r,c))
                         visit.add((r,c))
+                        q.append((r,c))
 
         for r in range(rows):
             for c in range(cols):
