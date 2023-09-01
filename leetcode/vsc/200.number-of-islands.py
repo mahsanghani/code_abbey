@@ -12,7 +12,10 @@ class Solution:
         if not grid:
             return 0
         
-        rows,cols,visit,islands = len(grid),len(grid[0]),set(),0
+        rows = len(grid)
+        cols = len(grid[0])
+        visit = set()
+        islands = 0
         
         def bfs(r,c):
             q = collections.deque()
