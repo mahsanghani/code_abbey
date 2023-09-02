@@ -21,10 +21,10 @@ class Solution:
 
         while q and fresh>0:
             for i in range(len(q)):
-                r,c=q.popleft()
+                row,col=q.popleft()
                 for dr,dc in directions:
-                    r=r+dr
-                    c=c+dc
+                    r=row+dr
+                    c=col+dc
                     if r<0 or c<0 or r==rows or c==cols or grid[r][c]!=1:
                         continue
                     grid[r][c]=2
