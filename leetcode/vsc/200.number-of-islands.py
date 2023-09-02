@@ -13,9 +13,9 @@ class Solution:
             return 0
         
         rows,cols,visit,islands = len(grid),len(grid[0]),set(),0
-        
+
         def bfs(r,c):
-            q = collections.deque()
+            q=collections.deque()
             visit.add((r,c))
             q.append((r,c))
 
@@ -24,23 +24,22 @@ class Solution:
                 directions = [[0,1],[1,0],[-1,0],[0,-1]]
 
                 for dr,dc in directions:
-                    r=row+dr
-                    c=col+dc
-                
+                    r=dr+row
+                    c=dc+col
+
                     if (r in range(rows) and
                         c in range(cols) and
-                        grid[r][c]=="1" and 
-                        (r,c) not in visit):
+                        (r,c) not in visit and
+                        grid[r][c]=="1"):
                         visit.add((r,c))
                         q.append((r,c))
-
 
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c]=="1" and (r,c) not in visit:
                     bfs(r,c)
                     islands+=1
-
+        
         return islands
 
 
