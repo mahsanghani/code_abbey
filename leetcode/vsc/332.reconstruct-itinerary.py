@@ -7,7 +7,7 @@
 # @lc code=start
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        adj= {s:[] for s,d in tickets}
+        adj = {s:[] for s,d in tickets}
 
         tickets.sort()
         results = ["JFK"]
@@ -25,11 +25,12 @@ class Solution:
 
             for k,v in enumerate(temp):
                 adj[c].pop(k)
-                temp.append(v)
+                results.append(v)
                 if dfs(v):
                     return True
                 adj[c].insert(k,v)
                 results.pop()
+            
             return False
         
         dfs("JFK")
