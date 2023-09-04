@@ -11,7 +11,7 @@ class Solution:
 
         tickets.sort()
         results = ["JFK"]
-
+        
         for s,d in tickets:
             adj[s].append(d)
 
@@ -30,7 +30,7 @@ class Solution:
                     return True
                 adj[c].insert(k,v)
                 results.pop()
-
+                
             return False
         
         dfs("JFK")
