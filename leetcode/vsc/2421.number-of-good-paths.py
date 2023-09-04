@@ -34,26 +34,28 @@ class UnionFind:
 
 class Solution:
     def numberOfGoodPaths(self, vals: List[int], edges: List[List[int]]) -> int:
-        n = len(vals)
+        results = 0
+        uf = UnionFind(len(vals))
         adj = collections.defaultdict(list)
         val2idx = collections.defaultdict(list)
+
         for a, b in edges:
             adj[a].append(b)
             adj[b].append(a)
-
-        uf = UnionFind(n)
-        results = n
-        nodes = sorted([(vals[i], i) for i in range(n)])
-        for val,i in nodes:
-            for nei in adj[i]:
-                if vals[nei] <= val:
-                    uf.union(i,nei)
-
-            for j in val2idx[val]:
-                if uf.find(i) == uf.find(j):
-                    results += 1
-            
+        for i, val in enumerate(vals):
             val2idx[val].append(i)
+
+        for val in sorted(val2idx.keys()):
+            for i in val2idx[val]:
+                for nei in adj[i]:
+                    if vals[nei] <= vals[i]:
+                        uf.union(nei, i)
+
+            count = collections.defaultdict(int)
+            for i in val2idx[val]:
+                count[uf.find(i)] += 1
+                results += count[uf.find(i)]
+        
         return results
 # @lc code=end
 
