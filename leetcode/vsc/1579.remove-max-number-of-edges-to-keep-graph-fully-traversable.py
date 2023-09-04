@@ -28,7 +28,7 @@ class UnionFind:
         if p1 == p2:
             return 0
         if self.rank[p1] > self.rank[p2]:
-            self.rank[p1] += self.rank[p2]:
+            self.rank[p1] += self.rank[p2]
             self.par[p2] = p1
         else:
             self.rank[p2] += self.rank[p1]
@@ -38,6 +38,22 @@ class UnionFind:
 
 class Solution:
     def maxNumEdgesToRemove(self, n: int, edges: List[List[int]]) -> int:
-        
+        count = 0
+        bob = UnionFind(n)
+        alice = UnionFind(n)
+
+        for time, source, destination in edges:
+            if time == 3:
+                count += (alice.union(source, destination) | bob.union(source, destination))
+
+        for time, source, destination in edges:
+            if time == 1:
+                count += alice.union(source, destination)
+            elif time == 2:
+                count += bob.union(source, destination)
+
+        if bob.isConnected() and alice.isConnected():
+            return len(edges) - count
+        return -1
 # @lc code=end
 
