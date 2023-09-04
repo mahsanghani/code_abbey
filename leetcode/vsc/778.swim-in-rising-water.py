@@ -30,7 +30,9 @@ class Solution:
                     (neighbourR,neighbourC) in visit):
                     continue
                 visit.add((neighbourR,neighbourC))
-                heapq.heappush(minheap,[max(t,grid[neighbourR][neighbourC]),neighbourR,neighbourC])
+                heapq.heappush(minheap,[max(t,
+                                        grid[neighbourR][neighbourC]),
+                                        neighbourR,neighbourC])
         
 # @lc code=end
 
