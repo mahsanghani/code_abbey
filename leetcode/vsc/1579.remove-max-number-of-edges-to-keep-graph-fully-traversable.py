@@ -9,28 +9,32 @@ import collections
 from collections import defaultdict
 class UnionFind:
     def __init__(self, n):
-        self.par = list(range(n))
-        self.rank = [0] * n
+        self.n = n
+        self.par = [i for i in range(n+1)]
+        self.rank = [1] * (n + 1)
 
-    def find(self, i):
-        while i != self.par[i]:
-            self.par[i] = self.par[self.par[i]]
-            i = self.par[i]
-        return i
+    def find(self, x):
+        while x != self.par[x]:
+            self.par[x] = self.par[self.par[x]]
+            x = self.par[x]
+        return x
     
-    def union(self, a, b):
-        aRoot = self.find(a)
-        bRoot = self.find(b)
-
-        if aRoot == bRoot:
-            return False
-        if self.rank[aRoot] < self.rank[bRoot]:
-            self.par[aRoot] = bRoot
-            self.rank[bRoot] += self.rank[aRoot]
+    def isConnected(self):
+        return self.n <= 1
+    
+    def union(self, x, y):
+        p1 = self.find(x)
+        p2 = self.find(y)
+        if p1 == p2:
+            return 0
+        if self.rank[p1] > self.rank[p2]:
+            self.rank[p1] += self.rank[p2]:
+            self.par[p2] = p1
         else:
-            self.par[bRoot] = aRoot
-            self.rank[aRoot] += self.rank[bRoot]
-        return True
+            self.rank[p2] += self.rank[p1]
+            self.par[p1] = p2
+        self.n -= 1
+        return 1
 
 class Solution:
     def maxNumEdgesToRemove(self, n: int, edges: List[List[int]]) -> int:
