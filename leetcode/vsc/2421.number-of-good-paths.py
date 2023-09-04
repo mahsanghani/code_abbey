@@ -42,6 +42,7 @@ class Solution:
         for a, b in edges:
             adj[a].append(b)
             adj[b].append(a)
+
         for i, val in enumerate(vals):
             val2idx[val].append(i)
 
