@@ -44,6 +44,16 @@ class Solution:
         uf = UnionFind(n)
         results = n
         nodes = sorted([(vals[i], i) for i in range(n)])
-        
+        for val,i in nodes:
+            for nei in adj[i]:
+                if vals[nei] <= val:
+                    uf.union(i,nei)
+
+            for j in val2idx[val]:
+                if uf.find(i) == uf.find(j):
+                    results += 1
+            
+            val2idx[val].append(i)
+        return results
 # @lc code=end
 
