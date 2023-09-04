@@ -16,6 +16,7 @@ class Solution:
             w1 = words[i]
             w2 = words[i+1]
             minlen = min(len(w1),len(w2))
+
             if len(w1)>len(w2) and w1[:minlen]==w2[:minlen]:
                 return ""
             for j in range(minlen):
@@ -27,14 +28,14 @@ class Solution:
             if c in visit:
                 return visit[c]
             if c not in adj:
-                return ""
+                return False
             
             visit[c] = True
 
             for j in adj[c]:
                 if dfs(j):
-                    return True
-            
+                    return False
+                
             visit[c] = False
             results.append(c)
 
