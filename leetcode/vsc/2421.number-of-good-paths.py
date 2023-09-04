@@ -5,6 +5,8 @@
 #
 
 # @lc code=start
+import collections
+from collections import defaultdict
 class UnionFind:
     def __init__(self, n):
         self.par = list(range(n))
@@ -32,6 +34,16 @@ class UnionFind:
 
 class Solution:
     def numberOfGoodPaths(self, vals: List[int], edges: List[List[int]]) -> int:
+        n = len(vals)
+        adj = collections.defaultdict(list)
+        val2idx = collections.defaultdict(list)
+        for a, b in edges:
+            adj[a].append(b)
+            adj[b].append(a)
+
+        uf = UnionFind(n)
+        results = n
+        nodes = sorted([(vals[i], i) for i in range(n)])
         
 # @lc code=end
 
