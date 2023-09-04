@@ -34,6 +34,9 @@ class UnionFind:
 
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        
+        uf = UnionFind(len(edges)+1)
+        for n1, n2 in edges:
+            if not uf.union(n1, n2):
+                return [n1, n2]
 # @lc code=end
 
