@@ -24,7 +24,6 @@ class TwoSum:
                 return True
         return False
 
-
 # Your TwoSum object will be instantiated and called as such:
 # obj = TwoSum()
 # obj.add(number)
