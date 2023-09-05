@@ -24,7 +24,7 @@ class MyStack:
         return self.q[-1]
 
     def empty(self) -> bool:
-        return len(self.q)==0
+        return len(self.q) == 0
 
 
 # Your MyStack object will be instantiated and called as such:
