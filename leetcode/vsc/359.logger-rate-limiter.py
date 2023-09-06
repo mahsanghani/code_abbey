@@ -1,27 +1,28 @@
 #
-# @lc app=leetcode id=346 lang=python3
+# @lc app=leetcode id=359 lang=python3
 #
-# [346] Moving Average from Data Stream
+# [359] Logger Rate Limiter
 #
 
 # @lc code=start
-import collections
-from collections import deque
-class MovingAverage:
+class Logger:
 
-    def __init__(self, size: int):
-        self.size = size
-        self.queue = []
+    def __init__(self):
+        self.map = {}
 
-    def next(self, val: int) -> float:
-        size = self.size
-        queue = self.queue
-        queue.append(val)
-        win_sum = sum(queue[-size:])
-        return win_sum/min(len(queue),size)
+    def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
+        if message not in self.map:
+            self.map[message] = timestamp
+            return True
+        
+        if timestamp >= self.map[message] + 10:
+            self.map[message] = timestamp
+            return True
+        else:
+            return False
 
-# Your MovingAverage object will be instantiated and called as such:
-# obj = MovingAverage(size)
-# param_1 = obj.next(val)
+# Your Logger object will be instantiated and called as such:
+# obj = Logger()
+# param_1 = obj.shouldPrintMessage(timestamp,message)
 # @lc code=end
 
