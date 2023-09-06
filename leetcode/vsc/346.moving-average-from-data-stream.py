@@ -11,18 +11,14 @@ class MovingAverage:
 
     def __init__(self, size: int):
         self.size = size
-        self.queue = [0]*self.size
-        self.head = 0
-        self.win_sum = 0
-        self.count = 0
+        self.queue = []
 
     def next(self, val: int) -> float:
-        self.count += 1
-        tail = (self.head+1)%self.size
-        self.win_sum = self.win_sum - self.queue[tail] + val
-        self.head = (self.head+1)%self.size
-        self.queue[self.head] = val
-        return self.win_sum/min(self.size,self.count)
+        size = self.size
+        queue = self.queue
+        queue.append(val)
+        win_sum = sum(queue[-size:])
+        return win_sum/min(len(queue),size)
 
 # Your MovingAverage object will be instantiated and called as such:
 # obj = MovingAverage(size)
