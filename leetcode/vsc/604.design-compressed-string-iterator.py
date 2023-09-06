@@ -1,27 +1,36 @@
 #
-# @lc app=leetcode id=346 lang=python3
+# @lc app=leetcode id=604 lang=python3
 #
-# [346] Moving Average from Data Stream
+# [604] Design Compressed String Iterator
 #
 
 # @lc code=start
-import collections
-from collections import deque
-class MovingAverage:
+class StringIterator:
 
-    def __init__(self, size: int):
-        self.size = size
-        self.queue = []
+    def __init__(self, compressedString: str):
+        self.i = 0
+        self.n = 0
+        self.char = None
+        self.data = compressedString
 
-    def next(self, val: int) -> float:
-        size = self.size
-        queue = self.queue
-        queue.append(val)
-        win_sum = sum(queue[-size:])
-        return win_sum/min(len(queue),size)
+    def next(self) -> str:
+        if not self.hasNext():
+            return " "
+        if not self.n:
+            self.char = self.data[self.i]
+            self.i = ii = self.i+1
+            while self.i < len(self.data) and self.data[self.i].isdigit():
+                self.i += 1
+            self.n = int(self.data[ii:self.i])
+        self.n -= 1
+        return self.char
 
-# Your MovingAverage object will be instantiated and called as such:
-# obj = MovingAverage(size)
-# param_1 = obj.next(val)
+    def hasNext(self) -> bool:
+        return self.i < len(self.data) or self.n
+
+# Your StringIterator object will be instantiated and called as such:
+# obj = StringIterator(compressedString)
+# param_1 = obj.next()
+# param_2 = obj.hasNext()
 # @lc code=end
 
