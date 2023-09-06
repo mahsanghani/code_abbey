@@ -16,10 +16,10 @@ class OrderedStream:
         self.data[idKey] = value
         if idKey > self.ptr:
             return []
-        
-        while self.ptr < len(self.data) and self.data[self.ptr]:
-            self.ptr += 1
-        return self.data[idKey:self.ptr]
+        else:
+            while self.ptr < len(self.data) and self.data[self.ptr]:
+                self.ptr += 1
+            return self.data[idKey:self.ptr]
 
 # Your OrderedStream object will be instantiated and called as such:
 # obj = OrderedStream(n)
