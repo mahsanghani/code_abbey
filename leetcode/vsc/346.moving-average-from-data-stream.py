@@ -14,6 +14,7 @@ class MovingAverage:
     def next(self, val: int) -> float:
         size = self.size
         queue = self.queue
+        queue.append(val)
         win_sum = sum(queue[-size:])
         return win_sum/min(len(queue),size)
 
