@@ -16,6 +16,10 @@ class BrowserHistory:
         self.current = self.head
         
     def visit(self, url: str) -> None:
+        new_node = DLLNode(url)
+        self.current.next = new_node
+        new_node.prev = self.current
+        self.current = new_node
 
     def back(self, steps: int) -> str:
 
