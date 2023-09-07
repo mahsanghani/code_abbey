@@ -9,33 +9,18 @@ import heapq
 class BrowserHistory:
 
     def __init__(self, homepage: str):
-        self.stack = [homepage]
-        self.current = 0
-        self.last = self.next = ""
-        # self.results.append(None)
-        heapq.heapify(self.stack)
+        self.history = []
+        self.future = []
+        self.current = homepage
 
     def visit(self, url: str) -> None:
-        self.current += 1
-        self.stack.append(url)
-        # self.results.append(None)
+        
 
     def back(self, steps: int) -> str:
-        # if self.current>=len(self.stack)-steps:
-        try:
-            for i in range(steps):
-                self.current -= 1
-                self.last = self.stack[-i]
-            return self.last
-        except:
-            return ""
+        
 
     def forward(self, steps: int) -> str:
-        if self.current<=len(self.stack)+steps:
-            for i in range(steps):
-                self.current += 1
-                self.next = self.stack[i]
-        return self.next
+        
 
 
 # Your BrowserHistory object will be instantiated and called as such:
