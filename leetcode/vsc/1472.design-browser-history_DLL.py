@@ -30,7 +30,7 @@ class BrowserHistory:
     def forward(self, steps: int) -> str:
         while steps>0 and self.current.next:
             self.current = self.current.next
-            steps += 1
+            steps -= 1
         return self.current.data
 
 # Your BrowserHistory object will be instantiated and called as such:
