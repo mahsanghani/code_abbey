@@ -12,6 +12,8 @@ class DLLNode:
         self.data = url
 class BrowserHistory:
     def __init__(self, homepage: str):
+        self.head = DLLNode(homepage)
+        self.current = self.head
         
     def visit(self, url: str) -> None:
 
