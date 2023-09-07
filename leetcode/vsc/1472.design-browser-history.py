@@ -22,11 +22,15 @@ class BrowserHistory:
         while steps>0 and self.history:
             self.future.append(self.current)
             self.current = self.history.pop()
-            steps += 1
+            steps -= 1
         return self.current
 
     def forward(self, steps: int) -> str:
-        
+        while steps>0 and self.future:
+            self.history.append(self.current)
+            self.current = self.future.pop()
+            steps -= 1
+        return self.current
 
 
 # Your BrowserHistory object will be instantiated and called as such:
