@@ -22,6 +22,10 @@ class BrowserHistory:
         self.current = new_node
 
     def back(self, steps: int) -> str:
+        while steps>0 and self.current.prev:
+            self.current = self.current.prev
+            steps -= 1
+        return self.current.data
 
     def forward(self, steps: int) -> str:
 
