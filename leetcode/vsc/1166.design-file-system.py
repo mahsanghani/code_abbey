@@ -5,10 +5,12 @@
 #
 
 # @lc code=start
+import collections
+from collections import defaultdict
 class FileSystem:
 
     def __init__(self):
-        self.paths = {}
+        self.paths = collections.defaultdict()
 
     def createPath(self, path: str, value: int) -> bool:
         if path in self.paths or '/'.join(path.split('/')[:-2]) not in self.paths:
