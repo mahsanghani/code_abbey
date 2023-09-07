@@ -5,25 +5,20 @@
 #
 
 # @lc code=start
+import collections
+from collections import deque
 class HitCounter:
 
     def __init__(self):
-        self.hits = []
+        self.hits = collections.deque()
 
     def hit(self, timestamp: int) -> None:
         self.hits.append(timestamp)
 
     def getHits(self, timestamp: int) -> int:
-        left = 0
-        right = len(self.hits) - 1
-        target = timestamp - 300
-        while left <= right:
-            mid = (left + right) // 2
-            if self.hits[mid] <= target:
-                left = mid + 1
-            else:
-                right = mid - 1
-        return len(self.hits) - left
+        while self.hits and timestamp - self.hits[0]>=300:
+            self.hits.popleft()
+        return len(self.hits)
 
 
 # Your HitCounter object will be instantiated and called as such:
