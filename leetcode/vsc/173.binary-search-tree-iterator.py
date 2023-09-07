@@ -14,23 +14,22 @@
 class BSTIterator:
 
     def __init__(self, root: Optional[TreeNode]):
-        self.index = -1
-        self.sortednodes = []
+        self.stack = []
         self.inorder(root)
 
     def inorder(self, root):
-        if not root:
-            return
-        self.inorder(root.left)
-        self.sortednodes.append(root.val)
-        self.inorder(root.right)
+        while root:
+            self.stack.append(root)
+            root = root.left
 
     def next(self) -> int:
-        self.index += 1
-        return self.sortednodes[self.index]
+        top_node = self.stack.pop()
+        if top_node.right:
+            self.inorder(top_node.right)
+        return top_node.val
 
     def hasNext(self) -> bool:
-        return self.index + 1 < len(self.sortednodes)
+        return len(self.stack) > 0
 
 
 # Your BSTIterator object will be instantiated and called as such:
