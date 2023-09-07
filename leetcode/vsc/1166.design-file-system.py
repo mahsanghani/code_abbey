@@ -8,13 +8,20 @@
 class FileSystem:
 
     def __init__(self):
-        
+        self.paths = {}
 
     def createPath(self, path: str, value: int) -> bool:
-        
+        if path in self.paths or '/'.join(path.split('/')[:-2]) not in self.paths:
+            return False
+        else:
+            self.paths[path] = value
+            return True
 
     def get(self, path: str) -> int:
-        
+        if path in self.paths:
+            return self.paths[path]
+        else:
+            return -1
 
 
 # Your FileSystem object will be instantiated and called as such:
