@@ -5,24 +5,46 @@
 #
 
 # @lc code=start
-class OrderedStream:
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
 
-    def __init__(self, n: int):
-        self.data = [None] * n
-        self.ptr = 0
+"""
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+"""
+
+class Codec:
+    # Encodes an n-ary tree to a binary tree.
+    def encode(self, root: 'Optional[Node]') -> Optional[TreeNode]:
+        if not root:
+            return None
         
-    def insert(self, idKey: int, value: str) -> List[str]:
-        idKey -= 1
-        self.data[idKey] = value
-        if idKey > self.ptr:
-            return []
-        else:
-            while self.ptr < len(self.data) and self.data[self.ptr]:
-                self.ptr += 1
-            return self.data[idKey:self.ptr]
 
-# Your OrderedStream object will be instantiated and called as such:
-# obj = OrderedStream(n)
-# param_1 = obj.insert(idKey,value)
+	
+	# Decodes your binary tree to an n-ary tree.
+    def decode(self, data: Optional[TreeNode]) -> 'Optional[Node]':
+        if not data:
+            return None
+        
+        rootNode = Node(data.val, [])
+        current = data.left
+        while current:
+            rootNode.children.append(self.decode(current))
+            current = current.right
+
+        return rootNode
+
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.decode(codec.encode(root))
 # @lc code=end
 
