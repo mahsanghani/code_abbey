@@ -12,7 +12,6 @@ class Node:
     def __init__(self):
         self.content = ""
         self.children = SortedDict()
-    
 class FileSystem:
     def __init__(self):
         self.root = Node()
