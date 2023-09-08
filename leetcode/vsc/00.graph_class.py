@@ -35,4 +35,16 @@ class Graph(object):
             self.graph[vertex] = []
             
     def adj(self):
+        """
+        return adjacency matrix
+        """
         return self.graph
+
+    def __str__(self):
+        results = "vertices: "
+        for k in self.graph:
+            results += str(k) + " "
+        results += "\nedges: "
+        for edge in self.gen_edges():
+            results += str(edge) + " "
+        return results
