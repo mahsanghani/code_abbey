@@ -5,24 +5,56 @@
 #
 
 # @lc code=start
-class OrderedStream:
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
 
-    def __init__(self, n: int):
-        self.data = [None] * n
-        self.ptr = 0
+"""
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+"""
+import collections
+from collections import deque
+class Codec:
+    # Encodes an n-ary tree to a binary tree.
+    def encode(self, root: 'Optional[Node]') -> Optional[TreeNode]:
+        if not root:
+            return None
         
-    def insert(self, idKey: int, value: str) -> List[str]:
-        idKey -= 1
-        self.data[idKey] = value
-        if idKey > self.ptr:
-            return []
-        else:
-            while self.ptr < len(self.data) and self.data[self.ptr]:
-                self.ptr += 1
-            return self.data[idKey:self.ptr]
+        rootNode = TreeNode(root.val)
+        queue = deque([(rootNode, root)])
 
-# Your OrderedStream object will be instantiated and called as such:
-# obj = OrderedStream(n)
-# param_1 = obj.insert(idKey,value)
+        while queue:
+            parent, current = queue.popleft()
+            prevBnode, headBnode = None, None
+
+            for child in current.children:
+                newBnode = TreeNode(child.val)
+                if prevBnode:
+                    prevBnode.right = newBnode
+                else:
+                    headBnode = newBnode
+                prevBnode = newBnode
+                queue.append((newBnode, child))
+            
+            parent.left = headBnode
+
+        return rootNode
+	
+	# Decodes your binary tree to an n-ary tree.
+    def decode(self, data: Optional[TreeNode]) -> 'Optional[Node]':
+        
+
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.decode(codec.encode(root))
 # @lc code=end
 
