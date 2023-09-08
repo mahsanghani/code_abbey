@@ -22,7 +22,7 @@ class Solution:
                 if w1[j]!=w2[j]:
                     adj[w1[j]].add(w2[j])
                     break
-            
+
         def dfs(c):
             if c in visit:
                 return visit[c]
@@ -30,14 +30,14 @@ class Solution:
                 return False
             
             visit[c] = True
-            
+
             for j in adj[c]:
                 if dfs(j):
                     return False
                 
             visit[c] = False
             results.append(c)
-        
+
         for c in adj:
             if dfs(c):
                 return ""
