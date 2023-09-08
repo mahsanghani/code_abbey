@@ -56,7 +56,17 @@ class Graph(object):
         """
         assuming edges are type set, tuple or list
         """
+        edge = set(edge)
+        (v1,v2) = tuple(edge)
+        if v1 in self.graph:
+            self.graph[v1][v2] = weight
+        else:
+            self.graph[v1] = {v2:weight}
 
+        if v2 in self.graph:
+            self.graph[v2][v1] = weight
+        else:
+            self.graph[v2] = {v1:weight}
 
     def gen_edges(self):
         """
