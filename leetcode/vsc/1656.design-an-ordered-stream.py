@@ -8,9 +8,9 @@
 class OrderedStream:
 
     def __init__(self, n: int):
-        self.data = [None]*n
+        self.data = [None] * n
         self.ptr = 0
-
+        
     def insert(self, idKey: int, value: str) -> List[str]:
         idKey -= 1
         self.data[idKey] = value
