@@ -30,9 +30,7 @@ class Solution:
                     return True
                 adj[c].insert(k,v)
                 results.pop()
-            
-            return False
-        
+
         dfs("JFK")
         return results
 
