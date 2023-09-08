@@ -26,3 +26,13 @@ class Graph(object):
         returns edges of a graph
         """
         return self.edges()
+    
+    def add_vertex(self, vertex):
+        """
+        empty vertex if not in graph
+        """
+        if vertex not in self.graph:
+            self.graph[vertex] = []
+            
+    def adj(self):
+        return self.graph
