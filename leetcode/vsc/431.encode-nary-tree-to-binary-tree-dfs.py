@@ -28,7 +28,18 @@ class Codec:
         if not root:
             return None
         
+        rootNode = TreeNode(root.val)
+        if len(root.children) > 0:
+            firstChild = root.children[0]
+            rootNode.left = self.encode(firstChild)
 
+        current = rootNode.left
+
+        for i in range(1, len(root.children)):
+            current.right = self.encode(root.children[i])
+            current = current.right
+
+        return rootNode
 	
 	# Decodes your binary tree to an n-ary tree.
     def decode(self, data: Optional[TreeNode]) -> 'Optional[Node]':
