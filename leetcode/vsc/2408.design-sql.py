@@ -14,13 +14,13 @@ class SQL:
 
 
     def insertRow(self, name: str, row: List[str]) -> None:
-        
+        self.tables[name].append(row)
 
     def deleteRow(self, name: str, rowId: int) -> None:
-        
+        self.tables[name].pop(rowId-1)
 
     def selectCell(self, name: str, rowId: int, columnId: int) -> str:
-        
+        return self.tables[name][rowId][columnId]
 
 
 # Your SQL object will be instantiated and called as such:
