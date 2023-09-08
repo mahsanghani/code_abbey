@@ -63,4 +63,9 @@ class Graph(object):
         generating edges of graph w/ 1 or 2 vertices
         """
         edges = []
+        for vertex in self.graph:
+            for neighbour,weight in self.graph[vertex].items():
+                if (neighbour, vertex, weight) not in edges:
+                    edges.append([vertex, neighbour, weight])
+
         return edges
