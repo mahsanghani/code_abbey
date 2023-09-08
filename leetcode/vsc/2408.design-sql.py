@@ -1,20 +1,32 @@
 #
-# @lc app=leetcode id=2405 lang=python3
+# @lc app=leetcode id=2408 lang=python3
 #
-# [2405] Optimal Partition of String
+# [2408] Design SQL
 #
 
 # @lc code=start
-import math
-class Solution:
-    def partitionString(self, s: str) -> int:
-        cur = set()
-        results = 1
-        for c in s:
-            if c in cur:
-                cur = set()
-                results += 1
-            cur.add(c)
-        return results
+class SQL:
+
+    def __init__(self, names: List[str], columns: List[int]):
+        self.tables = [[]]
+        for name,cols in zip(names, columns):
+            self.tables.append(name[0][cols])
+
+
+    def insertRow(self, name: str, row: List[str]) -> None:
+        
+
+    def deleteRow(self, name: str, rowId: int) -> None:
+        
+
+    def selectCell(self, name: str, rowId: int, columnId: int) -> str:
+        
+
+
+# Your SQL object will be instantiated and called as such:
+# obj = SQL(names, columns)
+# obj.insertRow(name,row)
+# obj.deleteRow(name,rowId)
+# param_3 = obj.selectCell(name,rowId,columnId)
 # @lc code=end
 
