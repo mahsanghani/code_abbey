@@ -41,6 +41,9 @@ class Graph(object):
         return self.graph
 
     def __str__(self):
+        """
+        string output vertices + edges
+        """
         results = "vertices: "
         for k in self.graph:
             results += str(k) + " "
@@ -48,3 +51,16 @@ class Graph(object):
         for edge in self.gen_edges():
             results += str(edge) + " "
         return results
+    
+    def add_edge(self, edge, weight=1):
+        """
+        assuming edges are type set, tuple or list
+        """
+
+
+    def gen_edges(self):
+        """
+        generating edges of graph w/ 1 or 2 vertices
+        """
+        edges = []
+        return edges
