@@ -14,3 +14,15 @@ class Graph(object):
         if graph==None:
             graph = {}
         self.graph = graph
+
+    def vertices(self):
+        """
+        returns vertices of a graph
+        """
+        return list(self.graph.keys())
+    
+    def edges(self):
+        """
+        returns edges of a graph
+        """
+        return self.edges()
