@@ -18,6 +18,18 @@ class Node(ABC):
     def evaluate(self) -> int:
         pass
 
+class TreeNode(Node):
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+    def evaluate(self) -> int:
+        if self.val.isdigit():
+            return self.val
+        else:
+            res = eval('int(self.left.evaluate())' + self.val + 'int(self.right.evaluate())')
+            return int(res)
 
 """    
 This is the TreeBuilder class.
