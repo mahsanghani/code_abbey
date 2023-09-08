@@ -51,7 +51,24 @@ class Codec:
 	
 	# Decodes your binary tree to an n-ary tree.
     def decode(self, data: Optional[TreeNode]) -> 'Optional[Node]':
+        if not data:
+            return None
         
+        rootNode = Node(data.val, [])
+        queue = deque([(rootNode, data)])
+
+        while queue:
+            parent, current = queue.popleft()
+            firstChild = current.left
+            sibling = firstChild
+
+            while sibling:
+                newNode = Node(sibling.val, [])
+                parent.children.append(newNode)
+                queue.append((newNode, sibling))
+                sibling = sibling.right
+
+        return rootNode        
 
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
