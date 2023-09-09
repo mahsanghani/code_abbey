@@ -5,30 +5,27 @@
 #
 
 # @lc code=start
-from collections import Counter
+from sortedcontainers import SortedList
 class MyCalendarThree:
 
     def __init__(self):
-        self.vals = Counter()
-        self.lazy = Counter()
+        self.starts = SortedList([[0,0]])
+        self.results = 0
 
-    def update(self, start: int, end: int, left: int = 0, right: int = 10**9, idx: int = 1) -> None:
-        if start > right or end < left:
-            return
+    def split(self, x: int) -> None:
+        idx = self.starts.bisect_left([x,0])
+        if idx < len(self.starts) and self.starts[idx][0] == x:
+            return idx
+        self.starts.add([x,self.starts[idx-1][1]])
         
-        if start <= left <= right <= end:
-            self.vals[idx] += 1
-            self.lazy[idx] += 1
-        else:
-            mid = (left + right) // 2
-            self.update(start, end, left, mid, idx*2)
-            self.update(start, end, mid+1, right, idx*2+1)
-            self.vals[idx] = self.lazy[idx] + max(self.vals[2*idx], self.vals[2*idx+1])
-
     def book(self, start: int, end: int) -> int:
-        self.update(start, end-1)
-        return self.vals[1]
-
+        self.split(start)
+        self.split(end)
+        for interval in self.starts.irange([start,0], [end,0], (True,False)):
+            interval[1] += 1
+            self.results = max(self.results, interval[1])
+        return self.results
+        
 
 # Your MyCalendarThree object will be instantiated and called as such:
 # obj = MyCalendarThree()
