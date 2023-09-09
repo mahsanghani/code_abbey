@@ -15,7 +15,7 @@ class Logger:
             self.map[message] = timestamp
             return True
         
-        if timestamp >= self.map[message]+10:
+        if timestamp >= self.map[message] + 10:
             self.map[message] = timestamp
             return True
         else:
