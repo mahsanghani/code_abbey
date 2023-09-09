@@ -11,12 +11,24 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+import collections
+from collections import deque
 class FindElements:
 
     def __init__(self, root: Optional[TreeNode]):
+        if not root:
+            return
+        
         self.set = set()
-        recover = lambda n,x: [self.set.add(x), recover(n.left,2*x+1), recover(n.right,2*x+2)] if n else None
-        recover(root, 0)
+        queue = collections.deque([[root, 0]])
+        while queue:
+            n,x = queue.popleft()
+            self.set.add(x)
+            if n.left:
+                queue.append([n.left, 2*x+1])
+            if n.right:
+                queue.append([n.right, 2*x+2])
+        
 
     def find(self, target: int) -> bool:
         return target in self.set
