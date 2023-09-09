@@ -5,22 +5,21 @@
 #
 
 # @lc code=start
+import collections
+from collections import defaultdict
 class SQL:
 
     def __init__(self, names: List[str], columns: List[int]):
-        self.tables = [[]]
-        for name,cols in zip(names, columns):
-            self.tables.append(name[0][cols])
-
+        self.tables = {name:[] for name in names}
 
     def insertRow(self, name: str, row: List[str]) -> None:
         self.tables[name].append(row)
 
     def deleteRow(self, name: str, rowId: int) -> None:
-        self.tables[name].pop(rowId-1)
+        self.tables[name][rowId-1] = None
 
     def selectCell(self, name: str, rowId: int, columnId: int) -> str:
-        return self.tables[name][rowId][columnId]
+        return self.tables[name][rowId-1][columnId-1]
 
 
 # Your SQL object will be instantiated and called as such:
