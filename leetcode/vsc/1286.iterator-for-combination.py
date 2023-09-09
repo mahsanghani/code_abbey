@@ -8,19 +8,22 @@
 class CombinationIterator:
 
     def __init__(self, characters: str, combinationLength: int):
-        self.combinations = []
-        n,k = len(characters), combinationLength
-        
-        for bitmask in range(1<<n):
-            if bin(bitmask).count('1') == k:
-                current= [characters[j] for j in range(n) if bitmask & (1<<n-j-1)]
-                self.combinations.append(''.join(current))
+        self.n = n = len(characters)
+        self.k = k = combinationLength
+        self.chars = characters
+
+        self.b = (1<<n) - (1<<n-k)
 
     def next(self) -> str:
-        return self.combinations.pop()
+        current = [self.chars[j] for j in range(self.n) if self.b & (1<<self.n-j-1)]
+        self.b -= 1
+        while self.b>0 and bin(self.b).count('1') != self.k:
+            self.b -= 1
+
+        return ''.join(current)
 
     def hasNext(self) -> bool:
-        return self.combinations
+        return self.b > 0
 
 
 # Your CombinationIterator object will be instantiated and called as such:
