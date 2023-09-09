@@ -15,13 +15,7 @@ class FindElements:
 
     def __init__(self, root: Optional[TreeNode]):
         self.set = set()
-
-        def recover(n,x):
-            if n:
-                self.set.add(x)
-                recover(n.left, 2*x + 1)
-                recover(n.right, 2*x + 2)
-            
+        recover = lambda n,x: [self.set.add(x), recover(n.left,2*x+1), recover(n.right,2*x+2)] if n else None
         recover(root, 0)
 
     def find(self, target: int) -> bool:
