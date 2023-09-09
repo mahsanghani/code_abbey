@@ -8,9 +8,9 @@
 class UndergroundSystem:
 
     def __init__(self):
-        self.check = {} # (start, time)
-        self.total = {} # (start, end)
-        
+        self.check = {}
+        self.total = {}
+
     def checkIn(self, id: int, start: str, time: int) -> None:
         self.check[id] = (start, time)
         
@@ -18,8 +18,8 @@ class UndergroundSystem:
         start, time = self.check[id]
         route = (start, end)
         if route not in self.total:
-            self.total[route] = [0, 0]
-        self.total[route][0] += t - time
+            self.total[route] = [0,0]
+        self.total[route][0] += t-time
         self.total[route][1] += 1
         
     def getAverageTime(self, start: str, end: str) -> float:
