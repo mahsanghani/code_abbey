@@ -15,8 +15,8 @@ class MyCalendarThree:
         self.diff[start] = self.diff.get(start, 0) + 1
         self.diff[end] = self.diff.get(end, 0) - 1
         cur = res = 0
-        for i in self.diff.values():
-            cur += i
+        for delta in self.diff.values():
+            cur += delta
             res = max(cur, res)
         return res
 
