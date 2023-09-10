@@ -27,15 +27,16 @@ class Solution:
                 if dfs(j)==False:
                     return False
             
-            cycle.remove(c)
             visit.add(c)
+            cycle.remove(c)
             results.append(c)
             return True
         
         for j in range(numCourses):
-            if dfs(j) == False:
+            if dfs(j)==False:
                 return []
             
         return results
+
 # @lc code=end
 
