@@ -8,31 +8,32 @@
 import heapq
 class Solution:
     def countPaths(self, n: int, roads: List[List[int]]) -> int:
-        graph = {}
+        adj = [[] for i in range(n)]
         for u,v,t in roads:
-            graph.setdefault(u,[]).append((v,t))
-            graph.setdefault(v,[]).append((u,t))
+            adj[u].append((v,t))
+            adj[v].append((u,t))
 
-        dist = [inf]*n
+        dist = [float('inf')]*n
         dist[0] = 0
         ways = [0]*n
         ways[0] = 1
-        pq = [(0,0)]
+
+        pq = []
+        heapq.heapify(pq)
+        heapq.heappush(pq,(0,0))
+        mod = 10**9+7
 
         while pq:
-            d,u = heapq.heappop(pq)
-            if d > dist[-1]:
-                break
-            if d == dist[u]:
-                for v,t in graph.get(u,[]):
-                    if dist[u] + t < dist[v]:
-                        dist[v] = dist[u] + t
-                        ways[v] = ways[u]
-                        heapq.heappush(pq, (dist[v], v))
-                    elif dist[u] + t == dist[v]:
-                        ways[v] += ways[u]
+            time, node = heapq.heappop(pq)
+            for v,t in adj[node]:
+                if dist[v] > t+time:
+                    dist[v] = t+time
+                    heapq.heappush(pq,(dist[v],v))
+                    ways[v] = ways[node]
+                elif dist[v] == t+time:
+                    ways[v] = (ways[v]+ways[node])%mod
         
-        return ways[-1] % 1_000_000_007
+        return ways[n-1] % mod
 
 # @lc code=end
 
