@@ -7,30 +7,35 @@
 # @lc code=start
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        req = {c:[] for c in range(numCourses)}
-        for course,prereq in prerequisites:
-            req[course].append(prereq)
+        adj = {i:[] for i in range(numCourses)}
+        for prev, next in prerequisites:
+            adj[prev].append(next)
 
-        visit,cycle,results = set(),set(),[]
+        visit = set()
+        cycle = set()
+        results = []
 
-        def dfs(course):
-            if course in cycle:
-                return False
-            if course in visit:
+        def dfs(c):
+            if c in visit:
                 return True
+            if c in cycle:
+                return False
             
-            cycle.add(course)
-            for pre in req[course]:
-                if dfs(pre) == False:
+            cycle.add(c)
+
+            for j in adj[c]:
+                if dfs(j)==False:
                     return False
-            cycle.remove(course)
-            visit.add(course)
-            results.append(course)
+            
+            cycle.remove(c)
+            visit.add(c)
+            results.append(c)
             return True
         
-        for course in range(numCourses):
-            if dfs(course) == False:
+        for j in range(numCourses):
+            if dfs(j) == False:
                 return []
+            
         return results
 # @lc code=end
 
