@@ -7,36 +7,32 @@
 # @lc code=start
 import collections
 from collections import deque
+from collections import defaultdict
 class Solution:
     def sequenceReconstruction(self, nums: List[int], seqs: List[List[int]]) -> bool:
-        values = {x for seq in seqs for x in seq}
-        graph = {x:[] for x in values}
-        indegrees = {x:0 for x in values}
+        s = set([i for seq in seqs for i in seq])
+        graph = defaultdict(list)
+        indeg = defaultdict(int)
 
         for seq in seqs:
-            for i in range(len(seq)-1):
-                s = seq[i]
-                t = seq[i+1]
-                graph[s].append(t)
-                indegrees[t] += 1
-        
-        queue = collections.deque()
-        for node, count in indegrees.items():
-            if count == 0:
-                queue.append(node)
+            for i,j in zip(seq[:-1],seq[1:]):
+                graph[i].append(j)
+                indeg[j] += 1
         
         results = []
-        while queue:
-            if len(queue) != 1:
+        q = [i for i in s if indeg[i]==0]
+
+        while q:
+            if len(q)!=1:
                 return False
-            source = queue.popleft()
-            results.append(source)
-            for target in graph[source]:
-                indegrees[target] -= 1
-                if indegrees[target] == 0:
-                    queue.append(target)
-        
-        return len(results) == len(values) and results == nums
+            i = q.pop()
+            results.append(i)
+            for j in graph[i]:
+                indeg[j] -= 1
+                if indeg[j] == 0:
+                    q.append(j)
+
+        return results == nums
 
 # @lc code=end
 
