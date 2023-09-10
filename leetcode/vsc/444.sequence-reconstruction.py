@@ -10,29 +10,30 @@ from collections import deque
 from collections import defaultdict
 class Solution:
     def sequenceReconstruction(self, nums: List[int], seqs: List[List[int]]) -> bool:
-        s = set([i for seq in seqs for i in seq])
         graph = defaultdict(list)
         indeg = defaultdict(int)
 
         for seq in seqs:
-            for i,j in zip(seq[:-1],seq[1:]):
-                graph[i].append(j)
-                indeg[j] += 1
+            for i in range(1, len(seq)):
+                graph[seq[i-1]].append(seq[i])
+                indeg[seq[i]] += 1
+
+        i = 1
+        stack = [nums[0]]
+        if indeg[nums[0]] > 0:
+            return False
         
-        results = []
-        q = [i for i in s if indeg[i]==0]
+        while stack:
+            node = stack.pop()
+            for child in graph[node]:
+                indeg[child] -= 1
+                if not indeg[child]:
+                    if stack or child != nums[i]:
+                        return False
+                    stack.append(child)
+                    i += 1
 
-        while q:
-            if len(q)!=1:
-                return False
-            i = q.pop()
-            results.append(i)
-            for j in graph[i]:
-                indeg[j] -= 1
-                if indeg[j] == 0:
-                    q.append(j)
-
-        return results == nums
+        return i == len(nums)
 
 # @lc code=end
 
