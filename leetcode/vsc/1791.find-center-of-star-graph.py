@@ -7,6 +7,6 @@
 # @lc code=start
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
-        return (set(edges[0]) & set(edges[1])).pop()
+        return edges[0][edges[0][1] in edges[1]] 
 # @lc code=end
 
