@@ -8,32 +8,37 @@
 class Solution:
     def minimumSemesters(self, n: int, relations: List[List[int]]) -> int:
         adj = {i:[] for i in range(1,n+1)}
-        count = {i:0 for i in range(1,n+1)}
-        for start,end in relations:
+        for start, end in relations:
             adj[start].append(end)
-            count[end] += 1
 
-        queue = []
-        for node in adj:
-            if count[node] == 0:
-                queue.append(node)
+        visit = {}
 
-        step = 0
-        study = 0
+        def dfs(c):
+            if c in visit:
+                return visit[c]
+            else:
+                visit[c] = -1
 
-        while queue:
-            step += 1
-            next_queue = []
-            for node in queue:
-                study += 1
-                end = adj[node]
-                for e in end:
-                    count[e] -= 1
-                    if count[e] == 0:
-                        next_queue.append(e)
-            queue = next_queue
+            max_length = 1
 
-        return step if study == n else -1
+            for end in adj[c]:
+                length = dfs(end)
+                if length == -1:
+                    return -1
+                else:
+                    max_length = max(length+1, max_length)
+            
+            visit[c] = max_length
+            return max_length
+        
+        max_length = -1
+        for c in adj:
+            length = dfs(c)
+            if length == -1:
+                return -1
+            else:
+                max_length = max(length, max_length)
+        return max_length
 
 # @lc code=end
 
