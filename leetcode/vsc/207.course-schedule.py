@@ -7,30 +7,33 @@
 # @lc code=start
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        req = {i:[] for i in range(numCourses)}
-        for course,prereq in prerequisites:
-            req[course].append(prereq)
+        adj = {i:[] for i in range(numCourses)}
+        for prev,next in prerequisites:
+            adj[prev].append(next)
 
-        visit=set()
+        visit = set()
 
-        def dfs(course):
-            if course in visit:
+        def dfs(c):
+            if c in visit:
                 return False
-            if req[course]==[]:
+            if adj[c]==[]:
                 return True
             
-            visit.add(course)
-            for pre in req[course]:
-                if not dfs(pre):
+            visit.add(c)
+
+            for j in adj[c]:
+                if not dfs(j):
                     return False
-            visit.remove(course)
-            req[course] = []
+                
+            visit.remove(c)
+            adj[c] = []
             return True
-        
-        for course in range(numCourses):
-            if not dfs(course):
+
+        for j in range(numCourses):
+            if not dfs(j):
                 return False
-        
+            
         return True
+
 # @lc code=end
 
