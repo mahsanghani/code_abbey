@@ -5,38 +5,34 @@
 #
 
 # @lc code=start
+import heapq
 class Solution:
     def countPaths(self, n: int, roads: List[List[int]]) -> int:
         graph = {}
         for u,v,t in roads:
-            graph.setdefault(u, {})[v] = t
-            graph.setdefault(v, {})[u] = t
+            graph.setdefault(u,[]).append((v,t))
+            graph.setdefault(v,[]).append((u,t))
 
         dist = [inf]*n
-        dist[-1] = 0
-        stack = [(n-1, 0)]
+        dist[0] = 0
+        ways = [0]*n
+        ways[0] = 1
+        pq = [(0,0)]
 
-        while stack:
-            x, t = stack.pop()
-            if t == dist[x]:
-                for y in graph.get(x, {}):
-                    if t + graph[x][y] < dist[y]:
-                        dist[y] = t + graph[x][y]
-                        stack.append((y, t + graph[x][y]))
-
-        @cache
-        def fn(x):
-            if x == n-1:
-                return 1
-            if dist[x] == inf:
-                return 0
-            answer = 0
-            for y in graph.get(x, {}):
-                if graph[x][y] + dist[y] == dist[x]:
-                    answer += fn(y)
-            return answer % 1_000_000_007
+        while pq:
+            d,u = heapq.heappop(pq)
+            if d > dist[-1]:
+                break
+            if d == dist[u]:
+                for v,t in graph.get(u,[]):
+                    if dist[u] + t < dist[v]:
+                        dist[v] = dist[u] + t
+                        ways[v] = ways[u]
+                        heapq.heappush(pq, (dist[v], v))
+                    elif dist[u] + t == dist[v]:
+                        ways[v] += ways[u]
         
-        return fn(0)
+        return ways[-1] % 1_000_000_007
 
 # @lc code=end
 
