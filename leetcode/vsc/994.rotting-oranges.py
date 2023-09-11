@@ -9,8 +9,12 @@ import collections
 from collections import deque
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        time,fresh,q,rows,cols=0,0,deque(),len(grid),len(grid[0])
-        directions = [[1,0],[0,1],[-1,0],[0,-1]]
+        time = 0
+        fresh = 0
+        q = deque()
+        rows = len(grid)
+        cols = len(grid[0])
+        directions = [[0,1],[1,0],[0,-1],[-1,0]]
 
         for r in range(rows):
             for c in range(cols):
@@ -23,15 +27,14 @@ class Solution:
             for i in range(len(q)):
                 row,col = q.popleft()
                 for dr,dc in directions:
-                    r=row+dr
-                    c=col+dc
+                    r = row+dr
+                    c = col+dc
                     if r<0 or c<0 or r==rows or c==cols or grid[r][c]!=1:
                         continue
-                    grid[r][c]=2
+                    grid[r][c] = 2
                     q.append([r,c])
-                    fresh-=1
-
-            time+=1
+                    fresh -= 1
+            time += 1
 
         return time if fresh==0 else -1
 # @lc code=end
