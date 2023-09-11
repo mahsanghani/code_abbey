@@ -26,13 +26,12 @@ class Solution:
             for j in adj[c]:
                 if dfs(j)==False:
                     return False
-            
+                
             visit.add(c)
             cycle.remove(c)
             results.append(c)
-            return True
-        
-        for j in range(numCourses):
+
+        for j in adj:
             if dfs(j)==False:
                 return []
             
