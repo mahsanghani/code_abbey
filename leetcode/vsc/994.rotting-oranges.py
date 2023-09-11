@@ -27,14 +27,13 @@ class Solution:
             for i in range(len(q)):
                 r,c = q.popleft()
                 for dr,dc in directions:
-                    row=r+dr
-                    col=c+dc
+                    row = r+dr
+                    col = c+dc
                     if row<0 or col<0 or row==rows or col==cols or grid[row][col]!=1:
                         continue
                     grid[row][col]=2
                     q.append([row,col])
                     fresh-=1
-
             time+=1
 
         return time if fresh==0 else -1
