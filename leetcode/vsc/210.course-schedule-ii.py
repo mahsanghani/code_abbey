@@ -8,7 +8,7 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         adj = {i:[] for i in range(numCourses)}
-        for prev, next in prerequisites:
+        for prev,next in prerequisites:
             adj[prev].append(next)
 
         visit = set()
