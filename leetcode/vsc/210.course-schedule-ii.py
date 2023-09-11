@@ -31,7 +31,7 @@ class Solution:
             cycle.remove(c)
             results.append(c)
 
-        for j in adj:
+        for j in range(numCourses):
             if dfs(j)==False:
                 return []
             
