@@ -10,21 +10,21 @@ from collections import deque
 class MyStack:
 
     def __init__(self):
-        self.q = deque()
+        self.queue = collections.deque()
 
     def push(self, x: int) -> None:
-        self.q.append(x)
+        self.queue.append(x)
 
     def pop(self) -> int:
-        for i in range(len(self.q)-1):
-            self.push(self.q.popleft())
-        return self.q.popleft()
+        for i in range(len(self.queue)-1):
+            self.push(self.queue.popleft())
+        return self.queue.popleft()
 
     def top(self) -> int:
-        return self.q[-1]
+        return self.queue[-1]
 
     def empty(self) -> bool:
-        return len(self.q) == 0
+        return len(self.queue) == 0
 
 
 # Your MyStack object will be instantiated and called as such:
