@@ -8,7 +8,7 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        braces = {']':'[', '}':'{', ')':'('}
+        braces = {')':'(', ']':'[', '}':'{'}
 
         for c in s:
             if c in braces:
@@ -18,7 +18,6 @@ class Solution:
                     return False
             else:
                 stack.append(c)
-
         return True if not stack else False
 # @lc code=end
 
