@@ -23,7 +23,14 @@ class LRUCache:
         self.capacity = capacity
         self.dictionary = {}
         
+    def push(self, key, value):
+        newNode = Node(key=key, value=value, next=self.tail, prev=self.tail.prev)
+        newNode.prev.next = newNode
+        self.tail.prev = newNode
+        self.dictionary[key] = newNode
 
+        if len(self.dictionary) > self.capacity:
+            self.pop(self.head.next)
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
