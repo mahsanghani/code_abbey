@@ -37,6 +37,14 @@ class LRUCache:
         node.next.prev = node.prev
         del self.dictionary[node.key]
 
+    def get(self, key: int) -> int:
+        if key not in self.dictionary:
+            return -1
+        node = self.dictionary[key]
+        self.pop(node)
+        self.push(key, node.value)
+        return node.value
+    
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
