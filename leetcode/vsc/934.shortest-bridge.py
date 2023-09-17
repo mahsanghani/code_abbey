@@ -23,7 +23,7 @@ class Solution:
             visit.add((r,c))
             for dr,dc in directions:
                 dfs(r+dr,c+dc)
-                
+
         def bfs():
             results = 0
             q = deque(visit)
