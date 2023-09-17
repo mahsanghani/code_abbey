@@ -9,42 +9,39 @@ import collections
 from collections import deque
 class Solution:
     def shortestBridge(self, grid: List[List[int]]) -> int:
-        rows = len(grid)
-        cols = len(grid[0])
-        visit = set()
-        directions = [[0,1],[1,0],[0,-1],[-1,0]]
-
-        def invalid(r,c):
-            return r<0 or c<0 or r==rows or c==cols
+        n = len(grid)
+        x,y = -1,-1
         
-        def dfs(r,c):
-            if (invalid(r,c) or not grid[r][c] or (r,c) in visit):
-                return
-            visit.add((r,c))
-            for dr,dc in directions:
-                dfs(r+dr,c+dc)
+        for i in range(n):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    x,y = i,j
+                    break
 
-        def bfs():
-            results = 0
-            q = deque(visit)
-            while q:
-                for i in range(len(q)):
-                    r,c = q.popleft()
-                    for dr,dc in directions:
-                        curr,curc = r+dr,c+dc
-                        if invalid(curr,curc) or (curr,curc) in visit:
-                            continue
-                        if grid[curr][curc]:
-                            return results
-                        q.append([curr,curc])
-                        visit.add((curr,curc))
-                results += 1
+        def dfs(x,y):
+            grid[x][y] = 2
+            bfs.append((x,y))
+            for x,y in [(x+1,y),(x-1,y),(x,y+1),(x,y-1)]:
+                if 0 <= x < n and 0 <= y < n and grid[x][y] == 1:
+                    dfs(x,y)
         
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c]:
-                    dfs(r,c)
-                    return bfs()
+        bfs = []
+        dist = 0
+        dfs(x,y)
+
+        while bfs:
+            new_bfs = []
+            for x,y in bfs:
+                for i,j in [(x+1,y),(x-1,y),(x,y+1),(x,y-1)]:
+                    if 0 <= i < n and 0 <= j < n:
+                        if grid[i][j] == 1:
+                            return dist
+                        elif grid[i][j] == 0:
+                            new_bfs.append((i,j))
+                            grid[i][j] = -1
+            
+            bfs = new_bfs
+            dist += 1
                 
 # @lc code=end
 
