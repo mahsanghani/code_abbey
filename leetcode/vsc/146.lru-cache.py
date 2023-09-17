@@ -32,6 +32,11 @@ class LRUCache:
         if len(self.dictionary) > self.capacity:
             self.pop(self.head.next)
 
+    def pop(self, node):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+        del self.dictionary[node.key]
+
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
