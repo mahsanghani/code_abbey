@@ -46,7 +46,7 @@ class LRUCache:
         return node.value
 
     def put(self, key: int, value: int) -> int:
-        if key in self.dict:
+        if key in self.dictionary:
             node = self.dictionary[key]
             self.pop(node)
         self.push(key, value)
