@@ -44,6 +44,12 @@ class LRUCache:
         self.pop(node)
         self.push(key, node.value)
         return node.value
+
+    def put(self, key: int, value: int) -> int:
+        if key in self.dict:
+            node = self.dictionary[key]
+            self.pop(node)
+        self.push(key, value)
     
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
