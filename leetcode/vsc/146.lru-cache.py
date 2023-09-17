@@ -7,26 +7,15 @@
 # @lc code=start
 import collections
 from collections import OrderedDict
+class Node:
+    def __init__(self, key=None, value=None, prev=None, next=None):
+        self.key = key
+        self.value = value
+        self.prev = prev
+        self.next = next
+
 class LRUCache:
     def __init__(self, capacity: int):
-        self.size = capacity
-        self.cache = collections.OrderedDict()
-
-    def get(self, key: int) -> int:
-        try:
-            value = self.cache.pop(key)
-            self.cache[key] = value
-            return value
-        except:
-            return -1
-
-    def put(self, key: int, value: int) -> None:
-        try:
-            self.cache.pop(key)
-        except:
-            if len(self.cache) >= self.size:
-                self.cache.popitem(last=False)
-        self.cache[key] = value
 
 
 # Your LRUCache object will be instantiated and called as such:
