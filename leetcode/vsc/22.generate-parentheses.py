@@ -7,25 +7,20 @@
 # @lc code=start
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        stack = []
         results = []
 
-        def bt(o,c):
-            if o==c==n:
-                results.append(''.join(stack))
-                return
+        def dfs(br: str, left: int, right: int):
+            if len(br) == 2*n:
+                results.append(br)
+
+            if left > 0:
+                dfs(br + '(', left-1, right)
             
-            if o<n:
-                stack.append('(')
-                bt(o+1,c)
-                stack.pop()
+            if right > 0 and right > left:
+                dfs(br + ')', left, right-1)
 
-            if c<o:
-                stack.append(')')
-                bt(o,c+1)
-                stack.pop()
+        dfs('',n,n)
 
-        bt(0,0)
         return results
 # @lc code=end
 
