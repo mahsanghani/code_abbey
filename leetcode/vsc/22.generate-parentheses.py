@@ -5,22 +5,35 @@
 #
 
 # @lc code=start
+import collections
+from collections import deque
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         results = []
+        queue = collections.deque([''])
 
-        def dfs(br: str, left: int, right: int):
-            if len(br) == 2*n:
-                results.append(br)
+        def valid(p):
+            left = 0
+            for b in p:
+                if b == '(':
+                    left += 1
+                else:
+                    left -= 1
 
-            if left > 0:
-                dfs(br + '(', left-1, right)
-            
-            if right > 0 and right > left:
-                dfs(br + ')', left, right-1)
-
-        dfs('',n,n)
-
+                if left < 0:
+                    return False
+                
+            return left == 0
+        
+        while queue:
+            curr = queue.popleft()
+            if len(curr) == 2*n:
+                if valid(curr):
+                    results.append(curr)
+                continue
+            queue.append(curr+')')
+            queue.append(curr+'(')
+        
         return results
 # @lc code=end
 
