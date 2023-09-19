@@ -10,30 +10,21 @@ from collections import deque
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         results = []
-        queue = collections.deque([''])
-
-        def valid(p):
-            left = 0
-            for b in p:
-                if b == '(':
-                    left += 1
-                else:
-                    left -= 1
-
-                if left < 0:
-                    return False
-                
-            return left == 0
         
-        while queue:
-            curr = queue.popleft()
+        def bt(curr,left,right):
             if len(curr) == 2*n:
-                if valid(curr):
-                    results.append(curr)
-                continue
-            queue.append(curr+')')
-            queue.append(curr+'(')
+                results.append("".join(curr))
+                return
+            if left < n:
+                curr.append('(')
+                bt(curr,left+1,right)
+                curr.pop()
+            if right < left:
+                curr.append(')')
+                bt(curr,left,right+1)
+                curr.pop()
         
+        bt([],0,0)
         return results
 # @lc code=end
 
