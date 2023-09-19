@@ -9,16 +9,25 @@ import collections
 from collections import deque
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        if n==0:
-            return ['']
-        
+        stack = []
         results = []
 
-        for count in range(n):
-            for left in self.generateParenthesis(count):
-                for right in self.generateParenthesis(n-1-count):
-                    results.append('(' + left + ')' + right)
+        def bt(o,c):
+            if o==c==n:
+                results.append(''.join(stack))
+                return
+            
+            if o<n:
+                stack.append('(')
+                bt(o+1,c)
+                stack.pop()
 
+            if c<o:
+                stack.append(')')
+                bt(o,c+1)
+                stack.pop()
+
+        bt(0,0)
         return results
 # @lc code=end
 
