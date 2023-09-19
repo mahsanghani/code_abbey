@@ -9,22 +9,16 @@ import collections
 from collections import deque
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
+        if n==0:
+            return ['']
+        
         results = []
-        
-        def bt(curr,left,right):
-            if len(curr) == 2*n:
-                results.append("".join(curr))
-                return
-            if left < n:
-                curr.append('(')
-                bt(curr,left+1,right)
-                curr.pop()
-            if right < left:
-                curr.append(')')
-                bt(curr,left,right+1)
-                curr.pop()
-        
-        bt([],0,0)
+
+        for count in range(n):
+            for left in self.generateParenthesis(count):
+                for right in self.generateParenthesis(n-1-count):
+                    results.append('(' + left + ')' + right)
+
         return results
 # @lc code=end
 
