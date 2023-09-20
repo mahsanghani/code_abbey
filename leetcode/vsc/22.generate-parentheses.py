@@ -11,7 +11,6 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         stack = []
         results = []
-
         def bt(o,c):
             if o==c==n:
                 results.append(''.join(stack))
@@ -26,7 +25,6 @@ class Solution:
                 stack.append(')')
                 bt(o,c+1)
                 stack.pop()
-
         bt(0,0)
         return results
 # @lc code=end
