@@ -17,14 +17,14 @@ class MyStack:
 
     def pop(self) -> int:
         for i in range(len(self.queue)-1):
-            self.push(self.queue.popleft())
+            self.queue.append(self.queue.popleft())
         return self.queue.popleft()
 
     def top(self) -> int:
         return self.queue[-1]
 
     def empty(self) -> bool:
-        return len(self.queue) == 0
+        return True if len(self.queue)==0 else False
 
 
 # Your MyStack object will be instantiated and called as such:
