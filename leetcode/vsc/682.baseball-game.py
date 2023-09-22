@@ -6,21 +6,19 @@
 
 # @lc code=start
 class Solution:
-    def calPoints(self, operations: List[str]) -> int:
+    def calPoints(self, ops: List[str]) -> int:
         stack = []
-        ops = ['C','D','+']
 
-        for op in operations:
-            if stack and op=='C':
+        for op in ops:
+            if op=='+':
+                stack.append(stack[-1]+stack[-2])
+            elif op=='D':
+                stack.append(stack[-1]*2)
+            elif op=='C':
                 stack.pop()
-            elif stack and op=='D':
-                new = 2*stack[-1]
-                stack.append(new)
-            elif len(stack) >= 2 and op=='+':
-                new = stack[-1] + stack[-2]
-                stack.append(new)
             else:
                 stack.append(int(op))
+
         return sum(stack)
 # @lc code=end
 
