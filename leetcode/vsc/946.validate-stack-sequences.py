@@ -7,12 +7,12 @@
 # @lc code=start
 class Solution:
     def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
-        i=0
-        stack=[]
-        for num in pushed:
-            stack.append(num)
+        i = 0
+        stack = []
+        for p in pushed:
+            stack.append(p)
             while stack and i<len(popped) and stack[-1]==popped[i]:
-                i+=1 
+                i += 1
                 stack.pop()
         return not stack
 
