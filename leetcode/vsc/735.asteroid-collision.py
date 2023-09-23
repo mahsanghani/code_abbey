@@ -8,6 +8,7 @@
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         stack = []
+
         for a in asteroids:
             while stack and a<0 and stack[-1]>0:
                 diff = a + stack[-1]
@@ -20,6 +21,7 @@ class Solution:
                     stack.pop()
             if a:
                 stack.append(a)
+        
         return stack
 
 # @lc code=end
