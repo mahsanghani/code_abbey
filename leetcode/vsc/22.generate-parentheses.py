@@ -11,21 +11,23 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         stack = []
         results = []
-        def bt(o,c):
-            if o==c==n:
+
+        def backtracking(open,close):
+            if open==close==n:
                 results.append(''.join(stack))
                 return
             
-            if o<n:
+            if open<n:
                 stack.append('(')
-                bt(o+1,c)
+                backtracking(open+1,close)
                 stack.pop()
 
-            if c<o:
+            if open>close:
                 stack.append(')')
-                bt(o,c+1)
+                backtracking(open,close+1)
                 stack.pop()
-        bt(0,0)
+
+        backtracking(0,0)
         return results
 # @lc code=end
 
