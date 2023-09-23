@@ -15,6 +15,7 @@ class Solution:
                 temp,idx = stack.pop()
                 results[idx] = i-idx
             stack.append([j,i])
+
         return results
 # @lc code=end
 
