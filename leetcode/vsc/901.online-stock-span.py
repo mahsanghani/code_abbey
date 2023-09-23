@@ -15,9 +15,8 @@ class StockSpanner:
         while self.stack and self.stack[-1][0]<=price:
             results += self.stack.pop()[1]
 
-        self.stack.append([price, results])
+        self.stack.append([price,results])
         return results
-
 
 # Your StockSpanner object will be instantiated and called as such:
 # obj = StockSpanner()
