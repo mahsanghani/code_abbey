@@ -12,9 +12,9 @@ class Solution:
 
         for p,s in sorted(pairs)[::-1]:
             stack.append((target-p)/s)
-            if len(stack)>1 and stack[-1]<=stack[-2]:
+            while len(stack)>1 and stack[-1]<=stack[-2]:
                 stack.pop()
-
+        
         return len(stack)
 # @lc code=end
 
