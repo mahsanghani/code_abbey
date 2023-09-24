@@ -15,7 +15,8 @@ class Solution:
                 i+=1
                 continue
 
-            dir=''
+            dir=""
+
             while (i<len(s) and s[i]!='/'):
                 dir+=s[i]
                 i+=1
