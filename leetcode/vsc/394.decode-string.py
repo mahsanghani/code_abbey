@@ -6,33 +6,25 @@
 
 # @lc code=start
 class Solution:
-    def dfs(self, s, i):
-        length = len(s)
-        result = []
-        
-        while i < length:
-            if s[i].isdigit():
-                count_str = ''
-                while s[i] != '[':
-                    count_str += s[i]
-                    i += 1
-                count = int(count_str)
-                i += 1
-                i, substr = self.dfs(s, i)
-                result.append(count * substr)
-            elif s[i] == ']':
-                i += 1
-                return i, ''.join(result)
-            else:
-                result.append(s[i])
-                i += 1
-
-        return ''.join(result)
-
     def decodeString(self, s: str) -> str:
-        if not s or len(s) == 0:
-            return ''
-        
-        return self.dfs(s, 0)
+        it,num,stack = 0,0,['']
+
+        while (it<len(s)):
+            if (s[it].isdigit()):
+                num = num*10+int(s[it])
+            elif (s[it]=='['):
+                stack.append(num)
+                num=0
+                stack.append('')
+            elif (s[it]==']'):
+                str1 = stack.pop()
+                rep = stack.pop()
+                str2 = stack.pop()
+                stack.append(str2 + str1 * rep)
+            else:
+                stack[-1] += s[it]
+            it += 1
+
+        return ''.join(stack)
 # @lc code=end
 
