@@ -6,29 +6,29 @@
 
 # @lc code=start
 class Solution:
-    def simplifyPath(self, path: str) -> str:
-        i, stack = 0, []
+    def simplifyPath(self, s: str) -> str:
+        i=0
+        stack=[]
 
-        while i<len(path):
-            if path[i]=="/":
+        while i<len(s):
+            if s[i]=='/':
                 i+=1
                 continue
 
-            dir = ""
-
-            while (i<len(path) and path[i]!="/"):
-                dir+=path[i]
+            dir=''
+            while (i<len(s) and s[i]!='/'):
+                dir+=s[i]
                 i+=1
 
-            if dir==".":
+            if dir=='.':
                 continue
 
-            if dir=="..":
+            if dir=='..':
                 if stack:
                     stack.pop()
             else:
                 stack.append(dir)
-            
-        return "/"+"/".join(stack)
+
+        return '/'+'/'.join(stack)
 # @lc code=end
 
