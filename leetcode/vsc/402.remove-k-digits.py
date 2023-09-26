@@ -15,5 +15,9 @@ class Solution:
                 stack.pop()
 
             stack.append(c)
+
+        stack = stack[:len(stack)-k]
+
+        return ''.join(stack)
 # @lc code=end
 
