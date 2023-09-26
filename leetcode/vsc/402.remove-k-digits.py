@@ -18,6 +18,6 @@ class Solution:
 
         stack = stack[:len(stack)-k]
 
-        return str(int(''.join(stack))) if stack else str(0)
+        return str(int(''.join(stack))) if stack else '0'
 # @lc code=end
 
