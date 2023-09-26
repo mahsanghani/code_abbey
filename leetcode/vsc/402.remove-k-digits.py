@@ -13,9 +13,7 @@ class Solution:
                 k-=1
                 stack.pop()
             stack.append(dig)
-
         stack = stack[:-k] if k else stack
-        
         return ''.join(stack).lstrip('0') or '0'
 # @lc code=end
 
