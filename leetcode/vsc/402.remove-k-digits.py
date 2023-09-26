@@ -10,14 +10,14 @@ class Solution:
         stack = []
 
         for c in num:
-            while stack and k>0 and c<stack[-1]:
+            while k and stack and c<stack[-1]:
                 k-=1
                 stack.pop()
 
             stack.append(c)
 
-        stack = stack[:len(stack)-k]
-
-        return str(int(''.join(stack))) if stack else '0'
+        stack = stack[:-k] if k else stack
+        
+        return ''.join(stack).lstrip('0') or '0'
 # @lc code=end
 
