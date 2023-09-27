@@ -10,15 +10,15 @@ class Solution:
         stack = [] # pair
         current = nums[0]
 
-        for n in nums[1:]:
-            while stack and stack[-1][0]<=n:
+        for num in nums[1:]:
+            while stack and stack[-1][0]<=num:
                 stack.pop()
-            if stack and stack[-1][1]<n:
+            if stack and stack[-1][1]<num:
                 return True
             
-            stack.append([n,current])
-            current = min(n,current)
-        
+            stack.append([num,current])
+            current = min(current, num)
+
         return False
 # @lc code=end
 
