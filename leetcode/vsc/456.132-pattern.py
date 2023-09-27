@@ -7,8 +7,8 @@
 # @lc code=start
 class Solution:
     def find132pattern(self, nums: List[int]) -> bool:
-        stack = [] # pair
-        current = nums[0]
+        stack = []
+        curmin = nums[0]
 
         for num in nums[1:]:
             while stack and stack[-1][0]<=num:
@@ -16,9 +16,9 @@ class Solution:
             if stack and stack[-1][1]<num:
                 return True
             
-            stack.append([num,current])
-            current = min(current,num)
-
+            stack.append([num,curmin])
+            curmin = min(curmin,num)
+        
         return False
 # @lc code=end
 
