@@ -9,15 +9,17 @@ class FreqStack:
 
     def __init__(self):
         self.count = {}
-        self.maxcount = 0
         self.stacks = {}
+        self.maxcount = 0
 
     def push(self, val: int) -> None:
-        valcount = self.count.get(val, 0)+1
+        valcount = self.count.get(val,0) + 1
         self.count[val] = valcount
+
         if valcount > self.maxcount:
             self.maxcount = valcount
             self.stacks[valcount] = []
+        
         self.stacks[valcount].append(val)
 
     def pop(self) -> int:
@@ -26,7 +28,6 @@ class FreqStack:
         if not self.stacks[self.maxcount]:
             self.maxcount -= 1
         return results
-
 
 # Your FreqStack object will be instantiated and called as such:
 # obj = FreqStack()
