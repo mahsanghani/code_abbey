@@ -17,7 +17,7 @@ class Solution:
                 return True
             
             stack.append([num,current])
-            current = min(current, num)
+            current = min(current,num)
 
         return False
 # @lc code=end
