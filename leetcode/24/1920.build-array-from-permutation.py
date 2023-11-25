@@ -7,9 +7,9 @@
 # @lc code=start
 class Solution:
     def buildArray(self, nums: List[int]) -> List[int]:
-        ans = []
+        results = []
         for n in nums:
-            ans.append(nums[n])
-        return ans
+            results.append(nums[n])
+        return results
 # @lc code=end
 
