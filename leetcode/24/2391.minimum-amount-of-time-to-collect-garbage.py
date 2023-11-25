@@ -28,10 +28,10 @@ class Solution:
                 lastpos['G']=i
 
         time+=count['M']
-        time+=prefix[lastpos['M']-1] if lastpos['M']!=0 else 0
         time+=count['P']
-        time+=prefix[lastpos['P']-1] if lastpos['P']!=0 else 0
         time+=count['G']
+        time+=prefix[lastpos['M']-1] if lastpos['M']!=0 else 0
+        time+=prefix[lastpos['P']-1] if lastpos['P']!=0 else 0
         time+=prefix[lastpos['G']-1] if lastpos['G']!=0 else 0
 
         return time
