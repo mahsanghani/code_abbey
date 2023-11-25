@@ -10,16 +10,19 @@ class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
         results = []
         counter = Counter()
+
         for i,j in enumerate(groupSizes):
             if j in counter:
                 counter[j].append(i)
             else:
                 counter[j] = [i]
+
         for k,v in counter.items():
             while len(v)>k:
                 results.append(v[:k])
                 v = v[k:]
             results.append(v)
+        
         return results
 # @lc code=end
 
