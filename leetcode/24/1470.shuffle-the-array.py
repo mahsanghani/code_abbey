@@ -10,7 +10,7 @@ class Solution:
         a = nums[:n]
         b = nums[n:]
         c = []
-        for i in range(len(b)):
+        for i in range(n):
             c.append(a[i])
             c.append(b[i])
         return c
