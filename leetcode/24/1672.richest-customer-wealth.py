@@ -7,9 +7,9 @@
 # @lc code=start
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
-        balances = []
-        for acc in accounts:
-            balances.append(sum(acc))
-        return max(balances)
+        balance = []
+        for account in accounts:
+            balance.append(sum(account))
+        return max(balance)
 # @lc code=end
 
