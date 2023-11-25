@@ -9,15 +9,15 @@ from collections import Counter
 class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
         results = []
-        counter = Counter()
+        mydict = {}
 
         for i,j in enumerate(groupSizes):
-            if j in counter:
-                counter[j].append(i)
+            if j in mydict:
+                mydict[j].append(i)
             else:
-                counter[j] = [i]
+                mydict[j] = [i]
 
-        for k,v in counter.items():
+        for k,v in mydict.items():
             while len(v)>k:
                 results.append(v[:k])
                 v = v[k:]
