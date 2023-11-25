@@ -5,7 +5,6 @@
 #
 
 # @lc code=start
-from collections import Counter
 class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
         results = []
