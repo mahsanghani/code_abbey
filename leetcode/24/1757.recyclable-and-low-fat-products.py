@@ -6,6 +6,6 @@
 
 # @lc code=start
 # Write your MySQL query statement below
-select product_id from Products where recyclable="Y" and low_fats="Y"
+SELECT product_id FROM Products WHERE recyclable='Y' AND low_fats='Y';
 # @lc code=end
 
