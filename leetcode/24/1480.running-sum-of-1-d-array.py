@@ -8,8 +8,10 @@
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         results = nums[:1]
+
         for i in range(1,len(nums)):
             results.append(results[-1]+nums[i])
+
         return results
 # @lc code=end
 
