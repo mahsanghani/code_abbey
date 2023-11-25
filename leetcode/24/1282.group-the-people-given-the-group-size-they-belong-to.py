@@ -8,15 +8,15 @@
 class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
         results = []
-        mydict = {}
+        sizes = {}
 
         for i,j in enumerate(groupSizes):
-            if j in mydict:
-                mydict[j].append(i)
+            if j in sizes:
+                sizes[j].append(i)
             else:
-                mydict[j] = [i]
+                sizes[j] = [i]
 
-        for k,v in mydict.items():
+        for k,v in sizes.items():
             while len(v)>k:
                 results.append(v[:k])
                 v = v[k:]
