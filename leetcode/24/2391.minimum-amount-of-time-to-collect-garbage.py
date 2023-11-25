@@ -12,17 +12,20 @@ class Solution:
         lastpos = {'M':0, 'P':0, 'G':0}
         count = {'M':0, 'P':0, 'G':0}
         
-        for g in garbage:
-            # while g:
-            while 'M' in g:
-                count['M']+=1
-                g = g.replace('M', '')
-            while 'P' in g:
-                count['P']+=1
-                g = g.replace('P', '')
-            while 'G' in g:
-                count['G']+=1
-                g = g.replace('G', '')
+        # for g in garbage:
+        #     while 'M' in g:
+        #         count['M']+=1
+        #         g = g.replace('M', '')
+        #     while 'P' in g:
+        #         count['P']+=1
+        #         g = g.replace('P', '')
+        #     while 'G' in g:
+        #         count['G']+=1
+        #         g = g.replace('G', '')
+
+        count['M'] = sum(s.count('M') for s in garbage)
+        count['P'] = sum(s.count('P') for s in garbage)
+        count['G'] = sum(s.count('G') for s in garbage)
                     
         for i in range(1,len(travel)):
             prefix.append(travel[i]+prefix[-1])
@@ -35,12 +38,12 @@ class Solution:
             if lastpos['G']==0 and 'G' in garbage[i]:
                 lastpos['G']=i
 
-        print(count['M'])
-        print(prefix[lastpos['M']])
-        print(count['P'])
-        print(prefix[lastpos['P']])
-        print(count['G'])
-        print(prefix[lastpos['G']])
+        # print(count['M'])
+        # print(prefix[lastpos['M']])
+        # print(count['P'])
+        # print(prefix[lastpos['P']])
+        # print(count['G'])
+        # print(prefix[lastpos['G']])
 
         time+=count['M']
         time+=prefix[lastpos['M']-1] if lastpos['M']!=0 else 0
