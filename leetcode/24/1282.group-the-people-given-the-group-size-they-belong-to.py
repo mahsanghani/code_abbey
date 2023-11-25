@@ -18,9 +18,10 @@ class Solution:
         for k,v in counter.items():
             while len(v)>k:
                 results.append(v[:k])
-                counter[k] = v[k:]
+                v = v[k:]
             results.append(v)
-        print(results)
+        # print(counter)
+        # print(results)
         return results
 # @lc code=end
 
