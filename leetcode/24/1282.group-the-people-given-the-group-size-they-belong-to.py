@@ -20,8 +20,6 @@ class Solution:
                 results.append(v[:k])
                 v = v[k:]
             results.append(v)
-        # print(counter)
-        # print(results)
         return results
 # @lc code=end
 
