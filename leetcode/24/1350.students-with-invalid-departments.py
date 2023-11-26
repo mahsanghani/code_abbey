@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode id=1350 lang=SQL
+# @lc app=leetcode id=1350 lang=MySQL
 #
 # [1350] Students With Invalid Departments
 #
