@@ -14,10 +14,13 @@ class Solution:
         results = []
         counts = Counter(nums)
         sorted_counts = dict(sorted(counts.items()))
-        for num in nums:
-            if num in sorted_counts:
-                results.append(sum(v for k,v in sorted_counts.items() if k<num))
 
+        for num in nums:
+            try:
+                results.append(sum(v for k,v in sorted_counts.items() if k<num))
+            except:
+                continue
+        
         return results
 # @lc code=end
 
