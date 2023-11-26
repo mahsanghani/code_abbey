@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode id=1303 lang=SQL
+# @lc app=leetcode id=1303 lang=MySQL
 #
 # [1303] Find the Team Size
 #
