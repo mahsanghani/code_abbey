@@ -5,6 +5,6 @@
 #
 # @lc code=start
 # Write your MySQL query statement below
-select id, name from students where department_id not in (select id from departments)
+select s.id, s.name from students as s left join departments d on s.department_id = d.id where d.id is NULL
 # @lc code=end
 
