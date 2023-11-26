@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode id=1757 lang=python3
+# @lc app=leetcode id=1757 lang=MySQL
 #
 # [1757] Recyclable and Low Fat Products
 #
