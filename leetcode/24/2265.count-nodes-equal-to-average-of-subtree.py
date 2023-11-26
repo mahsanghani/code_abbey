@@ -19,16 +19,15 @@ class Solution:
             if not node:
                 return 0,0
             
-            ls, lc = dfs(node.left)
-            rs, rc = dfs(node.right)
+            ls,lc = dfs(node.left)
+            rs,rc = dfs(node.right)
 
-            ts = ls + rs + node.val
-            tc = lc + rc + 1
+            ts = ls+rs+node.val
+            tc = lc+rc+1
 
             if ts//tc==node.val:
                 results+=1
-            return [ts,tc]
-
+            return ts,tc
         dfs(root)
         return results
 # @lc code=end
