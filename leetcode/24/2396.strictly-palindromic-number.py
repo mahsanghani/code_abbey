@@ -3,7 +3,6 @@
 #
 # [2396] Strictly Palindromic Number
 #
-
 # @lc code=start
 class Solution:
     def isStrictlyPalindromic(self, n: int) -> bool:
