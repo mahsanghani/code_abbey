@@ -20,13 +20,18 @@ class Solution:
             ls, lc = count(node.left)
             rs, rc = count(node.right)
 
-            ts = ls + rs
-            tc = lc + rc
+            ts = ls + rs + node.val
+            tc = lc + rc + 1
 
             return ts, tc
             
         def rec_avg(node):
             if not node:
-                return 0,0
+                return 0
+            
+            sub_sum, sub_count = count(node)
+            return sub_sum / sub_count
+        
+        return rec_avg(root)
 # @lc code=end
 
