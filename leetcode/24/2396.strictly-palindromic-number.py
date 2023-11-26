@@ -9,8 +9,7 @@ class Solution:
     def isStrictlyPalindromic(self, n: int) -> bool:
         if len(str(n))<2:
             return False
-        else:
-            if str(n)==str(n)[::-1]:
-                return False
+        if str(n)==str(n)[::-1]:
+            return False
 # @lc code=end
 
