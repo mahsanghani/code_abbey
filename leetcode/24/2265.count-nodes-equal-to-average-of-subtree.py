@@ -17,6 +17,14 @@ class Solution:
             if not node:
                 return 0,0
             
+            ls, lc = count(node.left)
+            rs, rc = count(node.right)
+
+            ts = ls + rs
+            tc = lc + rc
+
+            return ts, tc
+            
         def rec_avg(node):
             if not node:
                 return 0,0
