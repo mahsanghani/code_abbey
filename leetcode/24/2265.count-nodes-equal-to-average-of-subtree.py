@@ -28,6 +28,7 @@ class Solution:
             if ts//tc==node.val:
                 results+=1
             return ts,tc
+        
         dfs(root)
         return results
 # @lc code=end
