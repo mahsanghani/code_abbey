@@ -13,25 +13,23 @@
 #         self.right = right
 class Solution:
     def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
-        def count(node):
+        results = 0
+        def dfs(node):
+            nonlocal results
             if not node:
                 return 0,0
             
-            ls, lc = count(node.left)
-            rs, rc = count(node.right)
+            ls, lc = dfs(node.left)
+            rs, rc = dfs(node.right)
 
             ts = ls + rs + node.val
             tc = lc + rc + 1
 
-            return ts, tc
-            
-        def rec_avg(node):
-            if not node:
-                return 0
-            
-            sub_sum, sub_count = count(node)
-            return sub_sum / sub_count
-        
-        return rec_avg(root)
+            if ts//tc==node.val:
+                results+=1
+            return [ts,tc]
+
+        dfs(root)
+        return results
 # @lc code=end
 
