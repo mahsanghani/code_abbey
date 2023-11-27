@@ -1,14 +1,33 @@
 #
-# @lc app=leetcode id=2413 lang=python3
+# @lc app=leetcode id=2666 lang=JavaScript
 #
-# [2413] Allow One Function Call
+# [2666] Allow One Function Call
 #
 
 # @lc code=start
-class Solution:
-    def smallestEvenMultiple(self, n: int) -> int:
-        for i in range(n,301):
-            if i%2==0 and i%n==0:
-                return i
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+var once = function(fn) {
+    let hasBeenCalled = false
+	return function(...args){
+        if (hasBeenCalled) {
+         return undefined;
+        } else {
+         hasBeenCalled = true;
+         return fn(...args);
+        }
+    }
+};
+
+/**
+ * let fn = (a,b,c) => (a + b + c)
+ * let onceFn = once(fn)
+ *
+ * onceFn(1,2,3); // 6
+ * onceFn(2,3,6); // returns undefined without calling fn
+ */
+
 # @lc code=end
 
