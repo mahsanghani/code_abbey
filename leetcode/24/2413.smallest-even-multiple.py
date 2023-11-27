@@ -10,6 +10,5 @@ class Solution:
         for i in range(n,301):
             if i%2==0 and i%n==0:
                 return i
-        return 0
 # @lc code=end
 
