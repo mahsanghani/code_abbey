@@ -14,25 +14,14 @@ class TreeNode:
 
 class Solution:
     def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
-        stack_original = []
-        stack_cloned = []
-        node_original = original
-        node_cloned = cloned
-
-        while stack_original or node_cloned:
-            while node_original:
-                stack_original.append(node_original)
-                stack_cloned.append(node_cloned)
-                
-                node_original = node_original.left
-                node_cloned = node_cloned.left
-
-            node_original = stack_original.pop()
-            node_cloned = stack_cloned.pop()
-
-            if node_original is target:
-                return node_cloned
-
-            node_original = node_original.right
-            node_cloned = node_cloned.right
+        def inorder(original: TreeNode, cloned: TreeNode):
+            if original:
+                inorder(original.left,cloned.left)
+                if original is target:
+                    self.results = cloned
+                inorder(original.right,cloned.right)
+            
+        inorder(original,cloned)
+        return self.results
+# @lc code=end
 
