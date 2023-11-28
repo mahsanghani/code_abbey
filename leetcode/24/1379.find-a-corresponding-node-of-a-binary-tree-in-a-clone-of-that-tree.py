@@ -14,13 +14,13 @@
 
 class Solution:
     def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
-        def postorder(original: TreeNode, cloned: TreeNode):
+        def inorder(original: TreeNode, cloned: TreeNode):
             if original:
-                postorder(original.left, cloned.left)
-                postorder(original.right, cloned.right)
+                inorder(original.left, cloned.left)
                 if original is target:
                     self.results = cloned
-        postorder(original,cloned)
+                inorder(original.right, cloned.right)
+        inorder(original,cloned)
         return self.results
 # @lc code=end
 
