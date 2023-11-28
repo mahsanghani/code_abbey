@@ -14,14 +14,13 @@ class Solution:
 
         for r in range(n):
             for c in range(n):
-                rows[r] = max(rows[r],grid[r][c])
-                cols[c] = max(cols[c],grid[r][c])
+                rows[r] = max(rows[r], grid[r][c])
+                cols[c] = max(cols[c], grid[r][c])
 
         for r in range(n):
             for c in range(n):
                 results += min(rows[r],cols[c]) - grid[r][c]
 
         return results
-
 # @lc code=end
 
