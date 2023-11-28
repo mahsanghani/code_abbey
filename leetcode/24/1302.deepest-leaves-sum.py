@@ -14,25 +14,21 @@ class TreeNode:
         self.right = right
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
-        deepest = 0
-        depth = 0
+        q = deque([root])
+        current = 0
+        while q:
+            current = 0
+            size = len(q)
 
-        def dfs(node, level):
-            nonlocal depth, deepest
+            for i in range(size):
+                node = q.popleft()
+                current += node.val
 
-            if not node:
-                return
-            
-            if level == depth:
-                deepest+=node.val
-            elif level > depth:
-                depth = level
-                deepest = node.val
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
 
-            dfs(node.left, level+1)
-            dfs(node.right, level+1)
-
-        dfs(root,0)
-        return deepest
+        return current
 # @lc code=end
 
