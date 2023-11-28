@@ -1,17 +1,11 @@
 #
-# @lc app=leetcode id=1528 lang=python3
+# @lc app=leetcode id=1683 lang=MySQL
 #
-# [1528] Shuffle String
+# [1683] Invalid Tweets
 #
 
 # @lc code=start
-class Solution:
-    def restoreString(self, s: str, indices: List[int]) -> str:
-        results = list(s)
-
-        for i in range(len(indices)):
-            results[indices[i]]=s[i]
-
-        return ''.join(results)
+# Write your MySQL query statement below
+select tweet_id from tweets where char_length(content)>15
 # @lc code=end
 
