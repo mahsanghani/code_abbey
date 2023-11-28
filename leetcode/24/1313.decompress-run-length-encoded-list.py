@@ -10,7 +10,7 @@ class Solution:
         results = []
         for i in range(0,len(nums),2):
             freq = nums[i]
-            val = nums[i+1] if i+1<len(nums) else None
+            val = nums[i+1]
             for j in range(freq):
                 results.append(val)
         return results
