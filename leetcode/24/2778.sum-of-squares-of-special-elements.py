@@ -7,13 +7,10 @@
 # @lc code=start
 class Solution:
     def sumOfSquares(self, nums: List[int]) -> int:
-        results=0
-        n=len(nums)
+        results = 0
+        n = len(nums)
         for i in range(1,n+1):
-            if n%i==0:
-                print(nums[i-1])
-                results+=(nums[i-1]*nums[i-1])
-                print(results)
+            results += nums[i-1]*nums[i-1] if n%i==0 else 0
         return results
 # @lc code=end
 
