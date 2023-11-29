@@ -1,10 +1,15 @@
 #
-# @lc app=leetcode id=1350 lang=MySQL
+# @lc app=leetcode id=1777 lang=MySQL
 #
-# [1350] Students With Invalid Departments
+# [1777] Product's Price for Each Store
 #
 # @lc code=start
 # Write your MySQL query statement below
-select s.id, s.name from students as s left join departments d on s.department_id = d.id where d.id is NULL
+select product_id,
+sum(case when store ='store1' THEN  price ELSE NULL END) AS "store1",
+sum(case when store ='store2' THEN price  ELSE NULL END) AS "store2",
+sum(case when store ='store3' THEN price  ELSE NULL END) AS "store3"
+FROM Products
+group by product_id
 # @lc code=end
 
