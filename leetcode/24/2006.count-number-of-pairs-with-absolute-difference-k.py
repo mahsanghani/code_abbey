@@ -7,7 +7,7 @@
 # @lc code=start
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
-        results = 0
+        results=0
         for i in nums:
             for j in nums:
                 if i-j==k:
