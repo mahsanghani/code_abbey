@@ -18,7 +18,6 @@ class Solution:
             if s[i] == ')':
                 count -= 1
                 subarray.append(s[i])
-                print(subarray)
             if count == 0:
                 results += ''.join(subarray[1:-1])
                 subarray = []
