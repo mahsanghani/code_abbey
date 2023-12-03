@@ -19,9 +19,9 @@ class Solution:
                 count -= 1
                 subarray.append(s[i])
                 print(subarray)
-                if count == 0:
-                    results += ''.join(subarray[1:-1])
-                    subarray = []
+            if count == 0:
+                results += ''.join(subarray[1:-1])
+                subarray = []
         return results
 # @lc code=end
 
