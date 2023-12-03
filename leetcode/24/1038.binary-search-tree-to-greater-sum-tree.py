@@ -14,6 +14,7 @@ class TreeNode:
 class Solution:
     def bstToGst(self, root: TreeNode) -> TreeNode:
         self.nodes = []
+        self.total = 0
 
         def inorderTraversal(node):
             if node:
@@ -26,7 +27,7 @@ class Solution:
         def updateValue(node):
             if node:
                 updateValue(node.right)
-                node.val = sum(self.nodes[node.val:])
+                node.val = self.total = self.total + node.val
                 updateValue(node.left)
 
         updateValue(root)
