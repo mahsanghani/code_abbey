@@ -13,23 +13,21 @@ class TreeNode:
         self.right = right
 class Solution:
     def bstToGst(self, root: TreeNode) -> TreeNode:
-        nodes = []
+        self.nodes = []
 
         def inorderTraversal(node):
-            nonlocal nodes
             if node:
                 inorderTraversal(node.left)
-                nodes.append(node.val)
+                self.nodes.append(node.val)
                 inorderTraversal(node.right)
         
         inorderTraversal(root)
 
         def updateValue(node):
-            nonlocal nodes
             if node:
-                updateValue(node.left)
-                node.val = sum(nodes[node.val:])
                 updateValue(node.right)
+                node.val = sum(self.nodes[node.val:])
+                updateValue(node.left)
 
         updateValue(root)
         return root
