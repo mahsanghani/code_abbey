@@ -1,7 +1,7 @@
 #
 # @lc app=leetcode id=1683 lang=MySQL
 #
-# [1683] Shuffle String
+# [1683] Invalid Tweets
 #
 
 # @lc code=start
