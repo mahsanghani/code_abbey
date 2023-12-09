@@ -15,11 +15,11 @@ class Solution:
     def helper(self, node: TreeNode, parent: int, grandparent: int) -> int:
         if not node:
             return 0
-        return self.helper(node.left,node.val,parent) \
-            + self.helper(node.right,node.val,parent)\
+        return self.helper(node.left, node.val, parent) \
+            + self.helper(node.right, node.val, parent)\
             + (node.val if grandparent % 2 == 0 else 0)
     
     def sumEvenGrandparent(self, root: TreeNode) -> int:
-        return self.helper(root,-1,-1)
+        return self.helper(root, -1, -1)
 # @lc code=end
 
