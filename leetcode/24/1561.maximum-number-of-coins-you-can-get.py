@@ -5,12 +5,16 @@
 #
 
 # @lc code=start
+from collections import deque
 class Solution:
     def maxCoins(self, piles: List[int]) -> int:
-        results = 0
-        piles = sorted(piles,reverse=True)
-        for i in range(0,len(piles),3):
-            results+=piles[i+1]
-        return results
-# @lc code=end
+        res=0
+        q=deque(sorted(piles))
 
+        while q:
+            q.pop()
+            res+=q.pop()
+            q.popleft()
+
+        return res
+# @lc code=end
