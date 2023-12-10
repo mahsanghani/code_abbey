@@ -15,10 +15,12 @@ class Node:
 class Solution:
     def cloneTree(self, root: 'Node') -> 'Node':
         if not root:
-            return None
+            return root
         
         node = Node(root.val)
-        node.children = [self.cloneTree(child) for child in node.children]
+
+        for child in root.children:
+            node.children.append(self.cloneTree(child))
 
         return node
 # @lc code=end
