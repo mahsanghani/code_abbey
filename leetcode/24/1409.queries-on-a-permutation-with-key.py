@@ -8,11 +8,13 @@
 class Solution:
     def processQueries(self, queries: List[int], m: int) -> List[int]:
         results = []
-        perm = list(range(1,m+1))
+        perms = list(range(1,m+1))
+
         for q in queries:
-            results.append(perm.index(q))
-            perm.remove(q)
-            perm.insert(0,q)
+            results.append(perms.index(q))
+            perms.remove(q)
+            perms.insert(0,q)
+
         return results
 # @lc code=end
 
