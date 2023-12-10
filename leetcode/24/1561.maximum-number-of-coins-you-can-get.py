@@ -8,11 +8,13 @@
 from collections import deque
 class Solution:
     def maxCoins(self, piles: List[int]) -> int:
-        res = 0
-        piles.sort()
+        res=0
+        q=deque(sorted(piles))
 
-        for i in range(len(piles)//3,len(piles),2):
-            res+=piles[i]
+        while q:
+            q.pop()
+            res+=q.pop()
+            q.popleft()
 
         return res
 # @lc code=end
