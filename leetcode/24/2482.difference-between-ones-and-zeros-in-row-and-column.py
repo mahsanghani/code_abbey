@@ -17,9 +17,6 @@ class Solution:
         for j in range(len(grid[0])):
             cols.append(sum([row[j] for row in grid]))
 
-        print(rows)
-        print(cols)
-
         for i in range(len(grid)):
             for j in range(len(grid[i])):
                 results[i][j] = 2*rows[i]+2*cols[j]-len(grid)-len(grid[i])
