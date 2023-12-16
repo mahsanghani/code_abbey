@@ -7,17 +7,23 @@
 # @lc code=start
 class Solution:
     def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:
-        results = []
+        rows = []
+        cols = []
+        results = grid
 
         for i in range(len(grid)):
-            new = []
-            for j in range(len(grid[0])):
-                row = grid[i]
-                col = [row[j] for row in grid]
-                new.append(row.count(1)+col.count(1)-row.count(0)-col.count(0))
-            results.append(new)
+            rows.append(grid[i].count(1))
+        
+        for j in range(len(grid[0])):
+            cols.append(sum([row[j] for row in grid]))
+
+        print(rows)
+        print(cols)
+
+        for i in range(len(grid)):
+            for j in range(len(grid[i])):
+                results[i][j] = 2*rows[i]+2*cols[j]-len(grid)-len(grid[i])
 
         return results
-        
 # @lc code=end
 
