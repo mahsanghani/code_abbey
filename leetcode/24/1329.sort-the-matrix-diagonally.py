@@ -5,25 +5,31 @@
 #
 
 # @lc code=start
-from heapq import heapify
+from heapq import heapify, heappop
 from collections import defaultdict
 class Solution:
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
         rows = len(mat)
         cols = len(mat[0])
-        diag = defaultdict(list)
+        
+        def sortdiag(row,col):
+            diag = []
+            length = min(rows-row,cols-col)
+
+            for i in range(length):
+                diag.append(mat[row+i][col+i])
+
+            heapify(diag)
+
+            for i in range(length):
+                mat[row+i][col+i] = heappop(diag)
 
         for row in range(rows):
-            for col in range(cols):
-                diag[row-col].append(mat[row][col])
+            sortdiag(row,0)
 
-        for each in diag.values():
-            heapify(each)
+        for col in range(cols):
+            sortdiag(0,col)
 
-        for row in range(rows):
-            for col in range(cols):
-                value = heapq.heappop(diag[row-col])
-                mat[row][col] = value
         return mat
 # @lc code=end
 
