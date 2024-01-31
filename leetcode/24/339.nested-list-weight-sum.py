@@ -50,29 +50,14 @@
 from collections import deque
 class Solution:
     def depthSum(self, nestedList: List[NestedInteger]) -> int:
-        # def dfs(nestedList, depth):
-        #     total = 0
-        #     for nested in nestedList:
-        #         if nested.isInteger():
-        #             total += nested.getInteger() * depth
-        #         else:
-        #             total += dfs(nested.getList(), depth+1)
-        #     return total
-        # return dfs(nestedList,1)
-
-        queue = deque(nestedList)
-
-        depth = 1
-        total = 0
-
-        while len(queue)>0:
-            for i in range(len(queue)):
-                nested = queue.pop()
+        def dfs(nestedList, depth):
+            total = 0
+            for nested in nestedList:
                 if nested.isInteger():
                     total += nested.getInteger() * depth
                 else:
-                    queue.extendleft(nested.getList())
-            depth += 1
-        return total
+                    total += dfs(nested.getList(), depth+1)
+            return total
+        return dfs(nestedList,1)
 # @lc code=end
 
