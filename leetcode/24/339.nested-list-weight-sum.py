@@ -47,17 +47,32 @@
 #        Return None if this NestedInteger holds a single integer
 #        :rtype List[NestedInteger]
 #        """
-
+from collections import deque
 class Solution:
     def depthSum(self, nestedList: List[NestedInteger]) -> int:
-        def dfs(nestedList, depth):
-            total = 0
-            for nested in nestedList:
+        # def dfs(nestedList, depth):
+        #     total = 0
+        #     for nested in nestedList:
+        #         if nested.isInteger():
+        #             total += nested.getInteger() * depth
+        #         else:
+        #             total += dfs(nested.getList(), depth+1)
+        #     return total
+        # return dfs(nestedList,1)
+
+        queue = deque(nestedList)
+
+        depth = 1
+        total = 0
+
+        while len(queue)>0:
+            for i in range(len(queue)):
+                nested = queue.pop()
                 if nested.isInteger():
                     total += nested.getInteger() * depth
                 else:
-                    total += dfs(nested.getList(), depth+1)
-            return total
-        return dfs(nestedList,1)
+                    queue.extendleft(nested.getList())
+            depth += 1
+        return total
 # @lc code=end
 
