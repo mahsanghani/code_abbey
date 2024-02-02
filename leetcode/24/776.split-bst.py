@@ -12,6 +12,22 @@
 #         self.right = right
 class Solution:
     def splitBST(self, root: Optional[TreeNode], target: int) -> List[Optional[TreeNode]]:
-        
+        results = []
+
+        def dfs(node):
+
+            if not node:
+                return [None, None]
+            
+            if node.val > target:
+                left, right = dfs(node.left)
+                node.left = right
+                return [left, node]
+            else:
+                left, right = dfs(node.right)
+                node.right = left
+                return [node, right]
+            
+        return dfs(root)
 # @lc code=end
 
