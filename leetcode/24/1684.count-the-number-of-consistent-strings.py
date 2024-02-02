@@ -7,6 +7,10 @@
 # @lc code=start
 class Solution:
     def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
-        return sum([True if set(word).issubset(set(allowed)) else False for word in words])
+        total = 0
+        for word in words:
+            if set(word).issubset(set(allowed)):
+                total += 1
+        return total
 # @lc code=end
 
