@@ -18,7 +18,11 @@ class Node(ABC):
     def evaluate(self) -> int:
         pass
 
-
+class TreeNode(Node):
+    def __init__(self,val):
+        self.val = val
+        self.left = None
+        self.right = None
 """    
 This is the TreeBuilder class.
 You can treat it as the driver code that takes the postinfix input
