@@ -23,6 +23,14 @@ class TreeNode(Node):
         self.val = val
         self.left = None
         self.right = None
+
+    def evaluate(self) -> int:
+        if self.val.isdigit():
+            return self.val
+        else:
+            results = eval('int(self.left.evaluate())'+self.val+'int(self.right.evaluate())')
+            return int(results)
+
 """    
 This is the TreeBuilder class.
 You can treat it as the driver code that takes the postinfix input
