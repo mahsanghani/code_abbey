@@ -20,17 +20,12 @@ class Solution:
         # DFS in post-order
 
         def dfs(node):
-            if node is not None:
-                if node.val is not None:
-                    return node.val
-                # if node.left not in [2,3]:
-                #     dfs(node.left)
-                # if node.right not in [2,3]:
-                #     dfs(node.right)
-                if node.val == 2:
-                    return dfs(node.left) or dfs(node.right)
-                elif node.val == 3:
-                    return dfs(node.left) and dfs(node.right)
+            if not node.left and not node.right:
+                return True if node.val==1 else False
+            if node.val == 2:
+                return dfs(node.left) or dfs(node.right)
+            if node.val == 3:
+                return dfs(node.left) and dfs(node.right)
         dfs(root)
 # @lc code=end
 
