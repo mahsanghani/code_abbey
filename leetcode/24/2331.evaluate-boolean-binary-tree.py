@@ -21,11 +21,11 @@ class Solution:
 
         def dfs(node):
             if not node.left and not node.right:
-                return True if node.val==1 else False
+                return bool(node.val)
             if node.val == 2:
                 return dfs(node.left) or dfs(node.right)
             if node.val == 3:
                 return dfs(node.left) and dfs(node.right)
-        dfs(root)
+        return dfs(root)
 # @lc code=end
 
