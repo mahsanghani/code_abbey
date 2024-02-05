@@ -39,7 +39,15 @@ and returns the expression tree represnting it as a Node.
 
 class TreeBuilder(object):
     def buildTree(self, postfix: List[str]) -> 'Node':
-        
+        stack = []
+        current = None
+        for c in postfix:
+            current = TreeNode(c)
+            if not c.isdigit():
+                current.right = stack.pop()
+                current.left = stack.pop()
+            stack.append(current)
+        return current
 		
 """
 Your TreeBuilder object will be instantiated and called as such:
