@@ -19,17 +19,13 @@ class Node(ABC):
         pass
 
 class TreeNode(Node):
-    def __init__(self,val):
+    def __init__(self,val,left,right):
         self.val = val
-        self.left = None
-        self.right = None
+        self.left = left
+        self.right = right
 
     def evaluate(self) -> int:
-        if self.val.isdigit():
-            return self.val
-        else:
-            results = eval('int(self.left.evaluate())'+self.val+'int(self.right.evaluate())')
-            return int(results)
+        pass
 
 """    
 This is the TreeBuilder class.
@@ -40,14 +36,15 @@ and returns the expression tree represnting it as a Node.
 class TreeBuilder(object):
     def buildTree(self, postfix: List[str]) -> 'Node':
         stack = []
-        current = None
-        for c in postfix:
-            current = TreeNode(c)
-            if not c.isdigit():
-                current.right = stack.pop()
-                current.left = stack.pop()
-            stack.append(current)
-        return current
+        operators = {'+': Plus, '-': Minus, '*': Mul, '/': Div}
+        for token in postfix:
+            if token in operators:
+                R = stack.pop()
+                L = stack.pop()
+                stack.append(operators[token](L,R))
+            else:
+                stack.append(Num(int(token)))
+        return stack[0]
 		
 """
 Your TreeBuilder object will be instantiated and called as such:
