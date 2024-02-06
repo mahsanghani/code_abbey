@@ -16,6 +16,9 @@ public:
     virtual int evaluate() const = 0;
 };
 
+/**
+ * Definition for a node with a numeric value.
+*/
 class NumNode : public Node {
 public:
     NumNode(int val) : _val (val) {}
@@ -26,6 +29,22 @@ private:
 
 int NumNode::evaluate() const {
     return _val;
+}
+
+/**
+ * Definition for the interface of a node with an operator.
+*/
+class OpNode : public Node {
+public:
+    OpNode(Node* left, Node* right) : left (left), right (right) {}
+    ~OpNode();
+protected:
+    Node* const left;
+    Node* const right;
+};
+OpNode::~OpNode() {
+    delete left;
+    delete right;
 }
 
 /**
