@@ -72,6 +72,18 @@ int SubtractOpNode::evaluate() const {
 };
 
 /**
+ * Definition for a node with multiply operator.
+*/
+class MultiplyOpNode : public OpNode {
+public:
+    MultiplyOpNode(Node* left, Node* right): OpNode(left, right) {}
+    int evaluate() const;
+};
+int MultiplyOpNode::evaluate() const {
+    return left->evaluate() * right->evaluate();
+};
+
+/**
  * This is the TreeBuilder class.
  * You can treat it as the driver code that takes the postinfix input 
  * and returns the expression tree represnting it as a Node.
