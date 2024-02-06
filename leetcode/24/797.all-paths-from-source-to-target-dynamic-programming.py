@@ -7,10 +7,8 @@
 # @lc code=start
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
-        target = len(graph) - 1
-
         @lru_cache(maxsize=None)
-
+        target = len(graph)-1
         def dp(current):
             if current == target:
                 return [[target]]
