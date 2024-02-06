@@ -10,14 +10,15 @@ class Solution:
         count = 0
         results = ''
         subarray = []
+
         for i in range(len(s)):
-            if s[i] == '(':
+            if s[i]=='(':
                 count += 1
                 subarray.append(s[i])
-            if s[i] == ')':
+            if s[i]==')':
                 count -= 1
                 subarray.append(s[i])
-            if count == 0:
+            if count==0:
                 results += ''.join(subarray[1:-1])
                 subarray = []
         return results
