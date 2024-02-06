@@ -128,7 +128,18 @@ private:
 
 public:
     Node* buildTree(vector<string>& postfix) {
-        
+        stack<Node *> curStack;
+        for(auto &token : postfix) {
+            if(isdigit(token[0])) {
+                curStack.push(new NumNode(toInt(token)));
+            }
+            else {
+                auto R = curStack.top(); curStack.pop();
+                auto L = curStack.top(); curStack.pop();
+                curStack.push(nodeCreate(token, L, R));
+            }
+        }
+        return curStack.top();
     }
 };
 
