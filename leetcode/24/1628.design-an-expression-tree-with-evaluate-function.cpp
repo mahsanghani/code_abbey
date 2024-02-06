@@ -102,6 +102,30 @@ int DivideOpNode::evaluate() const {
  */
 
 class TreeBuilder {
+private:
+    Node* nodeCreate(string op, Node* left, Node* right) {
+        switch (op[0]) {
+            case '+':
+                return new AddOpNode(left, right);
+            case '-':
+                return new SubtractOpNode(left, right);
+            case '*':
+                return new MultiplyOpNode(left, right);
+            case '/':
+                return new DivideOpNode(left, right);
+            default:
+                return NULL;
+        }
+    }
+
+    int toInt(string &x) {
+        int results = 0;
+        for (char c : x) {
+            results = results * 10 + (c - '0');
+        }
+        return results;
+    }
+
 public:
     Node* buildTree(vector<string>& postfix) {
         
