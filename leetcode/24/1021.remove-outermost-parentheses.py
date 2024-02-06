@@ -10,7 +10,6 @@ class Solution:
         count = 0
         results = ''
         subarray = []
-
         for i in range(len(s)):
             if s[i] == '(':
                 count += 1
