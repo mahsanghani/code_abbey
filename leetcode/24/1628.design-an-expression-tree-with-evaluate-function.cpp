@@ -14,10 +14,19 @@ class Node {
 public:
     virtual ~Node () {};
     virtual int evaluate() const = 0;
-protected:
-    // define your fields here
 };
 
+class NumNode : public Node {
+public:
+    NumNode(int val) : _val (val) {}
+    int evaluate() const;
+private:
+    int _val;
+};
+
+int NumNode::evaluate() const {
+    return _val;
+}
 
 /**
  * This is the TreeBuilder class.
