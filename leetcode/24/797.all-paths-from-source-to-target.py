@@ -11,7 +11,14 @@ class Solution:
         target = len(graph)-1
 
         def backtrack(current, path):
-            return
+            if current == target:
+                results.append(list(path))
+                return
+            
+            for next_node in graph[current]:
+                path.append(next_node)
+                backtrack(next_node, path)
+                path.pop()
 
         path = [0]
         backtrack(0, path)
