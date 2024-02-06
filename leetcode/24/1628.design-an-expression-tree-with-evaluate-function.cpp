@@ -29,7 +29,7 @@ private:
 
 int NumNode::evaluate() const {
     return _val;
-}
+};
 
 /**
  * Definition for the interface of a node with an operator.
@@ -45,7 +45,19 @@ protected:
 OpNode::~OpNode() {
     delete left;
     delete right;
-}
+};
+
+/**
+ * Definition for a node with add operator.
+*/
+class AddOpNode : public OpNode {
+public:
+    AddOpNode(Node* left, Node* right): OpNode(left, right) {}
+    int evaluate() const;
+};
+int AddOpNode::evaluate() const {
+    return left->evaluate() + right->evaluate();
+};
 
 /**
  * This is the TreeBuilder class.
