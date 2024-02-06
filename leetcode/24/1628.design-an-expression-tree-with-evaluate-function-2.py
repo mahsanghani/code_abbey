@@ -5,7 +5,7 @@
 #
 
 # @lc code=start
-import abc 
+import abc
 from abc import ABC, abstractmethod 
 """
 This is the interface for the expression tree Node.
@@ -19,13 +19,35 @@ class Node(ABC):
         pass
 
 class TreeNode(Node):
-    def __init__(self,val,left,right):
-        self.val = val
+    def __init__(self, left, right):
+        # self.value = value
         self.left = left
         self.right = right
 
     def evaluate(self) -> int:
         pass
+
+class Plus(TreeNode):
+    def evaluate(self) -> int:
+        return self.left.evaluate() + self.right.evaluate()
+    
+class Minus(TreeNode):
+    def evaluate(self) -> int:
+        return self.left.evaluate() - self.right.evaluate()
+    
+class Mul(TreeNode):
+    def evaluate(self) -> int:
+        return self.left.evaluate() * self.right.evaluate()
+    
+class Div(TreeNode):
+    def evaluate(self) -> int:
+        return self.left.evaluate() // self.right.evaluate()
+    
+class Num(Node):
+    def __init__(self, value):
+        self.value = value
+    def evaluate(self) -> int:
+        return self.value
 
 """    
 This is the TreeBuilder class.
@@ -41,7 +63,7 @@ class TreeBuilder(object):
             if token in operators:
                 R = stack.pop()
                 L = stack.pop()
-                stack.append(operators[token](L,R))
+                stack.append(operators[token](L, R))
             else:
                 stack.append(Num(int(token)))
         return stack[0]
