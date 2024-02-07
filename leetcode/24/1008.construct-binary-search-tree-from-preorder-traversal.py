@@ -13,13 +13,16 @@ class TreeNode:
         self.right = right
 class Solution:
     def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
+        if not preorder:
+            return None
+
         node = preorder[0]
         root = TreeNode(node)
-        low = 
-        high = 
+        low = [i for i in preorder if i<node]
+        high = [i for i in preorder if i>node]
 
-        root.left = 
-        root.right = 
+        root.left = self.bstFromPreorder(low)
+        root.right = self.bstFromPreorder(high)
 
         return root
 # @lc code=end
