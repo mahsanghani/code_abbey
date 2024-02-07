@@ -13,17 +13,22 @@ class TreeNode:
         self.right = right
 class Solution:
     def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
-        if not preorder:
-            return None
+        def helper(in_left=0, in_right=len(preorder)):
+            nonlocal pre_idx
+            if in_left==in_right:
+                return None
+            root_val = preorder[pre_idx]
+            root = TreeNode(root_val)
+            index = idx_map[root_val]
+
+            pre_idx+=1
+            root.left = helper(in_left, index)
+            root.right = helper(index+1, in_right)
+            return root
         
-        node = preorder[0]
-        root = TreeNode(node)
-        low = [i for i in preorder if i<node]
-        high = [i for i in preorder if i>node]
-
-        root.left = self.bstFromPreorder(low)
-        root.right = self.bstFromPreorder(high)
-
-        return root
+        inorder = sorted(preorder)
+        pre_idx = 0
+        idx_map = {val:idx for idx, val in enumerate(inorder)}
+        return helper()
 # @lc code=end
 
