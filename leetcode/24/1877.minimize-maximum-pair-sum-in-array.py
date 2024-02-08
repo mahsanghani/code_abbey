@@ -7,8 +7,7 @@
 # @lc code=start
 class Solution:
     def minPairSum(self, nums: List[int]) -> int:
-        sums = []
-        pairs = []
+        sums, pairs = [], []
         nums.sort()
         for i in range(len(nums)//2):
             pairs.append([nums[i],nums[-i-1]])
