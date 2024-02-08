@@ -7,10 +7,9 @@
 # @lc code=start
 class Solution:
     def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
-        results = []
         for i,j in enumerate(image):
-            results.append(j[::-1])
-            results[i] = [0 if x==1 else 1 for x in results[i]]
-        return results    
+            image[i] = j[::-1]
+            image[i] = [0 if x==1 else 1 for x in image[i]]
+        return image
 # @lc code=end
 
