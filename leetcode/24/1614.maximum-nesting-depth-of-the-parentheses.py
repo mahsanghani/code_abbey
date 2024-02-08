@@ -7,8 +7,7 @@
 # @lc code=start
 class Solution:
     def maxDepth(self, s: str) -> int:
-        depth = 0
-        stack = []
+        depth, stack = 0, []
         for i,j in enumerate(s):
             if j=='(':
                 stack.append(j)
