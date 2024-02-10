@@ -12,25 +12,29 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
-    def dfs(node):
-        if not node:
-            return None
-        
-        mid = len(node)//2
-        root = TreeNode(node[mid])
-        root.left = self.dfs(node[:mid])
-        root.right = self.dfs(node[mid+1:])
-        
-        return root
-
     def balanceBST(self, root: TreeNode) -> TreeNode:
         results = []
-        if root:
-            self.balanceBST(root.left)
-            results.append(root.val)
-            self.balanceBST(root.right)
 
-        # return results
+        def dfs(node):
+            if not node:
+                return []
+            
+            dfs(node.left)
+            results.append(node.val)
+            dfs(node.right)
+
+        def sortedArraytoBST(nums):
+            if not nums:
+                return None
+            
+            mid = len(nums)//2
+            root = TreeNode(nums[mid])
+            root.left = sortedArraytoBST(nums[:mid])
+            root.right = sortedArraytoBST(nums[mid+1:])
+
+            return root
         
+        dfs(root)
+        return sortedArraytoBST(results) 
 # @lc code=end
 
