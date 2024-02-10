@@ -22,19 +22,19 @@ class Solution:
             dfs(node.left)
             results.append(node.val)
             dfs(node.right)
-
-        def sortedArraytoBST(nums):
-            if not nums:
+            
+        def sortedArraytoBST(lo, hi):
+            if lo>hi:
                 return None
             
-            mid = len(nums)//2
-            root = TreeNode(nums[mid])
-            root.left = sortedArraytoBST(nums[:mid])
-            root.right = sortedArraytoBST(nums[mid+1:])
+            mid = (lo+hi)//2
+            root = TreeNode(results[mid])
+            root.left = sortedArraytoBST(lo,mid-1)
+            root.right = sortedArraytoBST(mid+1,hi)
 
             return root
         
         dfs(root)
-        return sortedArraytoBST(results) 
+        return sortedArraytoBST(0,len(results)-1) 
 # @lc code=end
 
