@@ -16,12 +16,19 @@ class Solution:
     def __init__(self):
         self.seen: dict[str, int] = {None: None}
 
-    def dfs(self, node: 'Optional[Node]') -> 'Optional[NodeCopy]':
-        if not node:
+    def dfs(self, root: 'Optional[Node]') -> 'Optional[NodeCopy]':
+        if not root:
             return None
-        if self.seen.get(node):
-            return self.seen.get(node)
+        if self.seen.get(root):
+            return self.seen.get(root)
         
+        node = self.NodeCopy(root.val)
+        self.seen[root] = node
+
+        node.left = self.dfs(root.left)
+        node.right = self.dfs(root.right)
+        node.random = self.random(root.random)
+        return node
 
     def copyRandomBinaryTree(self, root: 'Optional[Node]') -> 'Optional[NodeCopy]':
         return None
