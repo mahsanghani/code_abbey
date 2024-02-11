@@ -13,18 +13,17 @@ class TreeNode:
         self.right = right
 class Solution:
     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
-        # depth = 0
-        results = []
-
-        def height(node):
+        def dfs(node):
             if not node:
-                return None
-            depth = 1+max(height(node.left), height(node.right))
-            if height==len(depth):
+                return -1
+            height = 1+max(dfs(node.left),dfs(node.right))
+            if height==len(results):
                 results.append([])
-            results[depth].append(node.val)
-            return depth
-
+            results[height].append(node.val)
+            return height
+        
+        results = []
+        dfs(root)
         return results
 # @lc code=end
 
