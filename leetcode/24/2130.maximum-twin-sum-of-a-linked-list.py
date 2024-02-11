@@ -33,7 +33,7 @@ class Solution:
         right = prev
 
         while right:
-            res = max(res, right.val+left.val)
+            res = max(res, right.val + left.val)
             left = left.next
             right = right.next
 
