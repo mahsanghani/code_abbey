@@ -12,7 +12,7 @@ class Solution:
         visit = {j:i for i,j in enumerate(s)}
 
         for i,j in enumerate(s):
-            r = max(r,visit[j])
+            r = max(r, visit[j])
             if i==r:
                 results.append(r-l+1)
                 l=r+1
