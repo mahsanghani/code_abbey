@@ -1,42 +1,28 @@
 #
-# @lc app=leetcode id=2130 lang=python3
+# @lc app=leetcode id=366 lang=python3
 #
-# [2130] Maximum Twin Sum of a Linked List
+# [366] Find Leaves of Binary Tree
 #
 
 # @lc code=start
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
-        self.next = next
+        self.left = left
+        self.right = right
 class Solution:
-    def pairSum(self, head: Optional[ListNode]) -> int:
-        slow = head
-        fast = head
+    def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
+        results = []
 
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
+        def height(node):
+            if not node:
+                return None
 
-        prev = None
-        curr = slow
+        def leaves(node):
+            if not node:
+                return []
 
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
-
-        res = 0
-        left = head
-        right = prev
-
-        while right:
-            res = max(res, left.val + right.val)
-            left = left.next
-            right = right.next
-
-        return res
+        return results
 # @lc code=end
 
