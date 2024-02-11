@@ -12,8 +12,8 @@ class ListNode:
         self.next = next
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
-        fast = head
         slow = head
+        fast = head
 
         while fast and fast.next:
             slow = slow.next
@@ -33,7 +33,7 @@ class Solution:
         right = prev
 
         while right:
-            res = max(res, right.val + left.val)
+            res = max(res, left.val + right.val)
             left = left.next
             right = right.next
 
