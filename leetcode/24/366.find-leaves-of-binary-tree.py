@@ -22,12 +22,12 @@ class Solution:
 
             if left==None and right==None:
                 return 0
-
-            height = 1+max(left or 0, right or 0)
             
+            height = 1 + max(left or 0, right or 0)
+
             while height >= len(results):
                 results.append([])
-            
+
             results[height].append(node.val)
             return height
         
