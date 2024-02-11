@@ -24,7 +24,6 @@ class Solution:
         
         node = NodeCopy(root.val)
         self.seen[root] = node
-
         node.left = self.dfs(root.left)
         node.right = self.dfs(root.right)
         node.random = self.dfs(root.random)
