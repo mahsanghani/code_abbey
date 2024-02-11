@@ -15,14 +15,11 @@ class Solution:
     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
         results = []
 
-        def height(node):
-            if not node:
-                return None
-
-        def leaves(node):
-            if not node:
-                return []
-
         return results
+
+    def height(self, node):
+        if not node:
+            return -1
+        
 # @lc code=end
 
