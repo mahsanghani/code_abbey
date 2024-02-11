@@ -22,15 +22,16 @@ class Solution:
         if self.seen.get(root):
             return self.seen.get(root)
         
-        node = self.NodeCopy(root.val)
+        node = NodeCopy(root.val)
         self.seen[root] = node
 
         node.left = self.dfs(root.left)
         node.right = self.dfs(root.right)
-        node.random = self.random(root.random)
+        node.random = self.dfs(root.random)
         return node
 
     def copyRandomBinaryTree(self, root: 'Optional[Node]') -> 'Optional[NodeCopy]':
-        return None
+        node = self.dfs(root)
+        return node
 # @lc code=end
 
