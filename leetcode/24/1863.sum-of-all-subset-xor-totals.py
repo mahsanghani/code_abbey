@@ -7,9 +7,6 @@
 # @lc code=start
 class Solution:
     def subsetXORSum(self, nums: List[int]) -> int:
-        all_or = 0
-        for num in nums:
-            all_or |= num
-        return all_or << len(nums)-1
+        return reduce(lambda x,y: x|y, nums) << len(nums) - 1
 # @lc code=end
 
