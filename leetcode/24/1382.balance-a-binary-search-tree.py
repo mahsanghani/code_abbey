@@ -14,27 +14,23 @@ class TreeNode:
 class Solution:
     def balanceBST(self, root: TreeNode) -> TreeNode:
         results = []
-
         def dfs(node):
             if not node:
                 return []
-            
             dfs(node.left)
             results.append(node.val)
             dfs(node.right)
             
         def sortedArraytoBST(lo, hi):
             if lo>hi:
-                return None
-            
+                return
             mid = (lo+hi)//2
-            root = TreeNode(results[mid])
-            root.left = sortedArraytoBST(lo,mid-1)
-            root.right = sortedArraytoBST(mid+1,hi)
-
-            return root
+            node = TreeNode(results[mid])
+            node.left = sortedArraytoBST(lo,mid-1)
+            node.right = sortedArraytoBST(mid+1,hi)
+            return node
         
         dfs(root)
-        return sortedArraytoBST(0,len(results)-1) 
+        return sortedArraytoBST(0,len(results)-1)
 # @lc code=end
 
