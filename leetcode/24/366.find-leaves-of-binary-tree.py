@@ -15,7 +15,7 @@ class Solution:
     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
         def dfs(node):
             if not node:
-                return None
+                return -1
             
             left = dfs(node.left)
             right = dfs(node.right)
@@ -25,8 +25,9 @@ class Solution:
 
             height = 1+max(left or 0, right or 0)
             
-            if height == len(results):
+            while height >= len(results):
                 results.append([])
+            
             results[height].append(node.val)
             return height
         
