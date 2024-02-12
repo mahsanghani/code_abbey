@@ -8,7 +8,7 @@
 class Solution:
     def firstPalindrome(self, words: List[str]) -> str:
         for word in words:
-            if word==word[::-1]:
+            if word == word[::-1]:
                 return word
         return ""
 # @lc code=end
