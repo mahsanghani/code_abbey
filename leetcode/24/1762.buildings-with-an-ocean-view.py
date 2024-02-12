@@ -12,11 +12,9 @@ class Solution:
         results = [r]
         while l>-1:
             if heights[l]>max_height:
-                # print(heights[l])
                 results.append(l)
                 max_height = heights[l]
             l-=1
-            r-=1
         return results[::-1]
 # @lc code=end
 
