@@ -13,13 +13,12 @@ class TreeNode:
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', nodes: 'List[TreeNode]') -> 'TreeNode':
-        nodes = set(nodes)
-
-        def dfs(node):
-            if not node or node in nodes: return node
-            left, right = dfs(node.left), dfs(node.right)
-            return node if left and right else left or right
+        if root in [None] + list(set(nodes)):
+            return root
         
-        return dfs(root)
+        left = self.lowestCommonAncestor(root.left, nodes)
+        right = self.lowestCommonAncestor(root.right, nodes)
+
+        return root if left and right else left or right
 # @lc code=end
 
