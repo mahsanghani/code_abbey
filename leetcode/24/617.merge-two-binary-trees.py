@@ -16,10 +16,10 @@ class Solution:
         if not root1 and not root2:
             return None
         
-        root = TreeNode((root1.val if root1 else 0) + (root2.val if root2 else 0))
-        root.left = self.mergeTrees(root1.left if root1 else None, root2.left if root2 else None)
-        root.right = self.mergeTrees(root1.right if root1 else None, root2.right if root2 else None)
+        node = TreeNode((root1.val if root1 else 0) + (root2.val if root2 else 0))
+        node.left = self.mergeTrees(root1.left if root1 else None, root2.left if root2 else None)
+        node.right = self.mergeTrees(root1.right if root1 else None, root2.right if root2 else None)
 
-        return root
+        return node
 # @lc code=end
 
