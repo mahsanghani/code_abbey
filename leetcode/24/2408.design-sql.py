@@ -6,7 +6,7 @@
 # @lc code=start
 class SQL:
     def __init__(self, names: List[str], columns: List[int]):
-        self.tables = {name: [] for name in names}
+        self.tables = {name:[] for name in names}
 
     def insertRow(self, name: str, row: List[str]) -> None:
         self.tables[name].append(row)
