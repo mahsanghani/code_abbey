@@ -6,11 +6,7 @@
 # @lc code=start
 class Solution:
     def numberCount(self, a: int, b: int) -> int:
-        count = 0
-        for i in range(a,b+1):
-            if len(set(str(i)))==len(str(i)):
-                count+=1
-        return count
+        return sum(len(str(i))==len(set(str(i))) for i in range(a,b+1))
         
 # @lc code=end
 
