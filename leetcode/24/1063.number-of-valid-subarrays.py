@@ -13,7 +13,7 @@ class Solution:
             while stack and num<stack[-1]:
                 stack.pop()
             stack.append(num)
-            results += len(stack)
+            results+=len(stack)
 
         return results
 # @lc code=end
