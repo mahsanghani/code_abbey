@@ -26,10 +26,10 @@ class Solution:
             if not arr:
                 return None
             
-            mid = len(arr)//2
-            node = TreeNode(arr[mid])
-            node.left = array2BST(arr[:mid+1])
-            node.right = array2BST(arr[mid+1:])
+            # mid = len(arr)//2
+            node = TreeNode(arr[0])
+            # node.left = array2BST(arr[:mid+1])
+            node.right = array2BST(arr[1:])
 
             return node
         
