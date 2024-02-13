@@ -13,6 +13,15 @@ class TreeNode:
         self.right = right
 class Solution:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
         
+        def dfs(node):
+            if not node:
+                return None
+            
+            return max(left, right)
+        
+        return dfs(root, root.val, root.val)
 # @lc code=end
 
