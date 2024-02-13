@@ -12,6 +12,29 @@ class TreeNode:
         self.right = right
 class Solution:
     def increasingBST(self, root: TreeNode) -> TreeNode:
+        results = []
+
+        def dfs(node):
+            if not node:
+                return None
+            
+            dfs(node.left)
+            results.append(node.val)
+            dfs(node.right)
+
+        def array2BST(arr):
+            if not arr:
+                return None
+            
+            mid = len(arr)//2
+            node = TreeNode(arr[mid])
+            node.left = array2BST(arr[:mid+1])
+            node.right = array2BST(arr[mid+1:])
+
+            return node
         
+        dfs(root)
+        return array2BST(results)
+
 # @lc code=end
 
