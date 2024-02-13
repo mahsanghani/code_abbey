@@ -20,13 +20,13 @@ class Solution:
             if not node:
                 return _max-_min
             
-            _max = max(_max, node.val)
             _min = min(_min, node.val)
+            _max = max(_max, node.val)
             left = dfs(node.left, _max, _min)
             right = dfs(node.right, _max, _min)
 
             return max(left, right)
-        
+
         return dfs(root, root.val, root.val)
 # @lc code=end
 
