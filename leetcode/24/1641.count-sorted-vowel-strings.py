@@ -7,17 +7,14 @@
 # @lc code=start
 class Solution:
     def countVowelStrings(self, n: int) -> int:
-        return self.bt(n,1)
+        return self.recursion(n,5)
     
-    def bt(self, n,v):
-        results = 0
-        
-        if n==0:
+    def recursion(self, n,v):
+        if n==1:
+            return v
+        if v==1:
             return 1
-        
-        for i in range(v,6):
-            results += self.bt(n-1, i)
-        
-        return results
+        return self.recursion(n-1,v) + \
+                self.recursion(n,v-1)
 # @lc code=end
 
