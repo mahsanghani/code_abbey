@@ -5,9 +5,17 @@
 #
 
 # @lc code=start
-from itertools import permutations
 class Solution:
+    def backtrack(self, nums, path, results):
+        if not nums:
+            results.append(path)
+            return
+        for i in range(len(nums)):
+            self.backtrack(nums[:i]+nums[i+1:], path + [nums[i]], results)
+
     def permute(self, nums: List[int]) -> List[List[int]]:
-        return list(permutations(nums))
+        results = []
+        self.backtrack(nums, [], results)
+        return results
 # @lc code=end
 
