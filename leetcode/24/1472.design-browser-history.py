@@ -7,8 +7,10 @@
 # @lc code=start
 class BrowserHistory:
     def __init__(self, homepage: str):
-        
-        
+        self.history = []
+        self.future = []
+        self.current = homepage
+
     def visit(self, url: str) -> None:
         
 
