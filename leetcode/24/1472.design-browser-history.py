@@ -3,7 +3,6 @@
 #
 # [1472] Design Browser History
 #
-
 # @lc code=start
 class BrowserHistory:
     def __init__(self, homepage: str):
@@ -29,7 +28,6 @@ class BrowserHistory:
             self.current = self.future.pop()
             steps -= 1
         return self.current
-
 
 # Your BrowserHistory object will be instantiated and called as such:
 # obj = BrowserHistory(homepage)
