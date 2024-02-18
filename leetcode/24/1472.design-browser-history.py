@@ -12,7 +12,9 @@ class BrowserHistory:
         self.current = homepage
 
     def visit(self, url: str) -> None:
-        
+        self.history.append(self.current)
+        self.future = []
+        self.current = url
 
     def back(self, steps: int) -> str:
         
