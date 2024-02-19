@@ -7,19 +7,13 @@
 # @lc code=start
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        def bt(first=0, curr=[]):
-            if len(curr)==k:
-                results.append(curr[:])
-                return
-            for i in range(first, n):
-                curr.append(nums[i])
-                bt(i+1,curr)
-                curr.pop()
-            
         results = []
         n = len(nums)
-        for k in range(n+1):
-            bt()
+
+        for i in range(2**n, 2**(n+1)):
+            bitmask = bin(i)[3:]
+            results.append([nums[j] for j in range(n) if bitmask[j]=='1'])
+        
         return results
 # @lc code=end
 
