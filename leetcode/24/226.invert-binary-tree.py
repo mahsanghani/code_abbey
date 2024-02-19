@@ -12,17 +12,17 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root:
+    def invertTree(self, node: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not node:
             return None
         
-        temp = root.left
-        root.left = root.right
-        root.right = temp
+        temp = node.left
+        node.left = node.right
+        node.right = temp
 
-        self.invertTree(root.left)
-        self.invertTree(root.right)
+        self.invertTree(node.left)
+        self.invertTree(node.right)
 
-        return root
+        return node
 # @lc code=end
 
