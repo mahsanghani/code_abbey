@@ -7,14 +7,14 @@
 # @lc code=start
 class Solution:
     def binary_search(self, row: List[int]) -> int:
-        l,r = 0,len(row)-1
-        while l<=r:
-            m = l+(r-l)//2
-            if row[m]<0:
-                r=m-1
+        left,right = 0,len(row)-1
+        while left<=right:
+            mid = left + (right-left) // 2
+            if row[mid] < 0:
+                right = mid - 1
             else:
-                l=m+1
-        return len(row)-l
+                left = mid + 1
+        return len(row) - left
 
     def countNegatives(self, grid: List[List[int]]) -> int:
         results = 0
