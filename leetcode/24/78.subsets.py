@@ -7,20 +7,11 @@
 # @lc code=start
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        subsets = []
-        results = []
+        results = [[]]
 
-        def dfs(i):
-            if i>=len(nums):
-                results.append(subsets.copy())
-                return
-            subsets.append(nums[i])
-            dfs(i+1)
-            subsets.pop()
-            dfs(i+1)
-        
-        dfs(0)
+        for num in nums:
+            results += [current + [num] for current in results]
+
         return results
-
 # @lc code=end
 
