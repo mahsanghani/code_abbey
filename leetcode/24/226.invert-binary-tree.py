@@ -15,14 +15,11 @@ class Solution:
     def invertTree(self, node: Optional[TreeNode]) -> Optional[TreeNode]:
         if not node:
             return None
-        
         temp = node.left
         node.left = node.right
         node.right = temp
-
         self.invertTree(node.left)
         self.invertTree(node.right)
-
         return node
 # @lc code=end
 
