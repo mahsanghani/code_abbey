@@ -7,13 +7,15 @@
 # @lc code=start
 class Solution:
     def partitionString(self, s: str) -> int:
-        results = []
         unique = set()
+        results = []
+        
         for c in s:
             if c in unique:
                 results.append(unique)
                 unique = set()
             unique.add(c)
+
         results.append(unique)
         return len(results)
 # @lc code=end
