@@ -10,15 +10,15 @@ class Solution:
             t1,t2=t2,t1
 
         previous = [0]*(len(t1)+1)
+        current = [0]*(len(t1)+1)
 
         for col in reversed(range(len(t2))):
-            current = [0]*(len(t1)+1)
             for row in reversed(range(len(t1))):
                 if t2[col]==t1[row]:
                     current[row]=1+previous[row+1]
                 else:
                     current[row] = max(previous[row], current[row+1])
-            previous = current
+            previous,current = current,previous
 
         return previous[0]
 # @lc code=end
