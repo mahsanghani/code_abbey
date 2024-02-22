@@ -11,14 +11,10 @@ class Solution:
         def memo(p1,p2):
             if p1==len(t1) or p2==len(t2):
                 return 0
-            
-            option1 = memo(p1+1,p2)
-            option2 = 0
-            first = t2.find(t1[p1],p2)
-            if first>=0:
-                option2 = 1+memo(p1+1,first+1)
-
-            return max(option1,option2) 
+            if t1[p1]==t2[p2]:
+                return 1+memo(p1+1,p2+1)
+            else:
+                return max(memo(p1,p2+1), memo(p1+1,p2))
         return memo(0,0)
 # @lc code=end
 
