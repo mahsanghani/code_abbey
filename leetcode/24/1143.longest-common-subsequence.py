@@ -15,7 +15,7 @@ class Solution:
             option1 = memo(p1+1,p2)
             option2 = 0
             first = t2.find(t1[p1],p2)
-            if first!=-1:
+            if first>=0:
                 option2 = 1+memo(p1+1,first+1)
 
             return max(option1,option2) 
