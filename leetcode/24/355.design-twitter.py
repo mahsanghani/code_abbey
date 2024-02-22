@@ -20,7 +20,7 @@ class Twitter:
         minHeap = []
 
     def follow(self, followerId: int, followeeId: int) -> None:
-        
+        self.followMap[followerId].add(followeeId)
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
         
