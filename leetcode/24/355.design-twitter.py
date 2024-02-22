@@ -19,7 +19,6 @@ class Twitter:
     def getNewsFeed(self, userId: int) -> List[int]:
         results = []
         minHeap = []
-
         self.followMap[userId].add(userId)
 
         for followeeId in self.followMap[userId]:
@@ -34,7 +33,6 @@ class Twitter:
             if index>=0:
                 count, tweetId = self.tweetMap[followeeId][index]
                 heappush(minHeap, [count, tweetId, followeeId, index-1])
-
         return results
 
     def follow(self, followerId: int, followeeId: int) -> None:
@@ -43,7 +41,6 @@ class Twitter:
     def unfollow(self, followerId: int, followeeId: int) -> None:
         if followeeId in self.followMap[followerId]:
             self.followMap[followerId].remove(followeeId)
-
 
 # Your Twitter object will be instantiated and called as such:
 # obj = Twitter()
