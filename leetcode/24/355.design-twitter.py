@@ -23,7 +23,8 @@ class Twitter:
         self.followMap[followerId].add(followeeId)
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
-        
+        if followeeId in self.followMap[followerId]:
+            self.followMap[followerId].remove(followeeId)
 
 
 # Your Twitter object will be instantiated and called as such:
