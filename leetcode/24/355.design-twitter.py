@@ -4,6 +4,7 @@
 # [355] Design Twitter
 #
 # @lc code=start
+from heapq import heappush, heappop
 from collections import defaultdict
 class Twitter:
     def __init__(self):
@@ -18,6 +19,23 @@ class Twitter:
     def getNewsFeed(self, userId: int) -> List[int]:
         results = []
         minHeap = []
+
+        self.followMap[userId].add(userId)
+
+        for followeeId in self.followMap[userId]:
+            if followeeId in self.tweetMap:
+                index = len(self.tweetMap[followeeId]) - 1
+                count, tweetId = self.tweetMap[followeeId][index]
+                heappush(minHeap, [count, tweetId, followeeId, index-1])
+
+        while minHeap and len(results)<10:
+            count, tweetId, followeeId, index = heappop(minHeap)
+            results.append(tweetId)
+            if index>=0:
+                count, tweetId = self.tweetMap[followeeId][index]
+                heappush(minHeap, [count, tweetId, followeeId, index-1])
+
+        return results
 
     def follow(self, followerId: int, followeeId: int) -> None:
         self.followMap[followerId].add(followeeId)
