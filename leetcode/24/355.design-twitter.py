@@ -12,10 +12,12 @@ class Twitter:
         self.followMap = defaultdict(set)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
-        
+        self.tweetMap[userId].append([self.count, tweetId])
+        self.count -= 1
 
     def getNewsFeed(self, userId: int) -> List[int]:
-        
+        results = []
+        minHeap = []
 
     def follow(self, followerId: int, followeeId: int) -> None:
         
