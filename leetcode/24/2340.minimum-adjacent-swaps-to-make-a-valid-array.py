@@ -11,6 +11,9 @@ class Solution:
         maxi = max(nums)
         idx1 = nums.index(mini)
         idx2 = nums.index(maxi)
+
+        nums = [nums[idx1]] + nums[:idx1] + nums[idx1+1:]
+
         return idx1 + idx2
 # @lc code=end
 
