@@ -7,8 +7,12 @@
 from collections import Counter
 class Solution:
     def minimumKeypresses(self, s: str) -> int:
-        sorted_counts = sorted(Counter(s).values(),reverse=True)
-        return sum((k//9+1)*v for k,v in enumerate(sorted_counts))
-        
+        counts = Counter(s)
+        results,count = 0,0
+        for key,value in enumerate(sorted(counts.values(), reverse=True)):
+            if key%9==0:
+                count+=1
+            results+=count*value
+        return results
 # @lc code=end
 
