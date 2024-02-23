@@ -8,13 +8,22 @@
 from collections import Counter
 class Solution:
     def validPalindrome(self, s: str) -> bool:
-        counts = Counter(s)
-        odd,even = 0,0
-        for k,v in counts.items():
-            if v%2==0:
-                even+=1
-            else:
-                odd+=1
-        return odd<2 if len(s)%2==0 else odd<3
+        l,r = 0,len(s)-1
+
+        def check(s,l,r):
+            while l<r:
+                if s[l]!=s[r]:
+                    return False
+                l+=1
+                r-=1
+            return True
+
+        while l<r:
+            if s[l]!=s[r]:
+                return check(s,l+1,r) or check(s,l,r-1)
+            l+=1
+            r-=1
+        return True
+
 # @lc code=end
 
