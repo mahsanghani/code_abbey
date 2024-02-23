@@ -6,6 +6,14 @@
 # @lc code=start
 class Solution:
     def minimumTime(self, jobs: List[int], workers: List[int]) -> int:
+        days = 0
+        jobs.sort()
+        workers.sort()
+
+        for i in range(len(jobs)):
+            days = max(days, jobs[i]//workers[i])
         
+        return days
+
 # @lc code=end
 
