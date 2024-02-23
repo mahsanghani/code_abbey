@@ -4,14 +4,15 @@
 # [2323] Find Minimum Time to Finish All Jobs II
 #
 # @lc code=start
+from math import ceil
 class Solution:
     def minimumTime(self, jobs: List[int], workers: List[int]) -> int:
         days = 0
         jobs.sort()
         workers.sort()
 
-        for i in range(len(jobs)):
-            days = max(days, jobs[i]//workers[i])
+        for j,w in zip(jobs,workers):
+            days = max(days, ceil(j/w))
         
         return days
 
