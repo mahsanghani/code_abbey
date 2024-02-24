@@ -4,6 +4,8 @@
 # [2638] Count the Number of K-Free Subsets
 #
 # @lc code=start
+from operator import add,mul
+from functools import reduce
 from collections import defaultdict
 class Solution:
     def countTheNumOfKFreeSubsets(self, nums: List[int], k: int) -> int:
