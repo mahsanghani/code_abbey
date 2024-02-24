@@ -9,13 +9,13 @@ class Solution:
         results = []
         intervals.sort()
         for interval in intervals:
-            if interval[1]<toBeRemoved[0] or interval[0]>toBeRemoved[1]:
+            if interval[0]>toBeRemoved[1] or interval[1]<toBeRemoved[0]:
                 results.append([interval[0],interval[1]])
             else:
-                if interval[1]>toBeRemoved[1]:
-                    results.append([interval[0],toBeRemoved[0]])
                 if interval[0]<toBeRemoved[0]:
                     results.append([toBeRemoved[1],interval[1]])
+                if interval[1]>toBeRemoved[1]:
+                    results.append([interval[0],toBeRemoved[0]])
         return results
 # @lc code=end
 
