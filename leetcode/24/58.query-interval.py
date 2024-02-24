@@ -44,7 +44,33 @@ class Solution:
         else:
             node.start = min(node.start, start)
             node.end = max(node.end, end)
+            
+    def query(self, node):
+        results = []
+        if not node:
+            return []
+        
+        inserted = False
+        left = self.query(node.left)
+        right = self.query(node.right)
 
-    
+        for l in left:
+            if l[1]<node.start:
+                results.append(l)
+            else:
+                results.append([min(l[0],node.start),node.end])
+                inserted = True
+                break
+
+        if not inserted:
+            results.append([node.start, node.end])
+        
+        for r in right:
+            if r[0]<=node.end:
+                results[-1][1] = max(node.end, r[1])
+            else:
+                results.append(r)
+
+        return results
 # @lc code=end
 
