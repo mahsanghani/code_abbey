@@ -27,5 +27,24 @@ class Solution:
                 self.add(self.root, start, end)
         
         return self.query(self.root)
+    
+    def add(self, node, start, end):
+        if end < node.middle:
+            if node.left:
+                self.add(node.left, start, end)
+            else:
+                node.left = TreeNode(start, end, (start+end)//2)
+        
+        elif start > node.middle:
+            if node.right:
+                self.add(node.right, start, end)
+            else:
+                node.right = TreeNode(start, end, (start+end)//2)
+
+        else:
+            node.start = min(node.start, start)
+            node.end = max(node.end, end)
+
+    
 # @lc code=end
 
