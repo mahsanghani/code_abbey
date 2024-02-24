@@ -6,13 +6,12 @@
 # @lc code=start
 class Solution:
     def reorderLogFiles(self, logs: List[str]) -> List[str]:
-        digits = []
-        letters = []
-
-        def get_key(log):
-            id, rest = log.split(" ", maxsplit=1)
-            return (0,rest,id) if rest[0].isalpha() else (1,)
-        
-        return sorted(logs, key=get_key)
+        return sorted(logs,key=self.sort)
+    def sort(self,logs):
+        a,b = logs.split(' ',1)
+        if b[0].isalpha():
+            return (0,b,a)
+        else:
+            return (1,None,None)
 # @lc code=end
 
