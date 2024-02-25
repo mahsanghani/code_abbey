@@ -6,13 +6,17 @@
 # @lc code=start
 class OrderedStream:
     def __init__(self, n: int):
-        self.map = {}
-        for i in range(n):
-            self.map[i] = []
+        self.data = [None] * n
+        self.ptr = 0
 
     def insert(self, idKey: int, value: str) -> List[str]:
-        self.map[idKey].insert(value)
-        return self.map
+        self.data[idKey-1] = value
+        if idKey-1 > self.ptr:
+            return []
+        else:
+            while self.ptr < len(self.data) and self.data[self.ptr]:
+                self.ptr += 1
+            return self.data[idKey-1:self.ptr]
 
 # Your OrderedStream object will be instantiated and called as such:
 # obj = OrderedStream(n)
