@@ -7,6 +7,10 @@
 # @lc code=start
 class Solution:
     def maximumSubarraySum(self, nums: List[int], k: int) -> int:
-        return sum(sorted(list(set(nums)), reverse=True)[:k])
+        results = 0
+        for i in range(len(nums)-k+1):
+            if len(set(nums[i:i+k]))==len(nums[i:i+k]):
+                results = max(results, sum(nums[i:i+k]))
+        return results
 # @lc code=end
 
