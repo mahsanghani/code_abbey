@@ -19,13 +19,13 @@ class Codec:
 
     def encode(self, longUrl: str) -> str:
         """Encodes a URL to a shortened URL."""
-        key = self._hash(longUrl)
+        key = str(self._hash(longUrl))
         self.map[key] = longUrl
-        return key
+        return self.prefix + key
 
     def decode(self, shortUrl: str) -> str:
         """Decodes a shortened URL to its original URL."""
-        return self.map[shortUrl]
+        return self.map[shortUrl.split("/")[-1]]
 
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
