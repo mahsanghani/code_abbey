@@ -14,15 +14,19 @@ class CustomStack:
             self.stack.append(x)
 
     def pop(self) -> int:
+        if not self.stack:
+            return -1
         temp = self.stack[-1]
         self.stack = self.stack[:-1]
         return temp
 
     def increment(self, k: int, val: int) -> None:
-        if k<self.size:
+        if k<len(self.stack):
             for i in range(k):
                 self.stack[i] += val
         else:
+            # for i in range(self.size):
+            #     self.stack[i] += val
             self.stack = [each+val for each in self.stack]
 
 
