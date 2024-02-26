@@ -22,6 +22,7 @@ class Solution:
             left = dfs(node.left)
             right = dfs(node.right)
             return node if left and right else left or right
+
         return dfs(root)
 # @lc code=end
 
