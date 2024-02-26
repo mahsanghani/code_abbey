@@ -25,8 +25,6 @@ class CustomStack:
             for i in range(k):
                 self.stack[i] += val
         else:
-            # for i in range(self.size):
-            #     self.stack[i] += val
             self.stack = [each+val for each in self.stack]
 
 
