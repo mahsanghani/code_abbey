@@ -5,24 +5,23 @@
 #
 # @lc code=start
 class Codec:
+    def __init__(self):
+        self.prefix = 
+        self.map = dict()
+
+    def _hash(self, s):
+        base = 13331
+        mod = 1e9+7
+        for c in s:
+            res = (res*base + ord(c))%mod
+        return res
+
     def encode(self, longUrl: str) -> str:
         """Encodes a URL to a shortened URL."""
-        results = ""
-        for c in longUrl:
-            results += str(len(c))+"#"+c
-        return results
 
     def decode(self, shortUrl: str) -> str:
         """Decodes a shortened URL to its original URL."""
-        i,results = 0,[]
-        while i<len(shortUrl):
-            j=i
-            while shortUrl[j]!="#":
-                j+=1
-            length = int(shortUrl[i:j])
-            results.append(shortUrl[j+1:j+1+length])
-            i = j+1+length
-        return "".join(results)
+        
         
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
