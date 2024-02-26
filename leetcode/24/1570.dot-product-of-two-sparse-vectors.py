@@ -8,14 +8,14 @@ class SparseVector:
     def __init__(self, nums: List[int]):
         self.map = {}
         for i,j in enumerate(nums):
-            if j != 0:
+            if j!=0:
                 self.map[i] = j
 
     # Return the dotProduct of two sparse vectors
     def dotProduct(self, vec: 'SparseVector') -> int:
         results = 0
         for i in set(self.map.keys()) & set(vec.map.keys()):
-            results += self.map[i]*vec.map[i]
+            results += self.map[i] * vec.map[i]
         return results
 
 # Your SparseVector object will be instantiated and called as such:
