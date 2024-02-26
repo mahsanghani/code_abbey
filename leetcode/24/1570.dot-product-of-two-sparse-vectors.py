@@ -8,7 +8,7 @@ class SparseVector:
     def __init__(self, nums: List[int]):
         self.map = {}
         for i,j in enumerate(nums):
-            if j!=0:
+            if j != 0:
                 self.map[i] = j
 
     # Return the dotProduct of two sparse vectors
