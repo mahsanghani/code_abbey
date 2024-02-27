@@ -6,16 +6,16 @@
 # @lc code=start
 class SQL:
     def __init__(self, names: List[str], columns: List[int]):
-        self.tables = {name:[] for name in names}
+        self.table = {name:[] for name in names}
 
     def insertRow(self, name: str, row: List[str]) -> None:
-        self.tables[name].append(row)
+        self.table[name].append(row)
 
     def deleteRow(self, name: str, rowId: int) -> None:
-        self.tables[name][rowId-1] = None
+        self.table[name][rowId-1] = None
 
     def selectCell(self, name: str, rowId: int, columnId: int) -> str:
-        return self.tables[name][rowId-1][columnId-1]
+        return str(self.table[name][rowId-1][columnId-1])
 
 # Your SQL object will be instantiated and called as such:
 # obj = SQL(names, columns)
