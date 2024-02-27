@@ -6,17 +6,15 @@
 # @lc code=start
 class Logger:
     def __init__(self):
-        self.map = {}
+        self.dict = {}
 
     def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
-        # if msg not in map, add it
-        if message not in self.map:
-            self.map[message] = timestamp
+        if message not in self.dict:
+            self.dict[message] = timestamp
             return True
-
-        # if msg in map, check time
-        if timestamp>=self.map[message]+10:
-            self.map[message] = timestamp
+        
+        if timestamp >= self.dict[message] + 10:
+            self.dict[message] = timestamp
             return True
         else:
             return False
