@@ -10,7 +10,7 @@ class CustomStack:
         self.stack = []
 
     def push(self, x: int) -> None:
-        if len(self.stack)<self.size:
+        if len(self.stack) < self.size:
             self.stack.append(x)
 
     def pop(self) -> int:
@@ -21,7 +21,7 @@ class CustomStack:
         return temp
 
     def increment(self, k: int, val: int) -> None:
-        if k<len(self.stack):
+        if k < len(self.stack):
             for i in range(k):
                 self.stack[i] += val
         else:
