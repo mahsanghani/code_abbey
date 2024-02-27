@@ -11,10 +11,19 @@ class CombinationIterator:
         self.results = []
         self.backtrack(0,[])
 
+    def backtrack(self, start, current):
+        if len(current)==self.length:
+            self.results.append(current[:])
+            return
+        for i in range(start,len(self.chars)):
+            current.append(self.chars[i])
+            self.backtrack(i+1,current)
+            current.pop()
+
     def next(self) -> str:
         item = self.results[0]
-        self.results = self.results[:-1]
-        return item
+        self.results = self.results[1:]
+        return ''.join(item)
 
     def hasNext(self) -> bool:
         return len(self.results)>0
