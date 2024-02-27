@@ -10,13 +10,30 @@ class SmallestInfiniteSet:
 
     def popSmallest(self) -> int:
         temp = self.small[0]
-        self.small = self.small[1:]
+        if len(self.small)>1:
+            self.small = self.small[1:]
         return temp
 
     def addBack(self, num: int) -> None:
         if num not in self.small:
-            self.small.insert(num-1,num)
+            if num<self.small[0]:
+                self.small.insert(0,num)
+            else:
+                # idx = self.binary(num)
+                self.small.insert(self.binary(num),num)
+    
+    def binary(self, num):
+        left, right = 0,len(self.small)-1
 
+        while left<=right:
+            mid = left+(right-left)//2
+            if self.small[mid]==num:
+                return mid
+            elif self.small[mid]<num:
+                left=mid+1
+            else:
+                right=mid-1
+        return left
 
 # Your SmallestInfiniteSet object will be instantiated and called as such:
 # obj = SmallestInfiniteSet()
