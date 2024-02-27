@@ -11,12 +11,9 @@ class RecentCounter:
 
     def ping(self, t: int) -> int:
         self.win.append(t)
-
-        while self.win[0] < t-3000:
+        while self.win[0]<t-3000:
             self.win.popleft()
-        
         return len(self.win)
-
 
 # Your RecentCounter object will be instantiated and called as such:
 # obj = RecentCounter()
