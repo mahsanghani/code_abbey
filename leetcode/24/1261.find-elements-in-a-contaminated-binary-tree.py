@@ -15,11 +15,11 @@ class FindElements:
         self.set = set()
         self.dfs(root,0)
 
-    def dfs(self,n,x):
-        if n:
-            self.set.add(x)
-            self.dfs(n.left,2*x+1)
-            self.dfs(n.right,2*x+2)
+    def dfs(self,node,val):
+        if node:
+            self.set.add(val)
+            self.dfs(node.left,2*val+1)
+            self.dfs(node.right,2*val+2)
 
     def find(self, target: int) -> bool:
         return target in self.set
