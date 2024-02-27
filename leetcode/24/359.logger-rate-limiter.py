@@ -1,0 +1,28 @@
+#
+# @lc app=leetcode id=359 lang=python3
+#
+# [359] Logger Rate Limiter
+#
+# @lc code=start
+class Logger:
+    def __init__(self):
+        self.map = {}
+
+    def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
+        # if msg not in map, add it
+        if message not in self.map:
+            self.map[message] = timestamp
+            return True
+
+        # if msg in map, check time
+        if timestamp>=self.map[message]+10:
+            self.map[message] = timestamp
+            return True
+        else:
+            return False
+
+# Your Logger object will be instantiated and called as such:
+# obj = Logger()
+# param_1 = obj.shouldPrintMessage(timestamp,message)
+# @lc code=end
+
