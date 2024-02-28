@@ -4,20 +4,21 @@
 # [1845] Seat Reservation Manager
 #
 # @lc code=start
+from heapq import heappush, heappop
 class SeatManager:
     def __init__(self, n: int):
-        self.size = n
-        self.seats = [None]*self.size
+        self.mark = 1
+        self.seats = []
 
     def reserve(self) -> int:
-        for i in range(self.size):
-            if self.seats[i]==None:
-                self.seats[i] = i+1
-                return i+1
+        if self.seats:
+            return heappop(self.seats)
+        self.seat = self.mark
+        self.mark += 1
+        return self.seat
 
     def unreserve(self, seatNumber: int) -> None:
-        if seatNumber in self.seats:
-            self.seats[seatNumber-1] = None
+        heappush(self.seats, seatNumber)
 
 
 # Your SeatManager object will be instantiated and called as such:
