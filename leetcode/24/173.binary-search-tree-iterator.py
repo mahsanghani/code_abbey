@@ -12,14 +12,23 @@ class TreeNode:
         self.right = right
 class BSTIterator:
     def __init__(self, root: Optional[TreeNode]):
-        if not root:
+        self.nodes = []
+        self.index = -1
+        self.inorder(root)
+
+    def inorder(self, node):
+        if not node:
             return None
+        self.inorder(node.left)
+        self.nodes.append(node.val)
+        self.inorder(node.right)
 
     def next(self) -> int:
-        
+        self.index+=1
+        return self.nodes[self.index]
 
     def hasNext(self) -> bool:
-        
+        return self.index+1<len(self.nodes)
 
 
 # Your BSTIterator object will be instantiated and called as such:
