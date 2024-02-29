@@ -3,12 +3,18 @@
 #
 # [706] Design HashMap
 #
-
 # @lc code=start
+class ListNode:
+    def __init__(self,key,val,next):
+        self.key = key
+        self.val = val
+        self.next = next
 class MyHashMap:
-
     def __init__(self):
-        
+        self.map = [ListNode() for i in range(1000)]
+
+    def hash(self, key):
+        return key % len(self.map)
 
     def put(self, key: int, value: int) -> None:
         
