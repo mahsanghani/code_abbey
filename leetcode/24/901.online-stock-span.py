@@ -6,8 +6,7 @@
 # @lc code=start
 class StockSpanner:
     def __init__(self):
-        self.stack = []
-        self.count = 0       
+        self.stack = []      
 
     def next(self, price: int) -> int:
         if not self.stack or self.stack[-1][0]>price:
@@ -15,7 +14,6 @@ class StockSpanner:
             return 1
         temp=1
         while self.stack and self.stack[-1][0]<=price:
-            # self.stack.pop()[1]
             temp+=self.stack.pop()[1]
         self.stack.append((price,temp))
         return temp
