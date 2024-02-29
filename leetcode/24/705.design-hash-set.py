@@ -11,16 +11,16 @@ class ListNode:
 
 class MyHashSet:
     def __init__(self):
-        
+        self.set = [ListNode(0) for i in range(10**4)]
 
     def add(self, key: int) -> None:
-        
+        curr = self.set[key%len(self.set)]
 
     def remove(self, key: int) -> None:
-        
+        curr = self.set[key%len(self.set)]
 
     def contains(self, key: int) -> bool:
-        
+        curr = self.set[key%len(self.set)]
 
 
 # Your MyHashSet object will be instantiated and called as such:
