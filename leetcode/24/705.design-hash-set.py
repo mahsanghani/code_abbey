@@ -31,6 +31,11 @@ class MyHashSet:
 
     def contains(self, key: int) -> bool:
         curr = self.set[key%len(self.set)]
+        while curr.next:
+            if curr.next.key == key:
+                return True
+            curr = curr.next
+        return False
 
 
 # Your MyHashSet object will be instantiated and called as such:
