@@ -4,10 +4,10 @@
 # [1244] Design A Leaderboard
 #
 # @lc code=start
-from collections import defaultdict
+from heapq import heappush, heappop
 class Leaderboard:
     def __init__(self):
-        self.scores = defaultdict()
+        self.scores = {}
 
     def addScore(self, playerId: int, score: int) -> None:
         if playerId not in self.scores:
@@ -15,13 +15,15 @@ class Leaderboard:
         self.scores[playerId] += score
 
     def top(self, K: int) -> int:
-        values = [v for _,v in sorted(self.scores.items(), key=lambda item: item[1])]
-        values.sort(reverse=True)
-        i,t = 0,0
-        while i<K:
-            t+=values[i]
-            i+=1
-        return t
+        heap = []
+        results = 0
+        for x in self.scores.values():
+            heappush(heap,x)
+            if len(heap)>K:
+                heappop(heap)
+        while heap:
+            results += heappop(heap)
+        return results
 
     def reset(self, playerId: int) -> None:
         self.scores[playerId] = 0
