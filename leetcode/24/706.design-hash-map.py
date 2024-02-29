@@ -17,7 +17,13 @@ class MyHashMap:
         return key % len(self.map)
 
     def put(self, key: int, value: int) -> None:
-        
+        curr = self.map[self.hash(key)]
+        while curr.next:
+            if curr.next.key == key:
+                curr.next.val = value
+                return
+            curr = curr.next
+        curr.next = ListNode(key, value)
 
     def get(self, key: int) -> int:
         
