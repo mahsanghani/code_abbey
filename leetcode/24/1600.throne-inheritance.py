@@ -22,7 +22,7 @@ class ThroneInheritance:
         self.dfs(self.king)
         return self.results
 
-    def dfs(self, curr):
+    def dfs(self, curr) -> None:
         if curr not in self.dead:
             self.results.append(curr)
         for child in self.nation[curr]:
