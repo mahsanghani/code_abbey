@@ -9,6 +9,7 @@ class ListNode:
         self.key = key
         self.val = val
         self.next = next
+
 class MyHashMap:
     def __init__(self):
         self.map = [ListNode() for i in range(1000)]
