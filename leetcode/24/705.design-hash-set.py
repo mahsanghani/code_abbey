@@ -23,6 +23,11 @@ class MyHashSet:
 
     def remove(self, key: int) -> None:
         curr = self.set[key%len(self.set)]
+        while curr.next:
+            if curr.next.key == key:
+                curr.next = curr.next.next
+                return
+            curr = curr.next
 
     def contains(self, key: int) -> bool:
         curr = self.set[key%len(self.set)]
