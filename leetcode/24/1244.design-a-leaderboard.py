@@ -10,44 +10,25 @@ from sortedcontainers import SortedDict
 class Leaderboard:
     def __init__(self):
         self.scores = {}
-        self.sortedScores = SortedDict()
 
     def addScore(self, playerId: int, score: int) -> None:
         if playerId not in self.scores:
-            self.scores[playerId] = score
-            self.sortedScores[-score] = self.sortedScores.get(-score,0)+1
-        else:
-            pre = self.scores[playerId]
-            val = self.sortedScores.get(-pre)
-            if val==1:
-                del self.sortedScores[-pre]
-            else:
-                self.sortedScores[-pre]=val-1
-            newscore = pre+score
-            self.scores[playerId] = newscore
-            self.sortedScores[-newscore] = self.sortedScores.get(-newscore,0)+1
-        
+            self.scores[playerId] = 0
+        self.scores[playerId] += score
 
     def top(self, K: int) -> int:
-        count, total = 0,0
-        for k,v in self.sortedScores.items():
-            times = self.sortedScores.get(k)
-            for i in range(times):
-                total += -k
-                count += 1
-                if count==K:
-                    break
-            if count==K:
-                break
-        return total
+        heap = []
+        for x in self.scores.values():
+            heappush(heap,x)
+            if len(heap)>K:
+                heappop(heap)
+        results = 0
+        while heap:
+            results+=heappop(heap)
+        return results
 
     def reset(self, playerId: int) -> None:
-        pre = self.scores[playerId]
-        if self.sortedScores[-pre]==1:
-            del self.sortedScores[-pre]
-        else:
-            self.sortedScores[-pre]-=1
-        del self.scores[playerId]
+        self.scores[playerId] = 0
 
 # Your Leaderboard object will be instantiated and called as such:
 # obj = Leaderboard()
