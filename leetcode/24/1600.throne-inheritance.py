@@ -3,22 +3,30 @@
 #
 # [1600] Throne Inheritance
 #
-
 # @lc code=start
+from collections import defaultdict
 class ThroneInheritance:
-
     def __init__(self, kingName: str):
-        
+        self.nation = defaultdict(list)
+        self.king = kingName
+        self.dead = set()
 
     def birth(self, parentName: str, childName: str) -> None:
-        
+        self.nation[parentName].append(childName)
 
     def death(self, name: str) -> None:
-        
+        self.dead.add(name)
 
     def getInheritanceOrder(self) -> List[str]:
-        
+        self.results = []
+        self.dfs(self.king)
+        return self.results
 
+    def dfs(self, curr):
+        if curr not in self.dead:
+            self.results.append(curr)
+        for child in self.nation[curr]:
+            self.dfs(child)
 
 # Your ThroneInheritance object will be instantiated and called as such:
 # obj = ThroneInheritance(kingName)
