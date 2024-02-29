@@ -15,6 +15,11 @@ class MyHashSet:
 
     def add(self, key: int) -> None:
         curr = self.set[key%len(self.set)]
+        while curr.next:
+            if curr.next.key == key:
+                return
+            curr = curr.next
+        curr.next = ListNode(key)
 
     def remove(self, key: int) -> None:
         curr = self.set[key%len(self.set)]
