@@ -3,39 +3,21 @@
 #
 # [706] Design HashMap
 #
-# @lc code=start
-class ListNode:
-    def __init__(self, key):
-        self.key = key
-        self.next = None
 
+# @lc code=start
 class MyHashMap:
+
     def __init__(self):
-        self.set = [ListNode(0) for i in range(10**4)]
+        
 
     def put(self, key: int, value: int) -> None:
-        curr = self.set[key%len(self.set)]
-        while curr.next:
-            if curr.next.key == key:
-                return
-            curr = curr.next
-        curr.next = ListNode(key)
+        
 
     def get(self, key: int) -> int:
-        curr = self.set[key%len(self.set)]
-        while curr.next:
-            if curr.next.key == key:
-                curr.next = curr.next.next
-                return
-            curr = curr.next
+        
 
     def remove(self, key: int) -> None:
-        curr = self.set[key%len(self.set)]
-        while curr.next:
-            if curr.next.key == key:
-                return True
-            curr = curr.next
-        return False
+        
 
 
 # Your MyHashMap object will be instantiated and called as such:

@@ -3,10 +3,13 @@
 #
 # [705] Design HashSet
 #
-
 # @lc code=start
-class MyHashSet:
+class ListNode:
+    def __init__(self,key):
+        self.key = key
+        self.next = None
 
+class MyHashSet:
     def __init__(self):
         
 
