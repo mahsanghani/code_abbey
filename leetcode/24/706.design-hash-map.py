@@ -34,7 +34,12 @@ class MyHashMap:
         return -1
 
     def remove(self, key: int) -> None:
-        
+        curr = self.map[self.hash(key)]
+        while curr.next and curr.next.key != key:
+            curr = curr.next
+        if curr and curr.next:
+            curr.next = curr.next.next
+        return
 
 
 # Your MyHashMap object will be instantiated and called as such:
