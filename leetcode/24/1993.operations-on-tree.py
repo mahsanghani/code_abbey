@@ -3,12 +3,14 @@
 #
 # [1993] Operations on Tree
 #
-
 # @lc code=start
 class LockingTree:
-
     def __init__(self, parent: List[int]):
-        
+        self.parent = parent
+        self.locked = [None]*len(parent)
+        self.child = {i:[] for i in range(len(parent))}
+        for i in range(1,len(parent)):
+            self.child[parent[i]].append(i)
 
     def lock(self, num: int, user: int) -> bool:
         
