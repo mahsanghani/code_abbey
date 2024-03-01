@@ -19,7 +19,10 @@ class LockingTree:
         return True
 
     def unlock(self, num: int, user: int) -> bool:
-        
+        if self.locked[num] != user:
+            return False
+        self.locked[num] = None
+        return True
 
     def upgrade(self, num: int, user: int) -> bool:
         
