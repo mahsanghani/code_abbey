@@ -10,16 +10,22 @@ class Node:
         self.endofword = False
 class Trie:
     def __init__(self):
-        
+        self.root = Node()
 
     def insert(self, word: str) -> None:
-        
+        current = self.root
+        for char in word:
+            if char not in current.children:
 
     def search(self, word: str) -> bool:
-        
+        current = self.root
+        for char in word:
+            if char not in current.children:
 
-    def startsWith(self, prefix: str) -> bool:
-        
+    def startsWith(self, word: str) -> bool:
+        current = self.root
+        for char in word:
+            if char not in current.children:
 
 
 # Your Trie object will be instantiated and called as such:
