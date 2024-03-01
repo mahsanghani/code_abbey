@@ -32,6 +32,9 @@ class Trie:
         current = self.root
         for char in word:
             if char not in current.children:
+                return False
+            current = current.children[c]
+        return True
 
 
 # Your Trie object will be instantiated and called as such:
