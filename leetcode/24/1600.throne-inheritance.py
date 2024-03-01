@@ -18,13 +18,13 @@ class ThroneInheritance:
         self.dead.add(name)
 
     def getInheritanceOrder(self) -> List[str]:
-        self.results = []
+        self.res = []
         self.dfs(self.king)
-        return self.results
+        return self.res
 
     def dfs(self, curr) -> None:
         if curr not in self.dead:
-            self.results.append(curr)
+            self.res.append(curr)
         for child in self.nation[curr]:
             self.dfs(child)
 
