@@ -16,6 +16,9 @@ class Trie:
         current = self.root
         for char in word:
             if char not in current.children:
+                current.children[c] = Node()
+            current = current.children[c]
+        current.endofword = True
 
     def search(self, word: str) -> bool:
         current = self.root
