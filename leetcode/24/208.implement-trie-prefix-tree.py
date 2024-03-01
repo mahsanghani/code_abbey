@@ -3,10 +3,12 @@
 #
 # [208] Implement Trie (Prefix Tree)
 #
-
 # @lc code=start
+class Node:
+    def __init__(self):
+        self.children = {}
+        self.endofword = False
 class Trie:
-
     def __init__(self):
         
 
