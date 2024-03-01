@@ -24,6 +24,9 @@ class Trie:
         current = self.root
         for char in word:
             if char not in current.children:
+                return False
+            current = current.children[c]
+        return current.endofword
 
     def startsWith(self, word: str) -> bool:
         current = self.root
