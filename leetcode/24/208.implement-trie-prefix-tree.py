@@ -8,6 +8,8 @@ class Node:
     def __init__(self):
         self.children = {}
         self.endofword = False
+
+
 class Trie:
     def __init__(self):
         self.root = Node()
@@ -16,8 +18,8 @@ class Trie:
         current = self.root
         for char in word:
             if char not in current.children:
-                current.children[c] = Node()
-            current = current.children[c]
+                current.children[char] = Node()
+            current = current.children[char]
         current.endofword = True
 
     def search(self, word: str) -> bool:
@@ -25,7 +27,7 @@ class Trie:
         for char in word:
             if char not in current.children:
                 return False
-            current = current.children[c]
+            current = current.children[char]
         return current.endofword
 
     def startsWith(self, word: str) -> bool:
@@ -33,7 +35,7 @@ class Trie:
         for char in word:
             if char not in current.children:
                 return False
-            current = current.children[c]
+            current = current.children[char]
         return True
 
 
