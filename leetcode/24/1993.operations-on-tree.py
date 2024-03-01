@@ -27,7 +27,7 @@ class LockingTree:
 
     def upgrade(self, num: int, user: int) -> bool:
         i = num
-        while i!=1:
+        while i!=-1:
             if self.locked[i]:
                 return False
             i = self.parent[i]
