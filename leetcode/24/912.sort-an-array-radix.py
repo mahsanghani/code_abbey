@@ -36,6 +36,8 @@ class Solution:
 
         positives = [val for val in nums if val>=0]
         negatives = [val for val in nums if val<0]
-        return positives + negatives
+        negatives.reverse()
+
+        return negatives + positives
 # @lc code=end
 
