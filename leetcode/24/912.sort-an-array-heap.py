@@ -23,8 +23,8 @@ class Solution:
             for i in range(n//2-1,-1,-1):
                 heapify(n,i)
             for j in range(n-1,-1,-1):
-                nums[0],nums[i] = nums[i], nums[0]
-                heapify(i,0)
+                nums[0],nums[j] = nums[j], nums[0]
+                heapify(j,0)
 
         heap_sort()
         return nums
