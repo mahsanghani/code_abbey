@@ -10,14 +10,14 @@ class Solution:
 
         def merge(left,mid,right):
             start1 = left
-            start2 = right
+            start2 = mid+1
             n1 = mid - left + 1
             n2 = right - mid
 
             for i in range(n1):
                 temp[start1+i] = nums[start1+i]
             for i in range(n2):
-                temp[start2+i] = nums[start2+1]
+                temp[start2+i] = nums[start2+i]
 
             i,j,k = 0,0,left
             while i<n1 and j<n2:
@@ -39,9 +39,14 @@ class Solution:
                 k+=1
 
         def merge_sort(left,right):
-            if left>right:
+            if left>=right:
                 return
+            mid = (left+right)//2
+            merge_sort(left,mid)
+            merge_sort(mid+1,right)
+            merge(left,mid,right)
         
         merge_sort(0,len(nums)-1)
+        return nums
 # @lc code=end
 
