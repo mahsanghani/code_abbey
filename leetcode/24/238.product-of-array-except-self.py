@@ -5,18 +5,16 @@
 #
 
 # @lc code=start
+import math
+from collections import defaultdict
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         results = []
-        product = 1
-        for num in nums:
-            if num>0:
-                product *= num
-        for num in nums:
-            if num>0:
-                results.append(int(product/num))
-            else:
-                results.append(product)
+        products = defaultdict(int)
+        for i,j in enumerate(nums):
+            if j not in products:
+                products[j] = math.prod([x for k,x in enumerate(nums) if k!=i])
+            results.append(products[j])
         return results
 # @lc code=end
 
