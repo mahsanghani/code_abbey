@@ -7,16 +7,18 @@
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        mini,maxi,diff,l,r = 0,0,0,0,len(prices)-1
+        profit = 0
+        left = 0
+        right = 1
 
-        while l<r:
-            if prices[r]-prices[l]>diff:
-                diff=prices[r]-prices[l]
-            if prices[l+1]<mini:
-                l+=1
-            if prices[r-1]>maxi:
-                r-=1
+        while right < len(prices):
+            if prices[right]>prices[left]:
+                profit += prices[right] - prices[left]
+                left = right
+            else:
+                left += 1
+            right += 1
 
-        return diff
+        return profit
 # @lc code=end
 
