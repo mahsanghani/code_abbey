@@ -17,5 +17,16 @@ class Solution:
             if largest!=i:
                 nums[i],nums[largest] = nums[largest], nums[i]
                 heapify(n,largest)
+
+        def heap_sort():
+            n = len(nums)
+            for i in range(n//2-1,-1,-1):
+                heapify(n,i)
+            for j in range(n-1,-1,-1):
+                nums[0],nums[i] = nums[i], nums[0]
+                heapify(i,0)
+
+        heap_sort()
+        return nums
 # @lc code=end
 
