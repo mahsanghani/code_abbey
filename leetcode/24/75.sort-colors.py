@@ -4,7 +4,6 @@
 # [75] Sort Colors
 #
 # @lc code=start
-from collections import Counter
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
