@@ -3,7 +3,6 @@
 #
 # [200] Number of Islands
 #
-
 # @lc code=start
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
@@ -17,18 +16,19 @@ class Solution:
                 return 0
             
             visit.add((r,c))
-
-            dfs(r+1,c)
+            
             dfs(r,c+1)
-            dfs(r-1,c)
             dfs(r,c-1)
+            dfs(r+1,c)
+            dfs(r-1,c)
 
             return 1
-
+        
         for r in range(rows):
             for c in range(cols):
                 if (r,c) not in visit and grid[r][c]=="1":
                     islands += dfs(r,c)
+        
         return islands
 # @lc code=end
 
