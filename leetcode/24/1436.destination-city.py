@@ -3,11 +3,10 @@
 #
 # [1436] Destination City
 #
-
 # @lc code=start
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:
-        routes = {d:s for s,d in paths}
-        return next(key for key in routes.keys() if key not in routes.values())
+        adj = {d:s for s,d in paths}
+        return next(key for key,value in adj.items() if key not in adj.values())
 # @lc code=end
 
