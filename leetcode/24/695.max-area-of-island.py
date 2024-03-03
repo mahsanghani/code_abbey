@@ -18,16 +18,16 @@ class Solution:
             
             visit.add((r,c))
 
-            return (1 \
-            + dfs(r+1,c) \
-            + dfs(r,c+1) \
-            + dfs(r-1,c) \
-            + dfs(r,c-1))
+            return (1+ \
+                dfs(r+1,c)+ \
+                dfs(r,c+1) + \
+                dfs(r-1,c) + \
+                dfs(r,c-1))
         
         for r in range(rows):
             for c in range(cols):
                 if (r,c) not in visit and grid[r][c]==1:
-                    area = max(area,dfs(r,c))
+                    area = max(area, dfs(r,c))
 
         return area
 # @lc code=end
