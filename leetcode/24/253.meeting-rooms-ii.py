@@ -6,10 +6,10 @@
 # @lc code=start
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        s=0
-        e=0
-        rooms=0
-        results=0
+        s = 0
+        e = 0
+        rooms = 0
+        results = 0
 
         start = sorted([i[0] for i in intervals])
         end = sorted([i[1] for i in intervals])
