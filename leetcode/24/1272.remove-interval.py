@@ -10,8 +10,8 @@ class Solution:
         inter.sort()
 
         for i in inter:
-            if i[0]>=rem[1] or i[1]<=rem[0]:
-                results.append([i[0],i[1]])
+            if i[0]>rem[1] or i[1]<rem[0]:
+                results.append(i)
             else:
                 if i[0]<rem[0]:
                     results.append([i[0],rem[0]])
