@@ -6,22 +6,22 @@
 
 # @lc code=start
 class Solution:
-    def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
-        results = []
-        i,j = 0,0
+    def intervalIntersection(self, first: List[List[int]], second: List[List[int]]) -> List[List[int]]:
+        i,j,results = 0,0,[]
 
-        while i<len(firstList) and j<len(secondList):
-            low = max(firstList[i][0], secondList[j][0])
-            high = min(firstList[i][1], secondList[j][1])
+        while i<len(first) and j<len(second):
+            low = max(first[i][0],second[j][0])
+            high = min(first[i][1],second[j][1])
 
             if low<=high:
                 results.append([low,high])
 
-            if firstList[i][1]<secondList[j][1]:
+            if first[i][1]<second[j][1]:
                 i+=1
             else:
                 j+=1
 
         return results
+
 # @lc code=end
 
