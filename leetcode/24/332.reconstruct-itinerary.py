@@ -8,19 +8,19 @@ class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         adj = {s:[] for s,d in tickets}
 
-        results = ["JFK"]
         tickets.sort()
+        results = ["JFK"]
 
         for s,d in tickets:
             adj[s].append(d)
 
         def dfs(c):
-            if len(results)==len(tickets)+1:
+            if len(results) == len(tickets) + 1:
                 return True
             if c not in adj:
                 return False
             
-            for k,v in enumerate(adj[c]):
+            for k,v in enumerate(list(adj[c])):
                 adj[c].pop(k)
                 results.append(v)
                 if dfs(v):
