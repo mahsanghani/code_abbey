@@ -14,7 +14,6 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         curr = root
         stack = []
-
         while curr or stack:
             while curr:
                 stack.append(curr)
