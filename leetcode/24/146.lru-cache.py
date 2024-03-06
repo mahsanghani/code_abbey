@@ -20,8 +20,13 @@ class LRUCache:
         self.left.next = self.right
         self.right.prev = self.left
 
-    def add(self. node):
-
+    def add(self, node):
+        p = self.right.prev
+        n = self.right
+        p.next = node
+        n.prev = node
+        node.next = n
+        node.prev = p
 
     def get(self, key: int) -> int:
         
