@@ -28,6 +28,12 @@ class LRUCache:
         node.next = n
         node.prev = p
 
+    def sub(self, node):
+        p = node.prev
+        n = node.next
+        p.next = n
+        n.prev = p
+
     def get(self, key: int) -> int:
         
 
