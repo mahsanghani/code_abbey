@@ -13,6 +13,15 @@ class ListNode:
 
 class LRUCache:
     def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+        self.left = ListNode(0,0)
+        self.right= ListNode(0,0)
+        self.left.next = self.right
+        self.right.prev = self.left
+
+    def add(self. node):
+
 
     def get(self, key: int) -> int:
         
