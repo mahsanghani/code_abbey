@@ -35,7 +35,11 @@ class LRUCache:
         n.prev = p
 
     def get(self, key: int) -> int:
-        
+        if key in self.cache:
+            self.remove(self.cache[key])
+            self.insert(self.cache[key])
+            return self.cache[key].v
+        return -1
 
     def put(self, key: int, value: int) -> None:
         
