@@ -3,7 +3,6 @@
 #
 # [807] Max Increase to Keep City Skyline
 #
-
 # @lc code=start
 class Solution:
     def maxIncreaseKeepingSkyline(self, grid: List[List[int]]) -> int:

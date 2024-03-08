@@ -3,7 +3,6 @@
 #
 # [986] Interval List Intersections
 #
-
 # @lc code=start
 class Solution:
     def intervalIntersection(self, first: List[List[int]], second: List[List[int]]) -> List[List[int]]:
