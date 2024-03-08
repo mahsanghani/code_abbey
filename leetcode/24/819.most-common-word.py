@@ -9,7 +9,7 @@ from collections import Counter
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
         words = re.split(r"\W+", paragraph.lower())
-        counts = dict(sorted(Counter(words).items(), key=lambda x:x[1], reverse=True))
-        return next(key for key in sorted(counts.keys()) if key not in set(banned))
+        counts = [word for word in words if word not in set(banned.append(""))]
+        return max(counts,key=counts.count)
 # @lc code=end
 
