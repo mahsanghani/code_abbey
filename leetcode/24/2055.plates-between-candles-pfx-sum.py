@@ -6,24 +6,22 @@
 # @lc code=start
 class Solution:
     def platesBetweenCandles(self, s: str, queries: List[List[int]]) -> List[int]:
-        results = []
-        candles = [i for i,j in enumerate(s) if j=='|']
+        pfx = [0]*(len(s)+1)
+        res = []
+        next = [float("inf")]*(len(s)+1)
+        prev = [0]*(len(s)+1)
+        
+        for i,j in enumerate(s):
+            pfx[i+1] = pfx[i]+(j=='|')
+            prev[i+1] = i if j=='|' else prev[i]
 
-        def bns(x):
-            l,r = 0,len(candles)-1
-            
-            while l<=r:
-                m=(l+r)//2
-                if candles[m]<x:
-                    l=m+1
-                else:
-                    r=m-1
-            return l
+        for i,j in reversed(list(enumerate(s))):
+            next[i] = i if j=='|' else next[i+1]
 
+        for q in queries:
+            l,r = next[q[0]], prev[q[1]+1]
+            res.append(r-l-(pfx[r]-pfx[l]) if l<r else 0)
 
-        for x,y in queries:
-            l,r = bns(x), bns(y+1)-1
-            results.append(candles[r] - candles[l] - (r-l) if l<r else 0)
-        return results
-    
+        return res
+
 # @lc code=end
