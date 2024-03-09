@@ -23,24 +23,25 @@ class Twitter:
 
         for followeeId in self.followMap[userId]:
             if followeeId in self.tweetMap:
-                index = len(self.tweetMap[followeeId]) - 1
+                index = len(self.tweetMap[followeeId])-1
                 count, tweetId = self.tweetMap[followeeId][index]
-                heappush(minHeap, [count, tweetId, followeeId, index-1])
-
+                heapq.heappush(minHeap, [count, tweetId, followeeId, index-1])
+        heapq.heapify(minHeap)
         while minHeap and len(results)<10:
-            count, tweetId, followeeId, index = heappop(minHeap)
+            count, tweetId, followeeId, index = heapq.heappop(minHeap)
             results.append(tweetId)
             if index>=0:
                 count, tweetId = self.tweetMap[followeeId][index]
-                heappush(minHeap, [count, tweetId, followeeId, index-1])
+                heapq.heappush(minHeap, [count, tweetId, followeeId, index-1])
+        
         return results
 
     def follow(self, followerId: int, followeeId: int) -> None:
         self.followMap[followerId].add(followeeId)
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
-        if followeeId in self.followMap[followerId]:
-            self.followMap[followerId].remove(followeeId)
+        self.followMap[followerId].discard(followeeId)
+
 
 # Your Twitter object will be instantiated and called as such:
 # obj = Twitter()
@@ -48,5 +49,3 @@ class Twitter:
 # param_2 = obj.getNewsFeed(userId)
 # obj.follow(followerId,followeeId)
 # obj.unfollow(followerId,followeeId)
-# @lc code=end
-
