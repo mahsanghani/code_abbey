@@ -13,21 +13,19 @@ class Twitter:
         self.followMap = defaultdict(list)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
-        self.follow(userId, userId)
-        self.tweetMap[userId].insert(0, [self.time, tweetId])
+        self.follow(userId,userId)
+        self.tweetMap[userId].insert(0,[self.time,tweetId])
         self.time+=1
 
     def getNewsFeed(self, userId: int) -> List[int]:
-        results = []
-
+        self.results = []
         for i in self.followMap[userId]:
             for j in self.tweetMap[i][:max(10,len(self.tweetMap[i]))]:
-                heapq.heappush(results, j)
-            while len(results)>10:
-                heapq.heappop(results)
-            
-        results.sort(key=lambda x:-x[0])
-        return [i[1] for i in results]
+                heapq.heappush(self.results, j)
+            while len(self.results)>10:
+                heapq.heappop(self.results)
+        self.results.sort(key=lambda x:-x[0])
+        return [r[1] for r in self.results]
 
     def follow(self, followerId: int, followeeId: int) -> None:
         if followeeId not in self.followMap[followerId]:
