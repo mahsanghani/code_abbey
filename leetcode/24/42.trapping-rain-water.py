@@ -11,7 +11,7 @@ class Solution:
 
         l = 0
         r = len(height)-1
-        pani = 0
+        water = 0
         left = height[l]
         right = height[r]
 
@@ -19,12 +19,12 @@ class Solution:
             if left<right:
                 l+=1
                 left = max(left,height[l])
-                pani += left - height[l]
+                water += left - height[l]
             else:
                 r-=1
                 right = max(right,height[r])
-                pani += right - height[r]
+                water += right - height[r]
 
-        return pani
+        return water
 # @lc code=end
 
