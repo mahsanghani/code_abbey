@@ -7,14 +7,20 @@
 import heapq
 class Solution:
     def maxScore(self, nums1: List[int], nums2: List[int], k: int) -> int:
-        res,pfx,heap = 0,0,[]
+        pairs = [(i,j) for i,j in zip(nums1,nums2)]
+        pairs.sort(key=lambda x:-x[1])
 
-        for i,j in sorted(list(zip(nums1,nums2)), key=itemgetter(1), reverse=True):
-            pfx += i
-            heapq.heappush(heap, i)
-            if len(heap)==k:
-                res = max(res, pfx*j)
-                pfx -= heapq.heappop(heap)
+        heap = [x[0] for x in pairs[:k]]
+        ksum = sum(heap)
+        heapq.heapify(heap)
+        results = ksum*pairs[k-1][1]
 
-        return res
+        for i in range(k, len(nums1)):
+            ksum -= heapq.heappop(heap)
+            ksum += pairs[i][0]
+            heapq.heappush(heap, pairs[i][0])
+            results = max(results, ksum*pairs[i][1])
+
+        return results
+    
 # @lc code=end
