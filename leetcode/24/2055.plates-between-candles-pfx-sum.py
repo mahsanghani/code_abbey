@@ -6,13 +6,13 @@
 # @lc code=start
 class Solution:
     def platesBetweenCandles(self, s: str, queries: List[List[int]]) -> List[int]:
-        pfx = [0]*(len(s)+1)
         res = []
-        next = [float("inf")]*(len(s)+1)
+        pfx = [0]*(len(s)+1)
         prev = [0]*(len(s)+1)
-        
+        next = [float('inf')]*(len(s)+1)
+
         for i,j in enumerate(s):
-            pfx[i+1] = pfx[i]+(j=='|')
+            pfx[i+1] = pfx[i] + (j=='|')
             prev[i+1] = i if j=='|' else prev[i]
 
         for i,j in reversed(list(enumerate(s))):
