@@ -3,7 +3,6 @@
 #
 # [2782] Number of Unique Categories
 #
-
 # @lc code=start
 # Definition for a category handler.
 class CategoryHandler:
