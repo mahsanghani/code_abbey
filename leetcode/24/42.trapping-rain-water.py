@@ -9,19 +9,22 @@ class Solution:
         if not height:
             return 0
 
-        l,p,r = 0,0,len(height)-1
-        left,right = height[l],height[r]
+        l = 0
+        r = len(height)-1
+        pani = 0
+        left = height[l]
+        right = height[r]
 
         while l<r:
             if left<right:
                 l+=1
                 left = max(left,height[l])
-                p += left - height[l]
+                pani += left - height[l]
             else:
                 r-=1
                 right = max(right,height[r])
-                p += right - height[r]
+                pani += right - height[r]
 
-        return p
+        return pani
 # @lc code=end
 
