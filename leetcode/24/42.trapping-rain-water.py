@@ -6,25 +6,21 @@
 # @lc code=start
 class Solution:
     def trap(self, height: List[int]) -> int:
-        if not height: 
-            return 0
-        
-        l=0
-        pani=0
-        r=len(height)-1
-        maxLeft = height[l]
-        maxRight = height[r]
+        if not height: return 0
+        l,r = 0,len(height)-1
+        results = 0
+        leftmax,rightmax = height[l],height[r]
         
         while l<r:
-            if maxLeft < maxRight:
+            if leftmax<rightmax:
                 l+=1
-                maxLeft = max(maxLeft, height[l])
-                pani += maxLeft - height[l]
+                leftmax = max(leftmax,height[l])
+                results += leftmax-height[l]
             else:
                 r-=1
-                maxRight = max(maxRight, height[r])
-                pani += maxRight - height[r]
-                
-        return pani
+                rightmax = max(rightmax,height[r])
+                results += rightmax-height[r]
+
+        return results
 # @lc code=end
 
