@@ -3,7 +3,6 @@
 #
 # [680] Valid Palindrome II
 #
-
 # @lc code=start
 from collections import Counter
 class Solution:

@@ -3,7 +3,6 @@
 #
 # [133] Clone Graph
 #
-
 # @lc code=start
 # Definition for a Node.
 class Node:
