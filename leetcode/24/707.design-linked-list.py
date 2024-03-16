@@ -4,63 +4,90 @@
 # [707] Design Linked List
 #
 # @lc code=start
-# Singly Linked List Node
 class ListNode:
-    def __init__(self, val, next_node=None):
-        self.val = val
-        self.next = next_node
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
-# Implementation for Singly Linked List
-class LinkedList:
+class MyLinkedList:
     def __init__(self):
-        # Init the list with a 'dummy' node which makes 
-        # removing a node from the beginning of list easier.
-        self.head = ListNode(-1)
-        self.tail = self.head
-    
-    def get(self, index: int) -> int:
-        curr = self.head.next
-        i = 0
-        while curr:
-            if i == index:
-                return curr.val
-            i += 1
-            curr = curr.next
-        return -1  # Index out of bounds or list is empty
-
-    def insertHead(self, val: int) -> None:
-        new_node = ListNode(val)
-        new_node.next = self.head.next
-        self.head.next = new_node
-        if not new_node.next:  # If list was empty before insertion
-            self.tail = new_node
-
-    def insertTail(self, val: int) -> None:
-        self.tail.next = ListNode(val)
-        self.tail = self.tail.next
-
-    def remove(self, index: int) -> bool:
-        i = 0
-        curr = self.head
-        while i < index and curr:
-            i += 1
-            curr = curr.next
+        self.size = 0
+        self.head = ListNode(0)  # sentinel node as pseudo-head
         
-        # Remove the node ahead of curr
-        if curr and curr.next:
-            if curr.next == self.tail:
-                self.tail = curr
-            curr.next = curr.next.next
-            return True
-        return False
 
-    def getValues(self) -> List[int]:
-        curr = self.head.next
-        res = []
-        while curr:
-            res.append(curr.val)
+    def get(self, index: int) -> int:
+        """
+        Get the value of the index-th node in the linked list. If the index is invalid, return -1.
+        """
+        # if index is invalid
+        if index < 0 or index >= self.size:
+            return -1
+        
+        curr = self.head
+        # index steps needed 
+        # to move from sentinel node to wanted index
+        for _ in range(index + 1):
             curr = curr.next
-        return res
+        return curr.val
+            
+
+    def addAtHead(self, val: int) -> None:
+        """
+        Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
+        """
+        self.addAtIndex(0, val)
+        
+
+    def addAtTail(self, val: int) -> None:
+        """
+        Append a node of value val to the last element of the linked list.
+        """
+        self.addAtIndex(self.size, val)
+        
+
+    def addAtIndex(self, index: int, val: int) -> None:
+        """
+        Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
+        """
+        # If index is greater than the length, 
+        # the node will not be inserted.
+        if index > self.size:
+            return
+        
+        # [so weird] If index is negative, 
+        # the node will be inserted at the head of the list.
+        if index < 0:
+            index = 0
+        
+        self.size += 1
+        # find predecessor of the node to be added
+        pred = self.head
+        for _ in range(index):
+            pred = pred.next
+            
+        # node to be added
+        to_add = ListNode(val)
+        # insertion itself
+        to_add.next = pred.next
+        pred.next = to_add
+        
+
+    def deleteAtIndex(self, index: int) -> None:
+        """
+        Delete the index-th node in the linked list, if the index is valid.
+        """
+        # if the index is invalid, do nothing
+        if index < 0 or index >= self.size:
+            return
+        
+        self.size -= 1
+        # find predecessor of the node to be deleted
+        pred = self.head
+        for _ in range(index):
+            pred = pred.next
+            
+        # delete pred.next 
+        pred.next = pred.next.next
 
 # Your MyLinkedList object will be instantiated and called as such:
 # obj = MyLinkedList()
