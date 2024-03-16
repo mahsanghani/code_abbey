@@ -14,6 +14,7 @@ class Solution:
         cols = len(rooms[0])
         q = deque()
         visit = set()
+        distance = 0
 
         def dfs(r,c):
             if r<0 or c<0 or r==rows or c==cols or (r,c) in visit or rooms[r][c]==-1:
@@ -26,8 +27,6 @@ class Solution:
                 if rooms[r][c]==0:
                     q.append((r,c))
                     visit.add((r,c))
-            
-        distance = 0
 
         while q:
             for i in range(len(q)):
