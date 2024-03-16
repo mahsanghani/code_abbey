@@ -4,6 +4,7 @@
 # [286] Walls and Gates
 #
 # @lc code=start
+from collections import deque
 class Solution:
     def wallsAndGates(self, rooms: List[List[int]]) -> None:
         """
