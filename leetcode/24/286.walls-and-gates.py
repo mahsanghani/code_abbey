@@ -36,6 +36,7 @@ class Solution:
                 dfs(r,c+1)
                 dfs(r-1,c)
                 dfs(r,c-1)
+
             distance+=1
 # @lc code=end
 
