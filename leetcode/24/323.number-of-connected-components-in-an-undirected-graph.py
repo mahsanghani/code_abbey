@@ -6,6 +6,30 @@
 # @lc code=start
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        adj = {i:[] for i in range(n)}
+
+        res = 0
+        visit = set()
+
+        for k,v in edges:
+            adj[k].append(v)
+            adj[v].append(k)
+
+        def dfs(node):
+            for j in adj[node]:
+                if j not in visit:
+                    visit.add(j)
+                    dfs(j)
+                    
+        for i in range(n):
+            if i not in visit:
+                dfs(i)
+                res+=1
+        
+        return res
+
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
         graph = defaultdict(list)
         for a, b in edges:
             graph[a].append(b)
@@ -26,6 +50,7 @@ class Solution:
                 ans += 1
                 
         return ans
+    
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         parents = [i for i in range(n)]
