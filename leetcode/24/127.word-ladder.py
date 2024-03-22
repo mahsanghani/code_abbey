@@ -4,20 +4,19 @@
 # [127] Word Ladder
 #
 # @lc code=start
-import collections
+from collections import deque, defaultdict
 class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
-        adj = collections.defaultdict(list)
-        wordList.append(beginWord)
-
+    def ladderLength(self, start: str, finish: str, words: List[str]) -> int:
+        adj = defaultdict(list)
+        words.append(start)
+        visit = set([start])
+        q = deque([start])
         results = 1
-        visit = set([beginWord])
-        q = collections.deque([beginWord])
 
-        if endWord not in wordList:
+        if finish not in words:
             return 0
-        
-        for word in wordList:
+
+        for word in words:
             for j in range(len(word)):
                 pattern = word[:j] + "*" + word[j+1:]
                 adj[pattern].append(word)
@@ -25,15 +24,18 @@ class Solution:
         while q:
             for i in range(len(q)):
                 word = q.popleft()
-                if word == endWord:
+                if word==finish:
                     return results
+
                 for j in range(len(word)):
                     pattern = word[:j] + "*" + word[j+1:]
-                    for neighbour in adj[pattern]:
-                        if neighbour not in visit:
-                            visit.add(neighbour)
-                            q.append(neighbour)
+                    for n in adj[pattern]:
+                        if n not in visit:
+                            visit.add(n)
+                            q.append(n)
+
             results+=1
         return 0
+
 # @lc code=end
 
