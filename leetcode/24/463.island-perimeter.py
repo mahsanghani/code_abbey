@@ -3,7 +3,6 @@
 #
 # [463] Island Perimeter
 #
-
 # @lc code=start
 class Solution:
     def islandPerimeter(self, grid: List[List[int]]) -> int:
