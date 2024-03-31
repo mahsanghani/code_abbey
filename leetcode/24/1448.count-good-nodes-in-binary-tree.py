@@ -15,13 +15,15 @@ class Solution:
         def dfs(node,val):
             if not node:
                 return 0
-            res = 1 if node.val>=val else 0
+
+            res = 1 if node.val >= val else 0
             val = max(val,node.val)
 
-            res+=dfs(node.left,val)
-            res+=dfs(node.right,val)
+            res += dfs(node.left, val)
+            res += dfs(node.right, val)
+
             return res
 
-        return dfs(root,root.val)
+        return dfs(root, root.val)
 # @lc code=end
 
