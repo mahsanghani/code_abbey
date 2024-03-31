@@ -12,23 +12,24 @@ class TreeNode:
         self.right = right
 class Solution:
     def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        res = 0
-        prev_num = 1
-        prev_level = 0
-        queue = deque([[root, prev_num, prev_level]])
+        table = {}
+        width = 0
 
-        while queue:
-            node,num,lvl = queue.popleft()
+        def dfs(node,depth,col):
+            if not node:
+                return None
+            
+            nonlocal width
 
-            if lvl>prev_level:
-                prev_level = lvl
-                prev_num = num
+            if depth not in table:
+                table[depth] = col
 
-            res = max(res, num-prev_num+1)
-            if node.left:
-                queue.append([node.left, 2*num, lvl+1])
-            if node.right:
-                queue.append([node.right, 2*num+1, lvl+1])
-        return res
+            width = max(width, col-table[depth]+1)
+
+            dfs(node.left, depth+1, 2*col)
+            dfs(node.right, depth+1, 2*col+1)
+
+        dfs(root,0,0)
+        return width
 # @lc code=end
 
