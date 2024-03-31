@@ -1,7 +1,7 @@
 #
-# @lc app=leetcode id=103 lang=python3
+# @lc app=leetcode id=106 lang=python3
 #
-# [103] Binary Tree Zigzag Level Order Traversal
+# [106] Construct Binary Tree from Inorder and Postorder Traversal
 #
 # @lc code=start
 # Definition for a binary tree node.
@@ -11,25 +11,23 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
-    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        res = []
-        rev = 1
-        queue = deque([root] if root else [])
+    def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+        idx = {}
+        for k,v in enumerate(inorder):
+            idx[v] = k
+    
+        def dfs(l,r):
+            if l>r:
+                return None
+                
+            val = postorder.pop()
+            node = TreeNode(val)
+            i = idx[val]
+            node.right = dfs(i+1,r)
+            node.left = dfs(l,i-1)
+            
+            return node
 
-        while queue:
-            lev = []
-            for _ in range(len(queue)):
-                node = queue.popleft()
-                lev.append(node.val)
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
-            if rev==1:
-                res.append(lev)
-            else:
-                res.append(lev[::-1])
-            rev=-rev
-        return res
+        return dfs(0, len(inorder)-1)
 # @lc code=end
 
