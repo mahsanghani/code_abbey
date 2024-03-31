@@ -15,10 +15,6 @@ class Node:
 
 class Solution:
     def construct(self, grid: List[List[int]]) -> 'Node':
-        rows = len(grid)
-        cols = len(grid[0])
-        visit = set()
-
         def dfs(n,r,c):
             same = True
             for i in range(n):
@@ -35,6 +31,7 @@ class Solution:
             bottomleft = dfs(n,r+n,c)
             bottomright = dfs(n,r+n,c+n)
             return Node(0,False,topleft,topright,bottomleft,bottomright)
+
         return dfs(len(grid),0,0)
 # @lc code=end
 
