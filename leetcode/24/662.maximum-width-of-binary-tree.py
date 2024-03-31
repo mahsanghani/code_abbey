@@ -17,15 +17,15 @@ class Solution:
 
         def dfs(node,depth,col):
             if not node:
-                return None
-            
-            nonlocal width
+                return node
 
+            nonlocal width
+            
             if depth not in table:
                 table[depth] = col
 
             width = max(width, col-table[depth]+1)
-
+            
             dfs(node.left, depth+1, 2*col)
             dfs(node.right, depth+1, 2*col+1)
 
