@@ -12,22 +12,13 @@ class TreeNode:
         self.right = right
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-        idx = {}
-        for k,v in enumerate(inorder):
-            idx[v] = k
+        if not preorder or not inorder:
+            return None
 
-        def dfs(l,r):
-            if l>r:
-                return None
-
-            val = preorder.pop()
-            node = TreeNode(val)
-            i = idx[val]
-
-            node.left = dfs(l,i-1)
-            node.right = dfs(i+1,r)
-            return node
-
-        return dfs(0,len(inorder)-1)
+        node = TreeNode(preorder[0])
+        mid = inorder.index(preorder[0])
+        node.left = self.buildTree(preorder[1:mid+1], inorder[:mid])
+        node.right = self.buildTree(preorder[mid+1:], inorder[mid+1:])
+        return node
 # @lc code=end
 
