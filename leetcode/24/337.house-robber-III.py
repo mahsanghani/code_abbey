@@ -15,11 +15,14 @@ class Solution:
         def dfs(node):
             if not node:
                 return [0,0]
+
             left = dfs(node.left)
             right = dfs(node.right)
             with_ = node.val + left[1] + right[1]
             without = max(left) + max(right)
+
             return [with_, without]
+        
         return max(dfs(root))
 # @lc code=end
 
