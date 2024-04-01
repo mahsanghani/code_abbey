@@ -3,7 +3,6 @@
 #
 # [338] Counting Bits
 #
-
 # @lc code=start
 class Solution:
     def countBits(self, n: int) -> List[int]:
