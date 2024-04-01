@@ -12,15 +12,12 @@ class TreeNode:
         self.right = right
 class Solution:
     def rob(self, root: Optional[TreeNode]) -> int:
-        # [with_root, without_root]
-
         def dfs(node):
             if not node:
                 return [0,0]
 
             left = dfs(node.left)
             right = dfs(node.right)
-
             with_ = node.val + left[1] + right[1]
             without = max(left) + max(right)
 
