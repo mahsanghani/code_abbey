@@ -6,14 +6,15 @@
 # @lc code=start
 class Solution:
     def numTrees(self, n: int) -> int:
-        trees = [1]*(n+1)
+        nums = [1]*(n+1)
+
         for nodes in range(2,n+1):
             total = 0
-            for root in range(1,nodes+1):
-                left = root-1
-                right = nodes-root
-                total += trees[left] * trees[right]
-            trees[nodes] = total
-        return trees[n]
+            for node in range(1,nodes+1):
+                left = node-1
+                right = nodes-node
+                total += nums[left]*nums[right]
+            nums[node] = total
+        return nums[n]
 # @lc code=end
 
