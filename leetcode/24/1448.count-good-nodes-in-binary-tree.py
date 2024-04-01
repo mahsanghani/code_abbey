@@ -12,12 +12,12 @@ class TreeNode:
         self.right = right
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        def dfs(node,val):
+        def dfs(node, val):
             if not node:
                 return 0
 
-            res = 1 if node.val >= val else 0
-            val = max(val,node.val)
+            res = 1 if node.val>=val else 0
+            val = max(val, node.val)
 
             res += dfs(node.left, val)
             res += dfs(node.right, val)
