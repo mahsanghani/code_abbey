@@ -3,7 +3,6 @@
 #
 # [94] Binary Tree Inorder Traversal
 #
-
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
