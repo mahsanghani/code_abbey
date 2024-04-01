@@ -12,19 +12,17 @@ class TreeNode:
         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        self.prev = float("-inf")
-
-        def inorder(root):
-            if not root:
+        # recursive + valid range approach
+        def validate(node, low=float("-inf"), high=float("inf")):
+            if not node:  # empty tree is valid BST 
                 return True
-            if not inorder(root.left):
-                return False
-            if root.val <= self.prev:
-                return False
-            self.prev = root.val
-            return inorder(root.right)
 
-        return inorder(root)
+            if node.val <= low or node.val >= high:
+                return False
+            # check left and right node
+            return (validate(node.right, node.val, high) and
+                    validate(node.left, low, high=node.val))
+        return validate(root)
         
 # @lc code=end
 
