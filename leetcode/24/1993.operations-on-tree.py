@@ -4,7 +4,6 @@
 # [1993] Operations on Tree
 #
 # @lc code=start
-from collections import deque
 class LockingTree:
     def __init__(self, parent: List[int]):
         self.parent = parent
@@ -31,20 +30,20 @@ class LockingTree:
             if self.locked[i]:
                 return False
             i = self.parent[i]
-
-        count = 0
+            
+        lockedCount = 0
         q = deque([num])
-
+        
         while q:
             node = q.popleft()
             if self.locked[node]:
                 self.locked[node] = None
-                count += 1
+                lockedCount +=1
             q.extend(self.child[node])
-
-        if count>0:
+            
+        if lockedCount > 0:
             self.locked[num] = user
-        return count>0
+        return lockedCount > 0
 
 
 # Your LockingTree object will be instantiated and called as such:
