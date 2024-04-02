@@ -1,7 +1,7 @@
 #
-# @lc app=leetcode id=953 lang=python3
+# @lc app=leetcode id=951 lang=python3
 #
-# [953] Verifying an Alien Dictionary
+# [951] 951. Flip Equivalent Binary Trees
 #
 # @lc code=start
 # Definition for a binary tree node.
