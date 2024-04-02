@@ -3,7 +3,6 @@
 #
 # [125] Valid Palindrome
 #
-
 # @lc code=start
 class Solution:
     def isPalindrome(self, s: str) -> bool:
