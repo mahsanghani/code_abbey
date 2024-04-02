@@ -5,13 +5,14 @@
 #
 # @lc code=start
 # Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
 class Codec:
+
     def serialize(self, root):
         """Encodes a tree to a single string.
         
@@ -23,7 +24,7 @@ class Codec:
         def dfs(node):
             if not node:
                 res.append('N')
-                return node
+                return
             res.append(str(node.val))
             dfs(node.left)
             dfs(node.right)
@@ -49,7 +50,6 @@ class Codec:
             node.right = dfs()
             return node
         return dfs()
-        
 
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
