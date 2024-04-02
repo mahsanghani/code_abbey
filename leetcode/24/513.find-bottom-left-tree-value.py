@@ -25,24 +25,24 @@ class Solution:
 
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
-        depth = -1
-        leftval = 0
+        max_depth = -1
+        bot_left_val = 0
 
-        def dfs(node, d):
+        def dfs(node, depth):
             if not node:
                 return node
 
-            nonlocal depth
-            nonlocal leftval
+            nonlocal max_depth
+            nonlocal bot_left_val
 
-            if d > depth:
-                depth = d
-                leftval = node.val
+            if depth > max_depth:
+                max_depth = depth
+                bot_left_val = node.val
 
-            dfs(node.left, d+1)
-            dfs(node.right, d+1)
+            dfs(node.left, depth+1)
+            dfs(node.right, depth+1)
 
         dfs(root, 0)
-        return leftval
+        return bot_left_val
 # @lc code=end
 
