@@ -36,5 +36,20 @@ class Solution:
         
         dfs(root)
         return root
+    
+class Solution:
+    def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        curr = 0
+
+        def dfs(node):
+            if not node:
+                return None
+            nonlocal curr
+            dfs(node.right)
+            curr, node.val = curr+node.val, curr+node.val
+            dfs(node.left)
+
+        dfs(root)
+        return root
 # @lc code=end
 
