@@ -3,7 +3,6 @@
 #
 # [894] All Possible Full Binary Trees
 #
-
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -17,8 +16,9 @@ class Solution:
             return []
         if n==1:
             return [TreeNode()]
-        
+
         results = []
+
         for i in range(1,n,2):
             left = self.allPossibleFBT(i)
             right = self.allPossibleFBT(n-i-1)
@@ -29,5 +29,6 @@ class Solution:
                     results.append(root)
 
         return results
+
 # @lc code=end
 
