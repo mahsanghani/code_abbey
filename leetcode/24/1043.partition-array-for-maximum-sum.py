@@ -3,7 +3,6 @@
 #
 # [1043] Partition Array for Maximum Sum
 #
-
 # @lc code=start
 class Solution:
     def maxSumAfterPartitioning(self, arr: List[int], k: int) -> int:
