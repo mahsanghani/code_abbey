@@ -3,7 +3,6 @@
 #
 # [205] Isomorphic Strings
 #
-
 # @lc code=start
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
