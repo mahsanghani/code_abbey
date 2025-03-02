@@ -7,8 +7,10 @@ class Solution:
                 if cur[0]==cur[2]:
                     res.add(cur)
                 return
+            
             if i==len(s):
                 return
+                
             rec(i+1,cur)
             rec(i+1,cur+s[i])
 
