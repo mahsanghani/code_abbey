@@ -11,12 +11,13 @@ class UndergroundSystem:
         route = (start, end)
         if route not in self.total:
             self.total[route] = [0,0]
-        self.total[route][0] += time-t
+        self.total[route][0] += time - t
         self.total[route][1] += 1
 
     def getAverageTime(self, start: str, end: str) -> float:
         total, count = self.total[(start, end)]
         return total / count
+
 
 # Your UndergroundSystem object will be instantiated and called as such:
 # obj = UndergroundSystem()
