@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class FoodRatings:
     def __init__(self, foods: List[str], cuisines: List[str], ratings: List[int]):
         self.restaurant = defaultdict(lambda: defaultdict(int))
