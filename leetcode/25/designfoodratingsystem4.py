@@ -23,20 +23,20 @@ class FoodRatings:
             self.rating_map[foods[i]] = ratings[i]
             self.cuisine_map[foods[i]] = cuisines[i]
 
-            heapq.heappush(self.cuisine_food_map[cuisines[i]], Food(ratings[i], foods[i]))
+            heappush(self.cuisine_food_map[cuisines[i]], Food(ratings[i], foods[i]))
 
 
     def changeRating(self, food: str, newRating: int) -> None:
         self.rating_map[food] = newRating
         cuisineName = self.cuisine_map[food]
-        heapq.heappush(self.cuisine_food_map[cuisineName], Food(newRating, food))
+        heappush(self.cuisine_food_map[cuisineName], Food(newRating, food))
 
 
     def highestRated(self, cuisine: str) -> str:
         highest_rated = self.cuisine_food_map[cuisine][0]
 
         while self.rating_map[highest_rated.name] != highest_rated.rating:
-            heapq.heappop(self.cuisine_food_map[cuisine])
+            heappop(self.cuisine_food_map[cuisine])
             highest_rated = self.cuisine_food_map[cuisine][0]
 
         return highest_rated.name
