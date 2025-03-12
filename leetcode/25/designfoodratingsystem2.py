@@ -1,6 +1,6 @@
 from collections import defaultdict
 from heapq import heappop, heappush
-
+``
 class FoodRatings:
     def __init__(self, foods: List[str], cuisines: List[str], ratings: List[int]):
         self.cuis = cuisines
