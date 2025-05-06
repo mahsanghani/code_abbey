@@ -22,4 +22,3 @@ class Solution:
         suffix = s[palindrome_end_index+1:]
         reversed_suffix = suffix[::-1]
         return reversed_suffix + s
-    
