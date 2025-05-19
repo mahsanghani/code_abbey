@@ -1,68 +1,61 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
 def countInversions(arr):
-    # Helper function to merge two sorted halves and count split inversions
-    def mergeAndCount(arr, temp, left, mid, right):
-        inv_count = 0
+    def mergeCount(arr, temp, left, mid, right):
+        count = 0
         
-        i = left     # index for left subarray
-        j = mid      # index for right subarray
-        k = left     # index for merged array
+        i = left
+        j = mid+1
+        k = left
         
-        while i < mid and j <= right:
+        while i<=mid and j<=right:
             if arr[i] <= arr[j]:
                 temp[k] = arr[i]
                 i += 1
             else:
-                # This is the key insight: if arr[i] > arr[j], then all elements
-                # from arr[i] to arr[mid-1] are also greater than arr[j]
                 temp[k] = arr[j]
-                inv_count += (mid - i)
+                count += (mid-i+1)
                 j += 1
             k += 1
-        
-        # Copy remaining elements from left subarray
-        while i < mid:
+            
+        while i<=mid:
             temp[k] = arr[i]
             i += 1
             k += 1
-        
-        # Copy remaining elements from right subarray
-        while j <= right:
+            
+        while j<=right:
             temp[k] = arr[j]
             j += 1
             k += 1
-        
-        # Copy back the merged elements to original array
+            
         for i in range(left, right + 1):
             arr[i] = temp[i]
             
-        return inv_count
-    
-    # Main recursive function to sort array and count inversions
-    def mergeSortAndCount(arr, temp, left, right):
-        inv_count = 0
+        return count
+        
+    def mergeSortCount(arr, temp, left, right):
+        count = 0
         
         if left < right:
-            # Divide the array into two parts and call recursively
             mid = (left + right) // 2
+            count += mergeSortCount(arr, temp, left, mid)
+            count += mergeSortCount(arr, temp, mid+1, right)
+            count += mergeCount(arr, temp, left, mid, right)
             
-            # Count inversions in left subarray
-            inv_count += mergeSortAndCount(arr, temp, left, mid)
-            
-            # Count inversions in right subarray
-            inv_count += mergeSortAndCount(arr, temp, mid + 1, right)
-            
-            # Count split inversions
-            inv_count += mergeAndCount(arr, temp, left, mid + 1, right)
-            
-        return inv_count
-    
-    # Create a temporary array to store sorted subarrays during merge
+        return count
+        
     n = len(arr)
-    temp = [0] * n
-    return mergeSortAndCount(arr, temp, 0, n - 1)
+    temp = [0]*n
+    return mergeSortCount(arr,temp,0,n-1)
 
 # Example usage:
-test_arr = [5, 2, 6, 1]
+test_arr = [2, 1, 3, 1, 2]
 print(countInversions(test_arr))  
 # # Should output 5
 
