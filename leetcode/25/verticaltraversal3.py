@@ -26,3 +26,4 @@ class Solution:
                 queue.append((node.right, col+1))
                 
         return [cols[col] for col in range(minCol, maxCol+1)]
+    
